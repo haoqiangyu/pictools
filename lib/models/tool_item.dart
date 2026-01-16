@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+/// 工具项数据模型
+class ToolItem {
+  final String id;
+  final String name;
+  final String description;
+  final IconData icon;
+  final String routeName;
+
+  const ToolItem({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.icon,
+    required this.routeName,
+  });
+}
+
+/// 预定义的工具列表
+class Tools {
+  Tools._();
+
+  static const List<ToolItem> all = [
+    ToolItem(
+      id: 'image_compare',
+      name: '图片对比',
+      description: '对比两张图片，清晰展示差异，支持多种对比模式',
+      icon: Icons.compare,
+      routeName: '/image-compare',
+    ),
+  ];
+}

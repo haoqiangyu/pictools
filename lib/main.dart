@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'providers/image_compare_provider.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
+import 'screens/image_compare_screen.dart';
 
 void main() {
   runApp(const PictoolsApp());
@@ -20,6 +21,7 @@ class PictoolsApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.darkTheme,
         home: const HomeScreen(),
+        routes: {'/image-compare': (context) => const ImageCompareScreen()},
       ),
     );
   }
