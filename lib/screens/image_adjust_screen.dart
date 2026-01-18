@@ -13,6 +13,8 @@ import '../widgets/adjust_mode_switcher.dart';
 import '../widgets/size_adjuster.dart';
 import '../widgets/aspect_ratio_selector.dart';
 import 'package:file_picker/file_picker.dart';
+import '../src/rust/api/image_codec.dart';
+import '../widgets/loading_overlay.dart';
 
 /// 图片调整功能页面
 class ImageAdjustScreen extends StatelessWidget {
@@ -286,75 +288,90 @@ class ImageAdjustScreen extends StatelessWidget {
     BuildContext context,
     ImageAdjustProvider provider,
   ) async {
+    // 选择保存路径（在 loading 之前，避免被遮挡）
+    String? outputPath = await FilePicker.platform.saveFile(
+      dialogTitle: '保存图片',
+      fileName: _generateFileName(provider),
+      allowedExtensions: [provider.exportFormat.extension],
+      type: FileType.custom,
+    );
+
+    if (outputPath == null) return;
+
+    // 确保文件扩展名正确
+    if (!outputPath.endsWith('.${provider.exportFormat.extension}')) {
+      outputPath = '$outputPath.${provider.exportFormat.extension}';
+    }
+
     try {
-      // 选择保存路径
-      String? outputPath = await FilePicker.platform.saveFile(
-        dialogTitle: '保存图片',
-        fileName: _generateFileName(provider),
-        allowedExtensions: [provider.exportFormat.extension],
-        type: FileType.custom,
-      );
+      // 使用 loading 遮罩执行耗时操作
+      await LoadingOverlay.showWhile(
+        context,
+        message: '正在导出图片...',
+        task: () async {
+          // 使用 image 包解码原图
+          final originalImage = img.decodeImage(provider.imageData!);
+          if (originalImage == null) {
+            throw Exception('无法解码图片');
+          }
 
-      if (outputPath == null) return;
+          img.Image resultImage;
 
-      // 确保文件扩展名正确
-      if (!outputPath.endsWith('.${provider.exportFormat.extension}')) {
-        outputPath = '$outputPath.${provider.exportFormat.extension}';
-      }
+          if (provider.mode == AdjustMode.crop) {
+            // 裁剪模式
+            final cropX = (provider.cropRect.left * originalImage.width)
+                .round();
+            final cropY = (provider.cropRect.top * originalImage.height)
+                .round();
+            final cropWidth = (provider.cropRect.width * originalImage.width)
+                .round();
+            final cropHeight = (provider.cropRect.height * originalImage.height)
+                .round();
 
-      // 使用 image 包解码原图
-      final originalImage = img.decodeImage(provider.imageData!);
-      if (originalImage == null) {
-        throw Exception('无法解码图片');
-      }
+            resultImage = img.copyCrop(
+              originalImage,
+              x: cropX,
+              y: cropY,
+              width: cropWidth,
+              height: cropHeight,
+            );
+          } else {
+            // 尺寸调整模式
+            resultImage = img.copyResize(
+              originalImage,
+              width: provider.targetWidth,
+              height: provider.targetHeight,
+              interpolation: img.Interpolation.cubic,
+            );
+          }
 
-      img.Image resultImage;
+          // 先将处理后的图片编码为 PNG 作为中间格式传给 Rust
+          final pngBytes = Uint8List.fromList(img.encodePng(resultImage));
 
-      if (provider.mode == AdjustMode.crop) {
-        // 裁剪模式
-        final cropX = (provider.cropRect.left * originalImage.width).round();
-        final cropY = (provider.cropRect.top * originalImage.height).round();
-        final cropWidth = (provider.cropRect.width * originalImage.width)
-            .round();
-        final cropHeight = (provider.cropRect.height * originalImage.height)
-            .round();
+          // 使用 Rust 编码最终格式
+          final ImageFormat rustFormat;
+          switch (provider.exportFormat) {
+            case ExportFormat.png:
+              rustFormat = const ImageFormat.png();
+              break;
+            case ExportFormat.jpg:
+              rustFormat = const ImageFormat.jpg(quality: 95);
+              break;
+            case ExportFormat.webp:
+              rustFormat = const ImageFormat.webP(quality: 90, lossless: false);
+              break;
+          }
 
-        resultImage = img.copyCrop(
-          originalImage,
-          x: cropX,
-          y: cropY,
-          width: cropWidth,
-          height: cropHeight,
-        );
-      } else {
-        // 尺寸调整模式
-        resultImage = img.copyResize(
-          originalImage,
-          width: provider.targetWidth,
-          height: provider.targetHeight,
-          interpolation: img.Interpolation.cubic,
-        );
-      }
-
-      // 根据格式编码图片
-      Uint8List encodedBytes;
-      switch (provider.exportFormat) {
-        case ExportFormat.png:
-          encodedBytes = Uint8List.fromList(img.encodePng(resultImage));
-          break;
-        case ExportFormat.jpg:
-          // JPG 不支持透明度，需要处理 alpha 通道
-          // 将透明背景替换为白色
-          final rgbImage = _removeAlphaChannel(resultImage);
-          encodedBytes = Uint8List.fromList(
-            img.encodeJpg(rgbImage, quality: 95),
+          final encodedBytes = await encodeImage(
+            imageData: pngBytes,
+            format: rustFormat,
           );
-          break;
-      }
 
-      // 保存文件
-      final file = File(outputPath);
-      await file.writeAsBytes(encodedBytes);
+          // 保存文件
+          final file = File(outputPath!);
+          await file.writeAsBytes(encodedBytes);
+        },
+      );
 
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -378,31 +395,6 @@ class ImageAdjustScreen extends StatelessWidget {
         );
       }
     }
-  }
-
-  /// 移除 alpha 通道，将透明区域替换为白色
-  img.Image _removeAlphaChannel(img.Image source) {
-    final result = img.Image(
-      width: source.width,
-      height: source.height,
-      numChannels: 3, // RGB without alpha
-    );
-
-    for (int y = 0; y < source.height; y++) {
-      for (int x = 0; x < source.width; x++) {
-        final pixel = source.getPixel(x, y);
-        final a = pixel.a.toDouble() / 255.0;
-
-        // Alpha 混合：将透明像素与白色背景混合
-        final r = (pixel.r * a + 255 * (1 - a)).round();
-        final g = (pixel.g * a + 255 * (1 - a)).round();
-        final b = (pixel.b * a + 255 * (1 - a)).round();
-
-        result.setPixelRgb(x, y, r, g, b);
-      }
-    }
-
-    return result;
   }
 
   String _generateFileName(ImageAdjustProvider provider) {

@@ -2,8 +2,10 @@
 enum ComparisonMode {
   /// 滑块对比模式
   slider,
+
   /// 并排对比模式
   sideBySide,
+
   /// 叠加对比模式
   overlay,
 }

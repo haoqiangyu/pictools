@@ -30,6 +30,15 @@ Pictools 是一个图片工具集合平台，提供多种实用的图片处理�
 - **并排模式** - 两张图片左右并排显示  
 - **叠加模式** - 可调节透明度查看叠加效果
 
+### ✂️ 图片调整 (v1.1.0 新增)
+
+强大的图片尺寸调整和裁剪工具：
+
+- **尺寸调整** - 自定义宽高，支持锁定比例
+- **比例裁剪** - 支持自由裁剪和预设比例（1:1, 4:3, 16:9 等）
+- **多格式导出** - 支持 PNG、JPG、**WebP** 格式
+- **高性能编码** - 使用 Rust 原生库进行图片编码，性能优异
+
 <details>
 <summary>📸 截图预览</summary>
 
@@ -67,6 +76,8 @@ fvm flutter run -d macos
 fvm flutter build macos --release
 ```
 
+> 💡 从源码构建需要安装 [Rust](https://rustup.rs/) 工具链
+
 ## 使用
 
 1. **启动应用** - 打开 Pictools，进入工具集合首页
@@ -81,37 +92,46 @@ fvm flutter build macos --release
 3. 在对比区域查看差异
 4. 悬停图片可复制文件完整路径
 
+### 图片调整使用
+
+1. 上传待调整的图片
+2. 选择调整模式（尺寸调整/比例裁剪）
+3. 设置目标尺寸或裁剪区域
+4. 选择导出格式（PNG/JPG/WebP）
+5. 点击"导出图片"保存
+
 ## 开发
 
 ### 技术栈
 
 - **框架**: Flutter 3.38.3
-- **平台**: macOS (后续支持 Windows/Linux)
+- **平台**: macOS
 - **状态管理**: Provider
+- **图片编码**: Rust (通过 flutter_rust_bridge)
 - **依赖库**:
   - `file_picker` - 文件选择
   - `desktop_drop` - 拖拽上传
+  - `image` - 图片解码处理
+  - `flutter_rust_bridge` - Rust FFI 绑定
 
 ### 项目结构
 
 ```
 lib/
-├── main.dart                 # 应用入口（含路由配置）
-├── models/
-│   ├── image_model.dart      # 图片数据模型
-│   └── tool_item.dart        # 工具项数据模型
+├── main.dart                 # 应用入口
+├── models/                   # 数据模型
 ├── providers/                # 状态管理
 ├── screens/
-│   ├── home_screen.dart      # 工具集合入口首页
-│   └── image_compare_screen.dart  # 图片对比页面
+│   ├── home_screen.dart      # 工具集合首页
+│   ├── image_compare_screen.dart  # 图片对比
+│   └── image_adjust_screen.dart   # 图片调整
+├── src/rust/                 # Rust FFI 生成代码
 ├── theme/                    # 主题配置
-└── widgets/
-    ├── tool_card.dart            # 工具卡片组件
-    ├── image_upload_area.dart    # 图片上传
-    ├── comparison_viewer.dart    # 对比查看器
-    ├── slider_comparison.dart    # 滑块模式
-    ├── side_by_side_comparison.dart  # 并排模式
-    └── overlay_comparison.dart   # 叠加模式
+└── widgets/                  # UI 组件
+
+rust/
+└── src/api/
+    └── image_codec.rs        # Rust 图片编码模块
 ```
 
 ### 添加新工具
@@ -124,8 +144,8 @@ lib/
 
 - [x] 🏠 工具集合入口首页
 - [x] 🔍 图片对比功能
-- [ ] 🖼️ 图片格式转换
-- [ ] 📐 图片裁剪/缩放
+- [x] ✂️ 图片裁剪/缩放
+- [x] 🖼️ 图片格式转换 (PNG/JPG/WebP)
 - [ ] 🗜️ 图片压缩
 - [ ] 🎨 批量处理
 - [ ] 🪟 Windows 支持

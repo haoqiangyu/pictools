@@ -6,8 +6,11 @@ import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
 import 'screens/image_compare_screen.dart';
 import 'screens/image_adjust_screen.dart';
+import 'src/rust/frb_generated.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await RustLib.init();
   runApp(const PictoolsApp());
 }
 
