@@ -29,5 +29,12 @@ class Tools {
       icon: Icons.compare,
       routeName: '/image-compare',
     ),
+    ToolItem(
+      id: 'image_adjust',
+      name: '图片调整',
+      description: '调整图片尺寸，按比例裁剪，快速获得所需效果',
+      icon: Icons.crop,
+      routeName: '/image-adjust',
+    ),
   ];
 }

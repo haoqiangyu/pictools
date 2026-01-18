@@ -29,6 +29,9 @@ class ImageUploadArea extends StatefulWidget {
   State<ImageUploadArea> createState() => _ImageUploadAreaState();
 }
 
+/// 记住上次选择的目录
+String? _lastPickedDirectory;
+
 class _ImageUploadAreaState extends State<ImageUploadArea> {
   bool _isDragging = false;
   bool _isHovering = false;
@@ -40,10 +43,20 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
         type: FileType.image,
         allowMultiple: false,
         withData: true,
+        initialDirectory: _lastPickedDirectory,
       );
 
       if (result != null && result.files.isNotEmpty) {
         final file = result.files.first;
+
+        // 记住目录路径
+        if (file.path != null) {
+          final lastSlash = file.path!.lastIndexOf('/');
+          if (lastSlash > 0) {
+            _lastPickedDirectory = file.path!.substring(0, lastSlash);
+          }
+        }
+
         if (file.bytes != null) {
           widget.onImageSelected?.call(file.bytes!, file.name, file.path);
         }
