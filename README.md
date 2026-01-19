@@ -30,7 +30,7 @@ Pictools 是一个图片工具集合平台，提供多种实用的图片处理�
 - **并排模式** - 两张图片左右并排显示  
 - **叠加模式** - 可调节透明度查看叠加效果
 
-### ✂️ 图片调整 (v1.1.0 新增)
+### ✂️ 图片调整
 
 强大的图片尺寸调整和裁剪工具：
 
@@ -38,6 +38,14 @@ Pictools 是一个图片工具集合平台，提供多种实用的图片处理�
 - **比例裁剪** - 支持自由裁剪和预设比例（1:1, 4:3, 16:9 等）
 - **多格式导出** - 支持 PNG、JPG、**WebP** 格式
 - **高性能编码** - 使用 Rust 原生库进行图片编码，性能优异
+
+### ☀️ 亮度增强 (v1.0.2 新增)
+
+一键提升图片亮度，改善暗部细节：
+
+- **智能增强** - 自动调整曝光、高光/阴影和饱和度
+- **实时对比** - 左右对比预览原图与增强效果
+- **Rust 加速** - 使用 Rust 原生算法，处理速度快
 
 <details>
 <summary>📸 截图预览</summary>
@@ -124,14 +132,16 @@ lib/
 ├── screens/
 │   ├── home_screen.dart      # 工具集合首页
 │   ├── image_compare_screen.dart  # 图片对比
-│   └── image_adjust_screen.dart   # 图片调整
+│   ├── image_adjust_screen.dart   # 图片调整
+│   └── image_enhance_screen.dart  # 亮度增强
 ├── src/rust/                 # Rust FFI 生成代码
 ├── theme/                    # 主题配置
 └── widgets/                  # UI 组件
 
 rust/
 └── src/api/
-    └── image_codec.rs        # Rust 图片编码模块
+    ├── image_codec.rs        # Rust 图片编码模块
+    └── image_enhance.rs      # Rust 亮度增强算法
 ```
 
 ### 添加新工具
@@ -146,6 +156,7 @@ rust/
 - [x] 🔍 图片对比功能
 - [x] ✂️ 图片裁剪/缩放
 - [x] 🖼️ 图片格式转换 (PNG/JPG/WebP)
+- [x] ☀️ 亮度增强
 - [ ] 🗜️ 图片压缩
 - [ ] 🎨 批量处理
 - [ ] 🪟 Windows 支持

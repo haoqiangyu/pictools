@@ -4,6 +4,7 @@
 // ignore_for_file: unused_import, unused_element, unnecessary_import, duplicate_ignore, invalid_use_of_internal_member, annotate_overrides, non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, unused_field
 
 import 'api/image_codec.dart';
+import 'api/image_enhance.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'frb_generated.dart';
@@ -64,7 +65,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.11.1';
 
   @override
-  int get rustContentHash => -687533844;
+  int get rustContentHash => 1066894301;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -86,6 +87,10 @@ abstract class RustLibApi extends BaseApi {
   Future<Uint8List> crateApiImageCodecEncodeImage({
     required List<int> imageData,
     required ImageFormat format,
+  });
+
+  Future<Uint8List> crateApiImageEnhanceEnhanceImage({
+    required List<int> imageData,
   });
 
   Future<Uint8List> crateApiImageCodecResizeImage({
@@ -180,6 +185,36 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<Uint8List> crateApiImageEnhanceEnhanceImage({
+    required List<int> imageData,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_list_prim_u_8_loose(imageData, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 3,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_list_prim_u_8_strict,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiImageEnhanceEnhanceImageConstMeta,
+        argValues: [imageData],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiImageEnhanceEnhanceImageConstMeta =>
+      const TaskConstMeta(debugName: "enhance_image", argNames: ["imageData"]);
+
+  @override
   Future<Uint8List> crateApiImageCodecResizeImage({
     required List<int> imageData,
     required int width,
@@ -195,7 +230,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 3,
+            funcId: 4,
             port: port_,
           );
         },

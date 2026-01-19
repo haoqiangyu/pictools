@@ -7,6 +7,7 @@
 // ignore_for_file: argument_type_not_assignable
 
 import 'api/image_codec.dart';
+import 'api/image_enhance.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'frb_generated.dart';

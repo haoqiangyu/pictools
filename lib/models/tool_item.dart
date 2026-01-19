@@ -36,5 +36,12 @@ class Tools {
       icon: Icons.crop,
       routeName: '/image-adjust',
     ),
+    ToolItem(
+      id: 'image_enhance',
+      name: '亮度增强',
+      description: '一键提升图片亮度，改善暗部细节，让画面更通透',
+      icon: Icons.wb_sunny,
+      routeName: '/image-enhance',
+    ),
   ];
 }
