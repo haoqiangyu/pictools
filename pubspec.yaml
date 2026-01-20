@@ -1,7 +1,7 @@
 name: pictools
 description: "图片对比工具桌面应用"
 publish_to: 'none'
-version: 1.0.2+1
+version: 1.0.3+1
 
 environment:
   sdk: ^3.10.1
