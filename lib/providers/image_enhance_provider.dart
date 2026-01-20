@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../models/aspect_ratio.dart';
@@ -115,5 +116,80 @@ class ImageEnhanceProvider extends ChangeNotifier {
     _errorMessage = null;
     _exportFormat = ExportFormat.png;
     notifyListeners();
+  }
+
+  /// 导出状态
+  Future<Map<String, dynamic>> exportState() async {
+    String? originalPath = _filePath;
+    if (originalPath == null && _originalData != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_enhance_origin_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_originalData!);
+        originalPath = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp original image: $e');
+      }
+    }
+
+    String? enhancedPath;
+    if (_enhancedData != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_enhance_result_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_enhancedData!);
+        enhancedPath = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp enhanced image: $e');
+      }
+    }
+
+    return {
+      'filePath': originalPath,
+      'enhancedPath': enhancedPath,
+      'fileName': _fileName,
+      'exportFormat': _exportFormat.index,
+    };
+  }
+
+  /// 导入状态
+  Future<void> importState(Map<String, dynamic> state) async {
+    if (state['filePath'] != null) {
+      final path = state['filePath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          await setImage(bytes, name: state['fileName'], path: path);
+        }
+      } catch (e) {
+        debugPrint('Failed to load original image: $e');
+      }
+    }
+
+    if (state['enhancedPath'] != null) {
+      final path = state['enhancedPath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          _enhancedData = bytes;
+          // 恢复后不再是处理中
+          _isProcessing = false;
+          _errorMessage = null;
+          notifyListeners();
+        }
+      } catch (e) {
+        debugPrint('Failed to load enhanced image: $e');
+      }
+    }
+
+    if (state['exportFormat'] != null) {
+      setExportFormat(ExportFormat.values[state['exportFormat']]);
+    }
   }
 }

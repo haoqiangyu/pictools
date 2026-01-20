@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../models/adjust_mode.dart';
@@ -224,5 +225,95 @@ class ImageAdjustProvider extends ChangeNotifier {
     _cropRect = const Rect.fromLTWH(0, 0, 1, 1);
     _exportFormat = ExportFormat.png;
     notifyListeners();
+  }
+
+  /// 导出状态
+  Future<Map<String, dynamic>> exportState() async {
+    String? path = _filePath;
+    if (path == null && _imageData != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_adjust_temp_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_imageData!);
+        path = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp image: $e');
+      }
+    }
+
+    return {
+      'filePath': path,
+      'fileName': _fileName,
+      'mode': _mode.index,
+      'targetWidth': _targetWidth,
+      'targetHeight': _targetHeight,
+      'lockAspectRatio': _lockAspectRatio,
+      'aspectRatio': _aspectRatio.index,
+      'cropRect': [
+        _cropRect.left,
+        _cropRect.top,
+        _cropRect.width,
+        _cropRect.height,
+      ],
+      'exportFormat': _exportFormat.index,
+    };
+  }
+
+  /// 导入状态
+  Future<void> importState(Map<String, dynamic> state) async {
+    if (state['filePath'] != null) {
+      final path = state['filePath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          await setImage(bytes, name: state['fileName'], path: path);
+        }
+      } catch (e) {
+        debugPrint('Failed to load image: $e');
+      }
+    }
+
+    if (state['mode'] != null) {
+      setMode(AdjustMode.values[state['mode']]);
+    }
+
+    if (state['targetWidth'] != null) {
+      // 暂时禁用锁定比例以准确设置宽高
+      final originalLock = _lockAspectRatio;
+      _lockAspectRatio = false;
+      setTargetWidth(state['targetWidth']);
+      if (state['targetHeight'] != null) {
+        setTargetHeight(state['targetHeight']);
+      }
+      _lockAspectRatio = originalLock;
+    }
+
+    if (state['lockAspectRatio'] != null) {
+      setLockAspectRatio(state['lockAspectRatio']);
+    }
+
+    if (state['aspectRatio'] != null) {
+      setAspectRatio(AspectRatioPreset.values[state['aspectRatio']]);
+    }
+
+    if (state['cropRect'] != null) {
+      final List rectList = state['cropRect'];
+      if (rectList.length == 4) {
+        final cropRect = Rect.fromLTWH(
+          (rectList[0] as num).toDouble(),
+          (rectList[1] as num).toDouble(),
+          (rectList[2] as num).toDouble(),
+          (rectList[3] as num).toDouble(),
+        );
+        setCropRect(cropRect);
+      }
+    }
+
+    if (state['exportFormat'] != null) {
+      setExportFormat(ExportFormat.values[state['exportFormat']]);
+    }
   }
 }

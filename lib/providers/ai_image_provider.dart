@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import '../services/gemini_service.dart';
@@ -236,6 +237,117 @@ class AIImageProvider extends ChangeNotifier {
     _resolution = '1K';
     _selectedModel = GeminiModel.defaultModel;
     _logs.clear();
+    notifyListeners();
+  }
+
+  /// 导出状态
+  Future<Map<String, dynamic>> exportState() async {
+    String? originalPath = _filePath;
+    if (originalPath == null && _originalData != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_ai_origin_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_originalData!);
+        originalPath = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp original image: $e');
+      }
+    }
+
+    String? resultPath;
+    if (_resultData != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_ai_result_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_resultData!);
+        resultPath = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp result image: $e');
+      }
+    }
+
+    return {
+      'filePath': originalPath,
+      'resultPath': resultPath,
+      'fileName': _fileName,
+      'prompt': _prompt,
+      'aspectRatio': _aspectRatio,
+      'resolution': _resolution,
+      'modelId': _selectedModel.id,
+      'logs': _logs
+          .map((e) => {'type': e.type.index, 'message': e.message})
+          .toList(),
+    };
+  }
+
+  /// 导入状态
+  Future<void> importState(Map<String, dynamic> state) async {
+    if (state['filePath'] != null) {
+      final path = state['filePath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          await setImage(bytes, name: state['fileName'], path: path);
+        }
+      } catch (e) {
+        debugPrint('Failed to load original image: $e');
+      }
+    }
+
+    if (state['resultPath'] != null) {
+      final path = state['resultPath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          _resultData = bytes;
+          _status = AIImageStatus.success;
+          notifyListeners();
+        }
+      } catch (e) {
+        debugPrint('Failed to load result image: $e');
+      }
+    }
+
+    if (state['prompt'] != null) {
+      _prompt = state['prompt'];
+    }
+
+    if (state['aspectRatio'] != null) {
+      _aspectRatio = state['aspectRatio'];
+    }
+
+    if (state['resolution'] != null) {
+      _resolution = state['resolution'];
+    }
+
+    if (state['modelId'] != null) {
+      try {
+        _selectedModel = GeminiModel.available.firstWhere(
+          (m) => m.id == state['modelId'],
+          orElse: () => GeminiModel.defaultModel,
+        );
+      } catch (_) {
+        _selectedModel = GeminiModel.defaultModel;
+      }
+    }
+
+    if (state['logs'] != null) {
+      final List logsList = state['logs'];
+      _logs.clear();
+      _logs.addAll(
+        logsList.map(
+          (e) =>
+              LogEntry(type: LogType.values[e['type']], message: e['message']),
+        ),
+      );
+    }
+
     notifyListeners();
   }
 

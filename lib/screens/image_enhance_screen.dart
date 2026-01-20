@@ -14,10 +14,29 @@ import '../src/rust/api/image_codec.dart';
 import '../src/rust/api/image_enhance.dart';
 
 /// 图片亮度增强功能页面
-class ImageEnhanceScreen extends StatelessWidget {
+class ImageEnhanceScreen extends StatefulWidget {
   final bool isStandaloneWindow;
 
   const ImageEnhanceScreen({super.key, this.isStandaloneWindow = false});
+
+  @override
+  State<ImageEnhanceScreen> createState() => _ImageEnhanceScreenState();
+}
+
+class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // 如果是独立窗口，尝试恢复状态
+    if (widget.isStandaloneWindow) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final args = WindowService.instance.currentArguments;
+        if (args?.data != null) {
+          context.read<ImageEnhanceProvider>().importState(args!.data!);
+        }
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +77,16 @@ class ImageEnhanceScreen extends StatelessWidget {
             // 返回按钮
             IconButton(
               onPressed: () {
-                if (isStandaloneWindow) {
+                if (widget.isStandaloneWindow) {
                   WindowService.instance.closeCurrentWindow();
                 } else {
                   Navigator.of(context).pop();
                 }
               },
               icon: Icon(
-                isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+                widget.isStandaloneWindow
+                    ? Icons.close
+                    : Icons.arrow_back_rounded,
               ),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
@@ -113,13 +134,20 @@ class ImageEnhanceScreen extends StatelessWidget {
             ),
             const Spacer(),
             // 分离窗口按钮（仅在主窗口显示）
-            if (!isStandaloneWindow)
+            if (!widget.isStandaloneWindow)
               Tooltip(
                 message: '分离到新窗口',
                 child: IconButton(
                   onPressed: () async {
+                    // 导出当前状态
+                    final state = await context
+                        .read<ImageEnhanceProvider>()
+                        .exportState();
                     final success = await WindowService.instance
-                        .detachToNewWindow(WindowType.imageEnhance);
+                        .detachToNewWindow(
+                          WindowType.imageEnhance,
+                          data: state,
+                        );
                     if (success && context.mounted) {
                       Navigator.of(context).pop();
                     }

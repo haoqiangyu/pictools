@@ -19,10 +19,29 @@ import '../src/rust/api/image_codec.dart';
 import '../widgets/loading_overlay.dart';
 
 /// 图片调整功能页面
-class ImageAdjustScreen extends StatelessWidget {
+class ImageAdjustScreen extends StatefulWidget {
   final bool isStandaloneWindow;
 
   const ImageAdjustScreen({super.key, this.isStandaloneWindow = false});
+
+  @override
+  State<ImageAdjustScreen> createState() => _ImageAdjustScreenState();
+}
+
+class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // 如果是独立窗口，尝试恢复状态
+    if (widget.isStandaloneWindow) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final args = WindowService.instance.currentArguments;
+        if (args?.data != null) {
+          context.read<ImageAdjustProvider>().importState(args!.data!);
+        }
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,14 +82,16 @@ class ImageAdjustScreen extends StatelessWidget {
             // 返回按钮
             IconButton(
               onPressed: () {
-                if (isStandaloneWindow) {
+                if (widget.isStandaloneWindow) {
                   WindowService.instance.closeCurrentWindow();
                 } else {
                   Navigator.of(context).pop();
                 }
               },
               icon: Icon(
-                isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+                widget.isStandaloneWindow
+                    ? Icons.close
+                    : Icons.arrow_back_rounded,
               ),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
@@ -118,13 +139,17 @@ class ImageAdjustScreen extends StatelessWidget {
             ),
             const Spacer(),
             // 分离窗口按钮
-            if (!isStandaloneWindow)
+            if (!widget.isStandaloneWindow)
               Tooltip(
                 message: '分离到新窗口',
                 child: IconButton(
                   onPressed: () async {
+                    // 导出当前状态
+                    final state = await context
+                        .read<ImageAdjustProvider>()
+                        .exportState();
                     final success = await WindowService.instance
-                        .detachToNewWindow(WindowType.imageAdjust);
+                        .detachToNewWindow(WindowType.imageAdjust, data: state);
                     if (success && context.mounted) {
                       Navigator.of(context).pop();
                     }

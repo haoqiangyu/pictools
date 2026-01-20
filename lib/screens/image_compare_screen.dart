@@ -9,10 +9,29 @@ import '../widgets/comparison_viewer.dart';
 import '../widgets/mode_switcher.dart';
 
 /// 图片对比功能页面
-class ImageCompareScreen extends StatelessWidget {
+class ImageCompareScreen extends StatefulWidget {
   final bool isStandaloneWindow;
 
   const ImageCompareScreen({super.key, this.isStandaloneWindow = false});
+
+  @override
+  State<ImageCompareScreen> createState() => _ImageCompareScreenState();
+}
+
+class _ImageCompareScreenState extends State<ImageCompareScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // 如果是独立窗口，尝试恢复状态
+    if (widget.isStandaloneWindow) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final args = WindowService.instance.currentArguments;
+        if (args?.data != null) {
+          context.read<ImageCompareProvider>().importState(args!.data!);
+        }
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +70,14 @@ class ImageCompareScreen extends StatelessWidget {
         // 返回按钮
         IconButton(
           onPressed: () {
-            if (isStandaloneWindow) {
+            if (widget.isStandaloneWindow) {
               WindowService.instance.closeCurrentWindow();
             } else {
               Navigator.of(context).pop();
             }
           },
           icon: Icon(
-            isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+            widget.isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
           ),
           style: IconButton.styleFrom(
             foregroundColor: AppTheme.secondaryColor,
@@ -103,13 +122,18 @@ class ImageCompareScreen extends StatelessWidget {
         ),
         const Spacer(),
         // 分离窗口按钮（仅在主窗口显示）
-        if (!isStandaloneWindow)
+        if (!widget.isStandaloneWindow)
           Tooltip(
             message: '分离到新窗口',
             child: IconButton(
               onPressed: () async {
+                // 导出当前状态
+                final state = await context
+                    .read<ImageCompareProvider>()
+                    .exportState();
                 final success = await WindowService.instance.detachToNewWindow(
                   WindowType.imageCompare,
+                  data: state,
                 );
                 if (success && context.mounted) {
                   Navigator.of(context).pop();

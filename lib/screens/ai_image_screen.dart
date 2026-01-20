@@ -40,6 +40,14 @@ class _AIImageScreenState extends State<AIImageScreen> {
       if (settingsProvider.hasApiKey) {
         aiProvider.initializeGemini(settingsProvider.geminiApiKey!);
       }
+
+      // 如果是独立窗口，尝试恢复状态
+      if (widget.isStandaloneWindow) {
+        final args = WindowService.instance.currentArguments;
+        if (args?.data != null) {
+          aiProvider.importState(args!.data!);
+        }
+      }
     });
   }
 
@@ -155,8 +163,12 @@ class _AIImageScreenState extends State<AIImageScreen> {
                 message: '分离到新窗口',
                 child: IconButton(
                   onPressed: () async {
+                    // 导出当前状态
+                    final state = await context
+                        .read<AIImageProvider>()
+                        .exportState();
                     final success = await WindowService.instance
-                        .detachToNewWindow(WindowType.aiImage);
+                        .detachToNewWindow(WindowType.aiImage, data: state);
                     if (success && context.mounted) {
                       Navigator.of(context).pop();
                     }

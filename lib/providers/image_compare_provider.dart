@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '../models/comparison_mode.dart';
 
@@ -105,5 +106,86 @@ class ImageCompareProvider extends ChangeNotifier {
     _overlayOpacity = 0.5;
     _sliderPosition = 0.5;
     notifyListeners();
+  }
+
+  /// 导出状态
+  Future<Map<String, dynamic>> exportState() async {
+    String? pathA = _imageAPath;
+    if (pathA == null && _imageA != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_temp_a_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_imageA!);
+        pathA = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp image A: $e');
+      }
+    }
+
+    String? pathB = _imageBPath;
+    if (pathB == null && _imageB != null) {
+      try {
+        final tempDir = Directory.systemTemp;
+        final file = File(
+          '${tempDir.path}/pictools_temp_b_${DateTime.now().microsecondsSinceEpoch}.png',
+        );
+        await file.writeAsBytes(_imageB!);
+        pathB = file.path;
+      } catch (e) {
+        debugPrint('Failed to save temp image B: $e');
+      }
+    }
+
+    return {
+      'imageAPath': pathA,
+      'imageAName': _imageAName ?? 'Temp Image A',
+      'imageBPath': pathB,
+      'imageBName': _imageBName ?? 'Temp Image B',
+      'mode': _mode.index,
+      'sliderPosition': _sliderPosition,
+      'overlayOpacity': _overlayOpacity,
+    };
+  }
+
+  /// 导入状态
+  Future<void> importState(Map<String, dynamic> state) async {
+    if (state['imageAPath'] != null) {
+      final path = state['imageAPath'] as String;
+      try {
+        // 读取本地文件，需要导入 dart:io
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          setImageA(bytes, name: state['imageAName'], path: path);
+        }
+      } catch (e) {
+        debugPrint('Failed to load image A: $e');
+      }
+    }
+
+    if (state['imageBPath'] != null) {
+      final path = state['imageBPath'] as String;
+      try {
+        final file = File(path);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          setImageB(bytes, name: state['imageBName'], path: path);
+        }
+      } catch (e) {
+        debugPrint('Failed to load image B: $e');
+      }
+    }
+
+    if (state['mode'] != null) {
+      setMode(ComparisonMode.values[state['mode']]);
+    }
+    if (state['sliderPosition'] != null) {
+      setSliderPosition(state['sliderPosition']);
+    }
+    if (state['overlayOpacity'] != null) {
+      setOverlayOpacity(state['overlayOpacity']);
+    }
   }
 }
