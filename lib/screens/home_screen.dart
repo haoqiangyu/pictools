@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 顶部标题栏
-              _buildHeader(),
+              _buildHeader(context),
               const SizedBox(height: 32),
               // 工具网格
               Expanded(child: _buildToolsGrid(context)),
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Row(
       children: [
         Container(
@@ -61,6 +61,21 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
             ),
           ],
+        ),
+        const Spacer(),
+        IconButton(
+          onPressed: () => Navigator.of(context).pushNamed('/settings'),
+          icon: const Icon(Icons.settings_outlined),
+          tooltip: '设置',
+          style: IconButton.styleFrom(
+            foregroundColor: AppTheme.secondaryColor,
+            backgroundColor: AppTheme.cardBg,
+            padding: const EdgeInsets.all(10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: const BorderSide(color: AppTheme.borderColor),
+            ),
+          ),
         ),
       ],
     );

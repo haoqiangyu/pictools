@@ -43,5 +43,12 @@ class Tools {
       icon: Icons.wb_sunny,
       routeName: '/image-enhance',
     ),
+    ToolItem(
+      id: 'ai_image',
+      name: 'AI 图片修改',
+      description: '使用 Gemini AI 根据提示词修改图片，支持多种宽高比和分辨率',
+      icon: Icons.auto_awesome,
+      routeName: '/ai-image',
+    ),
   ];
 }

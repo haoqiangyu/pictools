@@ -7,11 +7,15 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pictools/main.dart';
+import 'package:pictools/services/settings_provider.dart';
 
 void main() {
   testWidgets('App should start without errors', (WidgetTester tester) async {
+    // Create settings provider for test
+    final settingsProvider = SettingsProvider();
+
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const PictoolsApp());
+    await tester.pumpWidget(PictoolsApp(settingsProvider: settingsProvider));
 
     // Verify that the app title is displayed.
     expect(find.text('Pictools'), findsOneWidget);
