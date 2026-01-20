@@ -22,29 +22,27 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await RustLib.init();
 
-  // 初始化窗口服务
-  await WindowService.instance.init();
-
   // 初始化设置
   final settingsProvider = SettingsProvider();
   await settingsProvider.init();
 
-  // 获取当前窗口参数
-  final windowArgs =
-      WindowService.instance.currentArguments ??
-      const WindowArguments(type: WindowType.main);
+  // 初始化窗口服务并获取当前窗口参数
+  final windowArgs = await WindowService.instance.init();
 
-  // 如果是主窗口，也需要确保 window_manager 初始化并准备好显示
+  // 如果是主窗口，初始化 window_manager 并设置窗口属性
   if (windowArgs.type == WindowType.main) {
     await windowManager.ensureInitialized();
 
     // 固定尺寸 1400x900
     const Size initialSize = Size(1400, 900);
 
+    // 使用深色背景避免闪烁
+    const Color bgColor = Color(0xFF1E1E1E);
+
     WindowOptions windowOptions = const WindowOptions(
       size: initialSize,
       center: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: bgColor,
       skipTaskbar: false,
       titleBarStyle: TitleBarStyle.hidden,
     );

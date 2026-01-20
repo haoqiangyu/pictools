@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:window_manager/window_manager.dart';
@@ -81,6 +82,9 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
         padding: const EdgeInsets.symmetric(vertical: 8), // 增加一点垂直点击区域
         child: Row(
           children: [
+            // macOS 窗口按钮占位（仅在非独立窗口时需要，独立窗口有返回按钮）
+            if (Platform.isMacOS && widget.isStandaloneWindow)
+              const SizedBox(width: 54),
             // 返回按钮
             if (!widget.isStandaloneWindow)
               IconButton(

@@ -14,6 +14,7 @@ import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/log_panel.dart';
 import '../widgets/loading_overlay.dart';
+import '../widgets/image_panel_with_menu.dart';
 import '../src/rust/api/image_codec.dart';
 
 /// AI 图片修改页面
@@ -310,6 +311,8 @@ class _AIImageScreenState extends State<AIImageScreen> {
                     child: _buildImagePanel(
                       label: '原图',
                       imageData: provider.originalData,
+                      fileName: provider.fileName,
+                      filePath: provider.filePath,
                     ),
                   ),
                   Container(width: 1, color: AppTheme.borderColor),
@@ -368,88 +371,95 @@ class _AIImageScreenState extends State<AIImageScreen> {
   Widget _buildImagePanel({
     required String label,
     Uint8List? imageData,
+    String? fileName,
+    String? filePath,
     bool isProcessing = false,
     String? errorMessage,
   }) {
-    return Stack(
-      children: [
-        if (imageData != null)
-          Positioned.fill(child: Image.memory(imageData, fit: BoxFit.contain))
-        else if (!isProcessing && errorMessage == null)
-          const Center(
-            child: Text(
-              '等待生成',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
-            ),
-          ),
-        if (isProcessing)
-          Container(
-            color: AppTheme.primaryBg.withValues(alpha: 0.7),
-            child: const Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CircularProgressIndicator(
-                    color: AppTheme.accentColor,
-                    strokeWidth: 2,
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    'AI 处理中...',
-                    style: TextStyle(color: AppTheme.textColor, fontSize: 12),
-                  ),
-                ],
+    return ImagePanelWithMenu(
+      imageData: imageData,
+      fileName: fileName ?? '$label.png',
+      filePath: filePath,
+      child: Stack(
+        children: [
+          if (imageData != null)
+            Positioned.fill(child: Image.memory(imageData, fit: BoxFit.contain))
+          else if (!isProcessing && errorMessage == null)
+            const Center(
+              child: Text(
+                '等待生成',
+                style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
               ),
             ),
-          ),
-        if (errorMessage != null && !isProcessing)
-          Container(
-            color: AppTheme.primaryBg.withValues(alpha: 0.7),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
+          if (isProcessing)
+            Container(
+              color: AppTheme.primaryBg.withValues(alpha: 0.7),
+              child: const Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
-                      Icons.error_outline,
-                      color: AppTheme.errorColor,
-                      size: 32,
+                    CircularProgressIndicator(
+                      color: AppTheme.accentColor,
+                      strokeWidth: 2,
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 12),
                     Text(
-                      errorMessage,
-                      style: const TextStyle(
-                        color: AppTheme.errorColor,
-                        fontSize: 12,
-                      ),
-                      textAlign: TextAlign.center,
+                      'AI 处理中...',
+                      style: TextStyle(color: AppTheme.textColor, fontSize: 12),
                     ),
                   ],
                 ),
               ),
             ),
-          ),
-        Positioned(
-          left: 8,
-          top: 8,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: AppTheme.accentColor.withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(4),
+          if (errorMessage != null && !isProcessing)
+            Container(
+              color: AppTheme.primaryBg.withValues(alpha: 0.7),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.error_outline,
+                        color: AppTheme.errorColor,
+                        size: 32,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        errorMessage,
+                        style: const TextStyle(
+                          color: AppTheme.errorColor,
+                          fontSize: 12,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-            child: Text(
-              label,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
+          Positioned(
+            left: 8,
+            top: 8,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: AppTheme.accentColor.withValues(alpha: 0.9),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

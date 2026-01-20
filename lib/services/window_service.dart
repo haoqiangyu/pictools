@@ -26,17 +26,18 @@ class WindowService {
   static const Size minWindowSize = Size(800, 600);
 
   /// 初始化窗口服务
-  Future<void> init() async {
+  /// 返回当前窗口参数，主窗口需要自行调用 windowManager 初始化
+  Future<WindowArguments> init() async {
     _currentController = await WindowController.fromCurrentEngine();
     _currentArguments = WindowArguments.fromJson(
       _currentController?.arguments ?? '',
     );
 
-    // 初始化 window_manager
-    await windowManager.ensureInitialized();
-
-    // 如果是子窗口，设置窗口属性
+    // 只有子窗口需要在这里初始化 window_manager
+    // 主窗口在 main.dart 中统一初始化以避免重复
     if (!isMainWindow) {
+      await windowManager.ensureInitialized();
+
       await windowManager.setTitle(
         _currentArguments?.windowTitle ?? 'Pictools',
       );
@@ -64,6 +65,8 @@ class WindowService {
         await windowManager.focus();
       });
     }
+
+    return _currentArguments ?? const WindowArguments(type: WindowType.main);
   }
 
   /// 在新窗口中打开工具

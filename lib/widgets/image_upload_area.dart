@@ -5,6 +5,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/app_theme.dart';
+import '../services/internal_clipboard_service.dart';
+import 'image_context_menu.dart';
 
 /// 支持的图片格式
 const List<String> supportedImageExtensions = [
@@ -121,6 +123,48 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
     }
   }
 
+  Future<void> _handleContextMenu(TapDownDetails details) async {
+    final hasImage = widget.imageData != null;
+
+    await showImageContextMenu(
+      context,
+      details.globalPosition,
+      imageData: hasImage ? widget.imageData : null,
+      fileName: widget.fileName,
+      filePath: widget.filePath,
+      onSelected: (action) async {
+        if (action == ImageContextAction.copy && hasImage) {
+          await InternalClipboardService.instance.copyImage(
+            widget.imageData!,
+            fileName: widget.fileName,
+            filePath: widget.filePath,
+          );
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('✅ 图片已复制到剪切板'),
+                duration: Duration(seconds: 1),
+                backgroundColor: AppTheme.highlightColor,
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.all(16),
+              ),
+            );
+          }
+        } else if (action == ImageContextAction.paste) {
+          final clipboardImage = await InternalClipboardService.instance
+              .pasteImage();
+          if (clipboardImage != null) {
+            widget.onImageSelected?.call(
+              clipboardImage.data,
+              clipboardImage.fileName ?? 'pasted_image.png',
+              clipboardImage.filePath,
+            );
+          }
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final hasImage = widget.imageData != null;
@@ -141,6 +185,7 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
         cursor: hasImage ? SystemMouseCursors.basic : SystemMouseCursors.click,
         child: GestureDetector(
           onTap: hasImage ? null : _pickImage,
+          onSecondaryTapDown: _handleContextMenu,
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeOut,

@@ -10,6 +10,7 @@ import '../services/window_arguments.dart';
 import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/loading_overlay.dart';
+import '../widgets/image_panel_with_menu.dart';
 import '../models/aspect_ratio.dart';
 import '../src/rust/api/image_codec.dart';
 import '../src/rust/api/image_enhance.dart';
@@ -236,6 +237,8 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
                     child: _buildImagePanel(
                       label: '原图',
                       imageData: provider.originalData,
+                      fileName: provider.fileName,
+                      filePath: provider.filePath,
                     ),
                   ),
                   // 分隔线
@@ -278,81 +281,88 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
   Widget _buildImagePanel({
     required String label,
     Uint8List? imageData,
+    String? fileName,
+    String? filePath,
     bool isProcessing = false,
     String? errorMessage,
   }) {
-    return Stack(
-      children: [
-        // 图片
-        if (imageData != null)
-          Positioned.fill(child: Image.memory(imageData, fit: BoxFit.contain))
-        else if (!isProcessing && errorMessage == null)
-          const Center(
-            child: Text(
-              '等待处理',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
-            ),
-          ),
-        // 加载中
-        if (isProcessing)
-          Container(
-            color: AppTheme.primaryBg.withValues(alpha: 0.7),
-            child: const Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CircularProgressIndicator(
-                    color: AppTheme.accentColor,
-                    strokeWidth: 2,
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    '处理中...',
-                    style: TextStyle(color: AppTheme.textColor, fontSize: 12),
-                  ),
-                ],
+    return ImagePanelWithMenu(
+      imageData: imageData,
+      fileName: fileName ?? '$label.png',
+      filePath: filePath,
+      child: Stack(
+        children: [
+          // 图片
+          if (imageData != null)
+            Positioned.fill(child: Image.memory(imageData, fit: BoxFit.contain))
+          else if (!isProcessing && errorMessage == null)
+            const Center(
+              child: Text(
+                '等待处理',
+                style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
               ),
             ),
-          ),
-        // 错误信息
-        if (errorMessage != null)
-          Container(
-            color: AppTheme.primaryBg.withValues(alpha: 0.7),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  errorMessage,
-                  style: const TextStyle(
-                    color: AppTheme.errorColor,
-                    fontSize: 12,
+          // 加载中
+          if (isProcessing)
+            Container(
+              color: AppTheme.primaryBg.withValues(alpha: 0.7),
+              child: const Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircularProgressIndicator(
+                      color: AppTheme.accentColor,
+                      strokeWidth: 2,
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      '处理中...',
+                      style: TextStyle(color: AppTheme.textColor, fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          // 错误信息
+          if (errorMessage != null)
+            Container(
+              color: AppTheme.primaryBg.withValues(alpha: 0.7),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    errorMessage,
+                    style: const TextStyle(
+                      color: AppTheme.errorColor,
+                      fontSize: 12,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          // 标签
+          Positioned(
+            left: 8,
+            top: 8,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: AppTheme.accentColor.withValues(alpha: 0.9),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
           ),
-        // 标签
-        Positioned(
-          left: 8,
-          top: 8,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: AppTheme.accentColor.withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Text(
-              label,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 import '../theme/app_theme.dart';
@@ -43,8 +44,11 @@ class HomeScreen extends StatelessWidget {
       child: Container(
         color: Colors.transparent,
         width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: Row(
           children: [
+            // macOS 窗口按钮占位
+            if (Platform.isMacOS) const SizedBox(width: 54),
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(

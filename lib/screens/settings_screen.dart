@@ -1,9 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:window_manager/window_manager.dart';
 import '../theme/app_theme.dart';
 import '../services/settings_provider.dart';
-import '../services/window_service.dart';
 
 /// 全局设置页面
 class SettingsScreen extends StatefulWidget {
@@ -117,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       backgroundColor: AppTheme.primaryBg,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -134,61 +135,78 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Widget _buildHeader() {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {
-            if (widget.isStandaloneWindow) {
-              WindowService.instance.closeCurrentWindow();
-            } else {
-              Navigator.of(context).pop();
-            }
-          },
-          icon: Icon(
-            widget.isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
-          ),
-          style: IconButton.styleFrom(
-            foregroundColor: AppTheme.secondaryColor,
-            backgroundColor: AppTheme.cardBg,
-            padding: const EdgeInsets.all(8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: const BorderSide(color: AppTheme.borderColor),
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
-        Container(
-          padding: const EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            color: AppTheme.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Icon(
-            Icons.settings,
-            color: AppTheme.accentColor,
-            size: 24,
-          ),
-        ),
-        const SizedBox(width: 10),
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onDoubleTap: () async {
+        if (await windowManager.isMaximized()) {
+          windowManager.unmaximize();
+        } else {
+          windowManager.maximize();
+        }
+      },
+      behavior: HitTestBehavior.translucent,
+      child: Container(
+        color: Colors.transparent,
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Row(
           children: [
-            Text(
-              '设置',
-              style: TextStyle(
-                color: AppTheme.textColor,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            // macOS 窗口按钮占位（仅在独立窗口时需要，因为没有返回按钮）
+            if (Platform.isMacOS && widget.isStandaloneWindow)
+              const SizedBox(width: 54),
+            // 返回/关闭按钮（仅在非独立窗口时显示）
+            if (!widget.isStandaloneWindow)
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.arrow_back_rounded),
+                style: IconButton.styleFrom(
+                  foregroundColor: AppTheme.secondaryColor,
+                  backgroundColor: AppTheme.cardBg,
+                  padding: const EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(color: AppTheme.borderColor),
+                  ),
+                ),
+              ),
+            const SizedBox(width: 12),
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: AppTheme.accentColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.settings,
+                color: AppTheme.accentColor,
+                size: 24,
               ),
             ),
-            Text(
-              'API 配置与应用设置',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+            const SizedBox(width: 10),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '设置',
+                  style: TextStyle(
+                    color: AppTheme.textColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'API 配置与应用设置',
+                  style: TextStyle(
+                    color: AppTheme.secondaryColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 
