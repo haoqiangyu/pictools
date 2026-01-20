@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
 import '../providers/image_enhance_provider.dart';
+import '../services/window_service.dart';
+import '../services/window_arguments.dart';
 import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/loading_overlay.dart';
@@ -13,7 +15,9 @@ import '../src/rust/api/image_enhance.dart';
 
 /// 图片亮度增强功能页面
 class ImageEnhanceScreen extends StatelessWidget {
-  const ImageEnhanceScreen({super.key});
+  final bool isStandaloneWindow;
+
+  const ImageEnhanceScreen({super.key, this.isStandaloneWindow = false});
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +57,16 @@ class ImageEnhanceScreen extends StatelessWidget {
           children: [
             // 返回按钮
             IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: const Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                if (isStandaloneWindow) {
+                  WindowService.instance.closeCurrentWindow();
+                } else {
+                  Navigator.of(context).pop();
+                }
+              },
+              icon: Icon(
+                isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+              ),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
                 backgroundColor: AppTheme.cardBg,
@@ -100,6 +112,30 @@ class ImageEnhanceScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
+            // 分离窗口按钮（仅在主窗口显示）
+            if (!isStandaloneWindow)
+              Tooltip(
+                message: '分离到新窗口',
+                child: IconButton(
+                  onPressed: () async {
+                    final success = await WindowService.instance
+                        .detachToNewWindow(WindowType.imageEnhance);
+                    if (success && context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                  icon: const Icon(Icons.open_in_new, size: 18),
+                  style: IconButton.styleFrom(
+                    foregroundColor: AppTheme.secondaryColor,
+                    backgroundColor: AppTheme.cardBg,
+                    padding: const EdgeInsets.all(8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(color: AppTheme.borderColor),
+                    ),
+                  ),
+                ),
+              ),
             if (provider.hasImage) ...[
               TextButton.icon(
                 onPressed: () => provider.reset(),

@@ -6,6 +6,8 @@ import 'package:image/image.dart' as img;
 import '../models/adjust_mode.dart';
 import '../models/aspect_ratio.dart';
 import '../providers/image_adjust_provider.dart';
+import '../services/window_service.dart';
+import '../services/window_arguments.dart';
 import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/image_preview.dart';
@@ -18,7 +20,9 @@ import '../widgets/loading_overlay.dart';
 
 /// 图片调整功能页面
 class ImageAdjustScreen extends StatelessWidget {
-  const ImageAdjustScreen({super.key});
+  final bool isStandaloneWindow;
+
+  const ImageAdjustScreen({super.key, this.isStandaloneWindow = false});
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +62,16 @@ class ImageAdjustScreen extends StatelessWidget {
           children: [
             // 返回按钮
             IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: const Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                if (isStandaloneWindow) {
+                  WindowService.instance.closeCurrentWindow();
+                } else {
+                  Navigator.of(context).pop();
+                }
+              },
+              icon: Icon(
+                isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+              ),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
                 backgroundColor: AppTheme.cardBg,
@@ -105,6 +117,30 @@ class ImageAdjustScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
+            // 分离窗口按钮
+            if (!isStandaloneWindow)
+              Tooltip(
+                message: '分离到新窗口',
+                child: IconButton(
+                  onPressed: () async {
+                    final success = await WindowService.instance
+                        .detachToNewWindow(WindowType.imageAdjust);
+                    if (success && context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                  icon: const Icon(Icons.open_in_new, size: 18),
+                  style: IconButton.styleFrom(
+                    foregroundColor: AppTheme.secondaryColor,
+                    backgroundColor: AppTheme.cardBg,
+                    padding: const EdgeInsets.all(8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(color: AppTheme.borderColor),
+                    ),
+                  ),
+                ),
+              ),
             if (provider.hasImage) ...[
               TextButton.icon(
                 onPressed: () => provider.resetToOriginal(),

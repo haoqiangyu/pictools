@@ -3,7 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:desktop_drop/desktop_drop.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/app_theme.dart';
+
+/// 支持的图片格式
+const List<String> supportedImageExtensions = [
+  // 常见格式
+  'png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp',
+  // 高级格式
+  'tiff', 'tif', 'ico', 'svg',
+  // RAW 格式
+  'heic', 'heif', 'avif',
+  // 其他
+  'psd', 'raw', 'cr2', 'nef', 'arw', 'dng',
+];
 
 /// 图片上传区域组件
 class ImageUploadArea extends StatefulWidget {
@@ -29,21 +42,38 @@ class ImageUploadArea extends StatefulWidget {
   State<ImageUploadArea> createState() => _ImageUploadAreaState();
 }
 
-/// 记住上次选择的目录
-String? _lastPickedDirectory;
+/// SharedPreferences key for last picked directory
+const String _lastPickedDirectoryKey = 'last_picked_directory';
 
 class _ImageUploadAreaState extends State<ImageUploadArea> {
   bool _isDragging = false;
   bool _isHovering = false;
   bool _showControls = false;
 
+  /// 获取上次选择的目录
+  Future<String?> _getLastDirectory() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_lastPickedDirectoryKey);
+  }
+
+  /// 保存上次选择的目录
+  Future<void> _saveLastDirectory(String? directory) async {
+    if (directory != null) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_lastPickedDirectoryKey, directory);
+    }
+  }
+
   Future<void> _pickImage() async {
     try {
+      final lastDir = await _getLastDirectory();
+
       final result = await FilePicker.platform.pickFiles(
-        type: FileType.image,
+        type: FileType.custom,
+        allowedExtensions: supportedImageExtensions,
         allowMultiple: false,
         withData: true,
-        initialDirectory: _lastPickedDirectory,
+        initialDirectory: lastDir,
       );
 
       if (result != null && result.files.isNotEmpty) {
@@ -53,7 +83,7 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
         if (file.path != null) {
           final lastSlash = file.path!.lastIndexOf('/');
           if (lastSlash > 0) {
-            _lastPickedDirectory = file.path!.substring(0, lastSlash);
+            await _saveLastDirectory(file.path!.substring(0, lastSlash));
           }
         }
 

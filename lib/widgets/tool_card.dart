@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../models/tool_item.dart';
+import '../services/window_service.dart';
+import '../services/window_arguments.dart';
 
 /// 工具卡片组件
 class ToolCard extends StatefulWidget {
@@ -16,6 +18,55 @@ class ToolCard extends StatefulWidget {
 class _ToolCardState extends State<ToolCard> {
   bool _isHovered = false;
 
+  void _openInNewWindow() {
+    final windowType = WindowArguments.fromRouteName(widget.tool.routeName);
+    WindowService.instance.openInNewWindow(windowType);
+  }
+
+  void _showContextMenu(TapDownDetails details) {
+    final overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
+    showMenu<String>(
+      context: context,
+      position: RelativeRect.fromRect(
+        details.globalPosition & const Size(1, 1),
+        Offset.zero & overlay.size,
+      ),
+      color: AppTheme.cardBg,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: const BorderSide(color: AppTheme.borderColor),
+      ),
+      items: [
+        PopupMenuItem<String>(
+          onTap: widget.onTap,
+          child: const Row(
+            children: [
+              Icon(Icons.open_in_browser, size: 18, color: AppTheme.textColor),
+              SizedBox(width: 8),
+              Text(
+                '在当前窗口打开',
+                style: TextStyle(color: AppTheme.textColor, fontSize: 13),
+              ),
+            ],
+          ),
+        ),
+        PopupMenuItem<String>(
+          onTap: _openInNewWindow,
+          child: const Row(
+            children: [
+              Icon(Icons.open_in_new, size: 18, color: AppTheme.accentColor),
+              SizedBox(width: 8),
+              Text(
+                '在新窗口打开',
+                style: TextStyle(color: AppTheme.accentColor, fontSize: 13),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -24,6 +75,7 @@ class _ToolCardState extends State<ToolCard> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
+        onSecondaryTapDown: _showContextMenu,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOutCubic,
@@ -54,18 +106,36 @@ class _ToolCardState extends State<ToolCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              // 图标
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: AppTheme.accentColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(
-                  widget.tool.icon,
-                  color: AppTheme.accentColor,
-                  size: 32,
-                ),
+              // 图标 + 新窗口按钮
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: AppTheme.accentColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      widget.tool.icon,
+                      color: AppTheme.accentColor,
+                      size: 32,
+                    ),
+                  ),
+                  const Spacer(),
+                  // 新窗口打开按钮
+                  if (_isHovered)
+                    Tooltip(
+                      message: '在新窗口打开',
+                      child: IconButton(
+                        onPressed: _openInNewWindow,
+                        icon: const Icon(Icons.open_in_new, size: 18),
+                        style: IconButton.styleFrom(
+                          foregroundColor: AppTheme.secondaryColor,
+                          padding: const EdgeInsets.all(6),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               const SizedBox(height: 16),
               // 工具名称

@@ -1,12 +1,13 @@
 import Cocoa
 import FlutterMacOS
+import desktop_multi_window
 
 class MainFlutterWindow: NSWindow {
   override func awakeFromNib() {
     let flutterViewController = FlutterViewController()
     
-    // 设置更大的初始窗口尺寸
-    let initialWidth: CGFloat = 1280
+    // 统一窗口尺寸 - 所有窗口使用相同大小
+    let initialWidth: CGFloat = 1400
     let initialHeight: CGFloat = 900
     
     // 获取屏幕尺寸用于居中显示
@@ -19,11 +20,16 @@ class MainFlutterWindow: NSWindow {
     }
     
     // 设置最小窗口尺寸
-    self.minSize = NSSize(width: 1024, height: 768)
+    self.minSize = NSSize(width: 1024, height: 700)
     
     self.contentViewController = flutterViewController
 
     RegisterGeneratedPlugins(registry: flutterViewController)
+    
+    // 注册子窗口插件回调 - 让子窗口也能使用 file_picker 等插件
+    FlutterMultiWindowPlugin.setOnWindowCreatedCallback { controller in
+      RegisterGeneratedPlugins(registry: controller)
+    }
 
     super.awakeFromNib()
   }

@@ -7,6 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../providers/ai_image_provider.dart';
 import '../services/settings_provider.dart';
 import '../services/gemini_service.dart';
+import '../services/window_service.dart';
+import '../services/window_arguments.dart';
 import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/log_panel.dart';
@@ -15,7 +17,9 @@ import '../src/rust/api/image_codec.dart';
 
 /// AI 图片修改页面
 class AIImageScreen extends StatefulWidget {
-  const AIImageScreen({super.key});
+  final bool isStandaloneWindow;
+
+  const AIImageScreen({super.key, this.isStandaloneWindow = false});
 
   @override
   State<AIImageScreen> createState() => _AIImageScreenState();
@@ -86,9 +90,20 @@ class _AIImageScreenState extends State<AIImageScreen> {
       builder: (context, provider, _) {
         return Row(
           children: [
+            // 返回按钮（独立窗口显示关闭，主窗口显示返回）
             IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: const Icon(Icons.arrow_back_rounded),
+              onPressed: () {
+                if (widget.isStandaloneWindow) {
+                  WindowService.instance.closeCurrentWindow();
+                } else {
+                  Navigator.of(context).pop();
+                }
+              },
+              icon: Icon(
+                widget.isStandaloneWindow
+                    ? Icons.close
+                    : Icons.arrow_back_rounded,
+              ),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
                 backgroundColor: AppTheme.cardBg,
@@ -134,6 +149,30 @@ class _AIImageScreenState extends State<AIImageScreen> {
               ],
             ),
             const Spacer(),
+            // 分离窗口按钮（仅在主窗口显示）
+            if (!widget.isStandaloneWindow)
+              Tooltip(
+                message: '分离到新窗口',
+                child: IconButton(
+                  onPressed: () async {
+                    final success = await WindowService.instance
+                        .detachToNewWindow(WindowType.aiImage);
+                    if (success && context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                  icon: const Icon(Icons.open_in_new, size: 18),
+                  style: IconButton.styleFrom(
+                    foregroundColor: AppTheme.secondaryColor,
+                    backgroundColor: AppTheme.cardBg,
+                    padding: const EdgeInsets.all(8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(color: AppTheme.borderColor),
+                    ),
+                  ),
+                ),
+              ),
             // Gemini 文档链接
             TextButton.icon(
               onPressed: _openGeminiDocs,

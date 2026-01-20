@@ -3,10 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../theme/app_theme.dart';
 import '../services/settings_provider.dart';
+import '../services/window_service.dart';
 
 /// 全局设置页面
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({super.key});
+  final bool isStandaloneWindow;
+
+  const SettingsScreen({super.key, this.isStandaloneWindow = false});
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
@@ -134,8 +137,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Row(
       children: [
         IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back_rounded),
+          onPressed: () {
+            if (widget.isStandaloneWindow) {
+              WindowService.instance.closeCurrentWindow();
+            } else {
+              Navigator.of(context).pop();
+            }
+          },
+          icon: Icon(
+            widget.isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
+          ),
           style: IconButton.styleFrom(
             foregroundColor: AppTheme.secondaryColor,
             backgroundColor: AppTheme.cardBg,
