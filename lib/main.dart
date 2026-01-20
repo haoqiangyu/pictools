@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:window_manager/window_manager.dart';
+
 import 'providers/image_compare_provider.dart';
 import 'providers/image_adjust_provider.dart';
 import 'providers/image_enhance_provider.dart';
@@ -31,6 +33,26 @@ Future<void> main() async {
   final windowArgs =
       WindowService.instance.currentArguments ??
       const WindowArguments(type: WindowType.main);
+
+  // 如果是主窗口，也需要确保 window_manager 初始化并准备好显示
+  if (windowArgs.type == WindowType.main) {
+    await windowManager.ensureInitialized();
+
+    // 固定尺寸 1400x900
+    const Size initialSize = Size(1400, 900);
+
+    WindowOptions windowOptions = const WindowOptions(
+      size: initialSize,
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+      titleBarStyle: TitleBarStyle.hidden,
+    );
+    await windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    });
+  }
 
   runApp(
     PictoolsApp(settingsProvider: settingsProvider, windowArgs: windowArgs),

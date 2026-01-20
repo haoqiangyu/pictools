@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:window_manager/window_manager.dart';
 import '../providers/image_enhance_provider.dart';
 import '../services/window_service.dart';
 import '../services/window_arguments.dart';
@@ -44,7 +45,7 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
       backgroundColor: AppTheme.primaryBg,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -72,113 +73,121 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
   Widget _buildHeader(BuildContext context) {
     return Consumer<ImageEnhanceProvider>(
       builder: (context, provider, _) {
-        return Row(
-          children: [
-            // 返回按钮
-            IconButton(
-              onPressed: () {
-                if (widget.isStandaloneWindow) {
-                  WindowService.instance.closeCurrentWindow();
-                } else {
-                  Navigator.of(context).pop();
-                }
-              },
-              icon: Icon(
-                widget.isStandaloneWindow
-                    ? Icons.close
-                    : Icons.arrow_back_rounded,
-              ),
-              style: IconButton.styleFrom(
-                foregroundColor: AppTheme.secondaryColor,
-                backgroundColor: AppTheme.cardBg,
-                padding: const EdgeInsets.all(8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: const BorderSide(color: AppTheme.borderColor),
-                ),
-              ),
-            ),
-            const SizedBox(width: 12),
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: AppTheme.accentColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Icon(
-                Icons.wb_sunny,
-                color: AppTheme.accentColor,
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 10),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        return GestureDetector(
+          onDoubleTap: () async {
+            if (await windowManager.isMaximized()) {
+              windowManager.unmaximize();
+            } else {
+              windowManager.maximize();
+            }
+          },
+          behavior: HitTestBehavior.translucent,
+          child: Container(
+            color: Colors.transparent,
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
               children: [
-                Text(
-                  '亮度增强',
-                  style: TextStyle(
-                    color: AppTheme.textColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  '一键提升图片亮度，改善暗部细节',
-                  style: TextStyle(
-                    color: AppTheme.secondaryColor,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-            const Spacer(),
-            // 分离窗口按钮（仅在主窗口显示）
-            if (!widget.isStandaloneWindow)
-              Tooltip(
-                message: '分离到新窗口',
-                child: IconButton(
-                  onPressed: () async {
-                    // 导出当前状态
-                    final state = await context
-                        .read<ImageEnhanceProvider>()
-                        .exportState();
-                    final success = await WindowService.instance
-                        .detachToNewWindow(
-                          WindowType.imageEnhance,
-                          data: state,
-                        );
-                    if (success && context.mounted) {
+                // 返回按钮
+                if (!widget.isStandaloneWindow)
+                  IconButton(
+                    onPressed: () {
                       Navigator.of(context).pop();
-                    }
-                  },
-                  icon: const Icon(Icons.open_in_new, size: 18),
-                  style: IconButton.styleFrom(
-                    foregroundColor: AppTheme.secondaryColor,
-                    backgroundColor: AppTheme.cardBg,
-                    padding: const EdgeInsets.all(8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: const BorderSide(color: AppTheme.borderColor),
+                    },
+                    icon: const Icon(Icons.arrow_back_rounded),
+                    style: IconButton.styleFrom(
+                      foregroundColor: AppTheme.secondaryColor,
+                      backgroundColor: AppTheme.cardBg,
+                      padding: const EdgeInsets.all(8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: const BorderSide(color: AppTheme.borderColor),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            if (provider.hasImage) ...[
-              TextButton.icon(
-                onPressed: () => provider.reset(),
-                icon: const Icon(Icons.close, size: 16),
-                label: const Text('清除'),
-                style: TextButton.styleFrom(
-                  foregroundColor: AppTheme.errorColor,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 8,
+                const SizedBox(width: 12),
+                Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppTheme.accentColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.wb_sunny,
+                    color: AppTheme.accentColor,
+                    size: 24,
                   ),
                 ),
-              ),
-            ],
-          ],
+                const SizedBox(width: 10),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '亮度增强',
+                      style: TextStyle(
+                        color: AppTheme.textColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '一键提升图片亮度，改善暗部细节',
+                      style: TextStyle(
+                        color: AppTheme.secondaryColor,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                // 分离窗口按钮（仅在主窗口显示）
+                if (!widget.isStandaloneWindow)
+                  Tooltip(
+                    message: '分离到新窗口',
+                    child: IconButton(
+                      onPressed: () async {
+                        // 导出当前状态
+                        final state = await context
+                            .read<ImageEnhanceProvider>()
+                            .exportState();
+                        final success = await WindowService.instance
+                            .detachToNewWindow(
+                              WindowType.imageEnhance,
+                              data: state,
+                            );
+                        if (success && context.mounted) {
+                          Navigator.of(context).pop();
+                        }
+                      },
+                      icon: const Icon(Icons.open_in_new, size: 18),
+                      style: IconButton.styleFrom(
+                        foregroundColor: AppTheme.secondaryColor,
+                        backgroundColor: AppTheme.cardBg,
+                        padding: const EdgeInsets.all(8),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: const BorderSide(color: AppTheme.borderColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                if (provider.hasImage) ...[
+                  TextButton.icon(
+                    onPressed: () => provider.reset(),
+                    icon: const Icon(Icons.close, size: 16),
+                    label: const Text('清除'),
+                    style: TextButton.styleFrom(
+                      foregroundColor: AppTheme.errorColor,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
         );
       },
     );

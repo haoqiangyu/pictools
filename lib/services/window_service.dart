@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:window_manager/window_manager.dart';
+
 import 'window_arguments.dart';
 
 /// 窗口管理服务
@@ -21,9 +22,8 @@ class WindowService {
   /// 是否是主窗口
   bool get isMainWindow => _currentArguments?.type == WindowType.main;
 
-  /// 统一窗口尺寸
-  static const double windowWidth = 1400;
-  static const double windowHeight = 900;
+  /// 最小窗口尺寸
+  static const Size minWindowSize = Size(800, 600);
 
   /// 初始化窗口服务
   Future<void> init() async {
@@ -40,15 +40,29 @@ class WindowService {
       await windowManager.setTitle(
         _currentArguments?.windowTitle ?? 'Pictools',
       );
-      await windowManager.setMinimumSize(const Size(1024, 700));
-      // 使用与主窗口相同的尺寸
-      await windowManager.setSize(const Size(windowWidth, windowHeight));
-      await windowManager.center();
-      // 等待窗口准备就绪后再显示，避免黑屏闪烁
-      await windowManager.setBackgroundColor(const Color(0xFF121212));
-      await Future.delayed(const Duration(milliseconds: 50));
-      await windowManager.show();
-      await windowManager.focus();
+      await windowManager.setMinimumSize(minWindowSize);
+
+      // 固定窗口尺寸
+      Size initialSize = const Size(1000, 800);
+      if (_currentArguments?.type == WindowType.imageCompare) {
+        initialSize = const Size(1200, 800);
+      }
+
+      // 设置背景色为深色，避免白色闪烁
+      await windowManager.setBackgroundColor(const Color(0xFF1E1E1E));
+
+      WindowOptions windowOptions = WindowOptions(
+        size: initialSize,
+        center: true,
+        backgroundColor: const Color(0xFF1E1E1E),
+        skipTaskbar: false,
+        titleBarStyle: TitleBarStyle.hidden,
+      );
+
+      await windowManager.waitUntilReadyToShow(windowOptions, () async {
+        await windowManager.show();
+        await windowManager.focus();
+      });
     }
   }
 

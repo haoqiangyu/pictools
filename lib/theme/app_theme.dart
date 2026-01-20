@@ -84,6 +84,13 @@ class AppTheme {
       ),
       iconTheme: const IconThemeData(color: secondaryColor, size: 24),
       dividerTheme: const DividerThemeData(color: borderColor, thickness: 1),
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+        },
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:window_manager/window_manager.dart';
 import '../providers/image_compare_provider.dart';
 import '../services/window_service.dart';
 import '../services/window_arguments.dart';
@@ -39,7 +40,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
       backgroundColor: AppTheme.primaryBg,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -65,110 +66,124 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
   }
 
   Widget _buildHeader(BuildContext context) {
-    return Row(
-      children: [
-        // 返回按钮
-        IconButton(
-          onPressed: () {
-            if (widget.isStandaloneWindow) {
-              WindowService.instance.closeCurrentWindow();
-            } else {
-              Navigator.of(context).pop();
-            }
-          },
-          icon: Icon(
-            widget.isStandaloneWindow ? Icons.close : Icons.arrow_back_rounded,
-          ),
-          style: IconButton.styleFrom(
-            foregroundColor: AppTheme.secondaryColor,
-            backgroundColor: AppTheme.cardBg,
-            padding: const EdgeInsets.all(8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: const BorderSide(color: AppTheme.borderColor),
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
-        Container(
-          padding: const EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            color: AppTheme.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Icon(
-            Icons.compare,
-            color: AppTheme.accentColor,
-            size: 24,
-          ),
-        ),
-        const SizedBox(width: 10),
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onDoubleTap: () async {
+        if (await windowManager.isMaximized()) {
+          windowManager.unmaximize();
+        } else {
+          windowManager.maximize();
+        }
+      },
+      behavior: HitTestBehavior.translucent, // 确保空白区域也能响应
+      child: Container(
+        color: Colors.transparent, // 必须设置颜色(即使是透明)才能响应点击
+        width: double.infinity, // 占满横向空间
+        padding: const EdgeInsets.symmetric(vertical: 8), // 增加一点垂直点击区域
+        child: Row(
           children: [
-            Text(
-              '图片对比',
-              style: TextStyle(
-                color: AppTheme.textColor,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            // 返回按钮
+            if (!widget.isStandaloneWindow)
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.arrow_back_rounded),
+                style: IconButton.styleFrom(
+                  foregroundColor: AppTheme.secondaryColor,
+                  backgroundColor: AppTheme.cardBg,
+                  padding: const EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(color: AppTheme.borderColor),
+                  ),
+                ),
+              ),
+            const SizedBox(width: 12),
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: AppTheme.accentColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.compare,
+                color: AppTheme.accentColor,
+                size: 24,
               ),
             ),
-            Text(
-              '对比两张图片，清晰展示差异',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+            const SizedBox(width: 10),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '图片对比',
+                  style: TextStyle(
+                    color: AppTheme.textColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '对比两张图片，清晰展示差异',
+                  style: TextStyle(
+                    color: AppTheme.secondaryColor,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+            // 分离窗口按钮（仅在主窗口显示）
+            if (!widget.isStandaloneWindow)
+              Tooltip(
+                message: '分离到新窗口',
+                child: IconButton(
+                  onPressed: () async {
+                    // 导出当前状态
+                    final state = await context
+                        .read<ImageCompareProvider>()
+                        .exportState();
+                    final success = await WindowService.instance
+                        .detachToNewWindow(
+                          WindowType.imageCompare,
+                          data: state,
+                        );
+                    if (success && context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                  icon: const Icon(Icons.open_in_new, size: 18),
+                  style: IconButton.styleFrom(
+                    foregroundColor: AppTheme.secondaryColor,
+                    backgroundColor: AppTheme.cardBg,
+                    padding: const EdgeInsets.all(8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(color: AppTheme.borderColor),
+                    ),
+                  ),
+                ),
+              ),
+            Consumer<ImageCompareProvider>(
+              builder: (context, provider, _) {
+                if (!provider.hasBothImages) return const SizedBox.shrink();
+                return TextButton.icon(
+                  onPressed: () => provider.reset(),
+                  icon: const Icon(Icons.refresh, size: 16),
+                  label: const Text('重置'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: AppTheme.secondaryColor,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 8,
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
-        const Spacer(),
-        // 分离窗口按钮（仅在主窗口显示）
-        if (!widget.isStandaloneWindow)
-          Tooltip(
-            message: '分离到新窗口',
-            child: IconButton(
-              onPressed: () async {
-                // 导出当前状态
-                final state = await context
-                    .read<ImageCompareProvider>()
-                    .exportState();
-                final success = await WindowService.instance.detachToNewWindow(
-                  WindowType.imageCompare,
-                  data: state,
-                );
-                if (success && context.mounted) {
-                  Navigator.of(context).pop();
-                }
-              },
-              icon: const Icon(Icons.open_in_new, size: 18),
-              style: IconButton.styleFrom(
-                foregroundColor: AppTheme.secondaryColor,
-                backgroundColor: AppTheme.cardBg,
-                padding: const EdgeInsets.all(8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: const BorderSide(color: AppTheme.borderColor),
-                ),
-              ),
-            ),
-          ),
-        Consumer<ImageCompareProvider>(
-          builder: (context, provider, _) {
-            if (!provider.hasBothImages) return const SizedBox.shrink();
-            return TextButton.icon(
-              onPressed: () => provider.reset(),
-              icon: const Icon(Icons.refresh, size: 16),
-              label: const Text('重置'),
-              style: TextButton.styleFrom(
-                foregroundColor: AppTheme.secondaryColor,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
-                ),
-              ),
-            );
-          },
-        ),
-      ],
+      ),
     );
   }
 

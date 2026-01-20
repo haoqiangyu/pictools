@@ -22,6 +22,16 @@ class MainFlutterWindow: NSWindow {
     // 设置最小窗口尺寸
     self.minSize = NSSize(width: 1024, height: 700)
     
+    // Fix black screen flash:
+    // 1. Set background color to clear/transparent initially (Flutter will draw over it)
+    self.backgroundColor = .clear
+    // 2. Set opaque to false to allow transparency
+    self.isOpaque = false
+    // 3. Ensure title bar is hidden as we use custom window controls
+    self.titleVisibility = .hidden
+    self.titlebarAppearsTransparent = true
+    self.styleMask.insert(.fullSizeContentView)
+    
     self.contentViewController = flutterViewController
 
     RegisterGeneratedPlugins(registry: flutterViewController)

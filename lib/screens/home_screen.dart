@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:window_manager/window_manager.dart';
 import '../theme/app_theme.dart';
 import '../models/tool_item.dart';
 import '../widgets/tool_card.dart';
@@ -30,54 +31,71 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildHeader(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: AppTheme.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: const Icon(
-            Icons.photo_library_outlined,
-            color: AppTheme.accentColor,
-            size: 28,
-          ),
-        ),
-        const SizedBox(width: 14),
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onDoubleTap: () async {
+        if (await windowManager.isMaximized()) {
+          windowManager.unmaximize();
+        } else {
+          windowManager.maximize();
+        }
+      },
+      behavior: HitTestBehavior.translucent,
+      child: Container(
+        color: Colors.transparent,
+        width: double.infinity,
+        child: Row(
           children: [
-            Text(
-              'Pictools',
-              style: TextStyle(
-                color: AppTheme.textColor,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: AppTheme.accentColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.photo_library_outlined,
+                color: AppTheme.accentColor,
+                size: 28,
               ),
             ),
-            Text(
-              '图片工具集合',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
+            const SizedBox(width: 14),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Pictools',
+                  style: TextStyle(
+                    color: AppTheme.textColor,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '图片工具集合',
+                  style: TextStyle(
+                    color: AppTheme.secondaryColor,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+            IconButton(
+              onPressed: () => Navigator.of(context).pushNamed('/settings'),
+              icon: const Icon(Icons.settings_outlined),
+              tooltip: '设置',
+              style: IconButton.styleFrom(
+                foregroundColor: AppTheme.secondaryColor,
+                backgroundColor: AppTheme.cardBg,
+                padding: const EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: const BorderSide(color: AppTheme.borderColor),
+                ),
+              ),
             ),
           ],
         ),
-        const Spacer(),
-        IconButton(
-          onPressed: () => Navigator.of(context).pushNamed('/settings'),
-          icon: const Icon(Icons.settings_outlined),
-          tooltip: '设置',
-          style: IconButton.styleFrom(
-            foregroundColor: AppTheme.secondaryColor,
-            backgroundColor: AppTheme.cardBg,
-            padding: const EdgeInsets.all(10),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: const BorderSide(color: AppTheme.borderColor),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 
