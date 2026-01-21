@@ -17,6 +17,7 @@ import '../widgets/image_panel_with_menu.dart';
 import '../widgets/model_download_dialog.dart';
 import '../src/rust/api/background_removal.dart' as bg_removal;
 import '../src/rust/api/image_codec.dart';
+import '../models/export_format.dart';
 
 /// 背景移除功能页面
 class BackgroundRemovalScreen extends StatefulWidget {
@@ -843,15 +844,8 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
         context,
         message: '正在导出图片...',
         task: () async {
-          final ImageFormat rustFormat;
-          switch (provider.exportFormat) {
-            case ExportFormat.png:
-              rustFormat = const ImageFormat.png();
-              break;
-            case ExportFormat.jpg:
-              rustFormat = const ImageFormat.jpg(quality: 95);
-              break;
-          }
+          // 使用 Rust 编码最终格式
+          final rustFormat = provider.exportFormat.toRustFormat();
 
           final encodedBytes = await encodeImage(
             imageData: dataToExport!,

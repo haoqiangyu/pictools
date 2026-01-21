@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import '../services/model_manager.dart';
+import '../models/export_format.dart';
 
 /// 背景填充颜色
 class BackgroundColor {
@@ -202,15 +203,4 @@ class BackgroundRemovalProvider with ChangeNotifier {
     }
     notifyListeners();
   }
-}
-
-/// 导出格式
-enum ExportFormat {
-  png('PNG', 'png'),
-  jpg('JPG', 'jpg');
-
-  const ExportFormat(this.displayName, this.extension);
-
-  final String displayName;
-  final String extension;
 }

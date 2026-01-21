@@ -8,16 +8,8 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 import 'package:freezed_annotation/freezed_annotation.dart' hide protected;
 part 'image_codec.freezed.dart';
 
-// These functions are ignored because they are not marked as `pub`: `encode_jpg`, `encode_png`, `encode_webp`
+// These functions are ignored because they are not marked as `pub`: `encode_bmp`, `encode_ico`, `encode_jpg`, `encode_png`, `encode_tiff`, `encode_webp`
 
-/// 将图片编码为指定格式
-///
-/// # Arguments
-/// * `image_data` - 原始图片数据（支持 PNG/JPG/WebP/GIF/BMP 等）
-/// * `format` - 目标输出格式
-///
-/// # Returns
-/// 编码后的图片字节数据
 Future<Uint8List> encodeImage({
   required List<int> imageData,
   required ImageFormat format,
@@ -62,4 +54,7 @@ sealed class ImageFormat with _$ImageFormat {
     required int quality,
     required bool lossless,
   }) = ImageFormat_WebP;
+  const factory ImageFormat.bmp() = ImageFormat_Bmp;
+  const factory ImageFormat.ico() = ImageFormat_Ico;
+  const factory ImageFormat.tiff() = ImageFormat_Tiff;
 }

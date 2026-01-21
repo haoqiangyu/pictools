@@ -57,5 +57,12 @@ class Tools {
       icon: Icons.auto_fix_high,
       routeName: '/background-removal',
     ),
+    ToolItem(
+      id: 'image_converter',
+      name: '格式转换',
+      description: '批量转换图片格式，支持 HEIC, AVIF, WebP, PNG, JPG 等',
+      icon: Icons.transform,
+      routeName: '/image-converter',
+    ),
   ];
 }

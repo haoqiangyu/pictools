@@ -369,6 +369,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           quality: dco_decode_u_8(raw[1]),
           lossless: dco_decode_bool(raw[2]),
         );
+      case 3:
+        return ImageFormat_Bmp();
+      case 4:
+        return ImageFormat_Ico();
+      case 5:
+        return ImageFormat_Tiff();
       default:
         throw Exception("unreachable");
     }
@@ -434,6 +440,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         var var_quality = sse_decode_u_8(deserializer);
         var var_lossless = sse_decode_bool(deserializer);
         return ImageFormat_WebP(quality: var_quality, lossless: var_lossless);
+      case 3:
+        return ImageFormat_Bmp();
+      case 4:
+        return ImageFormat_Ico();
+      case 5:
+        return ImageFormat_Tiff();
       default:
         throw UnimplementedError('');
     }
@@ -505,6 +517,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         sse_encode_i_32(2, serializer);
         sse_encode_u_8(quality, serializer);
         sse_encode_bool(lossless, serializer);
+      case ImageFormat_Bmp():
+        sse_encode_i_32(3, serializer);
+      case ImageFormat_Ico():
+        sse_encode_i_32(4, serializer);
+      case ImageFormat_Tiff():
+        sse_encode_i_32(5, serializer);
     }
   }
 

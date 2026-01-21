@@ -17,6 +17,7 @@ import 'screens/image_adjust_screen.dart';
 import 'screens/image_enhance_screen.dart';
 import 'screens/ai_image_screen.dart';
 import 'screens/background_removal_screen.dart';
+import 'screens/image_converter_screen.dart';
 import 'screens/settings_screen.dart';
 import 'src/rust/frb_generated.dart';
 
@@ -91,6 +92,7 @@ class PictoolsApp extends StatelessWidget {
           '/image-enhance': (context) => const ImageEnhanceScreen(),
           '/ai-image': (context) => const AIImageScreen(),
           '/background-removal': (context) => const BackgroundRemovalScreen(),
+          '/image-converter': (context) => const ImageConverterScreen(),
           '/settings': (context) => const SettingsScreen(),
         },
       ),

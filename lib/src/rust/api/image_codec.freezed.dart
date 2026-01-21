@@ -22,18 +22,27 @@ mixin _$ImageFormat {
     required TResult Function() png,
     required TResult Function(int quality) jpg,
     required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? png,
     TResult? Function(int quality)? jpg,
     TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? png,
     TResult Function(int quality)? jpg,
     TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,18 +50,27 @@ mixin _$ImageFormat {
     required TResult Function(ImageFormat_Png value) png,
     required TResult Function(ImageFormat_Jpg value) jpg,
     required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ImageFormat_Png value)? png,
     TResult? Function(ImageFormat_Jpg value)? jpg,
     TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ImageFormat_Png value)? png,
     TResult Function(ImageFormat_Jpg value)? jpg,
     TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -125,6 +143,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     required TResult Function() png,
     required TResult Function(int quality) jpg,
     required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
   }) {
     return png();
   }
@@ -135,6 +156,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     TResult? Function()? png,
     TResult? Function(int quality)? jpg,
     TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
   }) {
     return png?.call();
   }
@@ -145,6 +169,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     TResult Function()? png,
     TResult Function(int quality)? jpg,
     TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
     required TResult orElse(),
   }) {
     if (png != null) {
@@ -159,6 +186,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     required TResult Function(ImageFormat_Png value) png,
     required TResult Function(ImageFormat_Jpg value) jpg,
     required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
   }) {
     return png(this);
   }
@@ -169,6 +199,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     TResult? Function(ImageFormat_Png value)? png,
     TResult? Function(ImageFormat_Jpg value)? jpg,
     TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
   }) {
     return png?.call(this);
   }
@@ -179,6 +212,9 @@ class _$ImageFormat_PngImpl extends ImageFormat_Png {
     TResult Function(ImageFormat_Png value)? png,
     TResult Function(ImageFormat_Jpg value)? jpg,
     TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
     required TResult orElse(),
   }) {
     if (png != null) {
@@ -269,6 +305,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     required TResult Function() png,
     required TResult Function(int quality) jpg,
     required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
   }) {
     return jpg(quality);
   }
@@ -279,6 +318,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     TResult? Function()? png,
     TResult? Function(int quality)? jpg,
     TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
   }) {
     return jpg?.call(quality);
   }
@@ -289,6 +331,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     TResult Function()? png,
     TResult Function(int quality)? jpg,
     TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
     required TResult orElse(),
   }) {
     if (jpg != null) {
@@ -303,6 +348,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     required TResult Function(ImageFormat_Png value) png,
     required TResult Function(ImageFormat_Jpg value) jpg,
     required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
   }) {
     return jpg(this);
   }
@@ -313,6 +361,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     TResult? Function(ImageFormat_Png value)? png,
     TResult? Function(ImageFormat_Jpg value)? jpg,
     TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
   }) {
     return jpg?.call(this);
   }
@@ -323,6 +374,9 @@ class _$ImageFormat_JpgImpl extends ImageFormat_Jpg {
     TResult Function(ImageFormat_Png value)? png,
     TResult Function(ImageFormat_Jpg value)? jpg,
     TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
     required TResult orElse(),
   }) {
     if (jpg != null) {
@@ -431,6 +485,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     required TResult Function() png,
     required TResult Function(int quality) jpg,
     required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
   }) {
     return webP(quality, lossless);
   }
@@ -441,6 +498,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     TResult? Function()? png,
     TResult? Function(int quality)? jpg,
     TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
   }) {
     return webP?.call(quality, lossless);
   }
@@ -451,6 +511,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     TResult Function()? png,
     TResult Function(int quality)? jpg,
     TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
     required TResult orElse(),
   }) {
     if (webP != null) {
@@ -465,6 +528,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     required TResult Function(ImageFormat_Png value) png,
     required TResult Function(ImageFormat_Jpg value) jpg,
     required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
   }) {
     return webP(this);
   }
@@ -475,6 +541,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     TResult? Function(ImageFormat_Png value)? png,
     TResult? Function(ImageFormat_Jpg value)? jpg,
     TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
   }) {
     return webP?.call(this);
   }
@@ -485,6 +554,9 @@ class _$ImageFormat_WebPImpl extends ImageFormat_WebP {
     TResult Function(ImageFormat_Png value)? png,
     TResult Function(ImageFormat_Jpg value)? jpg,
     TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
     required TResult orElse(),
   }) {
     if (webP != null) {
@@ -509,4 +581,400 @@ abstract class ImageFormat_WebP extends ImageFormat {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ImageFormat_WebPImplCopyWith<_$ImageFormat_WebPImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImageFormat_BmpImplCopyWith<$Res> {
+  factory _$$ImageFormat_BmpImplCopyWith(
+    _$ImageFormat_BmpImpl value,
+    $Res Function(_$ImageFormat_BmpImpl) then,
+  ) = __$$ImageFormat_BmpImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ImageFormat_BmpImplCopyWithImpl<$Res>
+    extends _$ImageFormatCopyWithImpl<$Res, _$ImageFormat_BmpImpl>
+    implements _$$ImageFormat_BmpImplCopyWith<$Res> {
+  __$$ImageFormat_BmpImplCopyWithImpl(
+    _$ImageFormat_BmpImpl _value,
+    $Res Function(_$ImageFormat_BmpImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ImageFormat
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ImageFormat_BmpImpl extends ImageFormat_Bmp {
+  const _$ImageFormat_BmpImpl() : super._();
+
+  @override
+  String toString() {
+    return 'ImageFormat.bmp()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageFormat_BmpImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() png,
+    required TResult Function(int quality) jpg,
+    required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
+  }) {
+    return bmp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? png,
+    TResult? Function(int quality)? jpg,
+    TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
+  }) {
+    return bmp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? png,
+    TResult Function(int quality)? jpg,
+    TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
+    required TResult orElse(),
+  }) {
+    if (bmp != null) {
+      return bmp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageFormat_Png value) png,
+    required TResult Function(ImageFormat_Jpg value) jpg,
+    required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
+  }) {
+    return bmp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImageFormat_Png value)? png,
+    TResult? Function(ImageFormat_Jpg value)? jpg,
+    TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
+  }) {
+    return bmp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageFormat_Png value)? png,
+    TResult Function(ImageFormat_Jpg value)? jpg,
+    TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
+    required TResult orElse(),
+  }) {
+    if (bmp != null) {
+      return bmp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageFormat_Bmp extends ImageFormat {
+  const factory ImageFormat_Bmp() = _$ImageFormat_BmpImpl;
+  const ImageFormat_Bmp._() : super._();
+}
+
+/// @nodoc
+abstract class _$$ImageFormat_IcoImplCopyWith<$Res> {
+  factory _$$ImageFormat_IcoImplCopyWith(
+    _$ImageFormat_IcoImpl value,
+    $Res Function(_$ImageFormat_IcoImpl) then,
+  ) = __$$ImageFormat_IcoImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ImageFormat_IcoImplCopyWithImpl<$Res>
+    extends _$ImageFormatCopyWithImpl<$Res, _$ImageFormat_IcoImpl>
+    implements _$$ImageFormat_IcoImplCopyWith<$Res> {
+  __$$ImageFormat_IcoImplCopyWithImpl(
+    _$ImageFormat_IcoImpl _value,
+    $Res Function(_$ImageFormat_IcoImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ImageFormat
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ImageFormat_IcoImpl extends ImageFormat_Ico {
+  const _$ImageFormat_IcoImpl() : super._();
+
+  @override
+  String toString() {
+    return 'ImageFormat.ico()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageFormat_IcoImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() png,
+    required TResult Function(int quality) jpg,
+    required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
+  }) {
+    return ico();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? png,
+    TResult? Function(int quality)? jpg,
+    TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
+  }) {
+    return ico?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? png,
+    TResult Function(int quality)? jpg,
+    TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
+    required TResult orElse(),
+  }) {
+    if (ico != null) {
+      return ico();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageFormat_Png value) png,
+    required TResult Function(ImageFormat_Jpg value) jpg,
+    required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
+  }) {
+    return ico(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImageFormat_Png value)? png,
+    TResult? Function(ImageFormat_Jpg value)? jpg,
+    TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
+  }) {
+    return ico?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageFormat_Png value)? png,
+    TResult Function(ImageFormat_Jpg value)? jpg,
+    TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
+    required TResult orElse(),
+  }) {
+    if (ico != null) {
+      return ico(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageFormat_Ico extends ImageFormat {
+  const factory ImageFormat_Ico() = _$ImageFormat_IcoImpl;
+  const ImageFormat_Ico._() : super._();
+}
+
+/// @nodoc
+abstract class _$$ImageFormat_TiffImplCopyWith<$Res> {
+  factory _$$ImageFormat_TiffImplCopyWith(
+    _$ImageFormat_TiffImpl value,
+    $Res Function(_$ImageFormat_TiffImpl) then,
+  ) = __$$ImageFormat_TiffImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ImageFormat_TiffImplCopyWithImpl<$Res>
+    extends _$ImageFormatCopyWithImpl<$Res, _$ImageFormat_TiffImpl>
+    implements _$$ImageFormat_TiffImplCopyWith<$Res> {
+  __$$ImageFormat_TiffImplCopyWithImpl(
+    _$ImageFormat_TiffImpl _value,
+    $Res Function(_$ImageFormat_TiffImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ImageFormat
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ImageFormat_TiffImpl extends ImageFormat_Tiff {
+  const _$ImageFormat_TiffImpl() : super._();
+
+  @override
+  String toString() {
+    return 'ImageFormat.tiff()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ImageFormat_TiffImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() png,
+    required TResult Function(int quality) jpg,
+    required TResult Function(int quality, bool lossless) webP,
+    required TResult Function() bmp,
+    required TResult Function() ico,
+    required TResult Function() tiff,
+  }) {
+    return tiff();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? png,
+    TResult? Function(int quality)? jpg,
+    TResult? Function(int quality, bool lossless)? webP,
+    TResult? Function()? bmp,
+    TResult? Function()? ico,
+    TResult? Function()? tiff,
+  }) {
+    return tiff?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? png,
+    TResult Function(int quality)? jpg,
+    TResult Function(int quality, bool lossless)? webP,
+    TResult Function()? bmp,
+    TResult Function()? ico,
+    TResult Function()? tiff,
+    required TResult orElse(),
+  }) {
+    if (tiff != null) {
+      return tiff();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImageFormat_Png value) png,
+    required TResult Function(ImageFormat_Jpg value) jpg,
+    required TResult Function(ImageFormat_WebP value) webP,
+    required TResult Function(ImageFormat_Bmp value) bmp,
+    required TResult Function(ImageFormat_Ico value) ico,
+    required TResult Function(ImageFormat_Tiff value) tiff,
+  }) {
+    return tiff(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImageFormat_Png value)? png,
+    TResult? Function(ImageFormat_Jpg value)? jpg,
+    TResult? Function(ImageFormat_WebP value)? webP,
+    TResult? Function(ImageFormat_Bmp value)? bmp,
+    TResult? Function(ImageFormat_Ico value)? ico,
+    TResult? Function(ImageFormat_Tiff value)? tiff,
+  }) {
+    return tiff?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImageFormat_Png value)? png,
+    TResult Function(ImageFormat_Jpg value)? jpg,
+    TResult Function(ImageFormat_WebP value)? webP,
+    TResult Function(ImageFormat_Bmp value)? bmp,
+    TResult Function(ImageFormat_Ico value)? ico,
+    TResult Function(ImageFormat_Tiff value)? tiff,
+    required TResult orElse(),
+  }) {
+    if (tiff != null) {
+      return tiff(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImageFormat_Tiff extends ImageFormat {
+  const factory ImageFormat_Tiff() = _$ImageFormat_TiffImpl;
+  const ImageFormat_Tiff._() : super._();
 }

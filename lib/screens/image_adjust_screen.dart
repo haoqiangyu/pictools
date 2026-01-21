@@ -18,6 +18,7 @@ import '../widgets/aspect_ratio_selector.dart';
 import 'package:file_picker/file_picker.dart';
 import '../src/rust/api/image_codec.dart';
 import '../widgets/loading_overlay.dart';
+import '../models/export_format.dart';
 
 /// 图片调整功能页面
 class ImageAdjustScreen extends StatefulWidget {
@@ -422,18 +423,7 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
           final pngBytes = Uint8List.fromList(img.encodePng(resultImage));
 
           // 使用 Rust 编码最终格式
-          final ImageFormat rustFormat;
-          switch (provider.exportFormat) {
-            case ExportFormat.png:
-              rustFormat = const ImageFormat.png();
-              break;
-            case ExportFormat.jpg:
-              rustFormat = const ImageFormat.jpg(quality: 95);
-              break;
-            case ExportFormat.webp:
-              rustFormat = const ImageFormat.webP(quality: 90, lossless: false);
-              break;
-          }
+          final rustFormat = provider.exportFormat.toRustFormat();
 
           final encodedBytes = await encodeImage(
             imageData: pngBytes,

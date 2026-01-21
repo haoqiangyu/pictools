@@ -313,6 +313,15 @@ impl SseDecode for crate::api::image_codec::ImageFormat {
                     lossless: var_lossless,
                 };
             }
+            3 => {
+                return crate::api::image_codec::ImageFormat::Bmp;
+            }
+            4 => {
+                return crate::api::image_codec::ImageFormat::Ico;
+            }
+            5 => {
+                return crate::api::image_codec::ImageFormat::Tiff;
+            }
             _ => {
                 unimplemented!("");
             }
@@ -410,6 +419,9 @@ impl flutter_rust_bridge::IntoDart for crate::api::image_codec::ImageFormat {
                 lossless.into_into_dart().into_dart(),
             ]
             .into_dart(),
+            crate::api::image_codec::ImageFormat::Bmp => [3.into_dart()].into_dart(),
+            crate::api::image_codec::ImageFormat::Ico => [4.into_dart()].into_dart(),
+            crate::api::image_codec::ImageFormat::Tiff => [5.into_dart()].into_dart(),
             _ => {
                 unimplemented!("");
             }
@@ -457,6 +469,15 @@ impl SseEncode for crate::api::image_codec::ImageFormat {
                 <i32>::sse_encode(2, serializer);
                 <u8>::sse_encode(quality, serializer);
                 <bool>::sse_encode(lossless, serializer);
+            }
+            crate::api::image_codec::ImageFormat::Bmp => {
+                <i32>::sse_encode(3, serializer);
+            }
+            crate::api::image_codec::ImageFormat::Ico => {
+                <i32>::sse_encode(4, serializer);
+            }
+            crate::api::image_codec::ImageFormat::Tiff => {
+                <i32>::sse_encode(5, serializer);
             }
             _ => {
                 unimplemented!("");

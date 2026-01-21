@@ -11,9 +11,9 @@ import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/loading_overlay.dart';
 import '../widgets/image_panel_with_menu.dart';
-import '../models/aspect_ratio.dart';
+import '../src/rust/api/image_enhance.dart' as rust_enhance;
 import '../src/rust/api/image_codec.dart';
-import '../src/rust/api/image_enhance.dart';
+import '../models/export_format.dart';
 
 /// 图片亮度增强功能页面
 class ImageEnhanceScreen extends StatefulWidget {
@@ -481,7 +481,9 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
     provider.startProcessing();
 
     try {
-      final result = await enhanceImage(imageData: provider.originalData!);
+      final result = await rust_enhance.enhanceImage(
+        imageData: provider.originalData!,
+      );
       provider.setEnhancedData(result);
     } catch (e) {
       provider.setError('处理失败: $e');
@@ -571,18 +573,7 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
         message: '正在导出图片...',
         task: () async {
           // 使用 Rust 编码最终格式
-          final ImageFormat rustFormat;
-          switch (provider.exportFormat) {
-            case ExportFormat.png:
-              rustFormat = const ImageFormat.png();
-              break;
-            case ExportFormat.jpg:
-              rustFormat = const ImageFormat.jpg(quality: 95);
-              break;
-            case ExportFormat.webp:
-              rustFormat = const ImageFormat.webP(quality: 90, lossless: false);
-              break;
-          }
+          final rustFormat = provider.exportFormat.toRustFormat();
 
           final encodedBytes = await encodeImage(
             imageData: provider.enhancedData!,

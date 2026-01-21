@@ -69,30 +69,3 @@ extension AspectRatioPresetExtension on AspectRatioPreset {
     }
   }
 }
-
-/// 支持的导出格式
-enum ExportFormat { png, jpg, webp }
-
-extension ExportFormatExtension on ExportFormat {
-  String get displayName {
-    switch (this) {
-      case ExportFormat.png:
-        return 'PNG';
-      case ExportFormat.jpg:
-        return 'JPG';
-      case ExportFormat.webp:
-        return 'WebP';
-    }
-  }
-
-  String get extension {
-    switch (this) {
-      case ExportFormat.png:
-        return 'png';
-      case ExportFormat.jpg:
-        return 'jpg';
-      case ExportFormat.webp:
-        return 'webp';
-    }
-  }
-}
