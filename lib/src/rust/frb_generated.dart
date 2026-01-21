@@ -3,6 +3,7 @@
 
 // ignore_for_file: unused_import, unused_element, unnecessary_import, duplicate_ignore, invalid_use_of_internal_member, annotate_overrides, non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, unused_field
 
+import 'api/background_removal.dart';
 import 'api/image_codec.dart';
 import 'api/image_enhance.dart';
 import 'dart:async';
@@ -65,7 +66,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.11.1';
 
   @override
-  int get rustContentHash => 1066894301;
+  int get rustContentHash => 1063922042;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -76,6 +77,13 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
 }
 
 abstract class RustLibApi extends BaseApi {
+  Future<Uint8List> crateApiBackgroundRemovalAddSolidBackground({
+    required List<int> rgbaData,
+    required int bgRed,
+    required int bgGreen,
+    required int bgBlue,
+  });
+
   Future<Uint8List> crateApiImageCodecCropImage({
     required List<int> imageData,
     required int x,
@@ -93,6 +101,11 @@ abstract class RustLibApi extends BaseApi {
     required List<int> imageData,
   });
 
+  Future<Uint8List> crateApiBackgroundRemovalRemoveBackground({
+    required List<int> imageData,
+    required String modelPath,
+  });
+
   Future<Uint8List> crateApiImageCodecResizeImage({
     required List<int> imageData,
     required int width,
@@ -107,6 +120,45 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     required super.generalizedFrbRustBinding,
     required super.portManager,
   });
+
+  @override
+  Future<Uint8List> crateApiBackgroundRemovalAddSolidBackground({
+    required List<int> rgbaData,
+    required int bgRed,
+    required int bgGreen,
+    required int bgBlue,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_list_prim_u_8_loose(rgbaData, serializer);
+          sse_encode_u_8(bgRed, serializer);
+          sse_encode_u_8(bgGreen, serializer);
+          sse_encode_u_8(bgBlue, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 1,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_list_prim_u_8_strict,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiBackgroundRemovalAddSolidBackgroundConstMeta,
+        argValues: [rgbaData, bgRed, bgGreen, bgBlue],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiBackgroundRemovalAddSolidBackgroundConstMeta =>
+      const TaskConstMeta(
+        debugName: "add_solid_background",
+        argNames: ["rgbaData", "bgRed", "bgGreen", "bgBlue"],
+      );
 
   @override
   Future<Uint8List> crateApiImageCodecCropImage({
@@ -128,7 +180,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 1,
+            funcId: 2,
             port: port_,
           );
         },
@@ -163,7 +215,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 2,
+            funcId: 3,
             port: port_,
           );
         },
@@ -196,7 +248,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 3,
+            funcId: 4,
             port: port_,
           );
         },
@@ -215,6 +267,41 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       const TaskConstMeta(debugName: "enhance_image", argNames: ["imageData"]);
 
   @override
+  Future<Uint8List> crateApiBackgroundRemovalRemoveBackground({
+    required List<int> imageData,
+    required String modelPath,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_list_prim_u_8_loose(imageData, serializer);
+          sse_encode_String(modelPath, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 5,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_list_prim_u_8_strict,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiBackgroundRemovalRemoveBackgroundConstMeta,
+        argValues: [imageData, modelPath],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiBackgroundRemovalRemoveBackgroundConstMeta =>
+      const TaskConstMeta(
+        debugName: "remove_background",
+        argNames: ["imageData", "modelPath"],
+      );
+
+  @override
   Future<Uint8List> crateApiImageCodecResizeImage({
     required List<int> imageData,
     required int width,
@@ -230,7 +317,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 4,
+            funcId: 6,
             port: port_,
           );
         },

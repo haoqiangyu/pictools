@@ -6,6 +6,7 @@ import 'providers/image_compare_provider.dart';
 import 'providers/image_adjust_provider.dart';
 import 'providers/image_enhance_provider.dart';
 import 'providers/ai_image_provider.dart';
+import 'providers/background_removal_provider.dart';
 import 'services/settings_provider.dart';
 import 'services/window_service.dart';
 import 'services/window_arguments.dart';
@@ -15,6 +16,7 @@ import 'screens/image_compare_screen.dart';
 import 'screens/image_adjust_screen.dart';
 import 'screens/image_enhance_screen.dart';
 import 'screens/ai_image_screen.dart';
+import 'screens/background_removal_screen.dart';
 import 'screens/settings_screen.dart';
 import 'src/rust/frb_generated.dart';
 
@@ -76,6 +78,7 @@ class PictoolsApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ImageAdjustProvider()),
         ChangeNotifierProvider(create: (_) => ImageEnhanceProvider()),
         ChangeNotifierProvider(create: (_) => AIImageProvider()),
+        ChangeNotifierProvider(create: (_) => BackgroundRemovalProvider()),
       ],
       child: MaterialApp(
         title: windowArgs.windowTitle,
@@ -87,6 +90,7 @@ class PictoolsApp extends StatelessWidget {
           '/image-adjust': (context) => const ImageAdjustScreen(),
           '/image-enhance': (context) => const ImageEnhanceScreen(),
           '/ai-image': (context) => const AIImageScreen(),
+          '/background-removal': (context) => const BackgroundRemovalScreen(),
           '/settings': (context) => const SettingsScreen(),
         },
       ),
@@ -106,6 +110,8 @@ class PictoolsApp extends StatelessWidget {
         return const ImageEnhanceScreen(isStandaloneWindow: true);
       case WindowType.aiImage:
         return const AIImageScreen(isStandaloneWindow: true);
+      case WindowType.backgroundRemoval:
+        return const BackgroundRemovalScreen(isStandaloneWindow: true);
       case WindowType.settings:
         return const SettingsScreen(isStandaloneWindow: true);
     }

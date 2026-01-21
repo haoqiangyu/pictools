@@ -6,6 +6,7 @@
 // Static analysis wrongly picks the IO variant, thus ignore this
 // ignore_for_file: argument_type_not_assignable
 
+import 'api/background_removal.dart';
 import 'api/image_codec.dart';
 import 'api/image_enhance.dart';
 import 'dart:async';

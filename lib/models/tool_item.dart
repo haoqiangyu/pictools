@@ -50,5 +50,12 @@ class Tools {
       icon: Icons.auto_awesome,
       routeName: '/ai-image',
     ),
+    ToolItem(
+      id: 'background_removal',
+      name: '主体抠图',
+      description: '智能抠图去背景，支持PNG透明导出和纯色背景填充',
+      icon: Icons.auto_fix_high,
+      routeName: '/background-removal',
+    ),
   ];
 }

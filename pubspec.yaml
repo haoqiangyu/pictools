@@ -23,6 +23,9 @@ dependencies:
   url_launcher: ^6.3.2
   desktop_multi_window: ^0.3.0
   window_manager: ^0.5.1
+  dio: ^5.4.0
+  path_provider: ^2.1.0
+  flutter_colorpicker: ^1.0.3
 
 dev_dependencies:
   flutter_test:

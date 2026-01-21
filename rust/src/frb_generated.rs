@@ -37,7 +37,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.11.1";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1066894301;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1063922042;
 
 // Section: executor
 
@@ -45,6 +45,47 @@ flutter_rust_bridge::frb_generated_default_handler!();
 
 // Section: wire_funcs
 
+fn wire__crate__api__background_removal__add_solid_background_impl(
+    port_: flutter_rust_bridge::for_generated::MessagePort,
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "add_solid_background",
+            port: Some(port_),
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Normal,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_rgba_data = <Vec<u8>>::sse_decode(&mut deserializer);
+            let api_bg_red = <u8>::sse_decode(&mut deserializer);
+            let api_bg_green = <u8>::sse_decode(&mut deserializer);
+            let api_bg_blue = <u8>::sse_decode(&mut deserializer);
+            deserializer.end();
+            move |context| {
+                transform_result_sse::<_, String>((move || {
+                    let output_ok = crate::api::background_removal::add_solid_background(
+                        api_rgba_data,
+                        api_bg_red,
+                        api_bg_green,
+                        api_bg_blue,
+                    )?;
+                    Ok(output_ok)
+                })())
+            }
+        },
+    )
+}
 fn wire__crate__api__image_codec__crop_image_impl(
     port_: flutter_rust_bridge::for_generated::MessagePort,
     ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
@@ -150,6 +191,43 @@ fn wire__crate__api__image_enhance__enhance_image_impl(
             move |context| {
                 transform_result_sse::<_, String>((move || {
                     let output_ok = crate::api::image_enhance::enhance_image(api_image_data)?;
+                    Ok(output_ok)
+                })())
+            }
+        },
+    )
+}
+fn wire__crate__api__background_removal__remove_background_impl(
+    port_: flutter_rust_bridge::for_generated::MessagePort,
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "remove_background",
+            port: Some(port_),
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Normal,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_image_data = <Vec<u8>>::sse_decode(&mut deserializer);
+            let api_model_path = <String>::sse_decode(&mut deserializer);
+            deserializer.end();
+            move |context| {
+                transform_result_sse::<_, String>((move || {
+                    let output_ok = crate::api::background_removal::remove_background(
+                        api_image_data,
+                        api_model_path,
+                    )?;
                     Ok(output_ok)
                 })())
             }
@@ -284,10 +362,22 @@ fn pde_ffi_dispatcher_primary_impl(
 ) {
     // Codec=Pde (Serialization + dispatch), see doc to use other codecs
     match func_id {
-        1 => wire__crate__api__image_codec__crop_image_impl(port, ptr, rust_vec_len, data_len),
-        2 => wire__crate__api__image_codec__encode_image_impl(port, ptr, rust_vec_len, data_len),
-        3 => wire__crate__api__image_enhance__enhance_image_impl(port, ptr, rust_vec_len, data_len),
-        4 => wire__crate__api__image_codec__resize_image_impl(port, ptr, rust_vec_len, data_len),
+        1 => wire__crate__api__background_removal__add_solid_background_impl(
+            port,
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        2 => wire__crate__api__image_codec__crop_image_impl(port, ptr, rust_vec_len, data_len),
+        3 => wire__crate__api__image_codec__encode_image_impl(port, ptr, rust_vec_len, data_len),
+        4 => wire__crate__api__image_enhance__enhance_image_impl(port, ptr, rust_vec_len, data_len),
+        5 => wire__crate__api__background_removal__remove_background_impl(
+            port,
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        6 => wire__crate__api__image_codec__resize_image_impl(port, ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }
