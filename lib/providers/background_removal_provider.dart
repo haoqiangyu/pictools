@@ -54,8 +54,11 @@ class BackgroundRemovalProvider with ChangeNotifier {
   bool get isProcessing => _isProcessing;
   String? get errorMessage => _errorMessage;
 
+  String? _modelPath;
+
   ModelPrecision get selectedPrecision => _selectedPrecision;
   bool get isModelDownloaded => _isModelDownloaded;
+  String? get modelPath => _modelPath;
 
   Color? get backgroundColor => _backgroundColor;
   Uint8List? get backgroundFilledData => _backgroundFilledData;
@@ -71,6 +74,7 @@ class BackgroundRemovalProvider with ChangeNotifier {
     _isModelDownloaded = await _modelManager.isModelDownloaded(
       _selectedPrecision,
     );
+    _modelPath = await _modelManager.getModelPath(_selectedPrecision);
     notifyListeners();
   }
 

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -262,20 +263,22 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
         // 右侧：控制面板
         SizedBox(
           width: 280,
-          child: Column(
-            children: [
-              _buildInfoPanel(provider),
-              const SizedBox(height: 16),
-              _buildModelPanel(context, provider),
-              const SizedBox(height: 16),
-              _buildActionPanel(context, provider),
-              if (provider.hasResult) ...[
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _buildInfoPanel(provider),
                 const SizedBox(height: 16),
-                _buildBackgroundPanel(context, provider),
+                _buildModelPanel(context, provider),
                 const SizedBox(height: 16),
-                _buildExportPanel(context, provider),
+                _buildActionPanel(context, provider),
+                if (provider.hasResult) ...[
+                  const SizedBox(height: 16),
+                  _buildBackgroundPanel(context, provider),
+                  const SizedBox(height: 16),
+                  _buildExportPanel(context, provider),
+                ],
               ],
-            ],
+            ),
           ),
         ),
       ],
@@ -399,20 +402,41 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
     );
   }
 
-  Widget _buildInfoRow(String label, String value) {
+  Widget _buildInfoRow(String label, String value, {bool enableCopy = false}) {
+    Widget valueWidget = Text(
+      value,
+      style: const TextStyle(color: AppTheme.textColor, fontSize: 12),
+      textAlign: TextAlign.right,
+      overflow: enableCopy ? null : TextOverflow.ellipsis,
+    );
+
+    if (enableCopy) {
+      valueWidget = InkWell(
+        onTap: () {
+          Clipboard.setData(ClipboardData(text: value));
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('已复制到剪贴板'),
+                duration: Duration(seconds: 1),
+              ),
+            );
+          }
+        },
+        child: Tooltip(message: '点击复制', child: valueWidget),
+      );
+    }
+
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           label,
           style: const TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
         ),
-        const Spacer(),
-        Flexible(
-          child: Text(
-            value,
-            style: const TextStyle(color: AppTheme.textColor, fontSize: 12),
-            overflow: TextOverflow.ellipsis,
-          ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Align(alignment: Alignment.centerRight, child: valueWidget),
         ),
       ],
     );
@@ -443,6 +467,10 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
           const SizedBox(height: 12),
           _buildInfoRow('当前模型', provider.selectedPrecision.displayName),
           _buildInfoRow('状态', provider.isModelDownloaded ? '已下载' : '未下载'),
+          if (provider.modelPath != null) ...[
+            const SizedBox(height: 8),
+            _buildInfoRow('路径', provider.modelPath!, enableCopy: true),
+          ],
           if (!provider.isModelDownloaded) ...[
             const SizedBox(height: 12),
             SizedBox(
