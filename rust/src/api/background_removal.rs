@@ -66,19 +66,12 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         }
     }
 
-    // 4. 加载ONNX模型并运行推理（优先使用 CoreML 加速）
-    println!("Configuring execution providers: [CoreML, CPU]");
+    // 4. 加载ONNX模型并运行推理
+    // 注意：CoreML 对 RMBG-2.0 模型只支持 12/7315 个节点，且会导致某些设备输出空白
+    // 因此只使用 CPU 以确保跨设备一致性
+    println!("Configuring execution providers: [CPU]");
     let mut session = Session::builder()
         .map_err(|e| format!("Failed to create session builder: {}", e))?
-        .with_execution_providers([
-            // 优先使用 CoreML（利用 Apple Neural Engine + GPU）
-            ort::ep::CoreML::default()
-                .with_subgraphs(true) // 支持子图中的控制流
-                .build(),
-            // 回退到 CPU（当 CoreML 不可用或不支持某些算子时）
-            ort::ep::CPUExecutionProvider::default().build(),
-        ])
-        .map_err(|e| format!("Failed to set execution providers: {}", e))?
         .with_optimization_level(GraphOptimizationLevel::Level3)
         .map_err(|e| format!("Failed to set optimization level: {}", e))?
         .commit_from_file(&model_path)

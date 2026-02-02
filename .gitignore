@@ -61,3 +61,9 @@ windows/flutter/generated_plugins.cmake
 
 # Test related
 coverage/
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+
