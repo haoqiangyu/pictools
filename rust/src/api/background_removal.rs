@@ -2,6 +2,20 @@ use image::{DynamicImage, ImageReader, RgbaImage};
 use ort::session::{builder::GraphOptimizationLevel, Session};
 use ort::value::Value;
 use std::io::Cursor;
+use std::sync::Once;
+
+// 确保 tracing subscriber 只初始化一次
+static INIT_TRACING: Once = Once::new();
+
+fn init_tracing() {
+    INIT_TRACING.call_once(|| {
+        // 初始化 tracing subscriber，捕获 ort 的日志
+        tracing_subscriber::fmt()
+            .with_env_filter("ort=debug")
+            .with_target(true)
+            .init();
+    });
+}
 
 /// 使用RMBG-2.0 ONNX模型进行背景移除
 ///
@@ -12,6 +26,12 @@ use std::io::Cursor;
 /// # Returns
 /// 返回带有透明背景的RGBA图片数据（PNG格式）
 pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<u8>, String> {
+    // 初始化 tracing 以输出 ort 的执行提供程序日志
+    init_tracing();
+
+    // 输出 ONNX Runtime 版本信息
+    println!("ONNX Runtime info: {}", ort::info());
+
     // 1. 解码输入图片
     let img = ImageReader::new(Cursor::new(&image_data))
         .with_guessed_format()
@@ -46,9 +66,19 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         }
     }
 
-    // 4. 加载ONNX模型并运行推理
+    // 4. 加载ONNX模型并运行推理（优先使用 CoreML 加速）
+    println!("Configuring execution providers: [CoreML, CPU]");
     let mut session = Session::builder()
         .map_err(|e| format!("Failed to create session builder: {}", e))?
+        .with_execution_providers([
+            // 优先使用 CoreML（利用 Apple Neural Engine + GPU）
+            ort::ep::CoreML::default()
+                .with_subgraphs(true) // 支持子图中的控制流
+                .build(),
+            // 回退到 CPU（当 CoreML 不可用或不支持某些算子时）
+            ort::ep::CPUExecutionProvider::default().build(),
+        ])
+        .map_err(|e| format!("Failed to set execution providers: {}", e))?
         .with_optimization_level(GraphOptimizationLevel::Level3)
         .map_err(|e| format!("Failed to set optimization level: {}", e))?
         .commit_from_file(&model_path)
