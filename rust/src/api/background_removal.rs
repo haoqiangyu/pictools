@@ -72,7 +72,7 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
     println!("Configuring execution providers: [CPU]");
     let mut session = Session::builder()
         .map_err(|e| format!("Failed to create session builder: {}", e))?
-        .with_optimization_level(GraphOptimizationLevel::Level3)
+        .with_optimization_level(GraphOptimizationLevel::Disable)
         .map_err(|e| format!("Failed to set optimization level: {}", e))?
         .commit_from_file(&model_path)
         .map_err(|e| format!("Failed to load model from {}: {}", model_path, e))?;
