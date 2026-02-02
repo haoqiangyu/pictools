@@ -112,6 +112,16 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         }
     }
 
+    // 【测试模式】直接返回 1024x1024 的 Mask 图片，不做 Resize 和原图合成以进行纯模型输出验证
+    // 8. 编码为PNG（Mask）
+    let mut buffer = Cursor::new(Vec::new());
+    alpha_1024
+        .write_to(&mut buffer, image::ImageFormat::Png)
+        .map_err(|e| format!("Failed to encode alpha mask PNG: {}", e))?;
+
+    Ok(buffer.into_inner())
+
+    /*
     let alpha_img = DynamicImage::ImageLuma8(alpha_1024)
         .resize_exact(
             original_width,
@@ -140,6 +150,7 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         .map_err(|e| format!("Failed to encode PNG: {}", e))?;
 
     Ok(buffer.into_inner())
+    */
 }
 
 /// 为透明图片添加纯色背景
