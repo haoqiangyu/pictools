@@ -74,6 +74,15 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         .map_err(|e| format!("Failed to create session builder: {}", e))?
         .with_optimization_level(GraphOptimizationLevel::Disable)
         .map_err(|e| format!("Failed to set optimization level: {}", e))?
+        .with_intra_threads(1)
+        .map_err(|e| format!("Failed to set intra threads: {}", e))?
+        .with_inter_threads(1)
+        .map_err(|e| format!("Failed to set inter threads: {}", e))?
+        .with_memory_pattern(false)
+        .map_err(|e| format!("Failed to disable memory pattern: {}", e))?
+        // .with_enable_cpu_mem_arena(false) // Not supported in this version, but default seems to be 0
+        .with_parallel_execution(false) // Sequential mode
+        .map_err(|e| format!("Failed to set sequential execution: {}", e))?
         .commit_from_file(&model_path)
         .map_err(|e| format!("Failed to load model from {}: {}", model_path, e))?;
 
