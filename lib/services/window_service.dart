@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'window_arguments.dart';
+import 'platform_capabilities.dart';
 
 /// 窗口管理服务
 class WindowService {
@@ -28,6 +29,11 @@ class WindowService {
   /// 初始化窗口服务
   /// 返回当前窗口参数，主窗口需要自行调用 windowManager 初始化
   Future<WindowArguments> init() async {
+    if (!PlatformCapabilities.supportsMultiWindow) {
+      _currentArguments = const WindowArguments(type: WindowType.main);
+      return _currentArguments!;
+    }
+
     _currentController = await WindowController.fromCurrentEngine();
     _currentArguments = WindowArguments.fromJson(
       _currentController?.arguments ?? '',
@@ -74,6 +80,8 @@ class WindowService {
     WindowType type, {
     Map<String, dynamic>? data,
   }) async {
+    if (!PlatformCapabilities.supportsMultiWindow) return null;
+
     try {
       final args = WindowArguments(type: type, data: data);
 

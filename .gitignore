@@ -45,6 +45,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/key.properties
+*.jks
+*.keystore
 
 # macOS
 macos/Pods/
@@ -66,4 +69,3 @@ coverage/
 venv/
 __pycache__/
 *.py[cod]
-

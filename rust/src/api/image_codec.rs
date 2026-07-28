@@ -36,7 +36,7 @@ fn encode_png(img: &DynamicImage) -> Result<Vec<u8>, String> {
 fn encode_jpg(img: &DynamicImage, quality: u8) -> Result<Vec<u8>, String> {
     let rgb_img = img.to_rgb8();
     let mut buffer = Cursor::new(Vec::new());
-    
+
     let mut encoder = image::codecs::jpeg::JpegEncoder::new_with_quality(&mut buffer, quality);
     encoder
         .encode(
@@ -46,22 +46,22 @@ fn encode_jpg(img: &DynamicImage, quality: u8) -> Result<Vec<u8>, String> {
             image::ExtendedColorType::Rgb8,
         )
         .map_err(|e| format!("Failed to encode JPG: {}", e))?;
-    
+
     Ok(buffer.into_inner())
 }
 
 fn encode_webp(img: &DynamicImage, quality: u8, lossless: bool) -> Result<Vec<u8>, String> {
     let rgba_img = img.to_rgba8();
     let (width, height) = rgba_img.dimensions();
-    
+
     let encoder = Encoder::from_rgba(rgba_img.as_raw(), width, height);
-    
+
     let webp_data: WebPMemory = if lossless {
         encoder.encode_lossless()
     } else {
         encoder.encode(quality as f32)
     };
-    
+
     Ok(webp_data.to_vec())
 }
 
@@ -95,13 +95,19 @@ pub fn resize_image(image_data: Vec<u8>, width: u32, height: u32) -> Result<Vec<
         .map_err(|e| format!("Failed to decode image: {}", e))?;
 
     let resized = img.resize_exact(width, height, image::imageops::FilterType::Lanczos3);
-    
+
     // 返回 PNG 格式的中间结果
     encode_png(&resized)
 }
 
 /// 裁剪图片
-pub fn crop_image(image_data: Vec<u8>, x: u32, y: u32, width: u32, height: u32) -> Result<Vec<u8>, String> {
+pub fn crop_image(
+    image_data: Vec<u8>,
+    x: u32,
+    y: u32,
+    width: u32,
+    height: u32,
+) -> Result<Vec<u8>, String> {
     let mut img = ImageReader::new(Cursor::new(&image_data))
         .with_guessed_format()
         .map_err(|e| format!("Failed to guess image format: {}", e))?
@@ -109,7 +115,7 @@ pub fn crop_image(image_data: Vec<u8>, x: u32, y: u32, width: u32, height: u32) 
         .map_err(|e| format!("Failed to decode image: {}", e))?;
 
     let cropped = img.crop(x, y, width, height);
-    
+
     // 返回 PNG 格式的中间结果
     encode_png(&cropped)
 }

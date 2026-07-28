@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/comparison_mode.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 模式切换器组件 (固定高度)
 class ModeSwitcher extends StatelessWidget {
@@ -19,81 +20,96 @@ class ModeSwitcher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 56, // 固定高度，防止跳动
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      decoration: BoxDecoration(
-        color: AppTheme.cardBg,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.borderColor),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // 模式按钮
-          ...ComparisonMode.values.map(
-            (mode) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3),
-              child: _ModeButton(
-                mode: mode,
-                isSelected: currentMode == mode,
-                onTap: () => onModeChanged?.call(mode),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isCompact = constraints.maxWidth < 620;
+        final modeButtons = ComparisonMode.values
+            .map(
+              (mode) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 3),
+                child: _ModeButton(
+                  mode: mode,
+                  compact: isCompact,
+                  isSelected: currentMode == mode,
+                  onTap: () => onModeChanged?.call(mode),
+                ),
+              ),
+            )
+            .toList();
+        final opacityControl = Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              context.l10n.t('opacity'),
+              style: const TextStyle(
+                color: AppTheme.secondaryColor,
+                fontSize: 12,
               ),
             ),
-          ),
-          // 透明度滑块 (始终占位，仅在叠加模式时可见)
-          const SizedBox(width: 16),
-          Container(width: 1, height: 28, color: AppTheme.borderColor),
-          const SizedBox(width: 16),
-          AnimatedOpacity(
-            duration: const Duration(milliseconds: 200),
-            opacity: currentMode == ComparisonMode.overlay ? 1.0 : 0.3,
-            child: IgnorePointer(
-              ignoring: currentMode != ComparisonMode.overlay,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    '透明度',
-                    style: TextStyle(
-                      color: AppTheme.secondaryColor,
-                      fontSize: 12,
-                    ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  trackHeight: 3,
+                  thumbShape: const RoundSliderThumbShape(
+                    enabledThumbRadius: 6,
                   ),
-                  const SizedBox(width: 8),
-                  SizedBox(
-                    width: 120,
-                    child: SliderTheme(
-                      data: SliderTheme.of(context).copyWith(
-                        trackHeight: 3,
-                        thumbShape: const RoundSliderThumbShape(
-                          enabledThumbRadius: 6,
-                        ),
-                      ),
-                      child: Slider(
-                        value: overlayOpacity,
-                        min: 0,
-                        max: 1,
-                        onChanged: onOpacityChanged,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 36,
-                    child: Text(
-                      '${(overlayOpacity * 100).toInt()}%',
-                      style: const TextStyle(
-                        color: AppTheme.textColor,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
+                child: Slider(
+                  value: overlayOpacity,
+                  min: 0,
+                  max: 1,
+                  onChanged: onOpacityChanged,
+                ),
               ),
             ),
+            SizedBox(
+              width: 36,
+              child: Text(
+                '${(overlayOpacity * 100).toInt()}%',
+                style: const TextStyle(color: AppTheme.textColor, fontSize: 12),
+              ),
+            ),
+          ],
+        );
+
+        return Container(
+          height: isCompact && currentMode == ComparisonMode.overlay ? 106 : 58,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 9),
+          decoration: BoxDecoration(
+            color: AppTheme.cardBg,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppTheme.borderColor),
           ),
-        ],
-      ),
+          child: isCompact
+              ? Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: modeButtons,
+                    ),
+                    if (currentMode == ComparisonMode.overlay) ...[
+                      const SizedBox(height: 6),
+                      Expanded(child: opacityControl),
+                    ],
+                  ],
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ...modeButtons,
+                    const SizedBox(width: 16),
+                    Container(
+                      width: 1,
+                      height: 28,
+                      color: AppTheme.borderColor,
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(width: 220, child: opacityControl),
+                  ],
+                ),
+        );
+      },
     );
   }
 }
@@ -101,10 +117,16 @@ class ModeSwitcher extends StatelessWidget {
 /// 模式按钮
 class _ModeButton extends StatefulWidget {
   final ComparisonMode mode;
+  final bool compact;
   final bool isSelected;
   final VoidCallback? onTap;
 
-  const _ModeButton({required this.mode, required this.isSelected, this.onTap});
+  const _ModeButton({
+    required this.mode,
+    required this.compact,
+    required this.isSelected,
+    this.onTap,
+  });
 
   @override
   State<_ModeButton> createState() => _ModeButtonState();
@@ -123,7 +145,10 @@ class _ModeButtonState extends State<_ModeButton> {
         onTap: widget.onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          padding: EdgeInsets.symmetric(
+            horizontal: widget.compact ? 9 : 14,
+            vertical: 8,
+          ),
           decoration: BoxDecoration(
             color: widget.isSelected
                 ? AppTheme.accentColor

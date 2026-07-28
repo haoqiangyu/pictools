@@ -8,7 +8,9 @@ import '../services/window_arguments.dart';
 import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/comparison_viewer.dart';
+import '../services/platform_capabilities.dart';
 import '../widgets/mode_switcher.dart';
+import '../l10n/app_localizations.dart';
 
 /// 图片对比功能页面
 class ImageCompareScreen extends StatefulWidget {
@@ -69,6 +71,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
   Widget _buildHeader(BuildContext context) {
     return GestureDetector(
       onDoubleTap: () async {
+        if (!PlatformCapabilities.supportsMultiWindow) return;
         if (await windowManager.isMaximized()) {
           windowManager.unmaximize();
         } else {
@@ -116,31 +119,37 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
               ),
             ),
             const SizedBox(width: 10),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '图片对比',
-                  style: TextStyle(
-                    color: AppTheme.textColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.l10n.t('compareTitle'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: AppTheme.textColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  '对比两张图片，清晰展示差异',
-                  style: TextStyle(
-                    color: AppTheme.secondaryColor,
-                    fontSize: 12,
+                  Text(
+                    context.l10n.t('compareSubtitle'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: AppTheme.secondaryColor,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            const Spacer(),
             // 分离窗口按钮（仅在主窗口显示）
-            if (!widget.isStandaloneWindow)
+            if (!widget.isStandaloneWindow &&
+                PlatformCapabilities.supportsMultiWindow)
               Tooltip(
-                message: '分离到新窗口',
+                message: context.l10n.t('detach'),
                 child: IconButton(
                   onPressed: () async {
                     // 导出当前状态
@@ -174,7 +183,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
                 return TextButton.icon(
                   onPressed: () => provider.reset(),
                   icon: const Icon(Icons.refresh, size: 16),
-                  label: const Text('重置'),
+                  label: Text(context.l10n.t('reset')),
                   style: TextButton.styleFrom(
                     foregroundColor: AppTheme.secondaryColor,
                     padding: const EdgeInsets.symmetric(
@@ -201,7 +210,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
               // 图片 A 上传区域
               Expanded(
                 child: ImageUploadArea(
-                  label: '原图 A',
+                  label: context.l10n.t('originalA'),
                   imageData: provider.imageA,
                   fileName: provider.imageAName,
                   filePath: provider.imageAPath,
@@ -215,7 +224,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
               // 图片 B 上传区域
               Expanded(
                 child: ImageUploadArea(
-                  label: '对比图 B',
+                  label: context.l10n.t('comparisonB'),
                   imageData: provider.imageB,
                   fileName: provider.imageBName,
                   filePath: provider.imageBPath,
@@ -236,7 +245,7 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
     return Consumer<ImageCompareProvider>(
       builder: (context, provider, _) {
         if (!provider.hasBothImages) {
-          return _buildEmptyState();
+          return _buildEmptyState(context);
         }
 
         return ComparisonViewer(
@@ -253,27 +262,30 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
     );
   }
 
-  Widget _buildEmptyState() {
+  Widget _buildEmptyState(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: AppTheme.cardBg,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppTheme.borderColor),
       ),
-      child: const Center(
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.compare, size: 56, color: AppTheme.borderColor),
-            SizedBox(height: 12),
+            const Icon(Icons.compare, size: 56, color: AppTheme.borderColor),
+            const SizedBox(height: 12),
             Text(
-              '请先上传两张图片进行对比',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 15),
+              context.l10n.t('uploadTwoImages'),
+              style: const TextStyle(
+                color: AppTheme.secondaryColor,
+                fontSize: 15,
+              ),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             Text(
-              '支持 PNG, JPG, GIF, WEBP, BMP 格式',
-              style: TextStyle(color: AppTheme.borderColor, fontSize: 12),
+              context.l10n.t('supportedFormats'),
+              style: const TextStyle(color: AppTheme.borderColor, fontSize: 12),
             ),
           ],
         ),

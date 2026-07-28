@@ -1,0 +1,20 @@
+App-Name
+Pictools - Bildwerkzeuge
+
+Kurzbeschreibung
+Bilder lokal vergleichen, zuschneiden, verbessern und konvertieren.
+
+Vollständige Beschreibung
+Pictools ist ein schlanker Werkzeugkasten für alltägliche Bildaufgaben. Ein Konto ist nicht erforderlich: Bild auswählen und direkt loslegen.
+
+Die wichtigsten Funktionen:
+- Bildvergleich: Unterschiede mit Schieberegler, Seitenansicht und Überlagerung prüfen.
+- Größe und Zuschnitt: genaue Abmessungen eingeben, Seitenverhältnis sperren oder auf ein gängiges Format zuschneiden.
+- Helligkeitsverbesserung: Belichtung und Schattendetails mit einem nativen Rust-Algorithmus optimieren und das Ergebnis mit dem Original vergleichen.
+- Formatkonvertierung: PNG-, JPG-, WebP-, BMP-, ICO- und TIFF-Bilder stapelweise konvertieren.
+- Flexibler Export: Dateien über die Android-Systemauswahl öffnen und speichern, ohne Foto- oder umfassende Speicherberechtigungen.
+
+Datenschutz an erster Stelle:
+Pictools betreibt keine eigenen Server, erfordert keine Anmeldung und enthält weder Werbung noch Analyse- oder Tracking-SDKs. Die Android-App fordert keine Netzwerkberechtigung an. Bilder werden auf dem Gerät verarbeitet und niemals an uns übertragen.
+
+Die Oberfläche unterstützt vereinfachtes und traditionelles Chinesisch, Englisch, Spanisch, Französisch und Deutsch. Sie kann der Systemsprache folgen oder die in den Einstellungen gewählte Sprache verwenden.

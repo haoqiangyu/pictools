@@ -1,0 +1,26 @@
+group 'com.annuo.pictools.rust_lib_pictools'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply from: '../cargokit/gradle/plugin.gradle'
+
+android {
+    namespace 'com.annuo.pictools.rust_lib_pictools'
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 24
+    }
+}
+
+cargokit {
+    manifestDir = '../../rust'
+    libname = 'rust_lib_pictools'
+}

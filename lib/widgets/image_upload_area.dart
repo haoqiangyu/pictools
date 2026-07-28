@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 import '../services/internal_clipboard_service.dart';
 import 'image_context_menu.dart';
 
@@ -113,7 +114,7 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
       Clipboard.setData(ClipboardData(text: widget.filePath!));
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Text('路径已复制到剪贴板'),
+          content: Text(context.l10n.t('pathCopied')),
           duration: const Duration(seconds: 2),
           backgroundColor: AppTheme.accentColor,
           behavior: SnackBarBehavior.floating,
@@ -141,12 +142,12 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
           );
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('✅ 图片已复制到剪切板'),
-                duration: Duration(seconds: 1),
+              SnackBar(
+                content: Text(context.l10n.t('imageCopied')),
+                duration: const Duration(seconds: 1),
                 backgroundColor: AppTheme.highlightColor,
                 behavior: SnackBarBehavior.floating,
-                margin: EdgeInsets.all(16),
+                margin: const EdgeInsets.all(16),
               ),
             );
           }
@@ -244,9 +245,12 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
               ),
             ),
             const SizedBox(height: 4),
-            const Text(
-              '拖拽或点击上传',
-              style: TextStyle(color: AppTheme.secondaryColor, fontSize: 11),
+            Text(
+              context.l10n.t('dragOrTap'),
+              style: const TextStyle(
+                color: AppTheme.secondaryColor,
+                fontSize: 11,
+              ),
             ),
           ],
         ),
@@ -329,21 +333,21 @@ class _ImageUploadAreaState extends State<ImageUploadArea> {
                 if (widget.filePath != null)
                   _IconButton(
                     icon: Icons.content_copy,
-                    tooltip: '复制路径',
+                    tooltip: context.l10n.t('copyPath'),
                     size: 24,
                     onTap: _copyPath,
                   ),
                 // 替换按钮
                 _IconButton(
                   icon: Icons.swap_horiz,
-                  tooltip: '替换图片',
+                  tooltip: context.l10n.t('replaceImage'),
                   size: 24,
                   onTap: _pickImage,
                 ),
                 // 删除按钮
                 _IconButton(
                   icon: Icons.close,
-                  tooltip: '删除图片',
+                  tooltip: context.l10n.t('deleteImage'),
                   size: 24,
                   color: AppTheme.errorColor,
                   onTap: widget.onClear,

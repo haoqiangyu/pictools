@@ -1,8 +1,5 @@
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:image/image.dart' as img;
 import 'package:window_manager/window_manager.dart';
 import '../models/adjust_mode.dart';
 import '../models/aspect_ratio.dart';
@@ -15,10 +12,12 @@ import '../widgets/image_preview.dart';
 import '../widgets/adjust_mode_switcher.dart';
 import '../widgets/size_adjuster.dart';
 import '../widgets/aspect_ratio_selector.dart';
-import 'package:file_picker/file_picker.dart';
-import '../src/rust/api/image_codec.dart';
 import '../widgets/loading_overlay.dart';
 import '../models/export_format.dart';
+import '../services/file_export_service.dart';
+import '../services/image_processing_service.dart';
+import '../services/platform_capabilities.dart';
+import '../l10n/app_localizations.dart';
 
 /// 图片调整功能页面
 class ImageAdjustScreen extends StatefulWidget {
@@ -81,6 +80,7 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
       builder: (context, provider, _) {
         return GestureDetector(
           onDoubleTap: () async {
+            if (!PlatformCapabilities.supportsMultiWindow) return;
             if (await windowManager.isMaximized()) {
               windowManager.unmaximize();
             } else {
@@ -125,31 +125,37 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '图片调整',
-                      style: TextStyle(
-                        color: AppTheme.textColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.l10n.t('adjustTitle'),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: AppTheme.textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '调整图片尺寸，按比例裁剪',
-                      style: TextStyle(
-                        color: AppTheme.secondaryColor,
-                        fontSize: 12,
+                      Text(
+                        context.l10n.t('adjustSubtitle'),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: AppTheme.secondaryColor,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                const Spacer(),
                 // 分离窗口按钮
-                if (!widget.isStandaloneWindow)
+                if (!widget.isStandaloneWindow &&
+                    PlatformCapabilities.supportsMultiWindow)
                   Tooltip(
-                    message: '分离到新窗口',
+                    message: context.l10n.t('detach'),
                     child: IconButton(
                       onPressed: () async {
                         // 导出当前状态
@@ -178,31 +184,35 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
                     ),
                   ),
                 if (provider.hasImage) ...[
-                  TextButton.icon(
-                    onPressed: () => provider.resetToOriginal(),
-                    icon: const Icon(Icons.refresh, size: 16),
-                    label: const Text('重置'),
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppTheme.secondaryColor,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
+                  if (PlatformCapabilities.isMobile) ...[
+                    IconButton(
+                      onPressed: provider.resetToOriginal,
+                      icon: const Icon(Icons.refresh),
+                      color: AppTheme.secondaryColor,
+                      tooltip: context.l10n.t('reset'),
+                    ),
+                    IconButton(
+                      onPressed: provider.reset,
+                      icon: const Icon(Icons.close),
+                      color: AppTheme.errorColor,
+                      tooltip: context.l10n.t('clear'),
+                    ),
+                  ] else ...[
+                    TextButton.icon(
+                      onPressed: provider.resetToOriginal,
+                      icon: const Icon(Icons.refresh, size: 16),
+                      label: Text(context.l10n.t('reset')),
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton.icon(
+                      onPressed: provider.reset,
+                      icon: const Icon(Icons.close, size: 16),
+                      label: Text(context.l10n.t('clear')),
+                      style: TextButton.styleFrom(
+                        foregroundColor: AppTheme.errorColor,
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 8),
-                  TextButton.icon(
-                    onPressed: () => provider.reset(),
-                    icon: const Icon(Icons.close, size: 16),
-                    label: const Text('清除'),
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppTheme.errorColor,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
-                      ),
-                    ),
-                  ),
+                  ],
                 ],
               ],
             ),
@@ -221,7 +231,7 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
         width: 400,
         height: 300,
         child: ImageUploadArea(
-          label: '选择图片',
+          label: context.l10n.t('selectImage'),
           onImageSelected: (data, name, path) {
             provider.setImage(data, name: name, path: path);
           },
@@ -231,77 +241,70 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
   }
 
   Widget _buildEditSection(BuildContext context, ImageAdjustProvider provider) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    final preview = ImagePreview(
+      imageData: provider.imageData!,
+      showCropOverlay: provider.mode == AdjustMode.crop,
+      cropRect: provider.cropRect,
+      onCropRectChanged: (rect) => provider.setCropRect(rect),
+      aspectRatio: provider.aspectRatio.ratio,
+      targetSize: Size(
+        provider.targetWidth.toDouble(),
+        provider.targetHeight.toDouble(),
+      ),
+      originalSize: provider.originalSize,
+    );
+    final controls = Column(
       children: [
-        // 左侧：图片预览区
+        AdjustModeSwitcher(
+          currentMode: provider.mode,
+          onModeChanged: (mode) => provider.setMode(mode),
+        ),
+        const SizedBox(height: 12),
         Expanded(
-          flex: 3,
-          child: Column(
-            children: [
-              Expanded(
-                child: ImagePreview(
-                  imageData: provider.imageData!,
-                  showCropOverlay: provider.mode == AdjustMode.crop,
-                  cropRect: provider.cropRect,
-                  onCropRectChanged: (rect) => provider.setCropRect(rect),
-                  aspectRatio: provider.aspectRatio.ratio,
-                  targetSize: Size(
-                    provider.targetWidth.toDouble(),
-                    provider.targetHeight.toDouble(),
+          child: SingleChildScrollView(
+            child: provider.mode == AdjustMode.resize
+                ? SizeAdjuster(
+                    originalWidth: provider.originalSize?.width.toInt() ?? 0,
+                    originalHeight: provider.originalSize?.height.toInt() ?? 0,
+                    targetWidth: provider.targetWidth,
+                    targetHeight: provider.targetHeight,
+                    lockAspectRatio: provider.lockAspectRatio,
+                    onWidthChanged: provider.setTargetWidth,
+                    onHeightChanged: provider.setTargetHeight,
+                    onLockToggle: provider.toggleLockAspectRatio,
+                    onPresetApplied: provider.applyPresetSize,
+                  )
+                : AspectRatioSelector(
+                    currentRatio: provider.aspectRatio,
+                    onRatioChanged: provider.setAspectRatio,
                   ),
-                  originalSize: provider.originalSize,
-                ),
-              ),
-            ],
           ),
         ),
-        const SizedBox(width: 20),
-        // 右侧：控制面板
-        SizedBox(
-          width: 320,
-          child: Column(
-            children: [
-              // 模式切换器
-              AdjustModeSwitcher(
-                currentMode: provider.mode,
-                onModeChanged: (mode) => provider.setMode(mode),
-              ),
-              const SizedBox(height: 16),
-
-              // 根据模式显示不同控制面板
-              Expanded(
-                child: SingleChildScrollView(
-                  child: provider.mode == AdjustMode.resize
-                      ? SizeAdjuster(
-                          originalWidth:
-                              provider.originalSize?.width.toInt() ?? 0,
-                          originalHeight:
-                              provider.originalSize?.height.toInt() ?? 0,
-                          targetWidth: provider.targetWidth,
-                          targetHeight: provider.targetHeight,
-                          lockAspectRatio: provider.lockAspectRatio,
-                          onWidthChanged: (w) => provider.setTargetWidth(w),
-                          onHeightChanged: (h) => provider.setTargetHeight(h),
-                          onLockToggle: () => provider.toggleLockAspectRatio(),
-                          onPresetApplied: (w, h) =>
-                              provider.applyPresetSize(w, h),
-                        )
-                      : AspectRatioSelector(
-                          currentRatio: provider.aspectRatio,
-                          onRatioChanged: (ratio) =>
-                              provider.setAspectRatio(ratio),
-                        ),
-                ),
-              ),
-              const SizedBox(height: 16),
-
-              // 导出面板
-              _buildExportPanel(context, provider),
-            ],
-          ),
-        ),
+        const SizedBox(height: 12),
+        _buildExportPanel(context, provider),
       ],
+    );
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 760) {
+          return Column(
+            children: [
+              Expanded(flex: 5, child: preview),
+              const SizedBox(height: 12),
+              Expanded(flex: 6, child: controls),
+            ],
+          );
+        }
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(flex: 3, child: preview),
+            const SizedBox(width: 20),
+            SizedBox(width: 320, child: controls),
+          ],
+        );
+      },
     );
   }
 
@@ -319,22 +322,32 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
           // 格式选择
           Row(
             children: [
-              const Text(
-                '导出格式',
-                style: TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+              Text(
+                context.l10n.t('exportFormat'),
+                style: const TextStyle(
+                  color: AppTheme.secondaryColor,
+                  fontSize: 12,
+                ),
               ),
-              const Spacer(),
-              ...ExportFormat.values.map((format) {
-                final isSelected = provider.exportFormat == format;
-                return Padding(
-                  padding: const EdgeInsets.only(left: 6),
-                  child: _FormatButton(
-                    label: format.displayName,
-                    isSelected: isSelected,
-                    onTap: () => provider.setExportFormat(format),
+              const SizedBox(width: 8),
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ExportFormat.values.map((format) {
+                      final isSelected = provider.exportFormat == format;
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: _FormatButton(
+                          label: format.displayName,
+                          isSelected: isSelected,
+                          onTap: () => provider.setExportFormat(format),
+                        ),
+                      );
+                    }).toList(),
                   ),
-                );
-              }),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 12),
@@ -343,7 +356,7 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
           ElevatedButton.icon(
             onPressed: () => _exportImage(context, provider),
             icon: const Icon(Icons.save_alt, size: 18),
-            label: const Text('导出图片'),
+            label: Text(context.l10n.t('exportImage')),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppTheme.accentColor,
               foregroundColor: Colors.white,
@@ -362,84 +375,46 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
     BuildContext context,
     ImageAdjustProvider provider,
   ) async {
-    // 选择保存路径（在 loading 之前，避免被遮挡）
-    String? outputPath = await FilePicker.platform.saveFile(
-      dialogTitle: '保存图片',
-      fileName: _generateFileName(provider),
-      allowedExtensions: [provider.exportFormat.extension],
-      type: FileType.custom,
-    );
-
-    if (outputPath == null) return;
-
-    // 确保文件扩展名正确
-    if (!outputPath.endsWith('.${provider.exportFormat.extension}')) {
-      outputPath = '$outputPath.${provider.exportFormat.extension}';
-    }
-
     try {
+      String? outputPath;
       // 使用 loading 遮罩执行耗时操作
       await LoadingOverlay.showWhile(
         context,
-        message: '正在导出图片...',
+        message: context.l10n.t('exporting'),
         task: () async {
-          // 使用 image 包解码原图
-          final originalImage = img.decodeImage(provider.imageData!);
-          if (originalImage == null) {
-            throw Exception('无法解码图片');
-          }
-
-          img.Image resultImage;
-
-          if (provider.mode == AdjustMode.crop) {
-            // 裁剪模式
-            final cropX = (provider.cropRect.left * originalImage.width)
-                .round();
-            final cropY = (provider.cropRect.top * originalImage.height)
-                .round();
-            final cropWidth = (provider.cropRect.width * originalImage.width)
-                .round();
-            final cropHeight = (provider.cropRect.height * originalImage.height)
-                .round();
-
-            resultImage = img.copyCrop(
-              originalImage,
-              x: cropX,
-              y: cropY,
-              width: cropWidth,
-              height: cropHeight,
-            );
-          } else {
-            // 尺寸调整模式
-            resultImage = img.copyResize(
-              originalImage,
-              width: provider.targetWidth,
-              height: provider.targetHeight,
-              interpolation: img.Interpolation.cubic,
-            );
-          }
-
-          // 先将处理后的图片编码为 PNG 作为中间格式传给 Rust
-          final pngBytes = Uint8List.fromList(img.encodePng(resultImage));
-
-          // 使用 Rust 编码最终格式
-          final rustFormat = provider.exportFormat.toRustFormat();
-
-          final encodedBytes = await encodeImage(
-            imageData: pngBytes,
-            format: rustFormat,
+          final encodedBytes = provider.mode == AdjustMode.resize
+              ? await ImageProcessingService.resizeAndEncode(
+                  provider.imageData!,
+                  width: provider.targetWidth,
+                  height: provider.targetHeight,
+                  format: provider.exportFormat,
+                )
+              : await ImageProcessingService.cropAndEncode(
+                  provider.imageData!,
+                  left: provider.cropRect.left,
+                  top: provider.cropRect.top,
+                  width: provider.cropRect.width,
+                  height: provider.cropRect.height,
+                  format: provider.exportFormat,
+                );
+          outputPath = await FileExportService.save(
+            bytes: encodedBytes,
+            fileName: _generateFileName(provider),
+            extension: provider.exportFormat.extension,
           );
-
-          // 保存文件
-          final file = File(outputPath!);
-          await file.writeAsBytes(encodedBytes);
         },
       );
+
+      if (outputPath == null) return;
 
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('图片已保存至: $outputPath'),
+            content: Text(
+              PlatformCapabilities.isMobile
+                  ? context.l10n.t('saved')
+                  : context.l10n.t('savedTo').replaceAll('{path}', outputPath!),
+            ),
             backgroundColor: AppTheme.highlightColor,
             behavior: SnackBarBehavior.floating,
             margin: const EdgeInsets.all(16),
@@ -450,7 +425,9 @@ class _ImageAdjustScreenState extends State<ImageAdjustScreen> {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('导出失败: $e'),
+            content: Text(
+              context.l10n.t('exportFailed').replaceAll('{error}', '$e'),
+            ),
             backgroundColor: AppTheme.errorColor,
             behavior: SnackBarBehavior.floating,
             margin: const EdgeInsets.all(16),

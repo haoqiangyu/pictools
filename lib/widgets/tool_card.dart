@@ -3,6 +3,8 @@ import '../theme/app_theme.dart';
 import '../models/tool_item.dart';
 import '../services/window_service.dart';
 import '../services/window_arguments.dart';
+import '../services/platform_capabilities.dart';
+import '../l10n/app_localizations.dart';
 
 /// 工具卡片组件
 class ToolCard extends StatefulWidget {
@@ -19,6 +21,7 @@ class _ToolCardState extends State<ToolCard> {
   bool _isHovered = false;
 
   void _openInNewWindow() {
+    if (!PlatformCapabilities.supportsMultiWindow) return;
     final windowType = WindowArguments.fromRouteName(widget.tool.routeName);
     WindowService.instance.openInNewWindow(windowType);
   }
@@ -39,26 +42,37 @@ class _ToolCardState extends State<ToolCard> {
       items: [
         PopupMenuItem<String>(
           onTap: widget.onTap,
-          child: const Row(
+          child: Row(
             children: [
-              Icon(Icons.open_in_browser, size: 18, color: AppTheme.textColor),
-              SizedBox(width: 8),
+              const Icon(
+                Icons.open_in_browser,
+                size: 18,
+                color: AppTheme.textColor,
+              ),
+              const SizedBox(width: 8),
               Text(
-                '在当前窗口打开',
-                style: TextStyle(color: AppTheme.textColor, fontSize: 13),
+                context.l10n.t('openCurrent'),
+                style: const TextStyle(color: AppTheme.textColor, fontSize: 13),
               ),
             ],
           ),
         ),
         PopupMenuItem<String>(
           onTap: _openInNewWindow,
-          child: const Row(
+          child: Row(
             children: [
-              Icon(Icons.open_in_new, size: 18, color: AppTheme.accentColor),
-              SizedBox(width: 8),
+              const Icon(
+                Icons.open_in_new,
+                size: 18,
+                color: AppTheme.accentColor,
+              ),
+              const SizedBox(width: 8),
               Text(
-                '在新窗口打开',
-                style: TextStyle(color: AppTheme.accentColor, fontSize: 13),
+                context.l10n.t('openNew'),
+                style: const TextStyle(
+                  color: AppTheme.accentColor,
+                  fontSize: 13,
+                ),
               ),
             ],
           ),
@@ -75,7 +89,9 @@ class _ToolCardState extends State<ToolCard> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
-        onSecondaryTapDown: _showContextMenu,
+        onSecondaryTapDown: PlatformCapabilities.supportsMultiWindow
+            ? _showContextMenu
+            : null,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOutCubic,
@@ -123,9 +139,9 @@ class _ToolCardState extends State<ToolCard> {
                   ),
                   const Spacer(),
                   // 新窗口打开按钮
-                  if (_isHovered)
+                  if (_isHovered && PlatformCapabilities.supportsMultiWindow)
                     Tooltip(
-                      message: '在新窗口打开',
+                      message: context.l10n.t('openNew'),
                       child: IconButton(
                         onPressed: _openInNewWindow,
                         icon: const Icon(Icons.open_in_new, size: 18),
@@ -140,22 +156,26 @@ class _ToolCardState extends State<ToolCard> {
               const SizedBox(height: 16),
               // 工具名称
               Text(
-                widget.tool.name,
+                context.l10n.toolName(widget.tool.id),
                 style: const TextStyle(
                   color: AppTheme.textColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 8),
               // 描述
               Text(
-                widget.tool.description,
+                context.l10n.toolDescription(widget.tool.id),
                 style: const TextStyle(
                   color: AppTheme.secondaryColor,
                   fontSize: 14,
                   height: 1.4,
                 ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

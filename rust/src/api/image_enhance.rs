@@ -22,7 +22,7 @@ fn pg_linear_to_srgb(color_rgb: [f64; 3]) -> [f64; 3] {
     let mut srgb_rgb: [f64; 3] = [0.0; 3];
     for (i, x) in color_rgb.iter().enumerate() {
         let a = 12.92 * x;
-        let b = x.powf(1.0 / 2.4) - 0.055;
+        let b = 1.055 * x.powf(1.0 / 2.4) - 0.055;
         let c = if *x >= 0.0031308 { 1.0 } else { 0.0 };
         srgb_rgb[i] = (1.0 - c) * a + c * b;
     }
@@ -102,10 +102,10 @@ fn light_on_kernel(color: [f64; 4]) -> [f64; 4] {
 }
 
 /// 对图片进行亮度增强处理
-/// 
+///
 /// # Arguments
 /// * `image_data` - 原始图片数据（支持 PNG/JPG/WebP/GIF/BMP 等）
-/// 
+///
 /// # Returns
 /// 处理后的 PNG 格式图片字节数据
 pub fn enhance_image(image_data: Vec<u8>) -> Result<Vec<u8>, String> {
@@ -149,4 +149,35 @@ pub fn enhance_image(image_data: Vec<u8>) -> Result<Vec<u8>, String> {
         .map_err(|e| format!("Failed to encode PNG: {}", e))?;
 
     Ok(buffer.into_inner())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn enhance_preserves_dimensions_and_alpha_while_brightening() {
+        let source = RgbaImage::from_pixel(2, 3, image::Rgba([64, 80, 96, 123]));
+        let mut input = Cursor::new(Vec::new());
+        source
+            .write_to(&mut input, image::ImageFormat::Png)
+            .expect("encode test input");
+
+        let output = enhance_image(input.into_inner()).expect("enhance image");
+        let decoded = image::load_from_memory(&output)
+            .expect("decode enhanced output")
+            .to_rgba8();
+        let pixel = decoded.get_pixel(0, 0);
+
+        assert_eq!(decoded.dimensions(), (2, 3));
+        assert_eq!(pixel[3], 123);
+        assert!(pixel[0] > 64);
+        assert!(pixel[1] > 80);
+        assert!(pixel[2] > 96);
+    }
+
+    #[test]
+    fn enhance_rejects_invalid_image_data() {
+        assert!(enhance_image(vec![1, 2, 3]).is_err());
+    }
 }

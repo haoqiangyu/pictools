@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>一款强大的图片工具集合桌面应用</strong>
+  <strong>一款跨平台图片工具集合应用</strong>
 </p>
 
 <p align="center">
@@ -47,17 +47,6 @@ Pictools 是一个图片工具集合平台，提供多种实用的图片处理�
 - **实时对比** - 左右对比预览原图与增强效果
 - **Rust 加速** - 使用 Rust 原生算法，处理速度快
 
-### 🤖 AI 图片修改 ⭐ v1.0.3 新增
-
-使用 Gemini AI 对图片进行智能修改：
-
-- **自然语言描述** - 用文字描述想要的修改效果
-- **智能理解** - AI 理解需求并生成修改后的图片
-- **实时预览** - 查看原图与AI修改结果的对比
-- **API 集成** - 集成 Google Gemini 3.0 Pro Vision 模型
-
-> 💡 需要在设置页面配置 Gemini API Key 才能使用此功能
-
 ###  🎯 主体抠图 ⭐ 新增
 
 使用 AI 智能抠图去除背景：
@@ -98,6 +87,15 @@ Pictools 是一个图片工具集合平台，提供多种实用的图片处理�
 </details>
 
 ## 安装
+
+### Android
+
+Android 版本支持图片对比、裁剪与缩放、Rust 亮度增强和格式转换。所有图片处理均在设备本地完成，正式版不申请网络权限。
+主体抠图暂不在 Android 提供，原因是当前 RMBG-2.0 模型体积为 366MB–1GB，CPU 推理的内存与耗时不适合作为移动端首发能力。
+
+界面默认跟随系统语言，不支持的系统语言回退为简体中文；可在设置中选择简体中文、繁体中文、英语、西班牙语、法语或德语。设置页内置本地隐私政策入口。
+
+Google Play 发布构建与签名步骤见 [Android 发布检查清单](docs/GOOGLE_PLAY_RELEASE.md)。
 
 ### macOS
 
@@ -162,10 +160,10 @@ fvm flutter build macos --release
 
 ### 技术栈
 
-- **框架**: Flutter 3.38.3
-- **平台**: macOS
+- **框架**: Flutter 3.44.6
+- **平台**: Android、macOS
 - **状态管理**: Provider
-- **图片编码**: Rust (通过 flutter_rust_bridge)
+- **图片处理**: Android 与 macOS 的亮度增强和图片编解码使用 Rust（通过 flutter_rust_bridge）
 - **依赖库**:
   - `file_picker` - 文件选择
   - `desktop_drop` - 拖拽上传
@@ -209,7 +207,6 @@ rust/
 - [x] ☀️ 亮度增强
 - [x] 🪟 多窗口支持
 - [x] 📋 跨窗口剪切板
-- [x] 🤖 AI 图片修改 (集成 Gemini)
 - [x] 🎯 主体抠图 (RMBG-2.0 ONNX)
 - [ ] 🗜️ 图片压缩
 - [ ] 🎨 批量处理

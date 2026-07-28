@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 尺寸调整面板组件
 class SizeAdjuster extends StatefulWidget {
@@ -77,7 +78,7 @@ class _SizeAdjusterState extends State<SizeAdjuster> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // 原始尺寸显示
-          _buildOriginalSizeInfo(),
+          _buildOriginalSizeInfo(context),
           const SizedBox(height: 16),
           const Divider(color: AppTheme.borderColor, height: 1),
           const SizedBox(height: 16),
@@ -86,13 +87,21 @@ class _SizeAdjusterState extends State<SizeAdjuster> {
           Row(
             children: [
               Expanded(
-                child: _buildDimensionInput('宽度', _widthController, true),
+                child: _buildDimensionInput(
+                  context.l10n.t('width'),
+                  _widthController,
+                  true,
+                ),
               ),
               const SizedBox(width: 12),
-              _buildLockButton(),
+              _buildLockButton(context),
               const SizedBox(width: 12),
               Expanded(
-                child: _buildDimensionInput('高度', _heightController, false),
+                child: _buildDimensionInput(
+                  context.l10n.t('height'),
+                  _heightController,
+                  false,
+                ),
               ),
             ],
           ),
@@ -101,7 +110,7 @@ class _SizeAdjusterState extends State<SizeAdjuster> {
     );
   }
 
-  Widget _buildOriginalSizeInfo() {
+  Widget _buildOriginalSizeInfo(BuildContext context) {
     return Row(
       children: [
         const Icon(
@@ -111,7 +120,10 @@ class _SizeAdjusterState extends State<SizeAdjuster> {
         ),
         const SizedBox(width: 8),
         Text(
-          '原始尺寸: ${widget.originalWidth} × ${widget.originalHeight}',
+          context.l10n
+              .t('originalSize')
+              .replaceAll('{width}', '${widget.originalWidth}')
+              .replaceAll('{height}', '${widget.originalHeight}'),
           style: const TextStyle(color: AppTheme.secondaryColor, fontSize: 13),
         ),
       ],
@@ -176,9 +188,11 @@ class _SizeAdjusterState extends State<SizeAdjuster> {
     );
   }
 
-  Widget _buildLockButton() {
+  Widget _buildLockButton(BuildContext context) {
     return Tooltip(
-      message: widget.lockAspectRatio ? '已锁定比例' : '未锁定比例',
+      message: context.l10n.t(
+        widget.lockAspectRatio ? 'ratioLocked' : 'ratioUnlocked',
+      ),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(

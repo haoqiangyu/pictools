@@ -1,8 +1,6 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:window_manager/window_manager.dart';
 import '../providers/image_enhance_provider.dart';
 import '../services/window_service.dart';
@@ -11,9 +9,11 @@ import '../theme/app_theme.dart';
 import '../widgets/image_upload_area.dart';
 import '../widgets/loading_overlay.dart';
 import '../widgets/image_panel_with_menu.dart';
-import '../src/rust/api/image_enhance.dart' as rust_enhance;
-import '../src/rust/api/image_codec.dart';
 import '../models/export_format.dart';
+import '../services/file_export_service.dart';
+import '../services/image_processing_service.dart';
+import '../services/platform_capabilities.dart';
+import '../l10n/app_localizations.dart';
 
 /// 图片亮度增强功能页面
 class ImageEnhanceScreen extends StatefulWidget {
@@ -76,6 +76,7 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
       builder: (context, provider, _) {
         return GestureDetector(
           onDoubleTap: () async {
+            if (!PlatformCapabilities.supportsMultiWindow) return;
             if (await windowManager.isMaximized()) {
               windowManager.unmaximize();
             } else {
@@ -120,31 +121,37 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '亮度增强',
-                      style: TextStyle(
-                        color: AppTheme.textColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.l10n.t('enhanceTitle'),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: AppTheme.textColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '一键提升图片亮度，改善暗部细节',
-                      style: TextStyle(
-                        color: AppTheme.secondaryColor,
-                        fontSize: 12,
+                      Text(
+                        context.l10n.t('enhanceSubtitle'),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: AppTheme.secondaryColor,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                const Spacer(),
                 // 分离窗口按钮（仅在主窗口显示）
-                if (!widget.isStandaloneWindow)
+                if (!widget.isStandaloneWindow &&
+                    PlatformCapabilities.supportsMultiWindow)
                   Tooltip(
-                    message: '分离到新窗口',
+                    message: context.l10n.t('detach'),
                     child: IconButton(
                       onPressed: () async {
                         // 导出当前状态
@@ -173,18 +180,21 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
                     ),
                   ),
                 if (provider.hasImage) ...[
-                  TextButton.icon(
-                    onPressed: () => provider.reset(),
-                    icon: const Icon(Icons.close, size: 16),
-                    label: const Text('清除'),
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppTheme.errorColor,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
-                      ),
-                    ),
-                  ),
+                  PlatformCapabilities.isMobile
+                      ? IconButton(
+                          onPressed: provider.reset,
+                          icon: const Icon(Icons.close),
+                          color: AppTheme.errorColor,
+                          tooltip: context.l10n.t('clear'),
+                        )
+                      : TextButton.icon(
+                          onPressed: provider.reset,
+                          icon: const Icon(Icons.close, size: 16),
+                          label: Text(context.l10n.t('clear')),
+                          style: TextButton.styleFrom(
+                            foregroundColor: AppTheme.errorColor,
+                          ),
+                        ),
                 ],
               ],
             ),
@@ -203,7 +213,7 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
         width: 400,
         height: 300,
         child: ImageUploadArea(
-          label: '选择图片',
+          label: context.l10n.t('selectImage'),
           onImageSelected: (data, name, path) {
             provider.setImage(data, name: name, path: path);
           },
@@ -216,65 +226,71 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
     BuildContext context,
     ImageEnhanceProvider provider,
   ) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        // 左侧：对比预览区
-        Expanded(
-          flex: 3,
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppTheme.cardBg,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppTheme.borderColor),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Row(
-                children: [
-                  // 原图
-                  Expanded(
-                    child: _buildImagePanel(
-                      label: '原图',
-                      imageData: provider.originalData,
-                      fileName: provider.fileName,
-                      filePath: provider.filePath,
-                    ),
-                  ),
-                  // 分隔线
-                  Container(width: 1, color: AppTheme.borderColor),
-                  // 增强后
-                  Expanded(
-                    child: _buildImagePanel(
-                      label: '增强后',
-                      imageData: provider.enhancedData,
-                      isProcessing: provider.isProcessing,
-                      errorMessage: provider.errorMessage,
-                    ),
-                  ),
-                ],
+    final preview = Container(
+      decoration: BoxDecoration(
+        color: AppTheme.cardBg,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.borderColor),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Row(
+          children: [
+            Expanded(
+              child: _buildImagePanel(
+                label: context.l10n.t('original'),
+                imageData: provider.originalData,
+                fileName: provider.fileName,
+                filePath: provider.filePath,
               ),
             ),
-          ),
+            Container(width: 1, color: AppTheme.borderColor),
+            Expanded(
+              child: _buildImagePanel(
+                label: context.l10n.t('enhanced'),
+                imageData: provider.enhancedData,
+                isProcessing: provider.isProcessing,
+                errorMessage: provider.errorMessage,
+              ),
+            ),
+          ],
         ),
-        const SizedBox(width: 20),
-        // 右侧：控制面板
-        SizedBox(
-          width: 280,
-          child: Column(
+      ),
+    );
+    final controls = SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildInfoPanel(provider),
+          const SizedBox(height: 12),
+          _buildActionPanel(context, provider),
+          if (provider.hasEnhanced) ...[
+            const SizedBox(height: 12),
+            _buildExportPanel(context, provider),
+          ],
+        ],
+      ),
+    );
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 760) {
+          return Column(
             children: [
-              // 信息面板
-              _buildInfoPanel(provider),
-              const SizedBox(height: 16),
-              // 操作按钮
-              _buildActionPanel(context, provider),
-              const SizedBox(height: 16),
-              // 导出面板
-              if (provider.hasEnhanced) _buildExportPanel(context, provider),
+              Expanded(flex: 5, child: preview),
+              const SizedBox(height: 12),
+              Expanded(flex: 4, child: controls),
             ],
-          ),
-        ),
-      ],
+          );
+        }
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(flex: 3, child: preview),
+            const SizedBox(width: 20),
+            SizedBox(width: 280, child: controls),
+          ],
+        );
+      },
     );
   }
 
@@ -296,28 +312,34 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
           if (imageData != null)
             Positioned.fill(child: Image.memory(imageData, fit: BoxFit.contain))
           else if (!isProcessing && errorMessage == null)
-            const Center(
+            Center(
               child: Text(
-                '等待处理',
-                style: TextStyle(color: AppTheme.secondaryColor, fontSize: 14),
+                context.l10n.t('waiting'),
+                style: const TextStyle(
+                  color: AppTheme.secondaryColor,
+                  fontSize: 14,
+                ),
               ),
             ),
           // 加载中
           if (isProcessing)
             Container(
               color: AppTheme.primaryBg.withValues(alpha: 0.7),
-              child: const Center(
+              child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CircularProgressIndicator(
+                    const CircularProgressIndicator(
                       color: AppTheme.accentColor,
                       strokeWidth: 2,
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Text(
-                      '处理中...',
-                      style: TextStyle(color: AppTheme.textColor, fontSize: 12),
+                      context.l10n.t('processing'),
+                      style: const TextStyle(
+                        color: AppTheme.textColor,
+                        fontSize: 12,
+                      ),
                     ),
                   ],
                 ),
@@ -377,19 +399,19 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            '图片信息',
-            style: TextStyle(
+          Text(
+            context.l10n.t('imageInfo'),
+            style: const TextStyle(
               color: AppTheme.textColor,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 12),
-          _buildInfoRow('文件名', provider.fileName ?? '-'),
+          _buildInfoRow(context.l10n.t('fileName'), provider.fileName ?? '-'),
           const SizedBox(height: 8),
           _buildInfoRow(
-            '尺寸',
+            context.l10n.t('dimensions'),
             provider.originalSize != null
                 ? '${provider.originalSize!.width.toInt()} × ${provider.originalSize!.height.toInt()}'
                 : '-',
@@ -432,18 +454,21 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
-            '亮度增强',
-            style: TextStyle(
+          Text(
+            context.l10n.t('enhanceTitle'),
+            style: const TextStyle(
               color: AppTheme.textColor,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
-            '自动调整曝光、高光/阴影和饱和度，让画面更通透明亮',
-            style: TextStyle(color: AppTheme.secondaryColor, fontSize: 11),
+          Text(
+            context.l10n.t('enhanceInfo'),
+            style: const TextStyle(
+              color: AppTheme.secondaryColor,
+              fontSize: 11,
+            ),
           ),
           const SizedBox(height: 16),
           ElevatedButton.icon(
@@ -454,7 +479,11 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
               provider.hasEnhanced ? Icons.refresh : Icons.auto_fix_high,
               size: 18,
             ),
-            label: Text(provider.hasEnhanced ? '重新处理' : '开始增强'),
+            label: Text(
+              context.l10n.t(
+                provider.hasEnhanced ? 'processAgain' : 'startEnhance',
+              ),
+            ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppTheme.accentColor,
               foregroundColor: Colors.white,
@@ -478,15 +507,16 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
   ) async {
     if (provider.originalData == null) return;
 
+    final processingFailed = context.l10n.t('processingFailed');
     provider.startProcessing();
 
     try {
-      final result = await rust_enhance.enhanceImage(
-        imageData: provider.originalData!,
+      final result = await ImageProcessingService.enhance(
+        provider.originalData!,
       );
       provider.setEnhancedData(result);
     } catch (e) {
-      provider.setError('处理失败: $e');
+      provider.setError(processingFailed.replaceAll('{error}', '$e'));
     }
   }
 
@@ -507,22 +537,32 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
           // 格式选择
           Row(
             children: [
-              const Text(
-                '导出格式',
-                style: TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+              Text(
+                context.l10n.t('exportFormat'),
+                style: const TextStyle(
+                  color: AppTheme.secondaryColor,
+                  fontSize: 12,
+                ),
               ),
-              const Spacer(),
-              ...ExportFormat.values.map((format) {
-                final isSelected = provider.exportFormat == format;
-                return Padding(
-                  padding: const EdgeInsets.only(left: 6),
-                  child: _FormatButton(
-                    label: format.displayName,
-                    isSelected: isSelected,
-                    onTap: () => provider.setExportFormat(format),
+              const SizedBox(width: 8),
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ExportFormat.values.map((format) {
+                      final isSelected = provider.exportFormat == format;
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: _FormatButton(
+                          label: format.displayName,
+                          isSelected: isSelected,
+                          onTap: () => provider.setExportFormat(format),
+                        ),
+                      );
+                    }).toList(),
                   ),
-                );
-              }),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 12),
@@ -531,7 +571,7 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
           ElevatedButton.icon(
             onPressed: () => _exportImage(context, provider),
             icon: const Icon(Icons.save_alt, size: 18),
-            label: const Text('导出图片'),
+            label: Text(context.l10n.t('exportImage')),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppTheme.accentColor,
               foregroundColor: Colors.white,
@@ -552,44 +592,34 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
   ) async {
     if (provider.enhancedData == null) return;
 
-    // 选择保存路径
-    String? outputPath = await FilePicker.platform.saveFile(
-      dialogTitle: '保存图片',
-      fileName: _generateFileName(provider),
-      allowedExtensions: [provider.exportFormat.extension],
-      type: FileType.custom,
-    );
-
-    if (outputPath == null) return;
-
-    // 确保文件扩展名正确
-    if (!outputPath.endsWith('.${provider.exportFormat.extension}')) {
-      outputPath = '$outputPath.${provider.exportFormat.extension}';
-    }
-
     try {
+      String? outputPath;
       await LoadingOverlay.showWhile(
         context,
-        message: '正在导出图片...',
+        message: context.l10n.t('exporting'),
         task: () async {
-          // 使用 Rust 编码最终格式
-          final rustFormat = provider.exportFormat.toRustFormat();
-
-          final encodedBytes = await encodeImage(
-            imageData: provider.enhancedData!,
-            format: rustFormat,
+          final encodedBytes = await ImageProcessingService.encode(
+            provider.enhancedData!,
+            provider.exportFormat,
           );
-
-          // 保存文件
-          final file = File(outputPath!);
-          await file.writeAsBytes(encodedBytes);
+          outputPath = await FileExportService.save(
+            bytes: encodedBytes,
+            fileName: _generateFileName(provider),
+            extension: provider.exportFormat.extension,
+          );
         },
       );
+
+      if (outputPath == null) return;
 
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('图片已保存至: $outputPath'),
+            content: Text(
+              PlatformCapabilities.isMobile
+                  ? context.l10n.t('saved')
+                  : context.l10n.t('savedTo').replaceAll('{path}', outputPath!),
+            ),
             backgroundColor: AppTheme.highlightColor,
             behavior: SnackBarBehavior.floating,
             margin: const EdgeInsets.all(16),
@@ -600,7 +630,9 @@ class _ImageEnhanceScreenState extends State<ImageEnhanceScreen> {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('导出失败: $e'),
+            content: Text(
+              context.l10n.t('exportFailed').replaceAll('{error}', '$e'),
+            ),
             backgroundColor: AppTheme.errorColor,
             behavior: SnackBarBehavior.floating,
             margin: const EdgeInsets.all(16),

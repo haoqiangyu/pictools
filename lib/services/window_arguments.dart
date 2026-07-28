@@ -6,7 +6,6 @@ enum WindowType {
   imageCompare,
   imageAdjust,
   imageEnhance,
-  aiImage,
   backgroundRemoval,
   settings,
 }
@@ -53,8 +52,6 @@ class WindowArguments {
         return 'Pictools - 图片调整';
       case WindowType.imageEnhance:
         return 'Pictools - 亮度增强';
-      case WindowType.aiImage:
-        return 'Pictools - AI 图片修改';
       case WindowType.backgroundRemoval:
         return 'Pictools - 主体抠图';
       case WindowType.settings:
@@ -73,8 +70,6 @@ class WindowArguments {
         return '/image-adjust';
       case WindowType.imageEnhance:
         return '/image-enhance';
-      case WindowType.aiImage:
-        return '/ai-image';
       case WindowType.backgroundRemoval:
         return '/background-removal';
       case WindowType.settings:
@@ -91,8 +86,6 @@ class WindowArguments {
         return WindowType.imageAdjust;
       case '/image-enhance':
         return WindowType.imageEnhance;
-      case '/ai-image':
-        return WindowType.aiImage;
       case '/background-removal':
         return WindowType.backgroundRemoval;
       case '/settings':

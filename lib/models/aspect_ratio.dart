@@ -1,3 +1,5 @@
+import '../l10n/app_localizations.dart';
+
 /// 裁剪比例预设枚举
 enum AspectRatioPreset {
   /// 自由裁剪
@@ -29,7 +31,7 @@ extension AspectRatioPresetExtension on AspectRatioPreset {
   String get displayName {
     switch (this) {
       case AspectRatioPreset.free:
-        return '自由';
+        return appText('ratio.free');
       case AspectRatioPreset.square:
         return '1:1';
       case AspectRatioPreset.ratio4x3:

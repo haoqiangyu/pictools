@@ -1,3 +1,5 @@
+import '../l10n/app_localizations.dart';
+
 /// 对比模式枚举
 enum ComparisonMode {
   /// 滑块对比模式
@@ -14,11 +16,11 @@ extension ComparisonModeExtension on ComparisonMode {
   String get displayName {
     switch (this) {
       case ComparisonMode.slider:
-        return '滑块';
+        return appText('mode.slider');
       case ComparisonMode.sideBySide:
-        return '并排';
+        return appText('mode.sideBySide');
       case ComparisonMode.overlay:
-        return '叠加';
+        return appText('mode.overlay');
     }
   }
 

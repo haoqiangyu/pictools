@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 滑块对比模式组件
 class SliderComparison extends StatefulWidget {
@@ -202,12 +203,12 @@ class _SliderComparisonState extends State<SliderComparison> {
                   Positioned(
                     left: imageRect.left + 8,
                     bottom: imageRect.top + 8,
-                    child: _buildLabel('原图 A'),
+                    child: _buildLabel(context.l10n.t('originalA')),
                   ),
                   Positioned(
                     right: (containerSize.width - imageRect.right) + 8,
                     bottom: imageRect.top + 8,
-                    child: _buildLabel('对比图 B'),
+                    child: _buildLabel(context.l10n.t('comparisonB')),
                   ),
                 ],
               ),

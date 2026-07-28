@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import '../services/platform_capabilities.dart';
 
 /// 工具项数据模型
 class ToolItem {
   final String id;
-  final String name;
-  final String description;
   final IconData icon;
   final String routeName;
 
   const ToolItem({
     required this.id,
-    required this.name,
-    required this.description,
     required this.icon,
     required this.routeName,
   });
@@ -24,45 +21,29 @@ class Tools {
   static const List<ToolItem> all = [
     ToolItem(
       id: 'image_compare',
-      name: '图片对比',
-      description: '对比两张图片，清晰展示差异，支持多种对比模式',
       icon: Icons.compare,
       routeName: '/image-compare',
     ),
-    ToolItem(
-      id: 'image_adjust',
-      name: '图片调整',
-      description: '调整图片尺寸，按比例裁剪，快速获得所需效果',
-      icon: Icons.crop,
-      routeName: '/image-adjust',
-    ),
+    ToolItem(id: 'image_adjust', icon: Icons.crop, routeName: '/image-adjust'),
     ToolItem(
       id: 'image_enhance',
-      name: '亮度增强',
-      description: '一键提升图片亮度，改善暗部细节，让画面更通透',
       icon: Icons.wb_sunny,
       routeName: '/image-enhance',
     ),
     ToolItem(
-      id: 'ai_image',
-      name: 'AI 图片修改',
-      description: '使用 Gemini AI 根据提示词修改图片，支持多种宽高比和分辨率',
-      icon: Icons.auto_awesome,
-      routeName: '/ai-image',
-    ),
-    ToolItem(
       id: 'background_removal',
-      name: '主体抠图',
-      description: '智能抠图去背景，支持PNG透明导出和纯色背景填充',
       icon: Icons.auto_fix_high,
       routeName: '/background-removal',
     ),
     ToolItem(
       id: 'image_converter',
-      name: '格式转换',
-      description: '批量转换图片格式，支持 HEIC, AVIF, WebP, PNG, JPG 等',
       icon: Icons.transform,
       routeName: '/image-converter',
     ),
   ];
+
+  static List<ToolItem> get available =>
+      PlatformCapabilities.supportsBackgroundRemoval
+      ? all
+      : all.where((tool) => tool.id != 'background_removal').toList();
 }

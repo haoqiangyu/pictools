@@ -1,131 +1,118 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:window_manager/window_manager.dart';
-import '../theme/app_theme.dart';
+
+import '../l10n/app_localizations.dart';
+import '../services/platform_capabilities.dart';
 import '../services/settings_provider.dart';
+import '../theme/app_theme.dart';
 
-/// 全局设置页面
 class SettingsScreen extends StatefulWidget {
-  final bool isStandaloneWindow;
-
   const SettingsScreen({super.key, this.isStandaloneWindow = false});
+
+  final bool isStandaloneWindow;
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  final _apiKeyController = TextEditingController();
-  bool _obscureApiKey = true;
-  bool _hasChanges = false;
+  String _version = '-';
 
-  static const String _geminiApiKeyUrl =
-      'https://ai.google.dev/gemini-api/docs/api-key';
+  static const _languages = <(String?, String)>[
+    (null, 'systemLanguage'),
+    ('zh_CN', '简体中文'),
+    ('zh_TW', '繁體中文'),
+    ('en', 'English'),
+    ('es', 'Español'),
+    ('fr', 'Français'),
+    ('de', 'Deutsch'),
+  ];
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final provider = context.read<SettingsProvider>();
-      if (provider.geminiApiKey != null) {
-        _apiKeyController.text = provider.geminiApiKey!;
-      }
+    PackageInfo.fromPlatform().then((info) {
+      if (mounted) setState(() => _version = info.version);
     });
   }
 
   @override
-  void dispose() {
-    _apiKeyController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _saveSettings() async {
-    final provider = context.read<SettingsProvider>();
-    final success = await provider.saveGeminiApiKey(_apiKeyController.text);
-
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(success ? 'API Key 已保存' : '保存失败'),
-          backgroundColor: success
-              ? AppTheme.highlightColor
-              : AppTheme.errorColor,
-          behavior: SnackBarBehavior.floating,
-          margin: const EdgeInsets.all(16),
-        ),
-      );
-      if (success) {
-        setState(() => _hasChanges = false);
-      }
-    }
-  }
-
-  Future<void> _clearApiKey() async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: AppTheme.cardBg,
-        title: const Text('确认清除', style: TextStyle(color: AppTheme.textColor)),
-        content: const Text(
-          '确定要清除 API Key 吗？清除后需要重新输入才能使用 AI 功能。',
-          style: TextStyle(color: AppTheme.secondaryColor),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('取消'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            style: TextButton.styleFrom(foregroundColor: AppTheme.errorColor),
-            child: const Text('清除'),
-          ),
-        ],
-      ),
-    );
-
-    if (confirm == true && mounted) {
-      final provider = context.read<SettingsProvider>();
-      await provider.clearApiKey();
-      _apiKeyController.clear();
-      setState(() => _hasChanges = false);
-
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('API Key 已清除'),
-            backgroundColor: AppTheme.highlightColor,
-            behavior: SnackBarBehavior.floating,
-            margin: EdgeInsets.all(16),
-          ),
-        );
-      }
-    }
-  }
-
-  Future<void> _openApiKeyUrl() async {
-    final uri = Uri.parse(_geminiApiKeyUrl);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       backgroundColor: AppTheme.primaryBg,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
+          padding: const EdgeInsets.fromLTRB(20, 24, 20, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildHeader(),
-              const SizedBox(height: 24),
+              _header(context),
+              const SizedBox(height: 20),
               Expanded(
-                child: SingleChildScrollView(child: _buildSettingsContent()),
+                child: ListView(
+                  children: [
+                    _section(
+                      title: l10n.t('language'),
+                      icon: Icons.language_rounded,
+                      child: Consumer<SettingsProvider>(
+                        builder: (context, settings, _) =>
+                            DropdownButtonFormField<String>(
+                              initialValue: settings.language ?? 'system',
+                              dropdownColor: AppTheme.cardBg,
+                              decoration: InputDecoration(
+                                labelText: l10n.t('languageHint'),
+                                border: const OutlineInputBorder(),
+                              ),
+                              items: _languages.map((entry) {
+                                final value = entry.$1 ?? 'system';
+                                final label = entry.$1 == null
+                                    ? l10n.t(entry.$2)
+                                    : entry.$2;
+                                return DropdownMenuItem(
+                                  value: value,
+                                  child: Text(label),
+                                );
+                              }).toList(),
+                              onChanged: (value) => settings.setLanguage(
+                                value == null || value == 'system'
+                                    ? null
+                                    : value,
+                              ),
+                            ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    _section(
+                      title: l10n.t('privacy'),
+                      icon: Icons.privacy_tip_outlined,
+                      child: ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(l10n.t('privacy')),
+                        subtitle: Text(l10n.t('privacyHint')),
+                        trailing: const Icon(Icons.chevron_right_rounded),
+                        onTap: () =>
+                            Navigator.pushNamed(context, '/privacy-policy'),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    _section(
+                      title: l10n.t('about'),
+                      icon: Icons.info_outline_rounded,
+                      child: Column(
+                        children: [
+                          _infoRow(l10n.t('version'), _version),
+                          const Divider(height: 24),
+                          _infoRow(l10n.t('localProcessing'), 'Pictools'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -134,299 +121,66 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _header(BuildContext context) {
+    final l10n = context.l10n;
     return GestureDetector(
       onDoubleTap: () async {
+        if (!PlatformCapabilities.supportsMultiWindow) return;
         if (await windowManager.isMaximized()) {
-          windowManager.unmaximize();
+          await windowManager.unmaximize();
         } else {
-          windowManager.maximize();
+          await windowManager.maximize();
         }
       },
-      behavior: HitTestBehavior.translucent,
-      child: Container(
-        color: Colors.transparent,
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Row(
-          children: [
-            // macOS 窗口按钮占位（仅在独立窗口时需要，因为没有返回按钮）
-            if (Platform.isMacOS && widget.isStandaloneWindow)
-              const SizedBox(width: 54),
-            // 返回/关闭按钮（仅在非独立窗口时显示）
-            if (!widget.isStandaloneWindow)
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const Icon(Icons.arrow_back_rounded),
-                style: IconButton.styleFrom(
-                  foregroundColor: AppTheme.secondaryColor,
-                  backgroundColor: AppTheme.cardBg,
-                  padding: const EdgeInsets.all(8),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: AppTheme.borderColor),
-                  ),
-                ),
-              ),
-            const SizedBox(width: 12),
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: AppTheme.accentColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Icon(
-                Icons.settings,
-                color: AppTheme.accentColor,
-                size: 24,
-              ),
+      child: Row(
+        children: [
+          if (Platform.isMacOS && widget.isStandaloneWindow)
+            const SizedBox(width: 54),
+          if (!widget.isStandaloneWindow)
+            IconButton(
+              onPressed: () => Navigator.pop(context),
+              tooltip: l10n.t('back'),
+              icon: const Icon(Icons.arrow_back_rounded),
             ),
-            const SizedBox(width: 10),
-            const Column(
+          const SizedBox(width: 8),
+          const Icon(Icons.settings_rounded, color: AppTheme.accentColor),
+          const SizedBox(width: 10),
+          Flexible(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '设置',
-                  style: TextStyle(
-                    color: AppTheme.textColor,
+                  l10n.t('settings'),
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  'API 配置与应用设置',
-                  style: TextStyle(
+                  l10n.t('settingsSubtitle'),
+                  style: const TextStyle(
                     color: AppTheme.secondaryColor,
                     fontSize: 12,
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildSettingsContent() {
-    return Consumer<SettingsProvider>(
-      builder: (context, provider, _) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Gemini API Key 设置
-            _buildSection(
-              title: 'Gemini API',
-              icon: Icons.auto_awesome,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    '输入您的 Google AI Studio API Key 以使用 AI 图片修改功能',
-                    style: TextStyle(
-                      color: AppTheme.secondaryColor,
-                      fontSize: 12,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  // API Key 输入框
-                  TextField(
-                    controller: _apiKeyController,
-                    obscureText: _obscureApiKey,
-                    onChanged: (value) {
-                      setState(() {
-                        _hasChanges = value != (provider.geminiApiKey ?? '');
-                      });
-                    },
-                    style: const TextStyle(
-                      color: AppTheme.textColor,
-                      fontSize: 14,
-                      fontFamily: 'monospace',
-                    ),
-                    decoration: InputDecoration(
-                      hintText: '请输入 API Key',
-                      hintStyle: TextStyle(
-                        color: AppTheme.secondaryColor.withValues(alpha: 0.5),
-                      ),
-                      filled: true,
-                      fillColor: AppTheme.primaryBg,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
-                          color: AppTheme.borderColor,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
-                          color: AppTheme.borderColor,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
-                          color: AppTheme.accentColor,
-                        ),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 14,
-                      ),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _obscureApiKey
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: AppTheme.secondaryColor,
-                          size: 20,
-                        ),
-                        onPressed: () {
-                          setState(() => _obscureApiKey = !_obscureApiKey);
-                        },
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  // 状态指示
-                  Row(
-                    children: [
-                      Icon(
-                        provider.hasApiKey
-                            ? Icons.check_circle
-                            : Icons.info_outline,
-                        size: 14,
-                        color: provider.hasApiKey
-                            ? AppTheme.highlightColor
-                            : AppTheme.secondaryColor,
-                      ),
-                      const SizedBox(width: 6),
-                      Text(
-                        provider.hasApiKey ? 'API Key 已配置' : '未配置 API Key',
-                        style: TextStyle(
-                          color: provider.hasApiKey
-                              ? AppTheme.highlightColor
-                              : AppTheme.secondaryColor,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  // 操作按钮
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          onPressed: provider.isLoading || !_hasChanges
-                              ? null
-                              : _saveSettings,
-                          icon: provider.isLoading
-                              ? const SizedBox(
-                                  width: 16,
-                                  height: 16,
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              : const Icon(Icons.save, size: 18),
-                          label: const Text('保存'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppTheme.accentColor,
-                            foregroundColor: Colors.white,
-                            disabledBackgroundColor: AppTheme.accentColor
-                                .withValues(alpha: 0.3),
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      ElevatedButton.icon(
-                        onPressed: provider.hasApiKey ? _clearApiKey : null,
-                        icon: const Icon(Icons.delete_outline, size: 18),
-                        label: const Text('清除'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppTheme.cardBg,
-                          foregroundColor: AppTheme.errorColor,
-                          disabledForegroundColor: AppTheme.secondaryColor
-                              .withValues(alpha: 0.5),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            side: const BorderSide(color: AppTheme.borderColor),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            // 关于
-            _buildSection(
-              title: '关于',
-              icon: Icons.info_outline,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildInfoRow('应用版本', '1.0.2'),
-                  const SizedBox(height: 8),
-                  _buildInfoRow('API 库', 'googleai_dart 3.0.0'),
-                  const SizedBox(height: 12),
-                  InkWell(
-                    onTap: _openApiKeyUrl,
-                    borderRadius: BorderRadius.circular(4),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 4),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.open_in_new,
-                            size: 14,
-                            color: AppTheme.accentColor,
-                          ),
-                          SizedBox(width: 6),
-                          Text(
-                            '如何获取 Gemini API Key?',
-                            style: TextStyle(
-                              color: AppTheme.accentColor,
-                              fontSize: 12,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildSection({
+  Widget _section({
     required String title,
     required IconData icon,
     required Widget child,
   }) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
         color: AppTheme.cardBg,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppTheme.borderColor),
       ),
       child: Column(
@@ -434,38 +188,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
         children: [
           Row(
             children: [
-              Icon(icon, size: 18, color: AppTheme.accentColor),
-              const SizedBox(width: 8),
+              Icon(icon, color: AppTheme.accentColor),
+              const SizedBox(width: 10),
               Text(
                 title,
                 style: const TextStyle(
-                  color: AppTheme.textColor,
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 14),
           child,
         ],
       ),
     );
   }
 
-  Widget _buildInfoRow(String label, String value) {
-    return Row(
-      children: [
-        Text(
+  Widget _infoRow(String label, String value) => Row(
+    children: [
+      Expanded(
+        child: Text(
           label,
-          style: const TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+          style: const TextStyle(color: AppTheme.secondaryColor),
         ),
-        const Spacer(),
-        Text(
-          value,
-          style: const TextStyle(color: AppTheme.textColor, fontSize: 12),
-        ),
-      ],
-    );
-  }
+      ),
+      Text(value, style: const TextStyle(fontWeight: FontWeight.w500)),
+    ],
+  );
 }

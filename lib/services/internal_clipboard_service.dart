@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
@@ -21,7 +20,7 @@ class ClipboardImage {
 /// 应用内剪切板服务（基于文件系统，支持跨窗口）
 class InternalClipboardService {
   static final InternalClipboardService instance = InternalClipboardService._();
-  
+
   InternalClipboardService._();
 
   static const String _clipboardFileName = 'pictools_clipboard.png';
@@ -44,14 +43,14 @@ class InternalClipboardService {
   Future<ClipboardImage?> currentImage() async {
     try {
       if (!await _clipboardFile.exists()) return null;
-      
+
       final data = await _clipboardFile.readAsBytes();
       String? fileName;
-      
+
       if (await _metaFile.exists()) {
         fileName = await _metaFile.readAsString();
       }
-      
+
       return ClipboardImage(
         data: data,
         fileName: fileName ?? 'clipboard_image.png',
@@ -64,7 +63,11 @@ class InternalClipboardService {
     }
   }
 
-  Future<void> copyImage(Uint8List data, {String? fileName, String? filePath}) async {
+  Future<void> copyImage(
+    Uint8List data, {
+    String? fileName,
+    String? filePath,
+  }) async {
     try {
       await _clipboardFile.writeAsBytes(data);
       if (fileName != null) {

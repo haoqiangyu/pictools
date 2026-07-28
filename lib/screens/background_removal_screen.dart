@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +17,7 @@ import '../widgets/model_download_dialog.dart';
 import '../src/rust/api/background_removal.dart' as bg_removal;
 import '../src/rust/api/image_codec.dart';
 import '../models/export_format.dart';
+import '../services/platform_capabilities.dart';
 
 /// 背景移除功能页面
 class BackgroundRemovalScreen extends StatefulWidget {
@@ -86,6 +86,7 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
       builder: (context, provider, _) {
         return GestureDetector(
           onDoubleTap: () async {
+            if (!PlatformCapabilities.supportsMultiWindow) return;
             if (await windowManager.isMaximized()) {
               windowManager.unmaximize();
             } else {
@@ -148,7 +149,9 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
                   ],
                 ),
                 const Spacer(),
-                if (!widget.isStandaloneWindow && provider.hasImage)
+                if (!widget.isStandaloneWindow &&
+                    provider.hasImage &&
+                    PlatformCapabilities.supportsMultiWindow)
                   Tooltip(
                     message: '分离到新窗口',
                     child: IconButton(
@@ -834,6 +837,7 @@ class _BackgroundRemovalScreenState extends State<BackgroundRemovalScreen> {
     );
 
     if (outputPath == null) return;
+    if (!context.mounted) return;
 
     if (!outputPath.endsWith('.${provider.exportFormat.extension}')) {
       outputPath = '$outputPath.${provider.exportFormat.extension}';

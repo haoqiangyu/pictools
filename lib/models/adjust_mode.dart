@@ -1,3 +1,5 @@
+import '../l10n/app_localizations.dart';
+
 /// 图片调整模式枚举
 enum AdjustMode {
   /// 尺寸调整模式
@@ -11,18 +13,18 @@ extension AdjustModeExtension on AdjustMode {
   String get displayName {
     switch (this) {
       case AdjustMode.resize:
-        return '尺寸调整';
+        return appText('adjust.resize');
       case AdjustMode.crop:
-        return '比例裁剪';
+        return appText('adjust.crop');
     }
   }
 
   String get description {
     switch (this) {
       case AdjustMode.resize:
-        return '自定义图片宽高';
+        return appText('adjust.resizeDescription');
       case AdjustMode.crop:
-        return '按比例裁剪图片';
+        return appText('adjust.cropDescription');
     }
   }
 }

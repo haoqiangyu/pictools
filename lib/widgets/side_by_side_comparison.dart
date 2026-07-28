@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 并排对比模式组件
 class SideBySideComparison extends StatelessWidget {
@@ -21,7 +22,7 @@ class SideBySideComparison extends StatelessWidget {
         Expanded(
           child: _buildImagePanel(
             imageData: imageA,
-            label: '原图 A',
+            label: context.l10n.t('originalA'),
             isLeft: true,
           ),
         ),
@@ -30,7 +31,7 @@ class SideBySideComparison extends StatelessWidget {
         Expanded(
           child: _buildImagePanel(
             imageData: imageB,
-            label: '对比图 B',
+            label: context.l10n.t('comparisonB'),
             isLeft: false,
           ),
         ),

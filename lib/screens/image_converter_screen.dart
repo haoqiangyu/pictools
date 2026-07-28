@@ -5,7 +5,10 @@ import 'package:desktop_drop/desktop_drop.dart';
 import '../theme/app_theme.dart';
 import '../widgets/loading_overlay.dart';
 import '../models/export_format.dart';
-import '../src/rust/api/image_codec.dart';
+import '../services/image_processing_service.dart';
+import '../services/platform_capabilities.dart';
+import '../l10n/app_localizations.dart';
+import '../services/file_export_service.dart';
 
 class ImageConverterScreen extends StatefulWidget {
   const ImageConverterScreen({super.key});
@@ -56,57 +59,80 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
   Future<void> _convertAll() async {
     if (_items.isEmpty) return;
 
-    // 选择保存目录
-    final String? outputDirectory = await FilePicker.platform.getDirectoryPath(
-      dialogTitle: '选择保存目录',
-    );
-
-    if (outputDirectory == null) return;
+    String? outputDirectory;
+    if (!PlatformCapabilities.isMobile) {
+      outputDirectory = await FilePicker.platform.getDirectoryPath(
+        dialogTitle: context.l10n.t('chooseSaveFolder'),
+      );
+      if (outputDirectory == null) return;
+    }
+    if (!mounted) return;
 
     setState(() {
       _isProcessing = true;
     });
+    var failedCount = 0;
 
     try {
       await LoadingOverlay.showWhile(
         context,
-        message: '正在转换图片...',
+        message: context.l10n.t('converting'),
         task: () async {
           for (var item in _items) {
-            final file = File(item.path);
-            final bytes = await file.readAsBytes();
+            try {
+              final file = File(item.path);
+              final bytes = await file.readAsBytes();
+              final encodedBytes = await ImageProcessingService.encode(
+                bytes,
+                _globalExportFormat,
+              );
 
-            // 编码
-            final rustFormat = _globalExportFormat.toRustFormat();
-            final encodedBytes = await encodeImage(
-              imageData: bytes,
-              format: rustFormat,
-            );
+              final dotIndex = item.name.lastIndexOf('.');
+              final fileNameWithoutExt = dotIndex > 0
+                  ? item.name.substring(0, dotIndex)
+                  : item.name;
+              final newFileName =
+                  '$fileNameWithoutExt.${_globalExportFormat.extension}';
+              if (PlatformCapabilities.isMobile) {
+                final savedPath = await FileExportService.save(
+                  bytes: encodedBytes,
+                  fileName: newFileName,
+                  extension: _globalExportFormat.extension,
+                );
+                if (savedPath == null) {
+                  throw const FileSystemException('用户取消保存');
+                }
+              } else {
+                final outputPath = '$outputDirectory/$newFileName';
+                await File(outputPath).writeAsBytes(encodedBytes, flush: true);
+              }
 
-            // 构建输出路径
-            final fileNameWithoutExt = item.name.substring(
-              0,
-              item.name.lastIndexOf('.'),
-            );
-            final newFileName =
-                '$fileNameWithoutExt.${_globalExportFormat.extension}';
-            final outputPath = '$outputDirectory/$newFileName';
-
-            await File(outputPath).writeAsBytes(encodedBytes);
-
-            setState(() {
-              item.status = ConversionStatus.success;
-            });
+              if (mounted) {
+                setState(() => item.status = ConversionStatus.success);
+              }
+            } catch (_) {
+              failedCount++;
+              if (mounted) {
+                setState(() => item.status = ConversionStatus.failed);
+              }
+            }
           }
         },
       );
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('所有图片转换完成！'),
-            backgroundColor: AppTheme
-                .highlightColor, // Fixed: successColor -> highlightColor
+          SnackBar(
+            content: Text(
+              failedCount == 0
+                  ? context.l10n.t('conversionDone')
+                  : context.l10n
+                        .t('conversionPartial')
+                        .replaceAll('{count}', '$failedCount'),
+            ),
+            backgroundColor: failedCount == 0
+                ? AppTheme.highlightColor
+                : AppTheme.errorColor,
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -115,7 +141,9 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('转换出错: $e'),
+            content: Text(
+              context.l10n.t('conversionFailed').replaceAll('{error}', '$e'),
+            ),
             backgroundColor: AppTheme.errorColor,
             behavior: SnackBarBehavior.floating,
           ),
@@ -134,7 +162,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
       backgroundColor:
           AppTheme.primaryBg, // Fixed: backgroundColor -> primaryBg
       appBar: AppBar(
-        title: const Text('图片格式转换'),
+        title: Text(context.l10n.t('converterTitle')),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
@@ -168,7 +196,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
           ElevatedButton.icon(
             onPressed: _pickFiles,
             icon: const Icon(Icons.add_photo_alternate),
-            label: const Text('添加图片'),
+            label: Text(context.l10n.t('addImages')),
             style: ElevatedButton.styleFrom(
               backgroundColor:
                   AppTheme.accentColor, // Fixed: primaryColor -> accentColor
@@ -179,7 +207,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
           TextButton.icon(
             onPressed: _items.isEmpty ? null : _clearAll,
             icon: const Icon(Icons.delete_sweep),
-            label: const Text('清空列表'),
+            label: Text(context.l10n.t('clearList')),
             style: TextButton.styleFrom(foregroundColor: AppTheme.errorColor),
           ),
         ],
@@ -188,6 +216,33 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
   }
 
   Widget _buildEmptyState() {
+    final emptyState = Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            Icons.cloud_upload_outlined,
+            size: 64,
+            color: AppTheme.secondaryColor,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            context.l10n.t(
+              PlatformCapabilities.isMobile
+                  ? 'tapAddImages'
+                  : 'dropOrAddImages',
+            ),
+            style: const TextStyle(
+              fontSize: 16,
+              color: AppTheme.secondaryColor,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (PlatformCapabilities.isMobile) return emptyState;
+
     return DropTarget(
       onDragDone: (details) {
         setState(() {
@@ -196,23 +251,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
           }
         });
       },
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.cloud_upload_outlined,
-              size: 64,
-              color: AppTheme.secondaryColor,
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              '拖拽图片到这里或点击添加',
-              style: TextStyle(fontSize: 16, color: AppTheme.secondaryColor),
-            ),
-          ],
-        ),
-      ),
+      child: emptyState,
     );
   }
 
@@ -248,7 +287,9 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
                   const Icon(
                     Icons.check_circle,
                     color: AppTheme.highlightColor,
-                  ), // Fixed: successColor -> highlightColor
+                  ),
+                if (item.status == ConversionStatus.failed)
+                  const Icon(Icons.error, color: AppTheme.errorColor),
                 IconButton(
                   icon: const Icon(Icons.close, color: AppTheme.secondaryColor),
                   onPressed: () => _removeFile(index),
@@ -268,7 +309,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
         color: AppTheme.cardBg,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 4,
             offset: const Offset(0, -2),
           ),
@@ -276,7 +317,10 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
       ),
       child: Row(
         children: [
-          const Text('输出格式:', style: TextStyle(color: AppTheme.textColor)),
+          Text(
+            context.l10n.t('outputFormat'),
+            style: const TextStyle(color: AppTheme.textColor),
+          ),
           const SizedBox(width: 16),
           DropdownButton<ExportFormat>(
             value: _globalExportFormat,
@@ -317,7 +361,10 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
                       color: Colors.white,
                     ),
                   )
-                : const Text('开始转换', style: TextStyle(color: Colors.white)),
+                : Text(
+                    context.l10n.t('startConversion'),
+                    style: const TextStyle(color: Colors.white),
+                  ),
           ),
         ],
       ),

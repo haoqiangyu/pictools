@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/aspect_ratio.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 裁剪比例选择器组件
 class AspectRatioSelector extends StatelessWidget {
@@ -25,9 +26,12 @@ class AspectRatioSelector extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            '裁剪比例',
-            style: TextStyle(color: AppTheme.secondaryColor, fontSize: 12),
+          Text(
+            context.l10n.t('cropRatio'),
+            style: const TextStyle(
+              color: AppTheme.secondaryColor,
+              fontSize: 12,
+            ),
           ),
           const SizedBox(height: 12),
           Wrap(

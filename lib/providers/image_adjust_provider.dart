@@ -2,7 +2,6 @@ import 'dart:typed_data';
 import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'package:image/image.dart' as img;
 import '../models/adjust_mode.dart';
 import '../models/aspect_ratio.dart';
 import '../models/export_format.dart';

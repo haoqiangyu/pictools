@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 import '../services/internal_clipboard_service.dart';
 
 /// 图片右键菜单项
@@ -66,7 +67,7 @@ class _ImageContextMenuState extends State<ImageContextMenu> {
                 _buildMenuItem(
                   action: ImageContextAction.copy,
                   icon: Icons.content_copy,
-                  label: '复制图片',
+                  label: context.l10n.t('copyImage'),
                   enabled: true,
                 ),
               // 粘贴选项（可以替换现有图片）
@@ -74,7 +75,9 @@ class _ImageContextMenuState extends State<ImageContextMenu> {
                 _buildMenuItem(
                   action: ImageContextAction.paste,
                   icon: Icons.content_paste,
-                  label: canCopy ? '粘贴替换' : '粘贴图片',
+                  label: canCopy
+                      ? context.l10n.t('pasteReplace')
+                      : context.l10n.t('pasteImage'),
                   enabled: true,
                   showPreview: true,
                 ),
@@ -83,7 +86,7 @@ class _ImageContextMenuState extends State<ImageContextMenu> {
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Text(
-                    '剪切板为空',
+                    context.l10n.t('clipboardEmpty'),
                     style: TextStyle(
                       color: AppTheme.secondaryColor.withValues(alpha: 0.5),
                       fontSize: 12,
@@ -113,9 +116,10 @@ class _ImageContextMenuState extends State<ImageContextMenu> {
       child: GestureDetector(
         onTap: enabled
             ? () async {
+                final navigator = Navigator.of(context);
                 await widget.onSelected?.call(action);
-                if (context.mounted) {
-                  Navigator.of(context).pop();
+                if (mounted) {
+                  navigator.pop();
                 }
               }
             : null,

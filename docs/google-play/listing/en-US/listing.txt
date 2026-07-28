@@ -1,0 +1,20 @@
+App name
+Pictools - Image Tools
+
+Short description
+Compare, resize, enhance, and convert images entirely on your device.
+
+Full description
+Pictools is a lightweight toolbox for everyday image work. No account is required: choose an image and start editing.
+
+Key features:
+- Image comparison: inspect differences with slider, side-by-side, and overlay views.
+- Resize and crop: enter exact dimensions, lock the aspect ratio, or crop to a common ratio.
+- Brightness enhancement: improve exposure and shadow detail with a native Rust algorithm, then compare the result with the original.
+- Format conversion: batch convert PNG, JPG, WebP, BMP, ICO, and TIFF images.
+- Flexible export: open and save files through Android's system picker without photo-library or broad storage permissions.
+
+Privacy first:
+Pictools has no proprietary servers, requires no sign-in, and contains no advertising, analytics, or tracking SDKs. The Android app requests no network permission. Images are processed on your device and are never uploaded to us.
+
+The interface supports Simplified Chinese, Traditional Chinese, English, Spanish, French, and German. It can follow the system language or use a language selected in Settings.

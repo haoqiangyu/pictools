@@ -292,25 +292,20 @@ class _CropOverlayState extends State<CropOverlay> {
 
     // 计算拖动的主方向距离（沿对角线）
     double dragDistance;
-    bool expanding;
 
     switch (_activeHandle!) {
       case _HandlePosition.topLeft:
         // 向左上拖动为扩大，向右下拖动为缩小
         dragDistance = (-delta.dx - delta.dy) / 2;
-        expanding = dragDistance > 0;
       case _HandlePosition.topRight:
         // 向右上拖动为扩大，向左下拖动为缩小
         dragDistance = (delta.dx - delta.dy) / 2;
-        expanding = dragDistance > 0;
       case _HandlePosition.bottomLeft:
         // 向左下拖动为扩大，向右上拖动为缩小
         dragDistance = (-delta.dx + delta.dy) / 2;
-        expanding = dragDistance > 0;
       case _HandlePosition.bottomRight:
         // 向右下拖动为扩大，向左上拖动为缩小
         dragDistance = (delta.dx + delta.dy) / 2;
-        expanding = dragDistance > 0;
       default:
         return startRect;
     }

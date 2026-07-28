@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 /// 叠加对比模式组件
 class OverlayComparison extends StatelessWidget {
@@ -43,11 +44,19 @@ class OverlayComparison extends StatelessWidget {
             ),
           ),
           // 标签
-          Positioned(left: 12, bottom: 12, child: _buildLabel('原图 A (底层)')),
+          Positioned(
+            left: 12,
+            bottom: 12,
+            child: _buildLabel(context.l10n.t('overlayOriginal')),
+          ),
           Positioned(
             right: 12,
             bottom: 12,
-            child: _buildLabel('对比图 B (透明度: ${(opacity * 100).toInt()}%)'),
+            child: _buildLabel(
+              context.l10n
+                  .t('overlayComparison')
+                  .replaceAll('{opacity}', '${(opacity * 100).toInt()}'),
+            ),
           ),
         ],
       ),

@@ -1,12 +1,17 @@
 use image::{DynamicImage, ImageReader, RgbaImage};
+#[cfg(not(target_os = "android"))]
 use ort::session::{builder::GraphOptimizationLevel, Session};
+#[cfg(not(target_os = "android"))]
 use ort::value::Value;
 use std::io::Cursor;
+#[cfg(not(target_os = "android"))]
 use std::sync::Once;
 
 // 确保 tracing subscriber 只初始化一次
+#[cfg(not(target_os = "android"))]
 static INIT_TRACING: Once = Once::new();
 
+#[cfg(not(target_os = "android"))]
 fn init_tracing() {
     INIT_TRACING.call_once(|| {
         // 初始化 tracing subscriber，捕获 ort 的日志
@@ -25,6 +30,7 @@ fn init_tracing() {
 ///
 /// # Returns
 /// 返回带有透明背景的RGBA图片数据（PNG格式）
+#[cfg(not(target_os = "android"))]
 pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<u8>, String> {
     // 初始化 tracing 以输出 ort 的执行提供程序日志
     init_tracing();
@@ -121,16 +127,6 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         }
     }
 
-    // 【测试模式】直接返回 1024x1024 的 Mask 图片，不做 Resize 和原图合成以进行纯模型输出验证
-    // 8. 编码为PNG（Mask）
-    let mut buffer = Cursor::new(Vec::new());
-    alpha_1024
-        .write_to(&mut buffer, image::ImageFormat::Png)
-        .map_err(|e| format!("Failed to encode alpha mask PNG: {}", e))?;
-
-    Ok(buffer.into_inner())
-
-    /*
     let alpha_img = DynamicImage::ImageLuma8(alpha_1024)
         .resize_exact(
             original_width,
@@ -159,7 +155,11 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
         .map_err(|e| format!("Failed to encode PNG: {}", e))?;
 
     Ok(buffer.into_inner())
-    */
+}
+
+#[cfg(target_os = "android")]
+pub fn remove_background(_image_data: Vec<u8>, _model_path: String) -> Result<Vec<u8>, String> {
+    Err("Background removal is not available on Android".to_string())
 }
 
 /// 为透明图片添加纯色背景

@@ -4,6 +4,8 @@ import 'package:window_manager/window_manager.dart';
 import '../theme/app_theme.dart';
 import '../models/tool_item.dart';
 import '../widgets/tool_card.dart';
+import '../services/platform_capabilities.dart';
+import '../l10n/app_localizations.dart';
 
 /// 工具集合入口首页
 class HomeScreen extends StatelessWidget {
@@ -34,6 +36,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     return GestureDetector(
       onDoubleTap: () async {
+        if (!PlatformCapabilities.supportsMultiWindow) return;
         if (await windowManager.isMaximized()) {
           windowManager.unmaximize();
         } else {
@@ -62,10 +65,10 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 14),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Pictools',
                   style: TextStyle(
                     color: AppTheme.textColor,
@@ -74,8 +77,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '图片工具集合',
-                  style: TextStyle(
+                  context.l10n.t('tagline'),
+                  style: const TextStyle(
                     color: AppTheme.secondaryColor,
                     fontSize: 14,
                   ),
@@ -86,7 +89,7 @@ class HomeScreen extends StatelessWidget {
             IconButton(
               onPressed: () => Navigator.of(context).pushNamed('/settings'),
               icon: const Icon(Icons.settings_outlined),
-              tooltip: '设置',
+              tooltip: context.l10n.t('settings'),
               style: IconButton.styleFrom(
                 foregroundColor: AppTheme.secondaryColor,
                 backgroundColor: AppTheme.cardBg,
@@ -107,7 +110,8 @@ class HomeScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         // 根据可用宽度计算列数
-        const double minCardWidth = 280;
+        final tools = Tools.available;
+        const double minCardWidth = 240;
         const double maxCardWidth = 360;
         const double spacing = 20;
 
@@ -125,11 +129,11 @@ class HomeScreen extends StatelessWidget {
             crossAxisCount: crossAxisCount,
             crossAxisSpacing: spacing,
             mainAxisSpacing: spacing,
-            childAspectRatio: 1.4,
+            childAspectRatio: 1.2,
           ),
-          itemCount: Tools.all.length,
+          itemCount: tools.length,
           itemBuilder: (context, index) {
-            final tool = Tools.all[index];
+            final tool = tools[index];
             return ToolCard(
               tool: tool,
               onTap: () => Navigator.of(context).pushNamed(tool.routeName),
