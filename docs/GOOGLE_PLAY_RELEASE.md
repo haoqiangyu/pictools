@@ -30,7 +30,7 @@ https://privacy.pictureslighting.com
 ## 上架前人工项
 
 - 确认 `applicationId` `com.annuo.pictools` 在 Play Console 中可用且为最终标识。
-- 当前版本名为 `1.0.0`，build number 为 `1`。
+- 当前版本名为 `1.0.1`，build number 为 `2`。
 - 每次发布递增 `pubspec.yaml` 的 build number。
 - 隐私政策 URL、商店截图、512 × 512 应用图标和 1024 × 500 功能图片已就绪，位于 `docs/google-play/`。
 - 六种语言的商店标题、简短说明和完整说明已就绪；内容分级问卷仍需由账号持有人在 Play Console 中确认提交。

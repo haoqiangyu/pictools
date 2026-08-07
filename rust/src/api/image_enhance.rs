@@ -1,4 +1,4 @@
-use image::{ImageReader, RgbaImage};
+use image::{DynamicImage, ImageDecoder, ImageReader, RgbaImage};
 use std::io::Cursor;
 
 const PG_LUMINANCE: [f64; 3] = [0.2126, 0.7152, 0.0722];
@@ -109,13 +109,21 @@ fn light_on_kernel(color: [f64; 4]) -> [f64; 4] {
 /// # Returns
 /// 处理后的 PNG 格式图片字节数据
 pub fn enhance_image(image_data: Vec<u8>) -> Result<Vec<u8>, String> {
-    // 解码输入图片
-    let image = ImageReader::new(Cursor::new(&image_data))
+    let reader = ImageReader::new(Cursor::new(&image_data))
         .with_guessed_format()
-        .map_err(|e| format!("Failed to guess image format: {}", e))?
-        .decode()
-        .map_err(|e| format!("Failed to decode image: {}", e))?
-        .to_rgba8();
+        .map_err(|e| format!("Failed to guess image format: {}", e))?;
+    let mut decoder = reader
+        .into_decoder()
+        .map_err(|e| format!("Failed to create image decoder: {}", e))?;
+    let orientation = decoder
+        .orientation()
+        .map_err(|e| format!("Failed to read image orientation: {}", e))?;
+    let mut image = DynamicImage::from_decoder(decoder)
+        .map_err(|e| format!("Failed to decode image: {}", e))?;
+
+    // PNG cannot retain EXIF orientation, so bake it into the pixels first.
+    image.apply_orientation(orientation);
+    let image = image.to_rgba8();
 
     let mut result_image = RgbaImage::new(image.width(), image.height());
 
@@ -155,6 +163,54 @@ pub fn enhance_image(image_data: Vec<u8>) -> Result<Vec<u8>, String> {
 mod tests {
     use super::*;
 
+    fn jpeg_with_orientation(image: &RgbaImage, orientation: u8) -> Vec<u8> {
+        let mut jpeg = Cursor::new(Vec::new());
+        DynamicImage::ImageRgba8(image.clone())
+            .write_to(&mut jpeg, image::ImageFormat::Jpeg)
+            .expect("encode JPEG fixture");
+        let jpeg = jpeg.into_inner();
+
+        let mut tiff = vec![
+            b'I',
+            b'I',
+            42,
+            0, // Little-endian TIFF header.
+            8,
+            0,
+            0,
+            0, // First IFD offset.
+            1,
+            0, // One directory entry.
+            0x12,
+            0x01, // Orientation tag.
+            3,
+            0, // SHORT.
+            1,
+            0,
+            0,
+            0, // One value.
+            orientation,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0, // No next IFD.
+        ];
+        let mut exif = b"Exif\0\0".to_vec();
+        exif.append(&mut tiff);
+        let segment_length = u16::try_from(exif.len() + 2).expect("EXIF segment length");
+
+        let mut output = Vec::with_capacity(jpeg.len() + exif.len() + 4);
+        output.extend_from_slice(&jpeg[..2]);
+        output.extend_from_slice(&[0xff, 0xe1]);
+        output.extend_from_slice(&segment_length.to_be_bytes());
+        output.extend_from_slice(&exif);
+        output.extend_from_slice(&jpeg[2..]);
+        output
+    }
+
     #[test]
     fn enhance_preserves_dimensions_and_alpha_while_brightening() {
         let source = RgbaImage::from_pixel(2, 3, image::Rgba([64, 80, 96, 123]));
@@ -179,5 +235,16 @@ mod tests {
     #[test]
     fn enhance_rejects_invalid_image_data() {
         assert!(enhance_image(vec![1, 2, 3]).is_err());
+    }
+
+    #[test]
+    fn enhance_bakes_exif_orientation_into_output_pixels() {
+        let source = RgbaImage::from_pixel(2, 3, image::Rgba([40, 50, 60, 255]));
+        let input = jpeg_with_orientation(&source, 6);
+
+        let output = enhance_image(input).expect("enhance oriented JPEG");
+        let decoded = image::load_from_memory(&output).expect("decode enhanced output");
+
+        assert_eq!((decoded.width(), decoded.height()), (3, 2));
     }
 }

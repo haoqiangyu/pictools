@@ -8,7 +8,7 @@
 - 类别：摄影
 - 建议标签：图片编辑、工具、照片
 - 包名：`com.annuo.pictools`
-- 版本：`1.0.0`（versionCode 1）
+- 版本：`1.0.1`（versionCode 2）
 - 隐私政策：https://privacy.pictureslighting.com
 - 广告：否
 - 应用访问权限：所有功能均可直接使用，无需账号或特殊访问方式

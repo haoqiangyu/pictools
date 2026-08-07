@@ -167,10 +167,11 @@ Uint8List _encodeImage(img.Image image, ExportFormat format, int quality) {
 }
 
 Uint8List _enhanceInDart(Uint8List data) {
-  final image = img.decodeImage(data);
-  if (image == null) {
+  final decoded = img.decodeImage(data);
+  if (decoded == null) {
     throw const FormatException('无法解码图片，请确认文件格式有效');
   }
+  final image = img.bakeOrientation(decoded);
 
   for (final frame in image.frames) {
     for (final pixel in frame) {

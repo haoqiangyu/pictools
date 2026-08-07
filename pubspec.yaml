@@ -1,7 +1,7 @@
 name: pictools
 description: "跨平台图片处理工具"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.10.1

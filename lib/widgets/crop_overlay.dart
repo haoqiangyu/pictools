@@ -41,6 +41,7 @@ class _CropOverlayState extends State<CropOverlay> {
         final cropRectPixels = _normalizedToPixels(widget.cropRect, viewSize);
 
         return Stack(
+          clipBehavior: Clip.none,
           children: [
             // 半透明遮罩
             ..._buildMaskRegions(viewSize, cropRectPixels),
@@ -115,7 +116,8 @@ class _CropOverlayState extends State<CropOverlay> {
   }
 
   List<Widget> _buildHandles(Rect cropRect, Size viewSize) {
-    const handleSize = 12.0;
+    const visualSize = 14.0;
+    const touchTargetSize = 48.0;
     final handles = <Widget>[];
 
     // 有锁定比例时只显示四个角
@@ -127,38 +129,60 @@ class _CropOverlayState extends State<CropOverlay> {
             _HandlePosition.bottomRight: cropRect.bottomRight,
           }
         : {
-            _HandlePosition.topLeft: cropRect.topLeft,
-            _HandlePosition.topRight: cropRect.topRight,
-            _HandlePosition.bottomLeft: cropRect.bottomLeft,
-            _HandlePosition.bottomRight: cropRect.bottomRight,
             _HandlePosition.top: Offset(cropRect.center.dx, cropRect.top),
             _HandlePosition.bottom: Offset(cropRect.center.dx, cropRect.bottom),
             _HandlePosition.left: Offset(cropRect.left, cropRect.center.dy),
             _HandlePosition.right: Offset(cropRect.right, cropRect.center.dy),
+            // Corners come last so they win hit testing where targets overlap.
+            _HandlePosition.topLeft: cropRect.topLeft,
+            _HandlePosition.topRight: cropRect.topRight,
+            _HandlePosition.bottomLeft: cropRect.bottomLeft,
+            _HandlePosition.bottomRight: cropRect.bottomRight,
           };
 
     for (final entry in positions.entries) {
       final pos = entry.key;
       final offset = entry.value;
+      final targetLeft = (offset.dx - touchTargetSize / 2)
+          .clamp(0.0, math.max(0.0, viewSize.width - touchTargetSize))
+          .toDouble();
+      final targetTop = (offset.dy - touchTargetSize / 2)
+          .clamp(0.0, math.max(0.0, viewSize.height - touchTargetSize))
+          .toDouble();
 
       handles.add(
         Positioned(
-          left: offset.dx - handleSize / 2,
-          top: offset.dy - handleSize / 2,
+          left: targetLeft,
+          top: targetTop,
+          width: math.min(touchTargetSize, viewSize.width),
+          height: math.min(touchTargetSize, viewSize.height),
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onPanStart: (details) => _onPanStart(details, pos, viewSize),
             onPanUpdate: (details) => _onPanUpdate(details, viewSize),
             onPanEnd: (_) => _onPanEnd(),
             child: MouseRegion(
               cursor: _getCursor(pos),
-              child: Container(
-                width: handleSize,
-                height: handleSize,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: AppTheme.accentColor, width: 1.5),
-                  borderRadius: BorderRadius.circular(2),
-                ),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Positioned(
+                    left: offset.dx - targetLeft - visualSize / 2,
+                    top: offset.dy - targetTop - visualSize / 2,
+                    child: Container(
+                      width: visualSize,
+                      height: visualSize,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: AppTheme.accentColor,
+                          width: 1.5,
+                        ),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
