@@ -42,27 +42,42 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
     return Scaffold(
       backgroundColor: AppTheme.primaryBg,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 32, 20, 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // 顶部标题栏
-              _buildHeader(context),
-              const SizedBox(height: 16),
-              // 图片上传区域
-              _buildUploadSection(context),
-              const SizedBox(height: 16),
-              // 分割线
-              Container(height: 1, color: AppTheme.borderColor),
-              const SizedBox(height: 16),
-              // 对比区域
-              Expanded(child: _buildComparisonSection(context)),
-              const SizedBox(height: 12),
-              // 模式切换器
-              _buildModeSwitcher(context),
-            ],
-          ),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            // Landscape phones have very little vertical space. Keep the
+            // controls reachable and let the page scroll instead of allowing
+            // the comparison area to overlap the mode switcher.
+            final isShort = constraints.maxHeight < 600;
+            final content = Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _buildHeader(context),
+                SizedBox(height: isShort ? 8 : 16),
+                SizedBox(
+                  height: isShort ? 88 : 120,
+                  child: _buildUploadSection(context),
+                ),
+                SizedBox(height: isShort ? 8 : 16),
+                Container(height: 1, color: AppTheme.borderColor),
+                SizedBox(height: isShort ? 8 : 16),
+                if (isShort)
+                  SizedBox(height: 140, child: _buildComparisonSection(context))
+                else
+                  Expanded(child: _buildComparisonSection(context)),
+                SizedBox(height: isShort ? 8 : 12),
+                _buildModeSwitcher(context),
+              ],
+            );
+
+            final paddedContent = Padding(
+              padding: EdgeInsets.fromLTRB(20, isShort ? 12 : 32, 20, 20),
+              child: content,
+            );
+
+            return isShort
+                ? SingleChildScrollView(child: paddedContent)
+                : paddedContent;
+          },
         ),
       ),
     );
