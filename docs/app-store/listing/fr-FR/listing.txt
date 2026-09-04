@@ -1,0 +1,27 @@
+Nom de l’app
+Pictools - Outils d’image
+
+Sous-titre
+Outils d’image sur l’appareil
+
+Texte promotionnel
+Traitez vos images directement sur votre appareil, sans les téléverser.
+
+Description
+Pictools est une boîte à outils légère pour les tâches d’image du quotidien, conçue dans le respect de la confidentialité. Aucun compte n’est nécessaire : choisissez une image et commencez à travailler.
+
+Fonctions principales :
+- Comparaison d’images : examinez les différences avec les vues curseur, côte à côte et superposition.
+- Redimensionnement et recadrage : saisissez des dimensions précises, verrouillez les proportions ou utilisez un format courant.
+- Amélioration de la luminosité : améliorez l’exposition et les détails dans les ombres, puis comparez le résultat à l’original.
+- Conversion de formats : convertissez par lots des images PNG, JPG, WebP, BMP, ICO et TIFF.
+- Exportation flexible : choisissez les images et l’emplacement d’exportation avec le sélecteur de fichiers d’iOS.
+
+La confidentialité avant tout :
+Pictools ne demande aucune connexion et n’intègre ni publicité ni SDK d’analyse ou de suivi. Les images sont traitées sur votre appareil et ne nous sont jamais envoyées. Choisissez la langue de l’interface dans les réglages ou utilisez la langue du système.
+
+Nouveautés
+Première version iOS avec comparaison d’images, redimensionnement, recadrage selon un format, amélioration de la luminosité et conversion de formats. Tous les traitements sont effectués sur votre appareil.
+
+Mots-clés
+outils image,éditeur photo,comparer,cadrer,redimensionner,convertir,améliorer,confidentialité,local

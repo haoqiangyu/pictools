@@ -1,0 +1,27 @@
+App Name
+Pictools - Image Tools
+
+Subtitle
+On-device image tools
+
+Promotional Text
+Handle everyday image tasks directly on your device, without uploading your images.
+
+Description
+Pictools is a lightweight image toolbox built with privacy in mind. No account is required: choose an image and start working.
+
+Key features:
+- Image comparison: inspect differences with slider, side-by-side, and overlay views.
+- Resize and crop: enter exact dimensions, lock the aspect ratio, or crop to a common ratio.
+- Brightness enhancement: improve exposure and shadow detail, then compare the result with the original.
+- Format conversion: batch convert PNG, JPG, WebP, BMP, ICO, and TIFF images.
+- Flexible export: choose images and export locations through the iOS system file picker.
+
+Privacy first:
+Pictools requires no sign-in and includes no advertising, analytics, or tracking SDKs. Image processing takes place on your device, and the app does not upload your images to us. Choose a display language in Settings or follow the system language.
+
+What's New
+First iOS release with image comparison, resizing, aspect-ratio cropping, brightness enhancement, and format conversion. All image processing runs on your device.
+
+Keywords
+image tools,image editor,compare images,crop,resize,convert,enhance,offline,privacy
