@@ -1,17 +1,17 @@
 use image::{DynamicImage, ImageReader, RgbaImage};
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 use ort::session::{builder::GraphOptimizationLevel, Session};
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 use ort::value::Value;
 use std::io::Cursor;
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 use std::sync::Once;
 
 // 确保 tracing subscriber 只初始化一次
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 static INIT_TRACING: Once = Once::new();
 
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 fn init_tracing() {
     INIT_TRACING.call_once(|| {
         // 初始化 tracing subscriber，捕获 ort 的日志
@@ -30,7 +30,7 @@ fn init_tracing() {
 ///
 /// # Returns
 /// 返回带有透明背景的RGBA图片数据（PNG格式）
-#[cfg(not(target_os = "android"))]
+#[cfg(not(any(target_os = "android", target_os = "ios")))]
 pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<u8>, String> {
     // 初始化 tracing 以输出 ort 的执行提供程序日志
     init_tracing();
@@ -157,9 +157,9 @@ pub fn remove_background(image_data: Vec<u8>, model_path: String) -> Result<Vec<
     Ok(buffer.into_inner())
 }
 
-#[cfg(target_os = "android")]
+#[cfg(any(target_os = "android", target_os = "ios"))]
 pub fn remove_background(_image_data: Vec<u8>, _model_path: String) -> Result<Vec<u8>, String> {
-    Err("Background removal is not available on Android".to_string())
+    Err("Background removal is not available on mobile".to_string())
 }
 
 /// 为透明图片添加纯色背景

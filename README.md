@@ -97,6 +97,12 @@ Android 版本支持图片对比、裁剪与缩放、Rust 亮度增强和格式�
 
 Google Play 发布构建与签名步骤见 [Android 发布检查清单](docs/GOOGLE_PLAY_RELEASE.md)。
 
+### iOS
+
+iOS 版本支持图片对比、裁剪与缩放、亮度增强和格式转换。图片编解码、裁剪缩放和亮度增强通过应用内置的 Rust 原生库在设备本地执行；主体抠图和多窗口仅在桌面版提供。iOS 通过系统文件选择器导入和导出图片，不申请相册权限。
+
+App Store 发布构建、签名和审核资料见 [iOS 发布检查清单](docs/IOS_RELEASE.md)。
+
 ### macOS
 
 1. 从 [Releases](https://github.com/haoqiangyu/pictools/releases) 下载最新版本的 `Pictools.zip`
@@ -161,9 +167,9 @@ fvm flutter build macos --release
 ### 技术栈
 
 - **框架**: Flutter 3.44.6
-- **平台**: Android、macOS
+- **平台**: Android、iOS、macOS
 - **状态管理**: Provider
-- **图片处理**: Android 与 macOS 的亮度增强和图片编解码使用 Rust（通过 flutter_rust_bridge）
+- **图片处理**: Android、iOS 与 macOS 的亮度增强和图片编解码使用 Rust（通过 flutter_rust_bridge）
 - **依赖库**:
   - `file_picker` - 文件选择
   - `desktop_drop` - 拖拽上传

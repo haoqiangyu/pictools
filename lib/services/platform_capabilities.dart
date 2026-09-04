@@ -8,6 +8,7 @@ class PlatformCapabilities {
   static bool get isDesktop => !isMobile;
 
   static bool get supportsMultiWindow => isDesktop;
-  static bool get supportsRustProcessing => isDesktop || Platform.isAndroid;
+  static bool get supportsRustProcessing =>
+      isDesktop || Platform.isAndroid || Platform.isIOS;
   static bool get supportsBackgroundRemoval => isDesktop;
 }

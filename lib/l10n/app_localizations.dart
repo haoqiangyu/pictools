@@ -105,7 +105,7 @@ class AppLocalizations {
       'privacySharingTitle': '数据共享',
       'privacySharing': '我们不收集、出售或共享您的个人数据。卸载应用会由操作系统清除应用保存的本地偏好。',
       'privacyContactTitle': '联系我们',
-      'privacyContact': '如对本政策有疑问，请通过 Google Play 商店页面所列的开发者联系方式联系我们。',
+      'privacyContact': '如对本政策有疑问，请通过应用商店页面提供的开发者联系方式联系我们。',
     },
     'zh_Hant': {
       ..._commonZhHant,
@@ -151,7 +151,7 @@ class AppLocalizations {
       'privacySharingTitle': '資料分享',
       'privacySharing': '我們不收集、出售或分享您的個人資料。解除安裝時，作業系統會清除應用程式儲存的本機偏好。',
       'privacyContactTitle': '聯絡我們',
-      'privacyContact': '若對本政策有疑問，請使用 Google Play 商店頁面所列的開發者聯絡方式。',
+      'privacyContact': '若對本政策有疑問，請使用應用程式商店頁面所列的開發者聯絡方式。',
     },
     'en': {
       ..._commonEn,
@@ -207,7 +207,7 @@ class AppLocalizations {
           'We do not collect, sell, or share your personal data. Your operating system removes locally stored app preferences when you uninstall the app.',
       'privacyContactTitle': 'Contact',
       'privacyContact':
-          'Questions about this policy can be sent using the developer contact details on the Google Play listing.',
+          'Questions about this policy can be sent using the developer contact details on the app store listing.',
     },
     'es': {
       ..._commonEs,
@@ -263,7 +263,7 @@ class AppLocalizations {
           'No recopilamos, vendemos ni compartimos tus datos personales. El sistema operativo elimina las preferencias locales al desinstalar la aplicación.',
       'privacyContactTitle': 'Contacto',
       'privacyContact':
-          'Para cualquier consulta, utiliza los datos de contacto del desarrollador que aparecen en Google Play.',
+          'Para cualquier consulta, utiliza los datos de contacto del desarrollador que aparecen en la ficha de la tienda de aplicaciones.',
     },
     'fr': {
       ..._commonFr,
@@ -321,7 +321,7 @@ class AppLocalizations {
           'Nous ne collectons, ne vendons ni ne partageons vos données personnelles. Le système d’exploitation supprime les préférences locales lors de la désinstallation.',
       'privacyContactTitle': 'Contact',
       'privacyContact':
-          'Pour toute question, utilisez les coordonnées du développeur indiquées sur la fiche Google Play.',
+          'Pour toute question, utilisez les coordonnées du développeur indiquées sur la fiche de l’application.',
     },
     'de': {
       ..._commonDe,
@@ -377,7 +377,7 @@ class AppLocalizations {
           'Wir erheben, verkaufen oder teilen keine personenbezogenen Daten. Beim Deinstallieren entfernt das Betriebssystem die lokal gespeicherten App-Einstellungen.',
       'privacyContactTitle': 'Kontakt',
       'privacyContact':
-          'Bei Fragen nutzen Sie bitte die Kontaktdaten des Entwicklers im Google-Play-Eintrag.',
+          'Bei Fragen nutzen Sie bitte die Kontaktdaten des Entwicklers im Eintrag des App Stores.',
     },
   };
 }
