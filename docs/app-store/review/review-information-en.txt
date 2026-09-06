@@ -1,0 +1,33 @@
+Hello App Review Team,
+
+I am the independent developer of Pictools. Below is the requested information about the iPhone and iPad app submitted for review.
+Bundle ID: com.annuo.pictools
+
+1. Demonstration and access
+Please see the physical-device screen recording attached to my App Review reply for this submission.
+
+The app has no accounts, registration, or login, so account deletion and demo credentials are not applicable. Users edit their own images locally. There are no public posts, shared feeds, messaging, profiles, or content shared between users; content reporting and user blocking are therefore not applicable. There are no in-app purchases, subscriptions, or paid feature unlocks. All tools are accessible after installation.
+
+2. Purpose and target audience
+Pictools is an image utility for everyday users, photographers, designers, and content creators. It helps users compare images, resize and crop them, brighten dark photos, and convert formats. Processing takes place on the device, allowing users to complete common editing tasks without uploading images to a processing server. It is intended for the general public, not a specific business or employee group.
+
+3. Setup and main features
+No account, API key, activation, or special setup is required. Any ordinary PNG/JPEG images can be used; no special sample files are needed. For comparison, resizing/cropping, and enhancement, prepare images in Files. Photos can be copied there using Share > Save to Files. Conversion selects images from Photos. Locally available images can be processed offline.
+
+Launch Pictools to open the toolbox. English is available in Settings > Language.
+- Compare images: tap the two image areas to select files. Try Slider, Side by side, and Overlay; drag the divider or adjust opacity.
+- Resize & crop: select an image. Choose Resize and enter dimensions, or Crop ratio and adjust the crop area. Choose an export format, tap Export image, and complete the system save dialog.
+- Enhance brightness: select an image, tap Enhance, and compare the original and result. Choose an export format and tap Export image to save.
+- Convert format: tap Add images, select images, choose Output format, and tap Convert. Complete the save dialog for each output. Formats include PNG, JPG, WebP, BMP, ICO, and TIFF.
+- Settings: change the interface language or open Privacy Policy.
+
+4. External services, tools, and platforms
+Core processing uses no remote backend, data provider, authentication service, payment processor, or cloud AI service. Bundled tools include Flutter/Dart, Rust, flutter_rust_bridge, image-processing libraries, and a WebP codec. The file_picker plugin uses Apple's system file/photo pickers and save UI; shared_preferences stores local preferences. No advertising, analytics, or tracking SDK is used. Pictools does not upload user images to developer servers or AI services. Optional iCloud file/photo access is handled by Apple and is unnecessary for local files. Desktop background removal and Hugging Face/ONNX model features are not offered in this iOS version.
+
+5. Regional availability of features
+The app provides the same functionality in all regions where it is distributed, with no region-based feature restrictions. It supports Simplified Chinese, Traditional Chinese, English, Spanish, French, and German. Language selection changes the interface text, not the available tools.
+
+6. Regulated services and third-party content
+Pictools is a general-purpose image utility and does not provide regulated services or distribute a third-party media catalog. It processes images selected by users from their own device. No regulated-service credentials or third-party content-provider authorization is applicable to these functions.
+
+Thank you for reviewing Pictools.
