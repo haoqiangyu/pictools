@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "created_at": "2026-11-11T13:51:40Z",
+  "generator": "ui-design-crafter/scripts/export_store_screenshots.py",
+  "source_manifest": null,
+  "render_mode": "html-only",
+  "target": {
+    "platform": "app-store",
+    "preset": "custom-1179x2556",
+    "device_group": "ios-phone",
+    "orientation": "portrait",
+    "width": 1179,
+    "height": 2556,
+    "required_or_optional": "custom",
+    "source_url": "",
+    "last_checked": "",
+    "locale": "es-ES",
+    "theme": "default",
+    "style": "top-caption"
+  },
+  "outputs": [
+    {
+      "id": "01-import-content-top-caption",
+      "screen_name": "import-content",
+      "screen_role": null,
+      "source": "user-provided",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/es-ES/ios-phone/import-content.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/es-ES/ios-phone/06-import/app-store/custom-1179x2556/es-es/01-import-content-top-caption.html",
+      "png_path": null,
+      "caption": "Desde Fotos.\nDesde Archivos.",
+      "alt_text": "El diálogo de importación permite elegir imágenes desde Fotos o Archivos.",
+      "style": "top-caption",
+      "width": 1179,
+      "height": 2556,
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "locale": "es-ES",
+      "theme": "default",
+      "status": "html-ready",
+      "render_status": "not-rendered",
+      "warnings": []
+    }
+  ]
+}

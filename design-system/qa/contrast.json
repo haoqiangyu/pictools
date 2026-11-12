@@ -1,0 +1,65 @@
+[
+  {
+    "role": "primary on white",
+    "foreground": "#C84725",
+    "background": "#FFFFFF",
+    "ratio": 4.79,
+    "passes_body": true
+  },
+  {
+    "role": "ink on bg",
+    "foreground": "#202522",
+    "background": "#F7F6F2",
+    "ratio": 14.39,
+    "passes_body": true
+  },
+  {
+    "role": "secondary on bg",
+    "foreground": "#626B65",
+    "background": "#F7F6F2",
+    "ratio": 5.1,
+    "passes_body": true
+  },
+  {
+    "role": "dark text",
+    "foreground": "#F5F5EF",
+    "background": "#171B18",
+    "ratio": 15.91,
+    "passes_body": true
+  },
+  {
+    "role": "dark secondary",
+    "foreground": "#B1BAB2",
+    "background": "#232925",
+    "ratio": 7.44,
+    "passes_body": true
+  },
+  {
+    "role": "dark primary content",
+    "foreground": "#432313",
+    "background": "#FFAE8F",
+    "ratio": 7.86,
+    "passes_body": true
+  },
+  {
+    "role": "success",
+    "foreground": "#23744B",
+    "background": "#E5F2E9",
+    "ratio": 4.96,
+    "passes_body": true
+  },
+  {
+    "role": "warning",
+    "foreground": "#8A5A1B",
+    "background": "#F8EFD8",
+    "ratio": 5.15,
+    "passes_body": true
+  },
+  {
+    "role": "danger",
+    "foreground": "#B63232",
+    "background": "#FCE9E6",
+    "ratio": 5.14,
+    "passes_body": true
+  }
+]

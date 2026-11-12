@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 4,
+    "readable_images": 4,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/01-batch.png",
+      "caption": "",
+      "alt_text": "Trois photos converties en JPG par lot, avec réglages du format, de la qualité et de l'enregistrement.",
+      "platform": "google-play",
+      "preset": "custom-1920x1080",
+      "expected_width": 1920,
+      "expected_height": 1080,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/02-crop.png",
+      "caption": "",
+      "alt_text": "Recadrez une photo de la côte, choisissez les proportions et exportez une copie.",
+      "platform": "google-play",
+      "preset": "custom-1920x1080",
+      "expected_width": 1920,
+      "expected_height": 1080,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/03-compare.png",
+      "caption": "",
+      "alt_text": "Comparez une photo avant et après avec le curseur, côte à côte ou en superposition.",
+      "platform": "google-play",
+      "preset": "custom-1920x1080",
+      "expected_width": 1920,
+      "expected_height": 1080,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/04-export.png",
+      "caption": "",
+      "alt_text": "Choisissez le nom et le format, puis enregistrez une copie dans Photos ou Fichiers.",
+      "platform": "google-play",
+      "preset": "custom-1920x1080",
+      "expected_width": 1920,
+      "expected_height": 1080,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/01-batch.png",
+      "fmt": "png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 142561,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/02-crop.png",
+      "fmt": "png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1781762,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/03-compare.png",
+      "fmt": "png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1890557,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/tablet/04-export.png",
+      "fmt": "png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 717815,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

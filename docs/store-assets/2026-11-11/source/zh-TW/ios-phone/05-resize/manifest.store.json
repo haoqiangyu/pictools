@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "created_at": "2026-11-11T13:51:22Z",
+  "generator": "ui-design-crafter/scripts/export_store_screenshots.py",
+  "source_manifest": null,
+  "render_mode": "html-only",
+  "target": {
+    "platform": "app-store",
+    "preset": "custom-1179x2556",
+    "device_group": "ios-phone",
+    "orientation": "portrait",
+    "width": 1179,
+    "height": 2556,
+    "required_or_optional": "custom",
+    "source_url": "",
+    "last_checked": "",
+    "locale": "zh-TW",
+    "theme": "default",
+    "style": "top-caption"
+  },
+  "outputs": [
+    {
+      "id": "01-resize-content-top-caption",
+      "screen_name": "resize-content",
+      "screen_role": null,
+      "source": "user-provided",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-TW/ios-phone/resize-content.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-TW/ios-phone/05-resize/app-store/custom-1179x2556/zh-tw/01-resize-content-top-caption.html",
+      "png_path": null,
+      "caption": "想要的尺寸\n精確到像素",
+      "alt_text": "調整圖片寬度與高度，鎖定比例並匯出所需尺寸。",
+      "style": "top-caption",
+      "width": 1179,
+      "height": 2556,
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "locale": "zh-TW",
+      "theme": "default",
+      "status": "html-ready",
+      "render_status": "not-rendered",
+      "warnings": []
+    }
+  ]
+}

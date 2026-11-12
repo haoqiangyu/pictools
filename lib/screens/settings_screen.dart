@@ -1,220 +1,134 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:window_manager/window_manager.dart';
-
-import '../l10n/app_localizations.dart';
-import '../services/platform_capabilities.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../services/settings_provider.dart';
+import '../layout/studio_scaffold.dart';
+import '../l10n/studio_localizations.dart';
 import '../theme/app_theme.dart';
+import '../widgets/studio_widgets.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key, this.isStandaloneWindow = false});
-
   final bool isStandaloneWindow;
-
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  String _version = '-';
-
-  static const _languages = <(String?, String)>[
-    (null, 'systemLanguage'),
-    ('zh_CN', '简体中文'),
-    ('zh_TW', '繁體中文'),
-    ('en', 'English'),
-    ('es', 'Español'),
-    ('fr', 'Français'),
-    ('de', 'Deutsch'),
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-    PackageInfo.fromPlatform().then((info) {
-      if (mounted) setState(() => _version = info.version);
-    });
-  }
-
+  late final Future<PackageInfo> _info = PackageInfo.fromPlatform();
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    return Scaffold(
-      backgroundColor: AppTheme.primaryBg,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 24, 20, 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              _header(context),
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView(
-                  children: [
-                    _section(
-                      title: l10n.t('language'),
-                      icon: Icons.language_rounded,
-                      child: Consumer<SettingsProvider>(
-                        builder: (context, settings, _) =>
-                            DropdownButtonFormField<String>(
-                              initialValue: settings.language ?? 'system',
-                              dropdownColor: AppTheme.cardBg,
-                              decoration: InputDecoration(
-                                labelText: l10n.t('languageHint'),
-                                border: const OutlineInputBorder(),
-                              ),
-                              items: _languages.map((entry) {
-                                final value = entry.$1 ?? 'system';
-                                final label = entry.$1 == null
-                                    ? l10n.t(entry.$2)
-                                    : entry.$2;
-                                return DropdownMenuItem(
-                                  value: value,
-                                  child: Text(label),
-                                );
-                              }).toList(),
-                              onChanged: (value) => settings.setLanguage(
-                                value == null || value == 'system'
-                                    ? null
-                                    : value,
-                              ),
-                            ),
+    final settings = context.watch<SettingsProvider>();
+    return StudioScaffold(
+      title: context.s('settings'),
+      isStandaloneWindow: widget.isStandaloneWindow,
+      body: StudioReadingPane(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 640),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  StudioSection(
+                    context.s('appearance'),
+                    child: StudioSegments<ThemeMode>(
+                      items: {
+                        ThemeMode.system: context.s('systemTheme'),
+                        ThemeMode.light: context.s('lightTheme'),
+                        ThemeMode.dark: context.s('darkTheme'),
+                      },
+                      value: settings.themeMode,
+                      onChanged: settings.setThemeMode,
+                    ),
+                  ),
+                  const SizedBox(height: 28),
+                  StudioSection(
+                    context.s('language'),
+                    child: DropdownButtonFormField<String>(
+                      initialValue: settings.language ?? 'system',
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        labelText: context.s('languageHint'),
+                      ),
+                      items: [
+                        DropdownMenuItem(
+                          value: 'system',
+                          child: Text(context.s('systemLanguage')),
+                        ),
+                        for (final e in const {
+                          'zh_CN': '简体中文',
+                          'zh_TW': '繁體中文',
+                          'en': 'English',
+                          'es': 'Español',
+                          'fr': 'Français',
+                          'de': 'Deutsch',
+                        }.entries)
+                          DropdownMenuItem(value: e.key, child: Text(e.value)),
+                      ],
+                      onChanged: (value) => settings.setLanguage(
+                        value == 'system' ? null : value,
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    _section(
-                      title: l10n.t('privacy'),
-                      icon: Icons.privacy_tip_outlined,
-                      child: ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text(l10n.t('privacy')),
-                        subtitle: Text(l10n.t('privacyHint')),
-                        trailing: const Icon(Icons.chevron_right_rounded),
-                        onTap: () =>
-                            Navigator.pushNamed(context, '/privacy-policy'),
+                  ),
+                  const SizedBox(height: 28),
+                  Material(
+                    color: context.studio.surface,
+                    borderRadius: BorderRadius.circular(8),
+                    child: ListTile(
+                      contentPadding: const EdgeInsets.all(16),
+                      leading: Icon(
+                        Icons.shield_outlined,
+                        color: context.studio.success,
+                      ),
+                      title: Text(context.s('privacy')),
+                      subtitle: Text(context.s('privacyHint')),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () =>
+                          Navigator.pushNamed(context, '/privacy-policy'),
+                    ),
+                  ),
+                  const SizedBox(height: 32),
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset(
+                        'assets/brand/app-icon.png',
+                        width: 72,
+                        height: 72,
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    _section(
-                      title: l10n.t('about'),
-                      icon: Icons.info_outline_rounded,
-                      child: Column(
-                        children: [
-                          _infoRow(l10n.t('version'), _version),
-                          const Divider(height: 24),
-                          _infoRow(l10n.t('localProcessing'), 'Pictools'),
-                        ],
-                      ),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'Pictools',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  FutureBuilder<PackageInfo>(
+                    future: _info,
+                    builder: (context, s) => Text(
+                      s.hasData
+                          ? '${context.s('version')} ${s.data!.version} (${s.data!.buildNumber})'
+                          : context.s('localProcessing'),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: context.studio.muted),
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    context.s('homeFootnote'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: context.studio.muted),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
-
-  Widget _header(BuildContext context) {
-    final l10n = context.l10n;
-    return GestureDetector(
-      onDoubleTap: () async {
-        if (!PlatformCapabilities.supportsMultiWindow) return;
-        if (await windowManager.isMaximized()) {
-          await windowManager.unmaximize();
-        } else {
-          await windowManager.maximize();
-        }
-      },
-      child: Row(
-        children: [
-          if (Platform.isMacOS && widget.isStandaloneWindow)
-            const SizedBox(width: 54),
-          if (!widget.isStandaloneWindow)
-            IconButton(
-              onPressed: () => Navigator.pop(context),
-              tooltip: l10n.t('back'),
-              icon: const Icon(Icons.arrow_back_rounded),
-            ),
-          const SizedBox(width: 8),
-          const Icon(Icons.settings_rounded, color: AppTheme.accentColor),
-          const SizedBox(width: 10),
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n.t('settings'),
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  l10n.t('settingsSubtitle'),
-                  style: const TextStyle(
-                    color: AppTheme.secondaryColor,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _section({
-    required String title,
-    required IconData icon,
-    required Widget child,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: AppTheme.cardBg,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppTheme.borderColor),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(icon, color: AppTheme.accentColor),
-              const SizedBox(width: 10),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
-          child,
-        ],
-      ),
-    );
-  }
-
-  Widget _infoRow(String label, String value) => Row(
-    children: [
-      Expanded(
-        child: Text(
-          label,
-          style: const TextStyle(color: AppTheme.secondaryColor),
-        ),
-      ),
-      Text(value, style: const TextStyle(fontWeight: FontWeight.w500)),
-    ],
-  );
 }

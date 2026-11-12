@@ -1,387 +1,346 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:desktop_drop/desktop_drop.dart';
-import '../theme/app_theme.dart';
-import '../widgets/loading_overlay.dart';
-import '../models/export_format.dart';
-import '../services/image_processing_service.dart';
-import '../services/platform_capabilities.dart';
-import '../l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import '../providers/batch_converter_provider.dart';
+import '../layout/studio_scaffold.dart';
+import '../l10n/studio_localizations.dart';
 import '../services/file_export_service.dart';
+import '../services/photo_library_service.dart';
+import '../models/save_destination.dart';
+import '../widgets/save_destination_sheet.dart';
+import '../theme/app_theme.dart';
+import '../widgets/studio_widgets.dart';
+import '../widgets/export_sheet.dart';
 
 class ImageConverterScreen extends StatefulWidget {
   const ImageConverterScreen({super.key});
-
   @override
   State<ImageConverterScreen> createState() => _ImageConverterScreenState();
 }
 
 class _ImageConverterScreenState extends State<ImageConverterScreen> {
-  // 当前处理的文件列表
-  final List<ConverterItem> _items = [];
-
-  // 全局输出格式设置
-  ExportFormat _globalExportFormat = ExportFormat.png;
-
-  // 是否正在处理
-  bool _isProcessing = false;
-
-  Future<void> _pickFiles() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.image,
-      allowMultiple: true,
-    );
-
-    if (result != null) {
-      setState(() {
-        for (final file in result.files) {
-          if (file.path != null) {
-            _items.add(ConverterItem(path: file.path!, name: file.name));
-          }
-        }
-      });
-    }
-  }
-
-  void _removeFile(int index) {
-    setState(() {
-      _items.removeAt(index);
-    });
-  }
-
-  void _clearAll() {
-    setState(() {
-      _items.clear();
-    });
-  }
-
-  Future<void> _convertAll() async {
-    if (_items.isEmpty) return;
-
-    String? outputDirectory;
-    if (!PlatformCapabilities.isMobile) {
-      outputDirectory = await FilePicker.platform.getDirectoryPath(
-        dialogTitle: context.l10n.t('chooseSaveFolder'),
-      );
-      if (outputDirectory == null) return;
-    }
-    if (!mounted) return;
-
-    setState(() {
-      _isProcessing = true;
-    });
-    var failedCount = 0;
-
+  bool _importing = false, _saving = false, _stopSaving = false;
+  Future<void> _add() async {
+    if (_importing) return;
+    setState(() => _importing = true);
     try {
-      await LoadingOverlay.showWhile(
-        context,
-        message: context.l10n.t('converting'),
-        task: () async {
-          for (var item in _items) {
-            try {
-              final file = File(item.path);
-              final bytes = await file.readAsBytes();
-              final encodedBytes = await ImageProcessingService.encode(
-                bytes,
-                _globalExportFormat,
-              );
-
-              final dotIndex = item.name.lastIndexOf('.');
-              final fileNameWithoutExt = dotIndex > 0
-                  ? item.name.substring(0, dotIndex)
-                  : item.name;
-              final newFileName =
-                  '$fileNameWithoutExt.${_globalExportFormat.extension}';
-              if (PlatformCapabilities.isMobile) {
-                final savedPath = await FileExportService.save(
-                  bytes: encodedBytes,
-                  fileName: newFileName,
-                  extension: _globalExportFormat.extension,
-                );
-                if (savedPath == null) {
-                  throw const FileSystemException('用户取消保存');
-                }
-              } else {
-                final outputPath = '$outputDirectory/$newFileName';
-                await File(outputPath).writeAsBytes(encodedBytes, flush: true);
-              }
-
-              if (mounted) {
-                setState(() => item.status = ConversionStatus.success);
-              }
-            } catch (_) {
-              failedCount++;
-              if (mounted) {
-                setState(() => item.status = ConversionStatus.failed);
-              }
-            }
-          }
-        },
-      );
-
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              failedCount == 0
-                  ? context.l10n.t('conversionDone')
-                  : context.l10n
-                        .t('conversionPartial')
-                        .replaceAll('{count}', '$failedCount'),
-            ),
-            backgroundColor: failedCount == 0
-                ? AppTheme.highlightColor
-                : AppTheme.errorColor,
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
+      final files = await pickStudioFiles(context, multiple: true);
+      for (final f in files) {
+        if (!mounted) break;
+        final image = await acceptImage(context, f);
+        if (image != null && mounted) {
+          context.read<BatchConverterProvider>().add(image);
+        }
       }
     } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.l10n.t('conversionFailed').replaceAll('{error}', '$e'),
-            ),
-            backgroundColor: AppTheme.errorColor,
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      }
+      if (mounted) studioMessage(context, studioError(context, e));
     } finally {
-      setState(() {
-        _isProcessing = false;
-      });
+      if (mounted) setState(() => _importing = false);
+    }
+  }
+
+  Future<void> _save(BatchConverterProvider p, {BatchItem? only}) async {
+    if (_saving) return;
+    setState(() {
+      _saving = true;
+      _stopSaving = false;
+    });
+    SaveDestination? destination;
+    try {
+      final items = only == null ? List<BatchItem>.of(p.items) : [only];
+      destination = await chooseSaveDestination(
+        context,
+        photoCount: items
+            .where((i) => i.canSaveTo(SaveDestination.photos))
+            .length,
+        fileCount: items
+            .where((i) => i.canSaveTo(SaveDestination.files))
+            .length,
+        totalCount: items.where((i) => i.result != null).length,
+      );
+      if (!mounted || destination == null) return;
+      if (destination == SaveDestination.photos) {
+        await PhotoLibraryService.ensurePermission();
+      }
+      var saved = 0;
+      for (final item in items) {
+        if (!mounted || _stopSaving) break;
+        if (!item.canSaveTo(destination)) continue;
+        if (destination == SaveDestination.photos) {
+          await PhotoLibraryService.save(
+            bytes: item.result!,
+            fileName: item.outputName,
+            format: item.options!.format,
+          );
+        } else {
+          final result = await FileExportService.save(
+            bytes: item.result!,
+            fileName: item.outputName,
+            extension: item.options!.format.extension,
+            dialogTitle: context.s('saveToFiles'),
+          );
+          if (result == null) {
+            if (mounted) {
+              studioMessage(context, '${context.s('saveCancelled')} ($saved)');
+            }
+            return;
+          }
+        }
+        p.markSaved(item, destination);
+        saved++;
+      }
+      if (mounted && saved > 0) {
+        studioMessage(context, '${context.s(destination.successKey)} · $saved');
+      }
+    } catch (e) {
+      if (!mounted) return;
+      final key = destination == SaveDestination.photos
+          ? PhotoLibraryService.errorKey(e)
+          : 'exportError';
+      await showStudioDialog<void>(
+        context,
+        StudioPrompt(
+          title: context.s('chooseDestination'),
+          message: context.s(key),
+          actions: [
+            if (key == 'photosPermissionDenied')
+              TextButton(
+                onPressed: () async {
+                  try {
+                    await PhotoLibraryService.openSettings();
+                  } catch (_) {
+                    /* Keep results available. */
+                  }
+                },
+                child: Text(context.s('openSettings')),
+              ),
+            FilledButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(context.s('close')),
+            ),
+          ],
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _saving = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor:
-          AppTheme.primaryBg, // Fixed: backgroundColor -> primaryBg
-      appBar: AppBar(
-        title: Text(context.l10n.t('converterTitle')),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppTheme.textColor),
-          onPressed: () => Navigator.of(context).pop(),
+    final p = context.watch<BatchConverterProvider>();
+    final ready = p.items.any(
+      (i) =>
+          i.canSaveTo(SaveDestination.files) ||
+          (PhotoLibraryService.available &&
+              i.canSaveTo(SaveDestination.photos)),
+    );
+    final action = StudioAction(
+      context.s(
+        _saving
+            ? 'saving'
+            : p.running
+            ? 'processing'
+            : p.canRun
+            ? 'startConvert'
+            : ready
+            ? 'saveResults'
+            : 'addImages',
+      ),
+      p.canRun ? Icons.transform : Icons.download_outlined,
+      _saving || p.running || _importing
+          ? null
+          : p.canRun
+          ? () => p.run()
+          : ready
+          ? () => _save(p)
+          : _add,
+    );
+    final queue = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          '${context.s('queue')} · ${p.items.length}',
+          style: Theme.of(context).textTheme.titleLarge,
         ),
-      ),
-      body: Column(
-        children: [
-          // 顶部操作栏
-          _buildTopBar(),
-
-          // 文件列表区域
-          Expanded(
-            child: _items.isEmpty ? _buildEmptyState() : _buildFileList(),
-          ),
-
-          // 底部控制栏
-          _buildBottomBar(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTopBar() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      color: AppTheme.cardBg,
-      child: Row(
-        children: [
-          ElevatedButton.icon(
-            onPressed: _pickFiles,
-            icon: const Icon(Icons.add_photo_alternate),
-            label: Text(context.l10n.t('addImages')),
-            style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  AppTheme.accentColor, // Fixed: primaryColor -> accentColor
-              foregroundColor: Colors.white,
-            ),
-          ),
-          const SizedBox(width: 16),
-          TextButton.icon(
-            onPressed: _items.isEmpty ? null : _clearAll,
-            icon: const Icon(Icons.delete_sweep),
-            label: Text(context.l10n.t('clearList')),
-            style: TextButton.styleFrom(foregroundColor: AppTheme.errorColor),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEmptyState() {
-    final emptyState = Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
-            Icons.cloud_upload_outlined,
-            size: 64,
-            color: AppTheme.secondaryColor,
+        const SizedBox(height: 8),
+        Text(
+          '${p.complete} / ${p.items.length} ${context.s('ready')}',
+          style: TextStyle(color: context.studio.muted),
+        ),
+        const SizedBox(height: 16),
+        if (p.running) ...[
+          LinearProgressIndicator(
+            value: p.items.isEmpty ? 0 : p.complete / p.items.length,
           ),
           const SizedBox(height: 16),
-          Text(
-            context.l10n.t(
-              PlatformCapabilities.isMobile
-                  ? 'tapAddImages'
-                  : 'dropOrAddImages',
-            ),
-            style: const TextStyle(
-              fontSize: 16,
-              color: AppTheme.secondaryColor,
-            ),
-          ),
         ],
-      ),
-    );
-
-    if (PlatformCapabilities.isMobile) return emptyState;
-
-    return DropTarget(
-      onDragDone: (details) {
-        setState(() {
-          for (final file in details.files) {
-            _items.add(ConverterItem(path: file.path, name: file.name));
-          }
-        });
-      },
-      child: emptyState,
-    );
-  }
-
-  Widget _buildFileList() {
-    return ListView.builder(
-      padding: const EdgeInsets.all(16),
-      itemCount: _items.length,
-      itemBuilder: (context, index) {
-        final item = _items[index];
-        return Card(
-          margin: const EdgeInsets.only(bottom: 8),
-          color: AppTheme.cardBg,
-          child: ListTile(
-            leading: const Icon(
-              Icons.image,
-              color: AppTheme.accentColor,
-            ), // Fixed: primaryColor -> accentColor
-            title: Text(
-              item.name,
-              style: const TextStyle(color: AppTheme.textColor),
-            ),
-            subtitle: Text(
-              item.path,
-              style: const TextStyle(
-                color: AppTheme.secondaryColor,
-                fontSize: 12,
-              ),
-            ),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
+        for (final item in p.items)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                if (item.status == ConversionStatus.success)
-                  const Icon(
-                    Icons.check_circle,
-                    color: AppTheme.highlightColor,
-                  ),
-                if (item.status == ConversionStatus.failed)
-                  const Icon(Icons.error, color: AppTheme.errorColor),
-                IconButton(
-                  icon: const Icon(Icons.close, color: AppTheme.secondaryColor),
-                  onPressed: () => _removeFile(index),
+                StudioFileTile(
+                  name: item.source.name,
+                  data: item.source.data,
+                  subtitle:
+                      '${context.s(item.statusKey)}${item.options == null ? '' : ' · ${item.options!.format.displayName}'}',
+                  trailing: item.status == BatchStatus.processing
+                      ? const SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : PopupMenuButton<String>(
+                          enabled: !p.running && !_saving,
+                          tooltip: context.s('more'),
+                          icon: Icon(
+                            item.status == BatchStatus.saved
+                                ? Icons.check_circle_outline
+                                : Icons.more_horiz,
+                            color: item.status == BatchStatus.saved
+                                ? context.studio.success
+                                : context.studio.ink,
+                          ),
+                          onSelected: (value) {
+                            if (value == 'save') {
+                              _save(p, only: item);
+                            } else if (value == 'retry') {
+                              p.run(only: item);
+                            } else {
+                              p.remove(item);
+                            }
+                          },
+                          itemBuilder: (_) => [
+                            if (item.canSaveTo(SaveDestination.files) ||
+                                (PhotoLibraryService.available &&
+                                    item.canSaveTo(SaveDestination.photos)))
+                              PopupMenuItem(
+                                value: 'save',
+                                child: Text(context.s('chooseDestination')),
+                              ),
+                            if (item.status == BatchStatus.failed)
+                              PopupMenuItem(
+                                value: 'retry',
+                                child: Text(context.s('retry')),
+                              ),
+                            PopupMenuItem(
+                              value: 'remove',
+                              child: Text(context.s('remove')),
+                            ),
+                          ],
+                        ),
                 ),
+                if (item.error != null)
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: StudioNotice(context.s(item.error!), error: true),
+                  ),
               ],
             ),
           ),
-        );
-      },
+        OutlinedButton.icon(
+          onPressed: _importing || p.running || _saving ? null : _add,
+          icon: _importing
+              ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.add),
+          label: Text(context.s('addImages')),
+        ),
+        if (p.running || _saving)
+          TextButton(
+            onPressed: p.cancelling
+                ? null
+                : () {
+                    p.cancel();
+                    setState(() => _stopSaving = true);
+                  },
+            child: Text(context.s(p.cancelling ? 'cancelling' : 'cancelQueue')),
+          ),
+      ],
     );
-  }
-
-  Widget _buildBottomBar() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppTheme.cardBg,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 4,
-            offset: const Offset(0, -2),
+    return SessionExit(
+      busy: _saving,
+      hasSession: p.items.isNotEmpty && !p.running && !_saving,
+      onDiscard: p.clear,
+      child: StudioScaffold(
+        title: context.s('convertShort'),
+        primary: p.items.isEmpty ? null : action,
+        actions: [
+          StudioAction(
+            context.s('addImages'),
+            Icons.add_photo_alternate_outlined,
+            _importing || p.running || _saving ? null : _add,
           ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Text(
-            context.l10n.t('outputFormat'),
-            style: const TextStyle(color: AppTheme.textColor),
-          ),
-          const SizedBox(width: 16),
-          DropdownButton<ExportFormat>(
-            value: _globalExportFormat,
-            dropdownColor: AppTheme.cardBg,
-            style: const TextStyle(color: AppTheme.textColor),
-            underline: Container(height: 1, color: AppTheme.borderColor),
-            items: ExportFormat.values.map((format) {
-              return DropdownMenuItem(
-                value: format,
-                child: Text(format.displayName),
-              );
-            }).toList(),
-            onChanged: (value) {
-              if (value != null) {
-                setState(() {
-                  _globalExportFormat = value;
-                });
-              }
-            },
-          ),
-          const Spacer(),
-          ElevatedButton(
-            onPressed: _items.isEmpty || _isProcessing ? null : _convertAll,
-            style: ElevatedButton.styleFrom(
-              backgroundColor:
-                  AppTheme.accentColor, // Fixed: primaryColor -> accentColor
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
+          if (p.items.isNotEmpty)
+            StudioAction(
+              context.s('clearConfirm'),
+              Icons.delete_outline,
+              p.running || _saving
+                  ? null
+                  : () async {
+                      final ok = await showStudioDialog<bool>(
+                        context,
+                        StudioPrompt(
+                          title: context.s('clearConfirm'),
+                          message: context.s('unsavedResults'),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: Text(context.s('cancel')),
+                            ),
+                            FilledButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              child: Text(context.s('discard')),
+                            ),
+                          ],
+                        ),
+                      );
+                      if (ok == true) p.clear();
+                    },
             ),
-            child: _isProcessing
-                ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: Colors.white,
-                    ),
-                  )
-                : Text(
-                    context.l10n.t('startConversion'),
-                    style: const TextStyle(color: Colors.white),
-                  ),
-          ),
         ],
+        body: p.items.isEmpty
+            ? StudioEmpty(
+                title: context.s('convertShort'),
+                description: context.s('batchHint'),
+                icon: Icons.transform,
+                onImage: p.add,
+                onPick: _add,
+              )
+            : StudioWorkspace(
+                previewFraction: .48,
+                primary: action,
+                preview: SingleChildScrollView(
+                  padding: const EdgeInsets.all(20),
+                  child: queue,
+                ),
+                inspector: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ExportSettings(
+                      options: p.options,
+                      onChanged: p.running || _saving ? null : p.setOptions,
+                    ),
+                    const SizedBox(height: 16),
+                    StudioNotice(context.s('batchOptionsNote')),
+                    const SizedBox(height: 12),
+                    StudioNotice(context.s('newCopy'), success: true),
+                    if (ready && p.canRun) ...[
+                      const SizedBox(height: 16),
+                      OutlinedButton.icon(
+                        onPressed: p.running || _saving ? null : () => _save(p),
+                        icon: const Icon(Icons.download_outlined),
+                        label: Text(context.s('saveResults')),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
       ),
     );
   }
-}
-
-enum ConversionStatus { pending, success, failed }
-
-class ConverterItem {
-  final String path;
-  final String name;
-  ConversionStatus status;
-
-  ConverterItem({
-    required this.path,
-    required this.name,
-    this.status = ConversionStatus.pending,
-  });
 }

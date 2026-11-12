@@ -1,6 +1,12 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsService {
+  Future<String?> getThemeMode() async =>
+      (await SharedPreferences.getInstance()).getString('themeMode');
+  Future<void> setThemeMode(String value) async {
+    await (await SharedPreferences.getInstance()).setString('themeMode', value);
+  }
+
   static const _keyLanguage = 'language';
 
   Future<String?> getLanguage() async {

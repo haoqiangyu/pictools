@@ -1,0 +1,439 @@
+require_relative "lib/store_release"
+require_relative "lib/store_screenshots"
+
+ENV["FASTLANE_SKIP_UPDATE_CHECK"] = "1"
+ENV["FASTLANE_HIDE_CHANGELOG"] = "1"
+ENV["FASTLANE_OPT_OUT_USAGE"] = "1"
+opt_out_usage
+skip_docs
+
+def release_project(options = {})
+  project = StoreRelease::Project.new(build_number: options[:build_number]).prepare!
+  UI.message("Pictools #{project.version}+#{project.build_number}; six languages; preview: #{project.output}/preview.html")
+  project
+end
+
+def required_env(name)
+  value = ENV[name]
+  UI.user_error!("Set #{name} in fastlane/.env (see docs/STORE_AUTOMATION.md)") if value.to_s.strip.empty?
+  value
+end
+
+def apple_key
+  path = File.expand_path(required_env("ASC_KEY_FILEPATH"), StoreRelease::ROOT)
+  UI.user_error!("ASC_KEY_FILEPATH does not exist") unless File.file?(path)
+  app_store_connect_api_key(
+    key_id: required_env("ASC_KEY_ID"), issuer_id: required_env("ASC_ISSUER_ID"),
+    key_filepath: path, duration: 1200, in_house: false
+  )
+end
+
+def google_key
+  path = File.expand_path(required_env("GOOGLE_PLAY_JSON_KEY"), StoreRelease::ROOT)
+  UI.user_error!("GOOGLE_PLAY_JSON_KEY does not exist") unless File.file?(path)
+  path
+end
+
+def compile_flutter(project, platform)
+  if platform == "android" && !File.file?(File.join(project.root, "android/key.properties"))
+    UI.user_error!("Configure android/key.properties with the existing Play upload key before building.")
+  end
+  pattern = platform == "ios" ? "build/ios/ipa/*.ipa" : "build/app/outputs/bundle/release/app-release.aab"
+  previous = Dir.glob(File.join(project.root, pattern))
+  unless previous.empty?
+    backup = File.join(project.root, "build/releases/previous", platform, Time.now.utc.strftime("%Y%m%dT%H%M%S%6N"))
+    FileUtils.mkdir_p(backup)
+    # Preserve the prior package and make the build/export task regenerate its
+    # output. This also works when Gradle would otherwise mark it UP-TO-DATE.
+    previous.each { |path| FileUtils.mv(path, backup) }
+  end
+  started = Time.now
+  Dir.chdir(project.root) do
+    sh(ENV.fetch("FLUTTER_BIN", "flutter"), "pub", "get")
+    sh(*project.build_command(platform))
+  end
+  files = Dir.glob(File.join(project.root, pattern)).select { |path| File.mtime(path) >= started }
+  UI.user_error!("Expected one freshly built #{platform} artifact; found #{files.length}. Check signing/export logs.") unless files.length == 1
+  artifact = files.first
+  if platform == "ios"
+    require "fastlane_core/ipa_file_analyser"
+    analyser = FastlaneCore::IpaFileAnalyser
+    unless analyser.fetch_app_version(artifact) == project.version &&
+           analyser.fetch_app_build(artifact) == project.build_number &&
+           analyser.fetch_app_identifier(artifact) == project.config.fetch("app_identifier")
+      UI.user_error!("IPA identifier/version/build does not match the requested release")
+    end
+  end
+  destination = File.join(project.root, "build/releases", platform, "#{project.version}+#{project.build_number}", File.basename(artifact))
+  FileUtils.mkdir_p(File.dirname(destination))
+  FileUtils.cp(artifact, destination)
+  UI.success("Built #{destination}; retain build/symbols/#{platform}/#{project.version}+#{project.build_number}")
+  destination
+end
+
+def sync_apple_metadata(project, api_key)
+  require "spaceship"
+  app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+  UI.user_error!("App not found in App Store Connect") unless app
+  editable = StoreRelease.apple_version_preflight!(app, project.version)
+  urls = StoreRelease.apple_inherited_urls(app, project, editable)
+  # If a version must be created, deliver creates it; preflight prevents renaming
+  # another editable version. Omitted fields retain the server's existing values.
+  upload_to_app_store(
+    **urls, api_key: api_key, app_identifier: project.config.fetch("app_identifier"),
+    platform: "ios", app_version: project.version, metadata_path: project.metadata_path("ios"),
+    skip_binary_upload: true, skip_screenshots: true, skip_metadata: false,
+    submit_for_review: false, force: true, run_precheck_before_submit: false
+  )
+end
+
+def prepare_screenshots(project, platform, options)
+  selection = StoreRelease::Screenshots.new(
+    project, platform, locales: options[:locales],
+    include_graphics: StoreRelease.boolean(options[:include_graphics])
+  ).prepare!
+  count = selection.groups.sum { |group| group[:files].length }
+  UI.message("#{platform}: #{count} screenshots in #{selection.groups.length} language/device groups, #{selection.graphics.length} graphics")
+  UI.message("Upload inventory: #{project.output}/#{platform}-screenshots.json")
+  selection
+end
+
+def sync_apple_screenshots(project, selection)
+  app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+  UI.user_error!("App not found in App Store Connect") unless app
+  version = StoreRelease.apple_version_preflight!(app, project.version)
+  UI.user_error!("Run ios metadata first to create App Store #{project.version}") unless version
+  info = app.fetch_edit_app_info
+  info_locales = info ? info.get_app_info_localizations.map(&:locale) : []
+  missing = selection.groups.map { |group| group[:store_locale] }.uniq - info_locales
+  UI.user_error!("Run ios metadata first to initialize App Information locales: #{missing.join(', ')}") unless missing.empty?
+  StoreRelease::AppleScreenshotSync.new(version, selection).sync!
+  UI.success("App Store screenshots synchronized; other language/device groups preserved.")
+end
+
+def upload_play_with_validation_cleanup(settings)
+  listing_changes = !settings[:skip_upload_metadata] || !settings[:skip_upload_images] || !settings[:skip_upload_screenshots]
+  if listing_changes && !settings[:changes_not_sent_for_review] && !settings[:validate_only]
+    UI.message("Google Play listing changes will be committed via API; Google may send them for review automatically.")
+  end
+  production_draft = settings[:track] == "production" && settings[:release_status] == "draft" && !settings[:skip_upload_aab]
+  return upload_to_play_store(**settings) unless settings[:validate_only] || production_draft
+  require "supply"
+  require_relative "lib/store_play" if production_draft
+  Supply.config = FastlaneCore::Configuration.create(Supply::Options.available_options, settings)
+  uploader = production_draft ? StoreRelease::ProductionDraftUploader.new : Supply::Uploader.new
+  # Supply keeps its client private; retain this instance so validate-only
+  # uploads can always discard their edit, including when validation fails.
+  client = uploader.send(:client)
+  begin
+    uploader.perform_upload
+  ensure
+    client.abort_current_edit if client.current_edit
+  end
+end
+
+def play_options(project, key, options, upload: false)
+  if StoreRelease.boolean(options[:include_graphics]) && !StoreRelease.boolean(options[:screenshots])
+    UI.user_error!("Use screenshots:true with include_graphics:true")
+  end
+  track = options[:track] || (upload ? "internal" : "production")
+  status = options[:release_status] || (track == "internal" ? "completed" : "draft")
+  UI.user_error!("Use release_status:draft or completed") unless %w[draft completed].include?(status)
+  # Use Google's normal API commit workflow for store assets as requested.
+  # This is independent of the binary's draft status. Honor an explicit override
+  # and never silently flip it after an API rejection.
+  send_for_review = StoreRelease.boolean(options[:send_for_review], default: true)
+  {
+    json_key: key, package_name: project.config.fetch("package_name"),
+    metadata_path: project.metadata_path("android"), track: track,
+    release_status: status, skip_upload_apk: true, skip_upload_aab: !upload,
+    skip_upload_metadata: false,
+    skip_upload_images: !StoreRelease.boolean(options[:include_graphics]),
+    skip_upload_screenshots: !StoreRelease.boolean(options[:screenshots]), sync_image_upload: true,
+    changes_not_sent_for_review: !send_for_review, rescue_changes_not_sent_for_review: false,
+    validate_only: StoreRelease.boolean(options[:validate_only])
+  }
+end
+
+desc "Validate all six languages and generate an offline HTML preview"
+lane :check do |options|
+  project = release_project(options)
+  if StoreRelease.boolean(options[:screenshots])
+    prepare_screenshots(project, "ios", options.merge(include_graphics: false))
+    prepare_screenshots(project, "android", options)
+  end
+  UI.success("All store metadata is valid. No remote changes.")
+end
+
+desc "Run Flutter analysis and tests"
+lane :verify do
+  Dir.chdir(StoreRelease::ROOT) do
+    flutter = ENV.fetch("FLUTTER_BIN", "flutter")
+    sh(flutter, "pub", "get")
+    sh(flutter, "analyze")
+    sh(flutter, "test")
+  end
+end
+
+platform :ios do
+  desc "Create/inherit the App Store version and update only six-language release notes"
+  lane :prepare_update do |options|
+    project = release_project(options)
+    UI.message("Only App Store version and What's New; existing listing text and screenshots are preserved.")
+    next if StoreRelease.boolean(options[:dry_run])
+    apple_key
+    app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+    UI.user_error!("App not found") unless app
+    StoreRelease.apple_prepare_update!(app, project)
+  end
+
+  desc "Build/upload IPA and release notes, inherit existing store listing, and select the build without review"
+  lane :stage_binary do |options|
+    project = release_project(options)
+    UI.message("Only IPA and release notes -> App Store version #{project.version}; review remains manual.")
+    next if StoreRelease.boolean(options[:dry_run])
+    api_key = apple_key
+    verify unless StoreRelease.boolean(options[:skip_checks])
+    app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+    UI.user_error!("App not found") unless app
+    StoreRelease.apple_prepare_update!(app, project)
+    ipa = compile_flutter(project, "ios")
+    upload_to_testflight(
+      api_key: api_key, app_identifier: project.config.fetch("app_identifier"), ipa: ipa,
+      app_platform: "ios", app_version: project.version, build_number: project.build_number,
+      localized_build_info: project.localized_beta_notes,
+      skip_waiting_for_build_processing: false, skip_submission: true,
+      distribute_external: false, notify_external_testers: false
+    )
+    StoreRelease.apple_select_build!(app, project)
+    UI.success("IPA and release notes uploaded; build selected. Submit manually in App Store Connect.")
+  end
+
+  desc "Create the App Store version when missing and sync its six-language metadata"
+  lane :prepare do |options|
+    metadata(options)
+  end
+
+  desc "Attach this exact processed build to its App Store version, with manual release"
+  lane :select_build do |options|
+    project = release_project(options)
+    next if StoreRelease.boolean(options[:dry_run])
+    apple_key
+    app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+    UI.user_error!("App not found") unless app
+    StoreRelease.apple_select_build!(app, project)
+    UI.success("Selected #{project.version} (#{project.build_number}); not submitted for review.")
+  end
+
+  desc "Submit the exact App Store build for review; release remains manual after approval"
+  lane :submit do |options|
+    project = release_project(options)
+    next if StoreRelease.boolean(options[:dry_run])
+    api_key = apple_key
+    app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+    UI.user_error!("App not found") unless app
+    version = StoreRelease.apple_version_preflight!(app, project.version)
+    sync_apple_metadata(project, api_key) unless version
+    StoreRelease.apple_select_build!(app, project)
+    upload_to_app_store(api_key: api_key, app_identifier: project.config.fetch("app_identifier"),
+      platform: "ios", app_version: project.version, build_number: project.build_number,
+      skip_binary_upload: true, skip_metadata: true, skip_screenshots: true,
+      submit_for_review: true, automatic_release: false, force: true,
+      run_precheck_before_submit: true, precheck_include_in_app_purchases: false)
+  end
+
+  desc "Sync six-language App Store text (no binary or review submission)"
+  lane :metadata do |options|
+    project = release_project(options)
+    images = prepare_screenshots(project, "ios", options) if StoreRelease.boolean(options[:screenshots])
+    next if StoreRelease.boolean(options[:dry_run])
+    sync_apple_metadata(project, apple_key)
+    sync_apple_screenshots(project, images) if images
+  end
+
+  desc "Sync only selected App Store screenshots; initialize languages with ios metadata first"
+  lane :screenshots do |options|
+    UI.user_error!("Apple has no screenshot validate_only API; use dry_run:true") if StoreRelease.boolean(options[:validate_only])
+    project = release_project(options)
+    images = prepare_screenshots(project, "ios", options)
+    next if StoreRelease.boolean(options[:dry_run])
+    apple_key
+    sync_apple_screenshots(project, images)
+  end
+
+  desc "Build a signed, obfuscated IPA with Flutter"
+  lane :build do |options|
+    project = release_project(options)
+    next if StoreRelease.boolean(options[:dry_run])
+    compile_flutter(project, "ios")
+  end
+
+  desc "Build/upload to TestFlight, including localized description and What to Test"
+  lane :beta do |options|
+    project = release_project(options)
+    next if StoreRelease.boolean(options[:dry_run])
+    api_key = apple_key
+    verify unless StoreRelease.boolean(options[:skip_checks])
+    ipa = compile_flutter(project, "ios")
+    upload_to_testflight(
+      api_key: api_key, app_identifier: project.config.fetch("app_identifier"), ipa: ipa,
+      app_platform: "ios", app_version: project.version, build_number: project.build_number,
+      localized_app_info: project.localized_beta_info, localized_build_info: project.localized_beta_notes,
+      skip_waiting_for_build_processing: false, skip_submission: true,
+      distribute_external: false, notify_external_testers: false
+    )
+  end
+
+  desc "Sync App Store text, then build/upload IPA (finish review in App Store Connect)"
+  lane :release do |options|
+    project = release_project(options)
+    images = prepare_screenshots(project, "ios", options) if StoreRelease.boolean(options[:screenshots])
+    next if StoreRelease.boolean(options[:dry_run])
+    api_key = apple_key
+    verify unless StoreRelease.boolean(options[:skip_checks])
+    sync_apple_metadata(project, api_key)
+    sync_apple_screenshots(project, images) if images
+    ipa = compile_flutter(project, "ios")
+    upload_to_testflight(
+      api_key: api_key, app_identifier: project.config.fetch("app_identifier"), ipa: ipa,
+      app_platform: "ios", app_version: project.version, build_number: project.build_number,
+      localized_app_info: project.localized_beta_info, localized_build_info: project.localized_beta_notes,
+      skip_waiting_for_build_processing: false, skip_submission: true,
+      distribute_external: false, notify_external_testers: false
+    )
+    app = Spaceship::ConnectAPI::App.find(project.config.fetch("app_identifier"))
+    StoreRelease.apple_select_build!(app, project)
+    UI.success("IPA and metadata uploaded; build #{project.build_number} selected. Ready for manual review submission.")
+  end
+end
+
+platform :android do
+  desc "Build/upload only AAB and release notes to a production draft; no store listing changes"
+  lane :stage_binary do |options|
+    project = release_project(options)
+    # Google permits committing a draft release without changesNotSentForReview.
+    # This route must NEVER include app-level listing changes, which could be
+    # sent for review automatically. The release itself stays draft.
+    settings = play_options(project, nil, { track: "production", release_status: "draft", send_for_review: true,
+                                          validate_only: options[:validate_only] }, upload: true)
+    settings.merge!(skip_upload_metadata: true, skip_upload_images: true, skip_upload_screenshots: true,
+                    skip_upload_changelogs: false, version_name: project.version)
+    UI.message("Only AAB and release notes -> production DRAFT. Store listing is not changed; review remains manual.")
+    next if StoreRelease.boolean(options[:dry_run])
+    settings[:json_key] = google_key
+    verify unless StoreRelease.boolean(options[:skip_checks])
+    settings[:aab] = compile_flutter(project, "android")
+    mapping = File.join(project.root, "build/app/outputs/mapping/release/mapping.txt")
+    settings[:mapping] = mapping if File.file?(mapping)
+    upload_play_with_validation_cleanup(settings)
+  end
+
+  desc "Submit an existing production draft for review, without rebuilding or rewriting store assets"
+  lane :submit do |options|
+    project = release_project(build_number: options[:version_code] || options[:build_number])
+    UI.message("Submit production draft versionCode #{project.build_number}; this can publish after approval unless managed publishing is enabled.")
+    next if StoreRelease.boolean(options[:dry_run])
+    require "supply"
+    settings = play_options(project, google_key, options.merge(track: "production", send_for_review: true))
+    Supply.config = FastlaneCore::Configuration.create(Supply::Options.available_options, settings)
+    client = Supply::Client.make_from_config
+    begin
+      client.begin_edit(package_name: project.config.fetch("package_name"))
+      StoreRelease.prepare_play_submission!(client, project.build_number)
+      client.validate_current_edit!
+      client.commit_current_edit! unless settings[:validate_only]
+    ensure
+      client.abort_current_edit if client.current_edit
+    end
+  end
+
+  desc "Sync only the Google Play listing icon; supports dry_run and validate_only"
+  lane :icon do |options|
+    project = release_project(options)
+    icon = StoreRelease::PlayIcon.new(project, locales: options[:locales]).prepare!
+    UI.message("Play icon prepared for #{icon.locales.join(', ')}; inventory: #{project.output}/android-icon.json")
+    next if StoreRelease.boolean(options[:dry_run])
+    settings = play_options(project, google_key, options)
+    settings.merge!(metadata_path: icon.path, skip_upload_metadata: true, skip_upload_changelogs: true,
+                    skip_upload_images: false, skip_upload_screenshots: true)
+    if options[:version_code]
+      UI.user_error!("version_code must be a positive integer") unless options[:version_code].to_s.match?(/\A[1-9]\d*\z/)
+      settings[:version_code] = options[:version_code].to_i
+    end
+    upload_play_with_validation_cleanup(settings)
+  end
+
+  desc "Sync Play listing text; optionally update notes with version_code:<existing code>"
+  lane :metadata do |options|
+    # Explicit version_code identifies the existing release whose notes may change.
+    if options[:version_code] && !options[:version_code].to_s.match?(/\A[1-9]\d*\z/)
+      UI.user_error!("version_code must identify an existing positive version code")
+    end
+    project = release_project(build_number: options[:version_code] || options[:build_number])
+    prepare_screenshots(project, "android", options).attach_to_metadata! if StoreRelease.boolean(options[:screenshots])
+    next if StoreRelease.boolean(options[:dry_run])
+    settings = play_options(project, google_key, options)
+    settings[:version_code] = options[:version_code].to_i if options[:version_code]
+    settings[:skip_upload_changelogs] = options[:version_code].nil?
+    upload_play_with_validation_cleanup(settings)
+  end
+
+  desc "Sync only Play screenshots (optional include_graphics:true); validate_only uses a temporary edit"
+  lane :screenshots do |options|
+    project = release_project(options)
+    images = prepare_screenshots(project, "android", options)
+    next if StoreRelease.boolean(options[:dry_run])
+    settings = play_options(project, google_key, options.merge(screenshots: true))
+    settings.merge!(metadata_path: images.path, skip_upload_metadata: true, skip_upload_changelogs: true)
+    if options[:version_code]
+      UI.user_error!("version_code must be a positive integer") unless options[:version_code].to_s.match?(/\A[1-9]\d*\z/)
+      settings[:version_code] = options[:version_code].to_i
+    end
+    upload_play_with_validation_cleanup(settings)
+  end
+
+  desc "Build a signed, obfuscated Android App Bundle with Flutter"
+  lane :build do |options|
+    project = release_project(options)
+    next if StoreRelease.boolean(options[:dry_run])
+    compile_flutter(project, "android")
+  end
+
+  desc "Build/upload AAB and six-language metadata (default: internal track)"
+  lane :release do |options|
+    project = release_project(options)
+    prepare_screenshots(project, "android", options).attach_to_metadata! if StoreRelease.boolean(options[:screenshots])
+    settings = play_options(project, nil, options, upload: true)
+    UI.message("Play target: #{settings[:track]}, status: #{settings[:release_status]}, send_for_review: #{!settings[:changes_not_sent_for_review]}")
+    next if StoreRelease.boolean(options[:dry_run])
+    settings[:json_key] = google_key
+    verify unless StoreRelease.boolean(options[:skip_checks])
+    settings[:aab] = compile_flutter(project, "android")
+    settings[:version_name] = project.version
+    settings[:skip_upload_changelogs] = false
+    mapping = File.join(project.root, "build/app/outputs/mapping/release/mapping.txt")
+    settings[:mapping] = mapping if File.file?(mapping)
+    upload_play_with_validation_cleanup(settings)
+  end
+
+  desc "Promote an already uploaded Play versionCode (default: internal to production draft)"
+  lane :promote do |options|
+    code = options[:version_code].to_s
+    UI.user_error!("Specify the existing version_code to promote") unless code.match?(/\A[1-9]\d*\z/)
+    source = options[:from] || "internal"
+    destination = options[:to] || "production"
+    UI.user_error!("Promotion source and destination must differ") if source == destination
+    project = release_project(build_number: code)
+    settings = play_options(project, nil, options.merge(track: destination))
+    settings.merge!(
+      track: source, track_promote_to: destination, version_code: code.to_i,
+      track_promote_release_status: options[:release_status] || "draft",
+      skip_upload_metadata: true, skip_upload_changelogs: true,
+      skip_upload_images: true, skip_upload_screenshots: true
+    )
+    UI.message("Promote Play versionCode #{code}: #{source} -> #{destination} (#{settings[:track_promote_release_status]})")
+    next if StoreRelease.boolean(options[:dry_run])
+    settings[:json_key] = google_key
+    upload_to_play_store(**settings)
+  end
+end

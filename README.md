@@ -103,6 +103,8 @@ iOS 版本支持图片对比、裁剪与缩放、亮度增强和格式转换。�
 
 App Store 发布构建、签名和审核资料见 [iOS 发布检查清单](docs/IOS_RELEASE.md)。
 
+两端的六语言商店文案同步、Flutter 签名打包和上传现已接入 Fastlane，使用方法及 Apple / Google API 密钥配置见 [双商店自动化发布](docs/STORE_AUTOMATION.md)。
+
 ### macOS
 
 1. 从 [Releases](https://github.com/haoqiangyu/pictools/releases) 下载最新版本的 `Pictools.zip`

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "generator": "scripts/store/feature_graphics.py",
+  "target": {
+    "platform": "google-play",
+    "device_group": "feature graphic",
+    "preset": "google-play-feature-graphic",
+    "width": 1024,
+    "height": 500,
+    "orientation": "landscape",
+    "locale": "es-ES",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "last_checked": "2026-11-11"
+  },
+  "outputs": [
+    {
+      "id": "feature-graphic",
+      "screen_name": "crop",
+      "style": "split-caption",
+      "width": 1024,
+      "height": 500,
+      "platform": "google-play",
+      "preset": "google-play-feature-graphic",
+      "locale": "es-ES",
+      "caption": "Recorta y convierte.\nEn tu dispositivo.",
+      "alt_text": "Recorta una foto de la costa, elige la proporción y exporta una copia.",
+      "source": "android-emulator",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/raw/android-phone/es-ES/crop.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/es-ES/feature/feature.html",
+      "png_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/google-play/feature/feature-graphic.png",
+      "caption_area_percent": 18,
+      "render_status": "rendered",
+      "status": "png-ready",
+      "sha256": "6bc61b1a2f907bc9c8db07c60f771408e86e2d527df4402ceb3312bc2fa5fea2"
+    }
+  ]
+}

@@ -1,0 +1,7100 @@
+[
+  {
+    "id": "01-crop",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Passend zuschneiden.\nGenau dein Format.",
+        "size": 92,
+        "base": 112
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Passend zuschneiden.\nGenau dein Format.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 213.4375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Unterschiede\nauf einen Blick.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Unterschiede\nauf einen Blick.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Im Stapel umwandeln.\nWeniger Wiederholung.",
+        "size": 88,
+        "base": 112
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Im Stapel umwandeln.\nWeniger Wiederholung.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 204.15625,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Mehr Licht\nfür deine Bilder.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Aufhellen und das Ergebnis vergleichen.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mehr Licht\nfür deine Bilder.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Aufhellen und das Ergebnis vergleichen.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Die richtige Größe.\nPixelgenau.",
+        "size": 108,
+        "base": 112
+      },
+      {
+        "text": "Maße einstellen. Proportionen erhalten.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Die richtige Größe.\nPixelgenau.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 250.53125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Maße einstellen. Proportionen erhalten.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Aus Fotos.\nAus Dateien.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Wähle die Quelle deiner Bilder.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Aus Fotos.\nAus Dateien.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Wähle die Quelle deiner Bilder.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Speichern,\nwo du willst.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG in Fotos. Alle Formate in Dateien.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Speichern,\nwo du willst.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG in Fotos. Alle Formate in Dateien.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "de-DE",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Bei Tag.\nUnd bei Nacht.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Hell · Dunkel · System",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Bei Tag.\nUnd bei Nacht.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Hell · Dunkel · System",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Crop precisely.\nFind your fit.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Crop precisely.\nFind your fit.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Spot the\ndifference.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Spot the\ndifference.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Convert a batch.\nSkip the repetition.",
+        "size": 107,
+        "base": 112
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convert a batch.\nSkip the repetition.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 248.21875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Bring out\nthe light.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Brighten images. Compare the result.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Bring out\nthe light.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Brighten images. Compare the result.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Your size.\nTo the pixel.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Set dimensions. Keep proportions.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Your size.\nTo the pixel.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Set dimensions. Keep proportions.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "From Photos.\nFrom Files.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Choose where your images come from.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "From Photos.\nFrom Files.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choose where your images come from.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Save it\nyour way.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG to Photos. Every format to Files.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Save it\nyour way.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG to Photos. Every format to Files.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "en-US",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Made for day.\nAnd night.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Light · Dark · System",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Made for day.\nAnd night.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Light · Dark · System",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Recorta y ajusta.\nA tu medida.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recorta y ajusta.\nA tu medida.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Mira cada\ndiferencia.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mira cada\ndiferencia.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Convierte por lotes.\nRepite menos.",
+        "size": 104,
+        "base": 112
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convierte por lotes.\nRepite menos.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 241.25,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Da luz a\ntus imágenes.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Mejora el brillo y compara el resultado.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Da luz a\ntus imágenes.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mejora el brillo y compara el resultado.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "El tamaño exacto.\nPíxel a píxel.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Ajusta las dimensiones y conserva la proporción.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "El tamaño exacto.\nPíxel a píxel.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Ajusta las dimensiones y conserva la proporción.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Desde Fotos.\nDesde Archivos.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Elige de dónde importar tus imágenes.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Desde Fotos.\nDesde Archivos.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Elige de dónde importar tus imágenes.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Guarda donde\ntú quieras.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG en Fotos. Todo en Archivos.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Guarda donde\ntú quieras.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG en Fotos. Todo en Archivos.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "es-ES",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "De día.\nY de noche.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Claro · Oscuro · Sistema",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "De día.\nY de noche.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Claro · Oscuro · Sistema",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Recadrez vos images.\nAu bon format.",
+        "size": 93,
+        "base": 112
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recadrez vos images.\nAu bon format.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 215.75,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Voyez chaque\ndifférence.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Voyez chaque\ndifférence.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Convertissez par lots.\nMoins de répétitions.",
+        "size": 94,
+        "base": 112
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convertissez par lots.\nMoins de répétitions.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 218.0625,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Faites place\nà la lumière.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Éclaircissez et comparez le résultat.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Faites place\nà la lumière.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Éclaircissez et comparez le résultat.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Les bonnes dimensions.\nAu pixel près.",
+        "size": 85,
+        "base": 112
+      },
+      {
+        "text": "Réglez la taille. Gardez les proportions.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Les bonnes dimensions.\nAu pixel près.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 197.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Réglez la taille. Gardez les proportions.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Depuis Photos.\nDepuis Fichiers.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Choisissez la source de vos images.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Depuis Photos.\nDepuis Fichiers.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choisissez la source de vos images.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "Enregistrez\nà votre façon.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG dans Photos. Tout dans Fichiers.",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Enregistrez\nà votre façon.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG dans Photos. Tout dans Fichiers.",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "fr-FR",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "De jour.\nComme de nuit.",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "Clair · Sombre · Système",
+        "size": 32,
+        "base": 32
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "De jour.\nComme de nuit.",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Clair · Sombre · Système",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 44.796875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "裁剪到位\n尺寸刚好",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁剪到位\n尺寸刚好",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "差别，\n一眼看清",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差别，\n一眼看清",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "批量转换\n少些重复操作",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批量转换\n少些重复操作",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "让暗处，\n亮起来",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "一键提亮 · 前后对照",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "让暗处，\n亮起来",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "一键提亮 · 前后对照",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "想要的尺寸\n精确到像素",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "锁定比例，调整宽高",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "想要的尺寸\n精确到像素",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "锁定比例，调整宽高",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "相册、文件\n都能轻松导入",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "按需要选择图片来源",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "相册、文件\n都能轻松导入",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "按需要选择图片来源",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "保存去哪\n由你决定",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "保存去哪\n由你决定",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "zh-CN",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "白天与夜晚\n都看得舒服",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "浅色 · 深色 · 跟随系统",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "白天与夜晚\n都看得舒服",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "浅色 · 深色 · 跟随系统",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "裁切到位\n尺寸剛好",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁切到位\n尺寸剛好",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "差別，\n一眼看清",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差別，\n一眼看清",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "批次轉換\n減少重複操作",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批次轉換\n減少重複操作",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "04-enhance",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "讓暗處，\n亮起來",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "一鍵提亮 · 前後對照",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "讓暗處，\n亮起來",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "一鍵提亮 · 前後對照",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "05-resize",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "想要的尺寸\n精確到像素",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "鎖定比例，調整寬高",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "想要的尺寸\n精確到像素",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "鎖定比例，調整寬高",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "相簿、檔案\n都能輕鬆匯入",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "依照需要選擇圖片來源",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "相簿、檔案\n都能輕鬆匯入",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "依照需要選擇圖片來源",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "儲存到哪裡\n由你決定",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "儲存到哪裡\n由你決定",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "zh-TW",
+    "platform": "ios-phone",
+    "fonts": [
+      {
+        "text": "白天與夜晚\n都看得舒服",
+        "size": 112,
+        "base": 112
+      },
+      {
+        "text": "淺色 · 深色 · 跟隨系統",
+        "size": 41,
+        "base": 41
+      }
+    ],
+    "width": 1179,
+    "height": 2556,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 98,
+        "y": 68,
+        "width": 234.4375,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "白天與夜晚\n都看得舒服",
+        "x": 98,
+        "y": 195,
+        "width": 983,
+        "height": 259.8125,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "淺色 · 深色 · 跟隨系統",
+        "x": 98,
+        "y": 479,
+        "width": 983,
+        "height": 57.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 111.90625,
+      "y": 636,
+      "width": 955.15625,
+      "height": 1835,
+      "bottom": 2471
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "de-DE",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Passend zuschneiden. Genau dein Format.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Passend zuschneiden. Genau dein Format.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "de-DE",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Unterschiede auf einen Blick.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Unterschiede auf einen Blick.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "de-DE",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Im Stapel umwandeln. Weniger Wiederholung.",
+        "size": 111,
+        "base": 116
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Im Stapel umwandeln. Weniger Wiederholung.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 128.75,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "de-DE",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Speichern, wo du willst.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG in Fotos. Alle Formate in Dateien.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Speichern, wo du willst.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG in Fotos. Alle Formate in Dateien.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "de-DE",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "Zuschnitt und Format.\nAuf deinem Gerät.",
+        "size": 39,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Zuschnitt und Format.\nAuf deinem Gerät.",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 91.25,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Aus Fotos.\nAus Dateien.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Wähle die Quelle deiner Bilder.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Aus Fotos.\nAus Dateien.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Wähle die Quelle deiner Bilder.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Speichern,\nwo du willst.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG in die Galerie. Alles als Datei.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Speichern,\nwo du willst.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG in die Galerie. Alles als Datei.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Bei Tag.\nUnd bei Nacht.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Hell · Dunkel · System",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Bei Tag.\nUnd bei Nacht.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Hell · Dunkel · System",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "en-US",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Crop precisely. Find your fit.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Crop precisely. Find your fit.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "en-US",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Spot the difference.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Spot the difference.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "en-US",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Convert a batch. Skip the repetition.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convert a batch. Skip the repetition.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "en-US",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Save it your way.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG to Photos. Every format to Files.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Save it your way.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG to Photos. Every format to Files.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "en-US",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "Crop. Convert.\nOn your device.",
+        "size": 56,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Crop. Convert.\nOn your device.",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 131.03125,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Your gallery.\nYour files.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Choose images with the system picker.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Your gallery.\nYour files.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choose images with the system picker.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Save it\nyour way.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG to gallery. Every format to files.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Save it\nyour way.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG to gallery. Every format to files.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Made for day.\nAnd night.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Light · Dark · System",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Made for day.\nAnd night.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Light · Dark · System",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "es-ES",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Recorta y ajusta. A tu medida.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recorta y ajusta. A tu medida.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "es-ES",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Mira cada diferencia.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mira cada diferencia.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "es-ES",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Convierte por lotes. Repite menos.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convierte por lotes. Repite menos.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "es-ES",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Guarda donde tú quieras.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG en Fotos. Todo en Archivos.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Guarda donde tú quieras.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG en Fotos. Todo en Archivos.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "es-ES",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "Recorta y convierte.\nEn tu dispositivo.",
+        "size": 43,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recorta y convierte.\nEn tu dispositivo.",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 100.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Desde Fotos.\nDesde Archivos.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Elige de dónde importar tus imágenes.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Desde Fotos.\nDesde Archivos.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Elige de dónde importar tus imágenes.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Guarda donde\ntú quieras.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG en galería. Todo como archivo.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Guarda donde\ntú quieras.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG en galería. Todo como archivo.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "De día.\nY de noche.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Claro · Oscuro · Sistema",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "De día.\nY de noche.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Claro · Oscuro · Sistema",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "fr-FR",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Recadrez vos images. Au bon format.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recadrez vos images. Au bon format.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "fr-FR",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Voyez chaque différence.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Voyez chaque différence.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "fr-FR",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Convertissez par lots. Moins de répétitions.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convertissez par lots. Moins de répétitions.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "fr-FR",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "Enregistrez à votre façon.",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG dans Photos. Tout dans Fichiers.",
+        "size": 36,
+        "base": 36
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Enregistrez à votre façon.",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG dans Photos. Tout dans Fichiers.",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 50.390625,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "fr-FR",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "Recadrer, convertir.\nSur votre appareil.",
+        "size": 44,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recadrer, convertir.\nSur votre appareil.",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 102.9375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Depuis Photos.\nDepuis Fichiers.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Choisissez la source de vos images.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Depuis Photos.\nDepuis Fichiers.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choisissez la source de vos images.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Enregistrez\nà votre façon.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG en galerie. Tout en fichiers.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Enregistrez\nà votre façon.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG en galerie. Tout en fichiers.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "De jour.\nComme de nuit.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Clair · Sombre · Système",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "De jour.\nComme de nuit.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Clair · Sombre · Système",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "zh-CN",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "裁剪到位尺寸刚好",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁剪到位尺寸刚好",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "zh-CN",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "差别，一眼看清",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差别，一眼看清",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "zh-CN",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "批量转换少些重复操作",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批量转换少些重复操作",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "zh-CN",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "保存去哪由你决定",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "保存去哪由你决定",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "zh-CN",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "裁剪、转换\n在设备上完成",
+        "size": 58,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁剪、转换\n在设备上完成",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 135.71875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "相册、文件\n都能轻松导入",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "按需要选择图片来源",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "相册、文件\n都能轻松导入",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "按需要选择图片来源",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "保存去哪\n由你决定",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "保存去哪\n由你决定",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 到相册，全部格式到文件",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "白天与夜晚\n都看得舒服",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "浅色 · 深色 · 跟随系统",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "白天与夜晚\n都看得舒服",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "浅色 · 深色 · 跟随系统",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-crop",
+    "locale": "zh-TW",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "裁切到位尺寸剛好",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁切到位尺寸剛好",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "02-compare",
+    "locale": "zh-TW",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "差別，一眼看清",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差別，一眼看清",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "03-batch",
+    "locale": "zh-TW",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "批次轉換減少重複操作",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批次轉換減少重複操作",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "04-export",
+    "locale": "zh-TW",
+    "platform": "ios-ipad",
+    "fonts": [
+      {
+        "text": "儲存到哪裡由你決定",
+        "size": 116,
+        "base": 116
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "size": 45,
+        "base": 45
+      }
+    ],
+    "width": 2752,
+    "height": 2064,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 150,
+        "y": 83,
+        "width": 248.671875,
+        "height": 66,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "儲存到哪裡由你決定",
+        "x": 150,
+        "y": 171,
+        "width": 2452,
+        "height": 134.546875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "x": 150,
+        "y": 332,
+        "width": 2452,
+        "height": 63,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 320.640625,
+      "y": 460,
+      "width": 2110.6875,
+      "height": 1514,
+      "bottom": 1974
+    }
+  },
+  {
+    "id": "feature-graphic",
+    "locale": "zh-TW",
+    "platform": "feature graphic",
+    "fonts": [
+      {
+        "text": "裁切、轉換\n在裝置上完成",
+        "size": 58,
+        "base": 58
+      }
+    ],
+    "width": 1024,
+    "height": 500,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 84,
+        "y": 91,
+        "width": 117.96875,
+        "height": 37.1875,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁切、轉換\n在裝置上完成",
+        "x": 84,
+        "y": 158,
+        "width": 423,
+        "height": 135.71875,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 540,
+      "y": 98,
+      "width": 403,
+      "height": 280,
+      "bottom": 378
+    }
+  },
+  {
+    "id": "06-import",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "相簿、檔案\n都能輕鬆匯入",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "依照需要選擇圖片來源",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "相簿、檔案\n都能輕鬆匯入",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "依照需要選擇圖片來源",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "07-export",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "儲存到哪裡\n由你決定",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "儲存到哪裡\n由你決定",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "PNG/JPG 至相簿，全部格式至檔案",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "08-dark",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "白天與夜晚\n都看得舒服",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "淺色 · 深色 · 跟隨系統",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "白天與夜晚\n都看得舒服",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "淺色 · 深色 · 跟隨系統",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Im Stapel umwandeln.\nWeniger Wiederholung.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Im Stapel umwandeln.\nWeniger Wiederholung.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Sechs Formate. Wählbare Qualität.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Passend zuschneiden.\nGenau dein Format.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Passend zuschneiden.\nGenau dein Format.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Verhältnis wählen. Kopie exportieren.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Unterschiede\nauf einen Blick.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Unterschiede\nauf einen Blick.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Schieberegler · Nebeneinander · Überlagern",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Die richtige Größe.\nPixelgenau.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Maße einstellen. Proportionen erhalten.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Die richtige Größe.\nPixelgenau.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Maße einstellen. Proportionen erhalten.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "de-DE",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Mehr Licht\nfür deine Bilder.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Aufhellen und das Ergebnis vergleichen.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mehr Licht\nfür deine Bilder.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Aufhellen und das Ergebnis vergleichen.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Convert a batch.\nSkip the repetition.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convert a batch.\nSkip the repetition.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Quality controls.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Crop precisely.\nFind your fit.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Crop precisely.\nFind your fit.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choose a ratio. Export a copy.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Spot the\ndifference.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Spot the\ndifference.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Slider · Side by side · Overlay",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Your size.\nTo the pixel.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Set dimensions. Keep proportions.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Your size.\nTo the pixel.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Set dimensions. Keep proportions.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "en-US",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Bring out\nthe light.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Brighten images. Compare the result.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Bring out\nthe light.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Brighten images. Compare the result.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Convierte por lotes.\nRepite menos.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convierte por lotes.\nRepite menos.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Seis formatos. Calidad ajustable.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Recorta y ajusta.\nA tu medida.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recorta y ajusta.\nA tu medida.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Elige la proporción. Exporta una copia.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Mira cada\ndiferencia.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mira cada\ndiferencia.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Deslizador · En paralelo · Superposición",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "El tamaño exacto.\nPíxel a píxel.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Ajusta las dimensiones y conserva la proporción.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "El tamaño exacto.\nPíxel a píxel.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Ajusta las dimensiones y conserva la proporción.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "es-ES",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Da luz a\ntus imágenes.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Mejora el brillo y compara el resultado.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Da luz a\ntus imágenes.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Mejora el brillo y compara el resultado.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Convertissez par lots.\nMoins de répétitions.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Convertissez par lots.\nMoins de répétitions.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Six formats. Qualité réglable.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Recadrez vos images.\nAu bon format.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Recadrez vos images.\nAu bon format.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Choisissez un ratio. Exportez une copie.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Voyez chaque\ndifférence.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Voyez chaque\ndifférence.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Curseur · Côte à côte · Superposition",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Les bonnes dimensions.\nAu pixel près.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Réglez la taille. Gardez les proportions.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Les bonnes dimensions.\nAu pixel près.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Réglez la taille. Gardez les proportions.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "fr-FR",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "Faites place\nà la lumière.",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "Éclaircissez et comparez le résultat.",
+        "size": 24,
+        "base": 24
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Faites place\nà la lumière.",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "Éclaircissez et comparez le résultat.",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 33.59375,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "批量转换\n少些重复操作",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批量转换\n少些重复操作",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 种输出格式，按需设置质量",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "裁剪到位\n尺寸刚好",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁剪到位\n尺寸刚好",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "选定比例，导出新副本",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "差别，\n一眼看清",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差别，\n一眼看清",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑块 · 并排 · 叠加",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "想要的尺寸\n精确到像素",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "锁定比例，调整宽高",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "想要的尺寸\n精确到像素",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "锁定比例，调整宽高",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "zh-CN",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "让暗处，\n亮起来",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "一键提亮 · 前后对照",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "让暗处，\n亮起来",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "一键提亮 · 前后对照",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "01-batch",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "批次轉換\n減少重複操作",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "批次轉換\n減少重複操作",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "6 種輸出格式，依需求設定品質",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "02-crop",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "裁切到位\n尺寸剛好",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "裁切到位\n尺寸剛好",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "選定比例，匯出新副本",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "03-compare",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "差別，\n一眼看清",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "差別，\n一眼看清",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "滑塊 · 並排 · 疊加",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "04-resize",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "想要的尺寸\n精確到像素",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "鎖定比例，調整寬高",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "想要的尺寸\n精確到像素",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "鎖定比例，調整寬高",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  },
+  {
+    "id": "05-enhance",
+    "locale": "zh-TW",
+    "platform": "android-phone",
+    "fonts": [
+      {
+        "text": "讓暗處，\n亮起來",
+        "size": 78,
+        "base": 78
+      },
+      {
+        "text": "一鍵提亮 · 前後對照",
+        "size": 30,
+        "base": 30
+      }
+    ],
+    "width": 1080,
+    "height": 1920,
+    "horizontalOverflow": false,
+    "missingImages": 0,
+    "text": [
+      {
+        "text": "Pictools",
+        "x": 76,
+        "y": 39,
+        "width": 182.265625,
+        "height": 52,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "讓暗處，\n亮起來",
+        "x": 76,
+        "y": 111,
+        "width": 928,
+        "height": 180.9375,
+        "clipped": false,
+        "offscreen": false
+      },
+      {
+        "text": "一鍵提亮 · 前後對照",
+        "x": 76,
+        "y": 299,
+        "width": 928,
+        "height": 42,
+        "clipped": false,
+        "offscreen": false
+      }
+    ],
+    "screen": {
+      "x": 83.8125,
+      "y": 391,
+      "width": 912.359375,
+      "height": 1464,
+      "bottom": 1855
+    }
+  }
+]

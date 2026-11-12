@@ -1,5 +1,7 @@
 # Google Play 发布检查清单
 
+推荐使用 [Fastlane 双商店自动化](STORE_AUTOMATION.md) 完成六语言文案同步、签名 AAB 构建及内部测试/正式轨道上传。自动化文案以 `fastlane/metadata/*.json` 为准，`docs/google-play/listing/` 保留为早期手动资料。
+
 ## 功能范围
 
 Android 版提供图片对比、图片调整、Rust 亮度增强和格式转换。
@@ -7,8 +9,8 @@ Android 版提供图片对比、图片调整、Rust 亮度增强和格式转换�
 
 ## 权限与数据
 
-- 正式版不声明 `INTERNET`、照片、媒体或全盘存储权限。
-- 图片通过 Android 系统文件选择器读取和保存，不申请照片、媒体或全盘存储权限。
+- 正式版不声明 `INTERNET` 或全盘存储权限；Android 9 及更早版本保存到相册时按需申请旧版写入权限。
+- 图片可通过系统选择器从相册或文件导入；PNG/JPG 可通过 MediaStore 保存为相册新副本，也可保存到文件。
 - 图片处理均在设备本地完成，应用没有自有服务器，不收集、上传、出售或共享图片及个人数据。
 - 仅使用 `SharedPreferences` 在设备本地保存用户选择的界面语言。
 - 应用不集成广告、分析或追踪 SDK。
@@ -30,7 +32,7 @@ https://privacy.pictureslighting.com
 ## 上架前人工项
 
 - 确认 `applicationId` `com.annuo.pictools` 在 Play Console 中可用且为最终标识。
-- 当前版本名为 `1.0.1`，build number 为 `2`。
+- 版本名和 versionCode 以 `pubspec.yaml` 为准；本次准备 `1.2.0` / `3`，正式轨道先保留为草稿。
 - 每次发布递增 `pubspec.yaml` 的 build number。
 - 隐私政策 URL、商店截图、512 × 512 应用图标和 1024 × 500 功能图片已就绪，位于 `docs/google-play/`。
 - 六种语言的商店标题、简短说明和完整说明已就绪；内容分级问卷仍需由账号持有人在 Play Console 中确认提交。

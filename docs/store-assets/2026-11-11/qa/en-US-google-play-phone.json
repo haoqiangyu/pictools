@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 8,
+    "readable_images": 8,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/01-batch.png",
+      "caption": "Convert a batch.\nSkip the repetition.",
+      "alt_text": "Three photos converted to JPG in one batch, with format, quality and save controls.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/02-crop.png",
+      "caption": "Crop precisely.\nFind your fit.",
+      "alt_text": "Crop a coastal photo, choose an aspect ratio and export a copy.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/03-compare.png",
+      "caption": "Spot the\ndifference.",
+      "alt_text": "Compare a coastal photo before and after processing with a slider, side by side or in an overlay.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-resize",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/04-resize.png",
+      "caption": "Your size.\nTo the pixel.",
+      "alt_text": "Set image width and height, lock the aspect ratio and export at the desired size.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "05-enhance",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/05-enhance.png",
+      "caption": "Bring out\nthe light.",
+      "alt_text": "View the brightness enhancement result beside the original coastal photo and export it.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "06-import",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/06-import.png",
+      "caption": "Your gallery.\nYour files.",
+      "alt_text": "The Android import dialog offers the system photo picker and file picker.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "07-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/07-export.png",
+      "caption": "Save it\nyour way.",
+      "alt_text": "Choose a file name and format; save PNG/JPG to the gallery or save all formats as files.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "08-dark",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/08-dark.png",
+      "caption": "Made for day.\nAnd night.",
+      "alt_text": "The crop editor in dark mode, with a coastal photo, aspect ratio controls and an export button.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/01-batch.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 225305,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/02-crop.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 669450,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/03-compare.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 760202,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/04-resize.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 700228,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/05-enhance.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 719263,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/06-import.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171775,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/07-export.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 142653,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/phone/08-dark.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 663581,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

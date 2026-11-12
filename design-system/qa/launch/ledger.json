@@ -1,0 +1,375 @@
+{
+  "screens": {
+    "ios-light": "41:28444",
+    "ios-dark": "41:28471",
+    "android11-light": "41:28498",
+    "android11-dark": "41:28525",
+    "android12-light": "41:28555",
+    "android12-dark": "41:28582",
+    "duo-outer": "41:28627",
+    "duo-inner": "41:28654",
+    "small": "41:28672",
+    "landscape": "41:28699"
+  },
+  "prototypes": {
+    "ios-light": "41:28458",
+    "ios-dark": "41:28485",
+    "android11-light": "41:28512",
+    "android11-dark": "41:28539",
+    "android12-light": "41:28569",
+    "android12-dark": "41:28596",
+    "duo-outer": "41:28641",
+    "duo-inner": "41:28662",
+    "small": "41:28686",
+    "landscape": "41:28707"
+  },
+  "created": [
+    "41:28434",
+    "41:28435",
+    "41:28436",
+    "41:28437",
+    "41:28439",
+    "41:28440",
+    "41:28441",
+    "41:28442",
+    "41:28443",
+    "41:28444",
+    "41:28457",
+    "41:28468",
+    "41:28469",
+    "41:28470",
+    "41:28471",
+    "41:28484",
+    "41:28495",
+    "41:28496",
+    "41:28497",
+    "41:28498",
+    "41:28511",
+    "41:28522",
+    "41:28523",
+    "41:28524",
+    "41:28525",
+    "41:28538",
+    "41:28549",
+    "41:28550",
+    "41:28551",
+    "41:28552",
+    "41:28553",
+    "41:28554",
+    "41:28555",
+    "41:28568",
+    "41:28579",
+    "41:28580",
+    "41:28581",
+    "41:28582",
+    "41:28595",
+    "41:28606",
+    "41:28607",
+    "41:28608",
+    "41:28609",
+    "41:28610",
+    "41:28617",
+    "41:28618",
+    "41:28619",
+    "41:28620",
+    "41:28621",
+    "41:28622",
+    "41:28623",
+    "41:28624",
+    "41:28625",
+    "41:28626",
+    "41:28627",
+    "41:28640",
+    "41:28651",
+    "41:28652",
+    "41:28653",
+    "41:28654",
+    "41:28661",
+    "41:28666",
+    "41:28667",
+    "41:28668",
+    "41:28669",
+    "41:28670",
+    "41:28671",
+    "41:28672",
+    "41:28685",
+    "41:28696",
+    "41:28697",
+    "41:28698",
+    "41:28699",
+    "41:28706",
+    "41:28711",
+    "41:28712",
+    "41:28713",
+    "41:28714"
+  ],
+  "rules": [],
+  "boardId": "41:28434",
+  "prototypeSection": "41:28438",
+  "brandComponent": "18:1077",
+  "bounds": {
+    "x": 22206,
+    "y": 0,
+    "width": 1880,
+    "height": 4827
+  },
+  "invalidTargets": [],
+  "connections": 10,
+  "darkHome": "41:28984",
+  "innerHome": "41:29019",
+  "darkBindings": [
+    "bg",
+    "surface",
+    "subtle",
+    "ink",
+    "muted",
+    "border",
+    "primary",
+    "primaryInk",
+    "tint",
+    "canvas",
+    "canvasInk",
+    "canvasMuted",
+    "success",
+    "successTint",
+    "warning",
+    "warningTint",
+    "danger",
+    "dangerTint",
+    "focus",
+    "disabled",
+    "disabledInk"
+  ],
+  "previewColors": [
+    {
+      "key": "ios-light",
+      "id": "41:28444",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "ios-dark",
+      "id": "41:28471",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.09019608050584793,
+          "g": 0.10588235408067703,
+          "b": 0.0941176488995552
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:649"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "android11-light",
+      "id": "41:28498",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "android11-dark",
+      "id": "41:28525",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.09019608050584793,
+          "g": 0.10588235408067703,
+          "b": 0.0941176488995552
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:649"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "android12-light",
+      "id": "41:28555",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "android12-dark",
+      "id": "41:28582",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.09019608050584793,
+          "g": 0.10588235408067703,
+          "b": 0.0941176488995552
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:649"
+          }
+        }
+      },
+      "width": 390,
+      "height": 844
+    },
+    {
+      "key": "duo-outer",
+      "id": "41:28627",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 394,
+      "height": 626
+    },
+    {
+      "key": "duo-inner",
+      "id": "41:28654",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.09019608050584793,
+          "g": 0.10588235408067703,
+          "b": 0.0941176488995552
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:649"
+          }
+        }
+      },
+      "width": 951,
+      "height": 669
+    },
+    {
+      "key": "small",
+      "id": "41:28672",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 320,
+      "height": 568
+    },
+    {
+      "key": "landscape",
+      "id": "41:28699",
+      "fill": {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9686274528503418,
+          "g": 0.9647058844566345,
+          "b": 0.9490196108818054
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:18:648"
+          }
+        }
+      },
+      "width": 844,
+      "height": 390
+    }
+  ]
+}

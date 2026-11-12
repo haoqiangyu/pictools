@@ -1,0 +1,740 @@
+{
+  "checked_at": "2026-11-12T05:42:38Z",
+  "listings": [
+    {
+      "locale": "zh-CN",
+      "title": "Pictoos: 图片工具箱",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "34175faebb405fac20b9b8e2bd312889d06df8607cd9722172c897c644e5c090",
+            "309af336e8a812c6f02035d60cb29800ecc78f38d63ee936c1f416d5ac4888fa",
+            "93ee762956dd26fa14cccfc612f1d7e2df9551cff3bf5a164547cd0355b3f157",
+            "f7e90a705a7d8f4ae759e24d356ebc3edb690237102250e1dd2996dbdea30534",
+            "ac74a6fff2859b8d3fd3e39aa87dfbc3b3f21a313082cf07ea4878eb7eaaf195",
+            "61b5de0e6c5221bd4e174100a9dbe32a4ba0c8d52b7ef38c605b03bcebd450ee",
+            "75d74a22115e0070629e77c1a777af20639059915c564edfab103f3aa0dc54f9",
+            "0fa83297b1381a72673349ea2583622718a5864176b9e04815558af77b6ecc6d"
+          ],
+          "expected": [
+            "34175faebb405fac20b9b8e2bd312889d06df8607cd9722172c897c644e5c090",
+            "309af336e8a812c6f02035d60cb29800ecc78f38d63ee936c1f416d5ac4888fa",
+            "93ee762956dd26fa14cccfc612f1d7e2df9551cff3bf5a164547cd0355b3f157",
+            "f7e90a705a7d8f4ae759e24d356ebc3edb690237102250e1dd2996dbdea30534",
+            "ac74a6fff2859b8d3fd3e39aa87dfbc3b3f21a313082cf07ea4878eb7eaaf195",
+            "61b5de0e6c5221bd4e174100a9dbe32a4ba0c8d52b7ef38c605b03bcebd450ee",
+            "75d74a22115e0070629e77c1a777af20639059915c564edfab103f3aa0dc54f9",
+            "0fa83297b1381a72673349ea2583622718a5864176b9e04815558af77b6ecc6d"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "aa2826e2768c4d14fa29390e08a924c3f92624632ca37c374c2f23b546e17bdd",
+            "071ba1205cc076357ff70e4d2df3393a2d35b786384325e1b21fc4c0f45b3c40",
+            "bb2b8f20802a0432f83db0bccf1f6908b3b64f8f9b9993a919fb6692000465d0",
+            "3b431cf6e3b569ad61ef81de9016fc5838459d5150ead2c93eb4646248c7bdd2"
+          ],
+          "expected": [
+            "aa2826e2768c4d14fa29390e08a924c3f92624632ca37c374c2f23b546e17bdd",
+            "071ba1205cc076357ff70e4d2df3393a2d35b786384325e1b21fc4c0f45b3c40",
+            "bb2b8f20802a0432f83db0bccf1f6908b3b64f8f9b9993a919fb6692000465d0",
+            "3b431cf6e3b569ad61ef81de9016fc5838459d5150ead2c93eb4646248c7bdd2"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "5764567e0d0ebcbc483aaece491304a2f0b6fbda59b89153b79e70bed3ebc7b0"
+          ],
+          "expected": [
+            "5764567e0d0ebcbc483aaece491304a2f0b6fbda59b89153b79e70bed3ebc7b0"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 1,
+          "hashes": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    },
+    {
+      "locale": "zh-TW",
+      "title": "Pictoos: 圖片工具箱",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "afe668e2f05ab4050d33f767a6f6f4bb7d979490aa72d934f330da4bdd5171ff",
+            "3c640caf7472292bbd50ebea9c1ffa2198329a5a4e17183dafb416d4f55e4e13",
+            "58fb93fea8aade4f5768c88aeafba7fb7854565775ef53c3242b32f6bc06e7fd",
+            "aeca5d67fed89f40f1f6023a1928b0d4faaba1836b16ad3f13c389dfab21c06a",
+            "a1ab63a44abed521dfce1de6fc82d718c367def589cb57a500bdc0abdaeeb8a4",
+            "11ded8385cd9f8cc22fff86c45673aeb20f78a9ee12c3ef8c7364290d2ad2e05",
+            "f7686ac115f12be9fe93e8ce17e429937a304709a61b5f23021e8f24b9a0078b",
+            "077327beac1ed78d17c020d7f8b14d884ff442402d5dd8dcbab2574ae013c5be"
+          ],
+          "expected": [
+            "afe668e2f05ab4050d33f767a6f6f4bb7d979490aa72d934f330da4bdd5171ff",
+            "3c640caf7472292bbd50ebea9c1ffa2198329a5a4e17183dafb416d4f55e4e13",
+            "58fb93fea8aade4f5768c88aeafba7fb7854565775ef53c3242b32f6bc06e7fd",
+            "aeca5d67fed89f40f1f6023a1928b0d4faaba1836b16ad3f13c389dfab21c06a",
+            "a1ab63a44abed521dfce1de6fc82d718c367def589cb57a500bdc0abdaeeb8a4",
+            "11ded8385cd9f8cc22fff86c45673aeb20f78a9ee12c3ef8c7364290d2ad2e05",
+            "f7686ac115f12be9fe93e8ce17e429937a304709a61b5f23021e8f24b9a0078b",
+            "077327beac1ed78d17c020d7f8b14d884ff442402d5dd8dcbab2574ae013c5be"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "9f3e38854ee9ca08035c8f343cbaaab6f6c488a7dad894509f037359bd0d205d",
+            "45067f74b11bc77c18ed62636d89c70bc8ebaaf309d15ea83932a7e118a17092",
+            "da575ec7f6c9a840b5765417cf8731ce47df501cd9fd464db5e0637d7cd65ddc",
+            "ab7596736f3b48639ad231821d5b9e1232038cd1c7cf3398cba54ec4f0452501"
+          ],
+          "expected": [
+            "9f3e38854ee9ca08035c8f343cbaaab6f6c488a7dad894509f037359bd0d205d",
+            "45067f74b11bc77c18ed62636d89c70bc8ebaaf309d15ea83932a7e118a17092",
+            "da575ec7f6c9a840b5765417cf8731ce47df501cd9fd464db5e0637d7cd65ddc",
+            "ab7596736f3b48639ad231821d5b9e1232038cd1c7cf3398cba54ec4f0452501"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "df12f7516f4fc588ccc3088a2eeaa13232a8707e97114af8ea028d06097db0ec"
+          ],
+          "expected": [
+            "df12f7516f4fc588ccc3088a2eeaa13232a8707e97114af8ea028d06097db0ec"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 0,
+          "hashes": [],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": false,
+          "ordered": false,
+          "inherited_default": true
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    },
+    {
+      "locale": "en-US",
+      "title": "Pictoos: Image Toolbox",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "b8663fdbf5c1a7b75ce77b34cfcbdcf4796feb88259fbd1179d855e1208a8854",
+            "7622efec8853f2c2648c7c6565db8face8944b8a145964f38dfaa90f4a5a998d",
+            "b825d1cb769fbc0a473e9e6199934b5f432172e2217db89c5b006bf98d704315",
+            "8824a4536e484273748cca04f94fc224d1d24050283b2857c28c2dcfef933022",
+            "e7f33394b51732e25b418d8b7389cc66d1ea79d94d0bc74d547bb11fcd46cabd",
+            "5fc29d7ebee32756013f90239da86e42d56a8d6d6894240cac722bacb684a3ff",
+            "4ccbd9c13a2ee03d0188f6872a34b912f0532a5783e2ee247def7f985271f7b2",
+            "2731fe5fbfd8ee1ce3bfd16236488999614fbd95212b4da9ed97d978289020e2"
+          ],
+          "expected": [
+            "b8663fdbf5c1a7b75ce77b34cfcbdcf4796feb88259fbd1179d855e1208a8854",
+            "7622efec8853f2c2648c7c6565db8face8944b8a145964f38dfaa90f4a5a998d",
+            "b825d1cb769fbc0a473e9e6199934b5f432172e2217db89c5b006bf98d704315",
+            "8824a4536e484273748cca04f94fc224d1d24050283b2857c28c2dcfef933022",
+            "e7f33394b51732e25b418d8b7389cc66d1ea79d94d0bc74d547bb11fcd46cabd",
+            "5fc29d7ebee32756013f90239da86e42d56a8d6d6894240cac722bacb684a3ff",
+            "4ccbd9c13a2ee03d0188f6872a34b912f0532a5783e2ee247def7f985271f7b2",
+            "2731fe5fbfd8ee1ce3bfd16236488999614fbd95212b4da9ed97d978289020e2"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "27589435f08f9f29b6c453427cf0bae189c894434dd36e7ae754f521f886da48",
+            "237bf1ffc7fd1ba53845495042c355ad7452f4fb723499fdf7912f246bbbd98b",
+            "8c9e6fe4f75954d197e2b7d8c8f1c33111ef96ba54c5297f558c04c30e721216",
+            "e26964a060350de444a19f6b4949422f57aa158dbd515fbd74cc20f9995f8819"
+          ],
+          "expected": [
+            "27589435f08f9f29b6c453427cf0bae189c894434dd36e7ae754f521f886da48",
+            "237bf1ffc7fd1ba53845495042c355ad7452f4fb723499fdf7912f246bbbd98b",
+            "8c9e6fe4f75954d197e2b7d8c8f1c33111ef96ba54c5297f558c04c30e721216",
+            "e26964a060350de444a19f6b4949422f57aa158dbd515fbd74cc20f9995f8819"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "3ac972946a3a6dacbe76b69834f24ccd3c3a85d8a981af9e2f063077a3aa852d"
+          ],
+          "expected": [
+            "3ac972946a3a6dacbe76b69834f24ccd3c3a85d8a981af9e2f063077a3aa852d"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 0,
+          "hashes": [],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": false,
+          "ordered": false,
+          "inherited_default": true
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    },
+    {
+      "locale": "es-ES",
+      "title": "Pictoos: Kit de imágenes",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "3b7079f49b2ff42dd65508e8ca002257fdc403b01a41692b63f8e5b099f5974e",
+            "8716f0d969a68535fbac2b98c04f128f16c863985ca7143c6fc6562a7c5452a0",
+            "0e94d606e2503dc6569b1de4025674e24e943c8f805755ac6d649fdc1dbad3fe",
+            "18dc075bd8bf2cf5508879267c5f0910c4516bcc22247317e0ade02e5d61949f",
+            "9e04509a3f34550c4c9977a6976ea0830af9e556ab0c82cce3cd2422702eb7a4",
+            "950d37323ad4a8c00b763eda3e59f0f91551a80f2cccd66c4710c886e4978f89",
+            "3560a5f4377c044f6e643797a65aeb9e05f1d821b73e1fd9445849fa4324c4a8",
+            "ba1dedc002e2691024067b6dc6cb8f24dca7c7b26684629c695045ef375a8d4d"
+          ],
+          "expected": [
+            "3b7079f49b2ff42dd65508e8ca002257fdc403b01a41692b63f8e5b099f5974e",
+            "8716f0d969a68535fbac2b98c04f128f16c863985ca7143c6fc6562a7c5452a0",
+            "0e94d606e2503dc6569b1de4025674e24e943c8f805755ac6d649fdc1dbad3fe",
+            "18dc075bd8bf2cf5508879267c5f0910c4516bcc22247317e0ade02e5d61949f",
+            "9e04509a3f34550c4c9977a6976ea0830af9e556ab0c82cce3cd2422702eb7a4",
+            "950d37323ad4a8c00b763eda3e59f0f91551a80f2cccd66c4710c886e4978f89",
+            "3560a5f4377c044f6e643797a65aeb9e05f1d821b73e1fd9445849fa4324c4a8",
+            "ba1dedc002e2691024067b6dc6cb8f24dca7c7b26684629c695045ef375a8d4d"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "c930bc3237253574a56d16a30141691ee249ddf6687f3d80ad4a8f87dc9453fc",
+            "250e5c3adf7a1a38dd44b6655c07a363ed72c0de2b4d5629e390369b70f7b2d7",
+            "59466d417e2aa11eb0143c8a2776e48bc8bcfa13f5ab7e51681399bbdac4c4ac",
+            "adeddaed24f7750c9e840ab3d605d04b2dd2e4f8a4af288cc8803c97ca5e9622"
+          ],
+          "expected": [
+            "c930bc3237253574a56d16a30141691ee249ddf6687f3d80ad4a8f87dc9453fc",
+            "250e5c3adf7a1a38dd44b6655c07a363ed72c0de2b4d5629e390369b70f7b2d7",
+            "59466d417e2aa11eb0143c8a2776e48bc8bcfa13f5ab7e51681399bbdac4c4ac",
+            "adeddaed24f7750c9e840ab3d605d04b2dd2e4f8a4af288cc8803c97ca5e9622"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "6bc61b1a2f907bc9c8db07c60f771408e86e2d527df4402ceb3312bc2fa5fea2"
+          ],
+          "expected": [
+            "6bc61b1a2f907bc9c8db07c60f771408e86e2d527df4402ceb3312bc2fa5fea2"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 0,
+          "hashes": [],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": false,
+          "ordered": false,
+          "inherited_default": true
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    },
+    {
+      "locale": "fr-FR",
+      "title": "Pictoos : boîte à outils photo",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "bc76c8e557ab0b8c479069f1ff1045dd805ee18e8af183072d8ad4323c04c92f",
+            "529dc52ae9cebd0d062bb06bf5a4af7f7e8b84c8b181dd175a48aca18f724820",
+            "a133d814eb91c7d1bbf8dbd39e181f1a6e6546ad1dc825f51409e0adaa49b325",
+            "aaf8c5929e2ff04063e4a165ac8c7f6c4d6e07e84cf2378fc1df139a899e6545",
+            "5c14dc0276e5dc3c1a765f37d55db58a712825307fecd67fd9cf9c078890e813",
+            "6cee141c1fabc307f60c74e5d706f2f2afd86cefb9b7567194347a0d60079fc6",
+            "822f597c051ad06c19200080c9e0a6e9dc5c295055b7e20ff321827459d7b774",
+            "0eca1606af708328485fd72b292f41cc1dadf81e522d767edff6ac47a34684fc"
+          ],
+          "expected": [
+            "bc76c8e557ab0b8c479069f1ff1045dd805ee18e8af183072d8ad4323c04c92f",
+            "529dc52ae9cebd0d062bb06bf5a4af7f7e8b84c8b181dd175a48aca18f724820",
+            "a133d814eb91c7d1bbf8dbd39e181f1a6e6546ad1dc825f51409e0adaa49b325",
+            "aaf8c5929e2ff04063e4a165ac8c7f6c4d6e07e84cf2378fc1df139a899e6545",
+            "5c14dc0276e5dc3c1a765f37d55db58a712825307fecd67fd9cf9c078890e813",
+            "6cee141c1fabc307f60c74e5d706f2f2afd86cefb9b7567194347a0d60079fc6",
+            "822f597c051ad06c19200080c9e0a6e9dc5c295055b7e20ff321827459d7b774",
+            "0eca1606af708328485fd72b292f41cc1dadf81e522d767edff6ac47a34684fc"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "c93678ecc019de83c3cf2a131611154c05751a452e26e2289977d4c60c568d3f",
+            "8b168321309c983c254e238b8825c1b8926bac7dabbbec38d7b24e284692c0fa",
+            "b4d5ebf0ac99fbeb3c270afcd7cb728ec1676d6ab56bc8e2db3679f47da2a157",
+            "1b443a28f07a937aaea3efb04d824230c9769e5b22e21db1e56652e55b3e6359"
+          ],
+          "expected": [
+            "c93678ecc019de83c3cf2a131611154c05751a452e26e2289977d4c60c568d3f",
+            "8b168321309c983c254e238b8825c1b8926bac7dabbbec38d7b24e284692c0fa",
+            "b4d5ebf0ac99fbeb3c270afcd7cb728ec1676d6ab56bc8e2db3679f47da2a157",
+            "1b443a28f07a937aaea3efb04d824230c9769e5b22e21db1e56652e55b3e6359"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "33033ccae66cbde603ef0412d48b32a78ea4197b6cf8fda0f95346fe00a91929"
+          ],
+          "expected": [
+            "33033ccae66cbde603ef0412d48b32a78ea4197b6cf8fda0f95346fe00a91929"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 0,
+          "hashes": [],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": false,
+          "ordered": false,
+          "inherited_default": true
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    },
+    {
+      "locale": "de-DE",
+      "title": "Pictoos: Bild-Werkzeugkasten",
+      "text_matches": {
+        "title": true,
+        "short_description": true,
+        "full_description": true
+      },
+      "images": {
+        "phoneScreenshots": {
+          "count": 8,
+          "hashes": [
+            "3204df7d7b7d36d76aa56d0a32fe8506adcb46922698be74a9364be96cf76500",
+            "09dd375f8987969db7e718b65700a3a108b1d4147d851b85adf9c10301e2e736",
+            "e0043cc246d8e1e4bca802917cec15c5dd1a45b02acc68a66a8347e2772b8fcd",
+            "17ed1c89ef825fe4e39ee6084abc28712ec4c9ee517618153b7ca28b8751d6f0",
+            "3375c703cf41fb6037fbe5803b6b37723628b9e4888d6287d29a8831eed9fbdc",
+            "d382e9469b64ef9c9d7bdba49e37d4a3ef787ec4fd5aacebdcbe3b0e9a7876bb",
+            "450c59d1b0bcfcc010a6bb1d2c69ef28354811dbbf70189d96659ba9d64b28be",
+            "4fdb5eb06b7afe6b307775bc587c223b72a795511a6fa9f35814d7c357f90759"
+          ],
+          "expected": [
+            "3204df7d7b7d36d76aa56d0a32fe8506adcb46922698be74a9364be96cf76500",
+            "09dd375f8987969db7e718b65700a3a108b1d4147d851b85adf9c10301e2e736",
+            "e0043cc246d8e1e4bca802917cec15c5dd1a45b02acc68a66a8347e2772b8fcd",
+            "17ed1c89ef825fe4e39ee6084abc28712ec4c9ee517618153b7ca28b8751d6f0",
+            "3375c703cf41fb6037fbe5803b6b37723628b9e4888d6287d29a8831eed9fbdc",
+            "d382e9469b64ef9c9d7bdba49e37d4a3ef787ec4fd5aacebdcbe3b0e9a7876bb",
+            "450c59d1b0bcfcc010a6bb1d2c69ef28354811dbbf70189d96659ba9d64b28be",
+            "4fdb5eb06b7afe6b307775bc587c223b72a795511a6fa9f35814d7c357f90759"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-resize.png",
+            "05-enhance.png",
+            "06-import.png",
+            "07-export.png",
+            "08-dark.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "tenInchScreenshots": {
+          "count": 4,
+          "hashes": [
+            "eb64345f87ca35d064544db7e5b2de95859d724e040c8a450e1df66ae8ff1682",
+            "aa879c7f9a783d7de58f0040a241225350860bb0fa27f6a5257931a7ff96b0e4",
+            "c41f10769e02e0972704bc055b03050247562eeca793b53dc7a383b850ec7a71",
+            "e68514f88c10c19aff6af61de08a909814257901b4285b68f1387d957280f0e3"
+          ],
+          "expected": [
+            "eb64345f87ca35d064544db7e5b2de95859d724e040c8a450e1df66ae8ff1682",
+            "aa879c7f9a783d7de58f0040a241225350860bb0fa27f6a5257931a7ff96b0e4",
+            "c41f10769e02e0972704bc055b03050247562eeca793b53dc7a383b850ec7a71",
+            "e68514f88c10c19aff6af61de08a909814257901b4285b68f1387d957280f0e3"
+          ],
+          "files": [
+            "01-batch.png",
+            "02-crop.png",
+            "03-compare.png",
+            "04-export.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "featureGraphic": {
+          "count": 1,
+          "hashes": [
+            "8b61f0f04cbd5ec1be4454096f4e99eef5e3a53c624bdf8098612c02bd4f05ba"
+          ],
+          "expected": [
+            "8b61f0f04cbd5ec1be4454096f4e99eef5e3a53c624bdf8098612c02bd4f05ba"
+          ],
+          "files": [
+            "feature-graphic.png"
+          ],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        },
+        "icon": {
+          "count": 0,
+          "hashes": [],
+          "expected": [
+            "eb50e5cad41fe125661d5b5f9bbf52fb92415bc83d4482ea625d8cc7bef5a8a6"
+          ],
+          "files": [
+            "google-play-512.png"
+          ],
+          "matches": false,
+          "ordered": false,
+          "inherited_default": true
+        },
+        "sevenInchScreenshots": {
+          "count": 0,
+          "hashes": [],
+          "expected": [],
+          "files": [],
+          "matches": true,
+          "ordered": true,
+          "inherited_default": false
+        }
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "releases": [
+        {
+          "name": "1.2.0",
+          "release_notes": [
+            {
+              "language": "fr-FR",
+              "text": "Espace de travail renouvelé et thèmes clair/sombre. Conversion par lots dans six formats, qualité JPEG/WebP réglable et WebP sans perte. Améliorations du recadrage, des dimensions, de la comparaison et de la luminosité. Choisissez séparément la source et la destination : PNG/JPG dans la photothèque, tous les formats en fichiers. Suivez le traitement et l'enregistrement de chaque image."
+            },
+            {
+              "language": "es-ES",
+              "text": "Nuevo espacio de trabajo con temas claro y oscuro. Convierte seis formatos por lotes con calidad JPEG/WebP ajustable y WebP sin pérdida. Mejoras en recorte, tamaño, comparación y brillo. Elige por separado el origen y el destino: PNG/JPG en la fototeca y todos los formatos como archivos. Consulta el estado de procesamiento y guardado de cada imagen."
+            },
+            {
+              "language": "zh-TW",
+              "text": "更新圖片工作區與淺色、深色外觀。支援批次轉換六種圖片格式、調整 JPEG/WebP 品質及無損 WebP。改善裁切縮放、三種圖片比較與亮度增強。匯入來源與儲存位置可分別選擇：PNG/JPG 可儲存至相簿，全部格式可儲存至檔案，並明確顯示每張圖片的處理與儲存狀態。"
+            },
+            {
+              "language": "en-US",
+              "text": "Updated the workspace and light/dark themes. Batch convert six image formats with JPEG/WebP quality controls and lossless WebP. Improved cropping, resizing, three comparison modes and brightness enhancement. Choose import and save locations separately: PNG/JPG can go to your photo library, while all formats can be saved as files. Processing and saved states are shown for each image."
+            },
+            {
+              "language": "de-DE",
+              "text": "Überarbeiteter Arbeitsbereich mit hellem und dunklem Design. Sechs Formate im Stapel konvertieren, JPEG/WebP-Qualität einstellen und verlustfreies WebP nutzen. Verbesserungen bei Zuschnitt, Größe, Vergleich und Helligkeit. Quelle und Speicherziel getrennt wählen: PNG/JPG in der Fotomediathek, alle Formate als Dateien. Verarbeitungs- und Speicherstatus pro Bild sichtbar."
+            },
+            {
+              "language": "zh-CN",
+              "text": "更新图片工作台与浅色、深色外观。支持批量转换六种图片格式，调整 JPEG/WebP 质量和无损 WebP。优化裁剪缩放、三种图片对比和亮度增强。导入来源与保存位置可分别选择：PNG/JPG 可保存到相册，全部格式可保存到文件，并明确显示每张图片的处理与保存状态。"
+            }
+          ],
+          "status": "draft",
+          "version_codes": [
+            "3"
+          ]
+        },
+        {
+          "name": "2 (1.0.1)",
+          "status": "completed",
+          "version_codes": [
+            "2"
+          ]
+        }
+      ],
+      "track": "production"
+    },
+    {
+      "track": "beta"
+    },
+    {
+      "track": "alpha"
+    },
+    {
+      "releases": [
+        {
+          "name": "1 (1.0.0)",
+          "status": "completed",
+          "version_codes": [
+            "1"
+          ]
+        }
+      ],
+      "track": "internal"
+    },
+    {
+      "releases": [
+        {
+          "name": "2 (1.0.1)",
+          "release_notes": [
+            {
+              "language": "zh-CN",
+              "text": "优化体验"
+            }
+          ],
+          "status": "completed",
+          "version_codes": [
+            "2"
+          ]
+        }
+      ],
+      "track": "close_test_01"
+    }
+  ],
+  "errors": [],
+  "order_warnings": []
+}

@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "fail": 2,
+    "warn": 10,
+    "info": 0
+  },
+  "findings": [
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/launch/ios-native-light.png",
+      "message": "Screenshot is 1178x2556; nearest standard viewport is desktop-rotated with delta 1600."
+    },
+    {
+      "severity": "warn",
+      "rule": "background-too-light",
+      "target": "design-system/qa/launch/ios-native-light.png",
+      "message": "94% of sampled pixels are near-white. Verify text and controls have enough structure."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/launch/ios-native-light.png",
+      "message": "Only 4% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/launch/ios-native-dark.png",
+      "message": "Screenshot is 1178x2556; nearest standard viewport is desktop-rotated with delta 1600."
+    },
+    {
+      "severity": "fail",
+      "rule": "background-too-dark",
+      "target": "design-system/qa/launch/ios-native-dark.png",
+      "message": "96% of sampled pixels are near-black. Theme evidence or UI may be hidden."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/launch/ios-native-dark.png",
+      "message": "Only 3% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/launch/android12-system-light.png",
+      "message": "Screenshot is 1080x2400; nearest standard viewport is desktop-rotated with delta 1346."
+    },
+    {
+      "severity": "warn",
+      "rule": "background-too-light",
+      "target": "design-system/qa/launch/android12-system-light.png",
+      "message": "96% of sampled pixels are near-white. Verify text and controls have enough structure."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/launch/android12-system-light.png",
+      "message": "Only 3% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/launch/android12-system-dark.png",
+      "message": "Screenshot is 1080x2400; nearest standard viewport is desktop-rotated with delta 1346."
+    },
+    {
+      "severity": "fail",
+      "rule": "background-too-dark",
+      "target": "design-system/qa/launch/android12-system-dark.png",
+      "message": "95% of sampled pixels are near-black. Theme evidence or UI may be hidden."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/launch/android12-system-dark.png",
+      "message": "Only 3% of sampled pixels are midtone. Check contrast and surface readability."
+    }
+  ]
+}

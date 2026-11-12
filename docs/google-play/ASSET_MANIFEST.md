@@ -1,5 +1,15 @@
 # Google Play 图片素材
 
+## 当前 Studio 设计 · 2026-11-11
+
+使用 [六语言商店素材包](../store-assets/2026-11-11/README.md) 与 [成品预览](../store-assets/2026-11-11/index.html)。每种语言包含 8 张 1080 × 1920 手机宣传截图、4 张 1920 × 1080 平板界面图、1 张 1024 × 500 宣传图，并附当前品牌的 512 × 512 图标。标题与应用界面均已本地化。
+
+目录：`docs/store-assets/2026-11-11/upload/语言/google-play/`。替代文本见包内 `captions-and-alt-text.csv`。
+
+## 历史素材（旧版 UI）
+
+下表及旧生成脚本对应改版前的设计，不作为当前 Studio 版本的商店成品。
+
 | 素材 | 文件 | 尺寸 | 用途 |
 | --- | --- | --- | --- |
 | 商店图标 | `assets/store-icon.png` | 512 × 512 | Google Play 应用图标 |

@@ -1,7 +1,7 @@
 name: pictools
 description: "跨平台图片处理工具"
 publish_to: 'none'
-version: 1.0.1+2
+version: 1.2.0+3
 
 environment:
   sdk: ^3.10.1
@@ -14,6 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   file_picker: ^8.0.0+1
   desktop_drop: ^0.5.0
+  share_plus: ^11.1.0
   provider: ^6.1.2
   image: ^4.7.2
   rust_lib_pictools:
@@ -40,5 +41,7 @@ dev_dependencies:
   freezed: ^2.4.6
 
 flutter:
+  assets:
+    - assets/brand/app-icon.png
   uses-material-design: true
   generate: true

@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 4,
+    "readable_images": 4,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/01-crop.png",
+      "caption": "裁剪到位\n尺寸刚好",
+      "alt_text": "裁剪海岸照片，选择比例并拖动裁剪框，导出新副本。",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/02-compare.png",
+      "caption": "差别，\n一眼看清",
+      "alt_text": "使用滑块比较海岸照片处理前后的差异，可切换并排或叠加模式。",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/03-batch.png",
+      "caption": "批量转换\n少些重复操作",
+      "alt_text": "三张图片已批量转换为 JPG，可设置格式和质量并保存结果。",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/04-export.png",
+      "caption": "保存去哪\n由你决定",
+      "alt_text": "导出弹窗可设置文件名与格式，分别保存到相册或文件。",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/01-crop.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 2842380,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/02-compare.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 2986808,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/03-batch.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 239333,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-CN/app-store/ipad-13/04-export.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 1395500,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

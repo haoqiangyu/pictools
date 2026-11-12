@@ -1,0 +1,231 @@
+{
+  "updated": [
+    {
+      "frame": "18:2688",
+      "file": "18:2756",
+      "photo": "33:18756",
+      "eligible": false
+    },
+    {
+      "frame": "18:2760",
+      "file": "18:2836",
+      "photo": "33:18760",
+      "eligible": true
+    },
+    {
+      "frame": "18:2840",
+      "file": "18:2906",
+      "photo": "33:18763",
+      "eligible": false
+    },
+    {
+      "frame": "19:6193",
+      "file": "19:6236",
+      "photo": "33:18767",
+      "eligible": false
+    },
+    {
+      "frame": "19:6239",
+      "file": "19:6287",
+      "photo": "33:18772",
+      "eligible": true
+    },
+    {
+      "frame": "19:6290",
+      "file": "19:6329",
+      "photo": "33:18776",
+      "eligible": false
+    },
+    {
+      "frame": "19:8397",
+      "file": "19:8440",
+      "photo": "33:18781",
+      "eligible": true
+    },
+    {
+      "frame": "19:8755",
+      "file": "19:8798",
+      "photo": "33:18785",
+      "eligible": false
+    },
+    {
+      "frame": "19:8968",
+      "file": "19:9011",
+      "photo": "33:18790",
+      "eligible": false
+    },
+    {
+      "frame": "19:9369",
+      "file": "19:9412",
+      "photo": "33:18795",
+      "eligible": true
+    },
+    {
+      "frame": "19:9597",
+      "file": "19:9645",
+      "photo": "33:18799",
+      "eligible": true
+    },
+    {
+      "frame": "19:9821",
+      "file": "19:9864",
+      "photo": "33:18803",
+      "eligible": false
+    },
+    {
+      "frame": "19:10037",
+      "file": "19:10080",
+      "photo": "33:18808",
+      "eligible": false
+    },
+    {
+      "frame": "19:10253",
+      "file": "19:10296",
+      "photo": "33:18813",
+      "eligible": false
+    },
+    {
+      "frame": "19:10469",
+      "file": "19:10508",
+      "photo": "33:18818",
+      "eligible": false
+    },
+    {
+      "frame": "19:10732",
+      "file": "19:10775",
+      "photo": "33:18823",
+      "eligible": true
+    },
+    {
+      "frame": "19:10960",
+      "file": "19:11008",
+      "photo": "33:18827",
+      "eligible": true
+    },
+    {
+      "frame": "19:11184",
+      "file": "19:11227",
+      "photo": "33:18831",
+      "eligible": false
+    },
+    {
+      "frame": "19:11400",
+      "file": "19:11443",
+      "photo": "33:18836",
+      "eligible": false
+    },
+    {
+      "frame": "19:11616",
+      "file": "19:11659",
+      "photo": "33:18841",
+      "eligible": false
+    },
+    {
+      "frame": "19:11832",
+      "file": "19:11871",
+      "photo": "33:18846",
+      "eligible": false
+    },
+    {
+      "frame": "21:13739",
+      "file": "21:13843",
+      "photo": "33:18851",
+      "eligible": false
+    },
+    {
+      "frame": "21:13546",
+      "file": "21:13631",
+      "photo": "33:18855",
+      "eligible": false
+    },
+    {
+      "frame": "21:13633",
+      "file": "21:13737",
+      "photo": "33:18859",
+      "eligible": false
+    },
+    {
+      "frame": "21:15636",
+      "file": "21:15745",
+      "photo": "33:18863",
+      "eligible": false
+    },
+    {
+      "frame": "21:15746",
+      "file": "21:15855",
+      "photo": "33:18868",
+      "eligible": false
+    },
+    {
+      "frame": "21:15856",
+      "file": "21:15946",
+      "photo": "33:18873",
+      "eligible": false
+    },
+    {
+      "frame": "21:17965",
+      "file": "21:18068",
+      "photo": "33:18878",
+      "eligible": false
+    },
+    {
+      "frame": "21:18184",
+      "file": "21:18287",
+      "photo": "33:18883",
+      "eligible": false
+    }
+  ],
+  "created": {
+    "phone-png": "33:22899",
+    "phone-webp": "33:22946",
+    "phone-permission": "33:22994",
+    "phone-saved-photos": "33:23041",
+    "phone-saved-files": "33:23090",
+    "phone-saved-both": "33:23118",
+    "batch-destination": "33:23167",
+    "duo-outer-png": "33:23214",
+    "duo-inner-png": "33:23292",
+    "duo-book-png": "33:23389",
+    "phone-dark": "33:23486",
+    "duo-outer-saved-photos": "33:24637",
+    "duo-inner-saved-photos": "33:25076",
+    "duo-book-saved-photos": "33:25574",
+    "batch-saved-photos": "33:26844",
+    "batch-saved-files": "33:27001",
+    "batch-saved-both": "33:27156"
+  },
+  "warnings": [],
+  "prototypes": {
+    "phone-png": "33:23919",
+    "phone-webp": "33:23966",
+    "phone-permission": "33:24014",
+    "phone-saved-photos": "33:24067",
+    "phone-saved-files": "33:24096",
+    "phone-saved-both": "33:24125",
+    "batch-destination": "33:24153",
+    "duo-outer-png": "33:24200",
+    "duo-inner-png": "33:24278",
+    "duo-book-png": "33:24375",
+    "phone-dark": "33:24472",
+    "duo-outer-saved-photos": "33:24519",
+    "duo-outer-saved-files": "33:24700",
+    "duo-outer-saved-both": "33:24818",
+    "duo-inner-saved-photos": "33:24934",
+    "duo-inner-saved-files": "33:25150",
+    "duo-inner-saved-both": "33:25292",
+    "duo-book-saved-photos": "33:25432",
+    "duo-book-saved-files": "33:25648",
+    "duo-book-saved-both": "33:25790",
+    "batch-saved-photos": "33:26735",
+    "batch-saved-files": "33:26892",
+    "batch-saved-both": "33:27049"
+  },
+  "boardId": "33:22895",
+  "prototypeSection": "33:23918",
+  "prototypeConnections": 154,
+  "invalidDestinations": [],
+  "boardPosition": {
+    "x": 13394,
+    "y": 0
+  }
+}

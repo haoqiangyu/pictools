@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 8,
+    "readable_images": 8,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/01-crop.png",
+      "caption": "裁切到位\n尺寸剛好",
+      "alt_text": "裁剪海岸照片，選擇比例並拖動裁剪框，匯出新副本。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/02-compare.png",
+      "caption": "差別，\n一眼看清",
+      "alt_text": "使用滑塊比較海岸照片處理前後的差異，可切換並排或疊加模式。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/03-batch.png",
+      "caption": "批次轉換\n減少重複操作",
+      "alt_text": "三張圖片已批次轉換為 JPG，可設定格式與品質並儲存結果。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-enhance",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/04-enhance.png",
+      "caption": "讓暗處，\n亮起來",
+      "alt_text": "查看海岸照片的亮度增強結果，對照原圖並匯出。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "05-resize",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/05-resize.png",
+      "caption": "想要的尺寸\n精確到像素",
+      "alt_text": "調整圖片寬度與高度，鎖定比例並匯出所需尺寸。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "06-import",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/06-import.png",
+      "caption": "相簿、檔案\n都能輕鬆匯入",
+      "alt_text": "匯入圖片視窗提供從相簿匯入和從檔案匯入兩個入口。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "07-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/07-export.png",
+      "caption": "儲存到哪裡\n由你決定",
+      "alt_text": "匯出視窗可設定檔名與格式，分別儲存至相簿或檔案。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "08-dark",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/08-dark.png",
+      "caption": "白天與夜晚\n都看得舒服",
+      "alt_text": "深色模式的圖片裁剪介面，展示照片、比例控制項與匯出按鈕。",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/01-crop.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1148551,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/02-compare.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1250161,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/03-batch.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 288287,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/04-enhance.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1222748,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/05-resize.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1210432,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/06-import.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 206198,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/07-export.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 200117,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/app-store/iphone-dynamic-island-medium/08-dark.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1157010,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

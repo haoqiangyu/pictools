@@ -1,0 +1,11 @@
+{
+  "source_root": "docs/store-assets/2026-11-11/upload",
+  "ios": {
+    "iphone-dynamic-island-medium": "APP_IPHONE_61",
+    "ipad-13": "APP_IPAD_PRO_3GEN_129"
+  },
+  "android": {
+    "phone": "phoneScreenshots",
+    "tablet": "tenInchScreenshots"
+  }
+}

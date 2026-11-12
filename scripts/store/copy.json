@@ -1,0 +1,320 @@
+{
+  "zh-CN": {
+    "feature": "裁剪、转换\n在设备上完成",
+    "screens": [
+      [
+        "裁剪到位\n尺寸刚好",
+        "选定比例，导出新副本",
+        "裁剪海岸照片，选择比例并拖动裁剪框，导出新副本。"
+      ],
+      [
+        "差别，\n一眼看清",
+        "滑块 · 并排 · 叠加",
+        "使用滑块比较海岸照片处理前后的差异，可切换并排或叠加模式。"
+      ],
+      [
+        "批量转换\n少些重复操作",
+        "6 种输出格式，按需设置质量",
+        "三张图片已批量转换为 JPG，可设置格式和质量并保存结果。"
+      ],
+      [
+        "让暗处，\n亮起来",
+        "一键提亮 · 前后对照",
+        "查看海岸照片的亮度增强结果，对照原图并导出。"
+      ],
+      [
+        "想要的尺寸\n精确到像素",
+        "锁定比例，调整宽高",
+        "调整图片宽度与高度，锁定比例并导出所需尺寸。"
+      ],
+      [
+        "相册、文件\n都能轻松导入",
+        "按需要选择图片来源",
+        "导入图片弹窗提供从相册导入和从文件导入两个入口。"
+      ],
+      [
+        "保存去哪\n由你决定",
+        "PNG/JPG 到相册，全部格式到文件",
+        "导出弹窗可设置文件名与格式，分别保存到相册或文件。"
+      ],
+      [
+        "白天与夜晚\n都看得舒服",
+        "浅色 · 深色 · 跟随系统",
+        "深色模式的图片裁剪界面，展示照片、比例控件和导出按钮。"
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG 到相册，全部格式到文件"
+        }
+      }
+    }
+  },
+  "zh-TW": {
+    "feature": "裁切、轉換\n在裝置上完成",
+    "screens": [
+      [
+        "裁切到位\n尺寸剛好",
+        "選定比例，匯出新副本",
+        "裁剪海岸照片，選擇比例並拖動裁剪框，匯出新副本。"
+      ],
+      [
+        "差別，\n一眼看清",
+        "滑塊 · 並排 · 疊加",
+        "使用滑塊比較海岸照片處理前後的差異，可切換並排或疊加模式。"
+      ],
+      [
+        "批次轉換\n減少重複操作",
+        "6 種輸出格式，依需求設定品質",
+        "三張圖片已批次轉換為 JPG，可設定格式與品質並儲存結果。"
+      ],
+      [
+        "讓暗處，\n亮起來",
+        "一鍵提亮 · 前後對照",
+        "查看海岸照片的亮度增強結果，對照原圖並匯出。"
+      ],
+      [
+        "想要的尺寸\n精確到像素",
+        "鎖定比例，調整寬高",
+        "調整圖片寬度與高度，鎖定比例並匯出所需尺寸。"
+      ],
+      [
+        "相簿、檔案\n都能輕鬆匯入",
+        "依照需要選擇圖片來源",
+        "匯入圖片視窗提供從相簿匯入和從檔案匯入兩個入口。"
+      ],
+      [
+        "儲存到哪裡\n由你決定",
+        "PNG/JPG 至相簿，全部格式至檔案",
+        "匯出視窗可設定檔名與格式，分別儲存至相簿或檔案。"
+      ],
+      [
+        "白天與夜晚\n都看得舒服",
+        "淺色 · 深色 · 跟隨系統",
+        "深色模式的圖片裁剪介面，展示照片、比例控制項與匯出按鈕。"
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG 至相簿，全部格式至檔案"
+        }
+      }
+    }
+  },
+  "en-US": {
+    "feature": "Crop. Convert.\nOn your device.",
+    "screens": [
+      [
+        "Crop precisely.\nFind your fit.",
+        "Choose a ratio. Export a copy.",
+        "Crop a coastal photo, choose an aspect ratio and export a copy."
+      ],
+      [
+        "Spot the\ndifference.",
+        "Slider · Side by side · Overlay",
+        "Compare a coastal photo before and after processing with a slider, side by side or in an overlay."
+      ],
+      [
+        "Convert a batch.\nSkip the repetition.",
+        "Six formats. Quality controls.",
+        "Three photos converted to JPG in one batch, with format, quality and save controls."
+      ],
+      [
+        "Bring out\nthe light.",
+        "Brighten images. Compare the result.",
+        "View the brightness enhancement result beside the original coastal photo and export it."
+      ],
+      [
+        "Your size.\nTo the pixel.",
+        "Set dimensions. Keep proportions.",
+        "Set image width and height, lock the aspect ratio and export at the desired size."
+      ],
+      [
+        "From Photos.\nFrom Files.",
+        "Choose where your images come from.",
+        "An import dialog offers separate options to choose images from Photos or Files."
+      ],
+      [
+        "Save it\nyour way.",
+        "PNG/JPG to Photos. Every format to Files.",
+        "Set a file name and format, then save an image to Photos or Files."
+      ],
+      [
+        "Made for day.\nAnd night.",
+        "Light · Dark · System",
+        "The crop editor in dark mode, with a coastal photo, aspect ratio controls and an export button."
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG to gallery. Every format to files.",
+          "alt_text": "Choose a file name and format; save PNG/JPG to the gallery or save all formats as files."
+        },
+        "import": {
+          "caption": "Your gallery.\nYour files.",
+          "subtitle": "Choose images with the system picker.",
+          "alt_text": "The Android import dialog offers the system photo picker and file picker."
+        }
+      }
+    }
+  },
+  "es-ES": {
+    "feature": "Recorta y convierte.\nEn tu dispositivo.",
+    "screens": [
+      [
+        "Recorta y ajusta.\nA tu medida.",
+        "Elige la proporción. Exporta una copia.",
+        "Recorta una foto de la costa, elige la proporción y exporta una copia."
+      ],
+      [
+        "Mira cada\ndiferencia.",
+        "Deslizador · En paralelo · Superposición",
+        "Compara una foto antes y después con el deslizador, en paralelo o mediante superposición."
+      ],
+      [
+        "Convierte por lotes.\nRepite menos.",
+        "Seis formatos. Calidad ajustable.",
+        "Tres fotos convertidas a JPG en un lote, con controles de formato, calidad y guardado."
+      ],
+      [
+        "Da luz a\ntus imágenes.",
+        "Mejora el brillo y compara el resultado.",
+        "Revisa el resultado de la mejora de brillo, compáralo con el original y exporta la foto."
+      ],
+      [
+        "El tamaño exacto.\nPíxel a píxel.",
+        "Ajusta las dimensiones y conserva la proporción.",
+        "Define el ancho y el alto, bloquea la proporción y exporta al tamaño deseado."
+      ],
+      [
+        "Desde Fotos.\nDesde Archivos.",
+        "Elige de dónde importar tus imágenes.",
+        "El diálogo de importación permite elegir imágenes desde Fotos o Archivos."
+      ],
+      [
+        "Guarda donde\ntú quieras.",
+        "PNG/JPG en Fotos. Todo en Archivos.",
+        "Elige el nombre y el formato y guarda una copia en Fotos o Archivos."
+      ],
+      [
+        "De día.\nY de noche.",
+        "Claro · Oscuro · Sistema",
+        "Editor de recorte en modo oscuro con una foto de la costa, proporciones y botón de exportación."
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG en galería. Todo como archivo."
+        }
+      }
+    }
+  },
+  "fr-FR": {
+    "feature": "Recadrer, convertir.\nSur votre appareil.",
+    "screens": [
+      [
+        "Recadrez vos images.\nAu bon format.",
+        "Choisissez un ratio. Exportez une copie.",
+        "Recadrez une photo de la côte, choisissez les proportions et exportez une copie."
+      ],
+      [
+        "Voyez chaque\ndifférence.",
+        "Curseur · Côte à côte · Superposition",
+        "Comparez une photo avant et après avec le curseur, côte à côte ou en superposition."
+      ],
+      [
+        "Convertissez par lots.\nMoins de répétitions.",
+        "Six formats. Qualité réglable.",
+        "Trois photos converties en JPG par lot, avec réglages du format, de la qualité et de l'enregistrement."
+      ],
+      [
+        "Faites place\nà la lumière.",
+        "Éclaircissez et comparez le résultat.",
+        "Comparez la photo éclaircie avec l'original, puis exportez le résultat."
+      ],
+      [
+        "Les bonnes dimensions.\nAu pixel près.",
+        "Réglez la taille. Gardez les proportions.",
+        "Réglez la largeur et la hauteur, verrouillez les proportions et exportez aux dimensions souhaitées."
+      ],
+      [
+        "Depuis Photos.\nDepuis Fichiers.",
+        "Choisissez la source de vos images.",
+        "Le dialogue d'importation permet de choisir des images depuis Photos ou Fichiers."
+      ],
+      [
+        "Enregistrez\nà votre façon.",
+        "PNG/JPG dans Photos. Tout dans Fichiers.",
+        "Choisissez le nom et le format, puis enregistrez une copie dans Photos ou Fichiers."
+      ],
+      [
+        "De jour.\nComme de nuit.",
+        "Clair · Sombre · Système",
+        "L'éditeur de recadrage en mode sombre, avec photo, réglages des proportions et bouton d'exportation."
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG en galerie. Tout en fichiers."
+        }
+      }
+    }
+  },
+  "de-DE": {
+    "feature": "Zuschnitt und Format.\nAuf deinem Gerät.",
+    "screens": [
+      [
+        "Passend zuschneiden.\nGenau dein Format.",
+        "Verhältnis wählen. Kopie exportieren.",
+        "Ein Küstenfoto zuschneiden, das Seitenverhältnis wählen und eine Kopie exportieren."
+      ],
+      [
+        "Unterschiede\nauf einen Blick.",
+        "Schieberegler · Nebeneinander · Überlagern",
+        "Ein Foto vor und nach der Bearbeitung per Schieberegler, nebeneinander oder überlagert vergleichen."
+      ],
+      [
+        "Im Stapel umwandeln.\nWeniger Wiederholung.",
+        "Sechs Formate. Wählbare Qualität.",
+        "Drei Fotos als Stapel in JPG konvertiert, mit Einstellungen für Format, Qualität und Speichern."
+      ],
+      [
+        "Mehr Licht\nfür deine Bilder.",
+        "Aufhellen und das Ergebnis vergleichen.",
+        "Das aufgehellte Foto mit dem Original vergleichen und das Ergebnis exportieren."
+      ],
+      [
+        "Die richtige Größe.\nPixelgenau.",
+        "Maße einstellen. Proportionen erhalten.",
+        "Breite und Höhe einstellen, das Seitenverhältnis sperren und in der gewünschten Größe exportieren."
+      ],
+      [
+        "Aus Fotos.\nAus Dateien.",
+        "Wähle die Quelle deiner Bilder.",
+        "Der Importdialog bietet getrennte Optionen für Bilder aus Fotos oder Dateien."
+      ],
+      [
+        "Speichern,\nwo du willst.",
+        "PNG/JPG in Fotos. Alle Formate in Dateien.",
+        "Dateinamen und Format wählen und eine Kopie in Fotos oder Dateien speichern."
+      ],
+      [
+        "Bei Tag.\nUnd bei Nacht.",
+        "Hell · Dunkel · System",
+        "Der Zuschneideeditor im dunklen Modus mit Küstenfoto, Seitenverhältnissen und Exporttaste."
+      ]
+    ],
+    "platform_overrides": {
+      "google-play": {
+        "export": {
+          "subtitle": "PNG/JPG in die Galerie. Alles als Datei."
+        }
+      }
+    }
+  }
+}

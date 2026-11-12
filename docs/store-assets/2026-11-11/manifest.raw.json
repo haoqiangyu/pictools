@@ -1,0 +1,4110 @@
+{
+  "version": 1,
+  "project": "Pictools",
+  "captures": [
+    {
+      "id": "ios-phone-zh-CN-batch",
+      "path": "raw/ios-phone/zh-CN/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0fc4b34b7902b6de97efb8426b0de4d763f8945a3946b8a0a23617398372afcc"
+    },
+    {
+      "id": "ios-phone-zh-CN-compare",
+      "path": "raw/ios-phone/zh-CN/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3ab5d04755c13028d8b8c693569f5ff30d0ee2de25ba29a804951cc0d08f645e"
+    },
+    {
+      "id": "ios-phone-zh-CN-crop",
+      "path": "raw/ios-phone/zh-CN/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2e4de855cdfa3788cb076ccdc909768bb2e7483b12d8dcb03c6bcab7c7adbe15"
+    },
+    {
+      "id": "ios-phone-zh-CN-dark",
+      "path": "raw/ios-phone/zh-CN/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "09aa4aee5241a4b34cf80bbbf333f0155b5143754d14904da2430559081e77f2"
+    },
+    {
+      "id": "ios-phone-zh-CN-enhance",
+      "path": "raw/ios-phone/zh-CN/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "10454f8bbac3581bbceabda6fc981cc9784cca92066b8fa7525dde6867ff2741"
+    },
+    {
+      "id": "ios-phone-zh-CN-export",
+      "path": "raw/ios-phone/zh-CN/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5aa0a39dc6d57b314a11b014ef02d07cd149771eb8e580b3732950a668839019"
+    },
+    {
+      "id": "ios-phone-zh-CN-home",
+      "path": "raw/ios-phone/zh-CN/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "4d51541e6785aa6437b11cb807416ecb61498d1933abaa91d802d05a7cbfb015"
+    },
+    {
+      "id": "ios-phone-zh-CN-import",
+      "path": "raw/ios-phone/zh-CN/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:42.415308Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "364188e2eb396e53248f72f7b7077eba1a5860e0eedb5adb937b85ca3000dca0"
+    },
+    {
+      "id": "ios-phone-zh-CN-resize",
+      "path": "raw/ios-phone/zh-CN/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:20.483364Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "64a9984724e3442049c746580130ea80f7af9967d09aef2c25bb59dea1334df4"
+    },
+    {
+      "id": "ios-phone-zh-TW-batch",
+      "path": "raw/ios-phone/zh-TW/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3e553abe65d6963d62773fbbcc7d45dda90b7bfe71e41866111e20c6f4d81ebd"
+    },
+    {
+      "id": "ios-phone-zh-TW-compare",
+      "path": "raw/ios-phone/zh-TW/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7275c3792ce8c819aa5cb446cbb5991370b7546deda0c2d36205387c835d8808"
+    },
+    {
+      "id": "ios-phone-zh-TW-crop",
+      "path": "raw/ios-phone/zh-TW/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "4d01ab7689a16cce057422a8120efe1d36d54046ee8b914031b82875f3950145"
+    },
+    {
+      "id": "ios-phone-zh-TW-dark",
+      "path": "raw/ios-phone/zh-TW/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9dd4a78b7523a365a3b2bd2072f96ebf78c276e94342dcf72c1ea7fdf68a56ce"
+    },
+    {
+      "id": "ios-phone-zh-TW-enhance",
+      "path": "raw/ios-phone/zh-TW/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c6551e10feba6499d966dc40d812b0cca7739360204cdca417d643a731d95fbb"
+    },
+    {
+      "id": "ios-phone-zh-TW-export",
+      "path": "raw/ios-phone/zh-TW/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "10bdcf10830f7848c56c7dfee3351a243f7cc570ae47689a8ebcd649c292df48"
+    },
+    {
+      "id": "ios-phone-zh-TW-home",
+      "path": "raw/ios-phone/zh-TW/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5a7010b526f99bcc5f7c0fc7aebb10653b3973fa2526c2f60183d5f2747fef6f"
+    },
+    {
+      "id": "ios-phone-zh-TW-import",
+      "path": "raw/ios-phone/zh-TW/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:43.830553Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "bb3c44d2d89e6fdb5733e138020ff787a2349499d3e60fa661568aff0dbb64b7"
+    },
+    {
+      "id": "ios-phone-zh-TW-resize",
+      "path": "raw/ios-phone/zh-TW/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:37.915097Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2b882e3974c2d9f65edcbbb39e4849613e767d7904f2c4002a02d6b83dd73b45"
+    },
+    {
+      "id": "ios-phone-en-US-batch",
+      "path": "raw/ios-phone/en-US/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c7102f345672425dcbae8c8c7bee25595221858ccf8ff08901b41256b4a1f936"
+    },
+    {
+      "id": "ios-phone-en-US-compare",
+      "path": "raw/ios-phone/en-US/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "68c2f2c5682e27867feaf369d9b56b26ff0ef7dc05c82977833cfc2a139f3fec"
+    },
+    {
+      "id": "ios-phone-en-US-crop",
+      "path": "raw/ios-phone/en-US/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "25a53b6d499be86919f202f79fb9d62056036e36a5e9a0e3b194f6c6af075686"
+    },
+    {
+      "id": "ios-phone-en-US-dark",
+      "path": "raw/ios-phone/en-US/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "21874d40cfb2b7f72e12b1513710f4a251b70f7d9f9e431b6bb02c322b6162ba"
+    },
+    {
+      "id": "ios-phone-en-US-enhance",
+      "path": "raw/ios-phone/en-US/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "760f70233872f44684b11f8f4e8204712ca199f13f49b37d155ee0b261a48817"
+    },
+    {
+      "id": "ios-phone-en-US-export",
+      "path": "raw/ios-phone/en-US/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "25f022397f2e91b455367a4192c943dea7ae5edba5e09f87ea98b65571dd6fdf"
+    },
+    {
+      "id": "ios-phone-en-US-home",
+      "path": "raw/ios-phone/en-US/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "462d278dd1b518a9e566d47e42e01080a2e2a8f341ced54ccdcd37cdae8c0e95"
+    },
+    {
+      "id": "ios-phone-en-US-import",
+      "path": "raw/ios-phone/en-US/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:45.061669Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "453e881c7415b4a3f2ed9dcc1ade31c0a3be008e2bf2c24f7cb1350730bc84e7"
+    },
+    {
+      "id": "ios-phone-en-US-resize",
+      "path": "raw/ios-phone/en-US/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:55:54.680367Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7a03d0d7697af4cb9a383d3b0fbcf4f802cb17d38dddbf02b555cf7933b74af0"
+    },
+    {
+      "id": "ios-phone-es-ES-batch",
+      "path": "raw/ios-phone/es-ES/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "fc7293a616046cc56c600d3aa06e8a61e3a5821426008bcb003045ab8e10330d"
+    },
+    {
+      "id": "ios-phone-es-ES-compare",
+      "path": "raw/ios-phone/es-ES/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e9cff10da8bf97a7f1b7ff0f9efbc02a4b94aeb8c41a8b76660bdbd2aa6fff7c"
+    },
+    {
+      "id": "ios-phone-es-ES-crop",
+      "path": "raw/ios-phone/es-ES/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5bc98a61c46a55ec99b10179c258c7ad78f0b0e51fa87c4921dc933525673d83"
+    },
+    {
+      "id": "ios-phone-es-ES-dark",
+      "path": "raw/ios-phone/es-ES/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c210a724d8182893deee65a82782a7895e2f431b89653a8547213cc2f0084e89"
+    },
+    {
+      "id": "ios-phone-es-ES-enhance",
+      "path": "raw/ios-phone/es-ES/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "63975879de29e38d4cdcb963aaab770018059da56e0f4743cc88878d433347f7"
+    },
+    {
+      "id": "ios-phone-es-ES-export",
+      "path": "raw/ios-phone/es-ES/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7a82f30fe797bf39089855a2ba95177b2e9841cc19e852d6fe61ed942cd9d9c4"
+    },
+    {
+      "id": "ios-phone-es-ES-home",
+      "path": "raw/ios-phone/es-ES/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "bd3173126ef064dfa5a7413bfd4daa32ea4b5c94ab2acb136716d58734db92f9"
+    },
+    {
+      "id": "ios-phone-es-ES-import",
+      "path": "raw/ios-phone/es-ES/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:46.261606Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "a7b51df39ce23565ef13f1904f99d1b9c638bd52d37caaa105d4827db729ccd6"
+    },
+    {
+      "id": "ios-phone-es-ES-resize",
+      "path": "raw/ios-phone/es-ES/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:11.513163Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5cf0eb0323fa1e496174756f315760d03a3ec917f4544db9090dfc5f537ded7a"
+    },
+    {
+      "id": "ios-phone-fr-FR-batch",
+      "path": "raw/ios-phone/fr-FR/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "51ab1ca221a39a76b274510dfefb1a3a0764fc4683a370d6f791ea4326174cdf"
+    },
+    {
+      "id": "ios-phone-fr-FR-compare",
+      "path": "raw/ios-phone/fr-FR/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "4c8849caa09811b7f3bc018c7c437f99a01a71dd4459e4cae0e36bc7630c9781"
+    },
+    {
+      "id": "ios-phone-fr-FR-crop",
+      "path": "raw/ios-phone/fr-FR/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "298547f9fe1c7a227b6ba71258eadc3aaf4f738abc67a320bcd50ce16d252e30"
+    },
+    {
+      "id": "ios-phone-fr-FR-dark",
+      "path": "raw/ios-phone/fr-FR/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d4b851a59a1248d241980faed3531e0cdd77ec08a991ea66a8472fa2d342964b"
+    },
+    {
+      "id": "ios-phone-fr-FR-enhance",
+      "path": "raw/ios-phone/fr-FR/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "8be4c6dc366b4c983bb466e08e62aa2bba4ef4b9d35efc72494b7d0232e7ac27"
+    },
+    {
+      "id": "ios-phone-fr-FR-export",
+      "path": "raw/ios-phone/fr-FR/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2723ec91d5f87618d1a94e28582b9b48679eaa59d2281643e8272e17ab8aba29"
+    },
+    {
+      "id": "ios-phone-fr-FR-home",
+      "path": "raw/ios-phone/fr-FR/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "55a75b91347c9ff8a669d37ea0015bb5e2bb78163f66deb33fa3155ae9ef01ce"
+    },
+    {
+      "id": "ios-phone-fr-FR-import",
+      "path": "raw/ios-phone/fr-FR/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:47.444227Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "03dfc717ea52f5185c8b67b070ab59c45153501ba4959cad156c64816baee5e2"
+    },
+    {
+      "id": "ios-phone-fr-FR-resize",
+      "path": "raw/ios-phone/fr-FR/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:28.697574Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "64673594c2f1eeb86f728e2f511acdc0149415920bbde926dce7de351e54235d"
+    },
+    {
+      "id": "ios-phone-de-DE-batch",
+      "path": "raw/ios-phone/de-DE/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "316e852ce4e0745da60f970479f58b41831a26837f07f51d691ea945e2dc5b7a"
+    },
+    {
+      "id": "ios-phone-de-DE-compare",
+      "path": "raw/ios-phone/de-DE/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6da314b6c957cb57b216f94ce22b0715047ae3a00879742a494a505db7912045"
+    },
+    {
+      "id": "ios-phone-de-DE-crop",
+      "path": "raw/ios-phone/de-DE/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "00132085ae17f2cccf83f048f9d291accae828a48227770035c3fa348f3ad3a4"
+    },
+    {
+      "id": "ios-phone-de-DE-dark",
+      "path": "raw/ios-phone/de-DE/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "19f29f65b6ddcb24e61d7a9bd1ddfd54498cba8ac2f0464894d4009f1e2833a5"
+    },
+    {
+      "id": "ios-phone-de-DE-enhance",
+      "path": "raw/ios-phone/de-DE/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "10e1572bb96a3c1c8df111d3c265ecdf6ab3bbbdd281e29841dee1d144f36ff5"
+    },
+    {
+      "id": "ios-phone-de-DE-export",
+      "path": "raw/ios-phone/de-DE/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "17e3390c5e75a7f0c05c3377a4f2f23d1a311f6b08cd8454ff65bfd68b639ad0"
+    },
+    {
+      "id": "ios-phone-de-DE-home",
+      "path": "raw/ios-phone/de-DE/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "52cb181d9e0150a761426ef8e929248c71aacdc48a9c0f700b5239345a4ed756"
+    },
+    {
+      "id": "ios-phone-de-DE-import",
+      "path": "raw/ios-phone/de-DE/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:19:48.664906Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "fd66e9ca08c002c1e6a212781a2393d9226004e980db32788ec0872969413fbd"
+    },
+    {
+      "id": "ios-phone-de-DE-resize",
+      "path": "raw/ios-phone/de-DE/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-phone",
+      "viewport": {
+        "width": 1179,
+        "height": 2556,
+        "pixelRatio": 3.0
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:47.348042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5f0e965a6cd816b1c9c10331b206e558c80143fdc60ed60f1ff38b0105d2532d"
+    },
+    {
+      "id": "ios-ipad-zh-CN-batch",
+      "path": "raw/ios-ipad/zh-CN/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "a8ed8cae2fa371f4bedc471cc0dd76e1879a1fdfbc8ecfefde8267ced9c9ec52"
+    },
+    {
+      "id": "ios-ipad-zh-CN-compare",
+      "path": "raw/ios-ipad/zh-CN/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "8e594b18fcbe6b9f9c8a9522d47db0d79791b225a87fe4f1430f27c315918f33"
+    },
+    {
+      "id": "ios-ipad-zh-CN-crop",
+      "path": "raw/ios-ipad/zh-CN/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "32778fe819ec2574e9a5c343901f4cdfd5c97f9c5839ebeb3c7363c1f5e05b0a"
+    },
+    {
+      "id": "ios-ipad-zh-CN-dark",
+      "path": "raw/ios-ipad/zh-CN/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "501e0eb651efdc456b517e628e2eae67fdc59887c2e6779545afaa0fcd661a03"
+    },
+    {
+      "id": "ios-ipad-zh-CN-enhance",
+      "path": "raw/ios-ipad/zh-CN/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5b1929204a7357fefcd620d6ef8b55de6d914b01375a8c15af6df944b7d96af0"
+    },
+    {
+      "id": "ios-ipad-zh-CN-export",
+      "path": "raw/ios-ipad/zh-CN/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "91840a8cb2de4e4002f1dded850acc95b4c1ccf9eb6edc37fef52aab49247ca1"
+    },
+    {
+      "id": "ios-ipad-zh-CN-home",
+      "path": "raw/ios-ipad/zh-CN/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "76b6f9d0aae6fe966b2b93eb94ea7c36014830662bc3bdbecf71dec80bdf4570"
+    },
+    {
+      "id": "ios-ipad-zh-CN-import",
+      "path": "raw/ios-ipad/zh-CN/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:44.021411Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0ee1d7b3109d85f76d2f31f5d0be4d3c31b62445654f439901a3372a358fe530"
+    },
+    {
+      "id": "ios-ipad-zh-CN-resize",
+      "path": "raw/ios-ipad/zh-CN/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:51.726042Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "87b2d583891b816dfd985f32a22cfa9ab4945ceab838690d43b78e62e062c080"
+    },
+    {
+      "id": "ios-ipad-zh-TW-batch",
+      "path": "raw/ios-ipad/zh-TW/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2d32f7bc1528d5a27647d2d660bbf09eaa6ab4d98b6c126425fd927e7d7b9347"
+    },
+    {
+      "id": "ios-ipad-zh-TW-compare",
+      "path": "raw/ios-ipad/zh-TW/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "bccfc0f172caecd9769c0e5a0a6bef90fd2a9b5a4b36bb23023bc756dfc75769"
+    },
+    {
+      "id": "ios-ipad-zh-TW-crop",
+      "path": "raw/ios-ipad/zh-TW/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9a445db80d43ddb6da701367a732b6e0a27c4e6195c6b2fb1af5b8594bcb540e"
+    },
+    {
+      "id": "ios-ipad-zh-TW-dark",
+      "path": "raw/ios-ipad/zh-TW/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e50afbb31513c8fe6748fd02750222fc0d466a995300a4dce27db9151f458f26"
+    },
+    {
+      "id": "ios-ipad-zh-TW-enhance",
+      "path": "raw/ios-ipad/zh-TW/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9e2faece3c5fab26adb4e96df8e53e378e02d58e65e26b3306b727bafa806e93"
+    },
+    {
+      "id": "ios-ipad-zh-TW-export",
+      "path": "raw/ios-ipad/zh-TW/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "df88d816c4ffdc845e82881f4355ad024cf6f2b6f9cbc3f6612d5fdee2718c77"
+    },
+    {
+      "id": "ios-ipad-zh-TW-home",
+      "path": "raw/ios-ipad/zh-TW/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "a57ec905cc82a10f05f3b6ce8c6c3c3bbdb640b0724b544bdc26b41904148df8"
+    },
+    {
+      "id": "ios-ipad-zh-TW-import",
+      "path": "raw/ios-ipad/zh-TW/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:45.546658Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2b459b59ff09158c8bf682675f80dedd04b47b5591dcecf04ee4f3cd07ab15f3"
+    },
+    {
+      "id": "ios-ipad-zh-TW-resize",
+      "path": "raw/ios-ipad/zh-TW/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.917453Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9bd75195f4d615f5a90fa81d9c2110b6f3ea951b1bfd917f7be98c319d09babc"
+    },
+    {
+      "id": "ios-ipad-en-US-batch",
+      "path": "raw/ios-ipad/en-US/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6ef7f1610501e22031e37f12fb2eaa0a62ac7450bdbaaa75448e72ac88a09a1f"
+    },
+    {
+      "id": "ios-ipad-en-US-compare",
+      "path": "raw/ios-ipad/en-US/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "89bc5cb123499f6fd5429f0ccc1a3967337e76998b55dfed1a20718f7af5974b"
+    },
+    {
+      "id": "ios-ipad-en-US-crop",
+      "path": "raw/ios-ipad/en-US/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "865592c19f5c7c5ca77b3dc3daa442135a26a364577c7d1483eec342085efe8d"
+    },
+    {
+      "id": "ios-ipad-en-US-dark",
+      "path": "raw/ios-ipad/en-US/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b5b1932f8d0437523cc867a3ac085a003de322ad02649dee141614b974f7c050"
+    },
+    {
+      "id": "ios-ipad-en-US-enhance",
+      "path": "raw/ios-ipad/en-US/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c835ac39adc59ea12e1987857e987540e96557ab4ac2de564422f701a52a279a"
+    },
+    {
+      "id": "ios-ipad-en-US-export",
+      "path": "raw/ios-ipad/en-US/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "4df833328d6e657d61a8240cf669d36bcc9de14def0478ce1c1f9e02dde9a84e"
+    },
+    {
+      "id": "ios-ipad-en-US-home",
+      "path": "raw/ios-ipad/en-US/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5684e77a3a1a5409175c8d0ea510eb44bf573baea2889bf7d5d94795b58f5b33"
+    },
+    {
+      "id": "ios-ipad-en-US-import",
+      "path": "raw/ios-ipad/en-US/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:46.899546Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6cc5129c203880b5d9525fb3a837501410dbe2a64b7374c49c1b6e93441a4e2d"
+    },
+    {
+      "id": "ios-ipad-en-US-resize",
+      "path": "raw/ios-ipad/en-US/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.434976Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "28819e2f7d9f78a0f3e12e8b64257c0977e17cb48f75720b29434d450df8fed0"
+    },
+    {
+      "id": "ios-ipad-es-ES-batch",
+      "path": "raw/ios-ipad/es-ES/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e13ce729efaa137340ceb03a376f07839f80f5e1276d2b0f95799112a27aec3f"
+    },
+    {
+      "id": "ios-ipad-es-ES-compare",
+      "path": "raw/ios-ipad/es-ES/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "77780f6f18f20411f83e298f9c0fd1bb6f4ebfbfa17d78468a02d3fdfa6dbefd"
+    },
+    {
+      "id": "ios-ipad-es-ES-crop",
+      "path": "raw/ios-ipad/es-ES/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3c06c386ef7aa62f0f48fbf24bf9f2fb8e5244d3bf36709b3f53166afe7aa773"
+    },
+    {
+      "id": "ios-ipad-es-ES-dark",
+      "path": "raw/ios-ipad/es-ES/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "1d1891c377d55adfa317c8ac90106ea95b473e745ba812d9f86b6b8e9ff8a31c"
+    },
+    {
+      "id": "ios-ipad-es-ES-enhance",
+      "path": "raw/ios-ipad/es-ES/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d9ad93b7302a2e7476557c4f01a17ddb01920d1adcfe6daa8d59ddfe958d2351"
+    },
+    {
+      "id": "ios-ipad-es-ES-export",
+      "path": "raw/ios-ipad/es-ES/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "47400d70d1aa996b1d361b63e8b0f703b688062b3fd173d47a941235678aeec8"
+    },
+    {
+      "id": "ios-ipad-es-ES-home",
+      "path": "raw/ios-ipad/es-ES/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "67f55969595040fbc684e84ee16bdb40646855e7019d53c0498fef1c7b3fdbd6"
+    },
+    {
+      "id": "ios-ipad-es-ES-import",
+      "path": "raw/ios-ipad/es-ES/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:48.228092Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "52324fad7f34ff92b87d5977f26f2d7bc7830b0781d2bf90c0b1e2f6ddc64bea"
+    },
+    {
+      "id": "ios-ipad-es-ES-resize",
+      "path": "raw/ios-ipad/es-ES/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:56.633434Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7296de5100733f38ad51fb585a2dfdd34dd00123f6ccf1414249565a08189a0c"
+    },
+    {
+      "id": "ios-ipad-fr-FR-batch",
+      "path": "raw/ios-ipad/fr-FR/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "17b04b182c8d93430dafd0f8f9fd90caa41367358c9b4cb6a7497837218586e0"
+    },
+    {
+      "id": "ios-ipad-fr-FR-compare",
+      "path": "raw/ios-ipad/fr-FR/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "79fe447ac8fc096e3fcdc54f237382670a263726fac7163200ee9bb8c72cdc24"
+    },
+    {
+      "id": "ios-ipad-fr-FR-crop",
+      "path": "raw/ios-ipad/fr-FR/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f83edba3b528a135fed6b815bfdaf3dd8b6f7c0b3567c28ba8947ca04feaaebd"
+    },
+    {
+      "id": "ios-ipad-fr-FR-dark",
+      "path": "raw/ios-ipad/fr-FR/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f258b2036779745c7d3fd0b6f3f7b9a1706dca65d706470d2a8e5330d642fbdb"
+    },
+    {
+      "id": "ios-ipad-fr-FR-enhance",
+      "path": "raw/ios-ipad/fr-FR/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c0d67aa7c49357812dd5af4532356f3b32b5c533be5a729daf0fe09ac5744463"
+    },
+    {
+      "id": "ios-ipad-fr-FR-export",
+      "path": "raw/ios-ipad/fr-FR/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b88a4a08482a9cbe9aac1f61ff252691e011f901e4e95e189e4c4b941dba442f"
+    },
+    {
+      "id": "ios-ipad-fr-FR-home",
+      "path": "raw/ios-ipad/fr-FR/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b76266befd8c1487714af0832ce2c5de4e702c3e7842a15d140d002a25f75eb2"
+    },
+    {
+      "id": "ios-ipad-fr-FR-import",
+      "path": "raw/ios-ipad/fr-FR/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:49.546032Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "ce9a55dd27203fa6ea9b9870a7cabbd7fd2d9fd616c38ddbfa1189b6d64b2557"
+    },
+    {
+      "id": "ios-ipad-fr-FR-resize",
+      "path": "raw/ios-ipad/fr-FR/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:18.666740Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "da5c6334c6920d7a9523452bbeddbda5d2bca01e6d76d723721a945fdd3e2b64"
+    },
+    {
+      "id": "ios-ipad-de-DE-batch",
+      "path": "raw/ios-ipad/de-DE/batch.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "batch",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "1803a2b1cb0a19802251a0e22dcebfc8d1b7d1fa3244af74d15bd25ce7453a77"
+    },
+    {
+      "id": "ios-ipad-de-DE-compare",
+      "path": "raw/ios-ipad/de-DE/compare.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "compare",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "69c713d4ceda9b7466be57e01092c379fc532e14d9fa397b4edd340f7d0cc752"
+    },
+    {
+      "id": "ios-ipad-de-DE-crop",
+      "path": "raw/ios-ipad/de-DE/crop.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "crop",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2116f3190c769d84a54e6da190483eef88f6894be75557a1997b309a1eef03f7"
+    },
+    {
+      "id": "ios-ipad-de-DE-dark",
+      "path": "raw/ios-ipad/de-DE/dark.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "dark",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0d34c6b37afde59abe59a9b83cdb28eabd6e9f952f72a4d0e71838887e0cd5d8"
+    },
+    {
+      "id": "ios-ipad-de-DE-enhance",
+      "path": "raw/ios-ipad/de-DE/enhance.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "enhance",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6259a0213c4278ee08d135af90882ab8895cbea53b957b3a2821a772659e6d5e"
+    },
+    {
+      "id": "ios-ipad-de-DE-export",
+      "path": "raw/ios-ipad/de-DE/export.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "export",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "ab22a0fe7cbd7a21658df1bbdbcea816c6c8b798cfa1df96dd50c6e4c3abd5a6"
+    },
+    {
+      "id": "ios-ipad-de-DE-home",
+      "path": "raw/ios-ipad/de-DE/home.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "home",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "608d0c580d4d09466736230dcebe345d441f0da65031d211385c112037a32758"
+    },
+    {
+      "id": "ios-ipad-de-DE-import",
+      "path": "raw/ios-ipad/de-DE/import.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "import",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:20:50.860371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "ad41a8c128895a99e46b25ff7932a3610b921035ca7ea0a3594fc5b13ce901ef"
+    },
+    {
+      "id": "ios-ipad-de-DE-resize",
+      "path": "raw/ios-ipad/de-DE/resize.png",
+      "source": "ios-mac-xcode",
+      "screen_name": "resize",
+      "platform": "ios",
+      "device": "ios-ipad",
+      "viewport": {
+        "width": 2752,
+        "height": 2064,
+        "pixelRatio": 2.0
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:41.414287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6ce2e3f132e3833e394a2d6114a83aef09a5c00512bccf5af08294208852eb8b"
+    },
+    {
+      "id": "android-phone-zh-CN-batch",
+      "path": "raw/android-phone/zh-CN/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "63f80dbe273cf2846acae855a66e61d9107b32e877c83c0d7d96d94e132ad1c6"
+    },
+    {
+      "id": "android-phone-zh-CN-compare",
+      "path": "raw/android-phone/zh-CN/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f8bfbb2f928f3e16af885d499e37b1d84318b5b52eacdf831ae3f37335cd97c5"
+    },
+    {
+      "id": "android-phone-zh-CN-crop",
+      "path": "raw/android-phone/zh-CN/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "af058bcb2dc126bec9eb0f2fb56e24862a5429b8f31efaaeb305bfecce635618"
+    },
+    {
+      "id": "android-phone-zh-CN-dark",
+      "path": "raw/android-phone/zh-CN/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7a9ff243469964842bae9613d07b5fef3dcd832a747e10625262a09081818eaf"
+    },
+    {
+      "id": "android-phone-zh-CN-enhance",
+      "path": "raw/android-phone/zh-CN/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0c1ea6a95b1caa063255129571cd2d7b832963946073cc897b636a52179669b8"
+    },
+    {
+      "id": "android-phone-zh-CN-export",
+      "path": "raw/android-phone/zh-CN/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e8ec7a7d430892540ceb297d50355eca19f3ea7ec3ae45a084cb942a644191ba"
+    },
+    {
+      "id": "android-phone-zh-CN-home",
+      "path": "raw/android-phone/zh-CN/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "6c111fc09a1d3e6e9a32206c1f71b65f6b8c6aac5c2a9056202414aef9d3e616"
+    },
+    {
+      "id": "android-phone-zh-CN-import",
+      "path": "raw/android-phone/zh-CN/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:41.979822Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7e16053560e7e65623f7c75e6320d1d67c60623eb229558de2886f3c53b582a6"
+    },
+    {
+      "id": "android-phone-zh-CN-resize",
+      "path": "raw/android-phone/zh-CN/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:56:45.070095Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "99c31783044c1890ac693d37b239e223436a44d084e7aa147dba6e72759927c6"
+    },
+    {
+      "id": "android-phone-zh-TW-batch",
+      "path": "raw/android-phone/zh-TW/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "7dbd2d8a0e8e913c1676b314c3609a3980ba40701c03ea39649ff99ba48c84c6"
+    },
+    {
+      "id": "android-phone-zh-TW-compare",
+      "path": "raw/android-phone/zh-TW/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b59439532f0f7dfc221e48b16e399996f23349d457d999ebaad53262d1593ac3"
+    },
+    {
+      "id": "android-phone-zh-TW-crop",
+      "path": "raw/android-phone/zh-TW/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "ae20cecc67d298fc9eb3a57aa5bde3e89dc1a9a5fc0cb4f2cbe5a26b65b8cb80"
+    },
+    {
+      "id": "android-phone-zh-TW-dark",
+      "path": "raw/android-phone/zh-TW/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "631508c52af9ae9071103e6cf28b96a7516f9ffada092a52b9465f0e6e289dd0"
+    },
+    {
+      "id": "android-phone-zh-TW-enhance",
+      "path": "raw/android-phone/zh-TW/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "779bf51475e1c466a21d8a53df328841e8ece407ce8f5d20bd23e55c028304cf"
+    },
+    {
+      "id": "android-phone-zh-TW-export",
+      "path": "raw/android-phone/zh-TW/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "00f47cf3f050a7c6b4fe1b8677d736583957710d55b0385d91d9b421e5e21b30"
+    },
+    {
+      "id": "android-phone-zh-TW-home",
+      "path": "raw/android-phone/zh-TW/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e2f90c202f38fe5c0e7cf4a6a011b719b62bdab45e71836a1838225afeb048a8"
+    },
+    {
+      "id": "android-phone-zh-TW-import",
+      "path": "raw/android-phone/zh-TW/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:43.807817Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "580b5e636d2d3676e54d4963ea7af401eae3392958e43b2959661d7608a38db5"
+    },
+    {
+      "id": "android-phone-zh-TW-resize",
+      "path": "raw/android-phone/zh-TW/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:08.605371Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d61d3224daf0109637d6e8644940f78681e3b81302d0ae490df197d6e09a7eb1"
+    },
+    {
+      "id": "android-phone-en-US-batch",
+      "path": "raw/android-phone/en-US/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d0a79f36c581b405fe7289316113058d70cc917e6b22816769b4a844339eac6a"
+    },
+    {
+      "id": "android-phone-en-US-compare",
+      "path": "raw/android-phone/en-US/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "14ed4359219c9736627bb5350454fb8af488a984c0dc00463f2a2d46699ec4a2"
+    },
+    {
+      "id": "android-phone-en-US-crop",
+      "path": "raw/android-phone/en-US/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3f6eaddc9424ffac7c3e1d0e1459c9f8d60af2f5862435db0f822772ae3bb17f"
+    },
+    {
+      "id": "android-phone-en-US-dark",
+      "path": "raw/android-phone/en-US/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f5eaa40d7a1fb11b1f27cb776cfa5ea76a17cce07f3132af1ae4a27b383d56fd"
+    },
+    {
+      "id": "android-phone-en-US-enhance",
+      "path": "raw/android-phone/en-US/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "91972030d6b9eca04d3c193855fcc3e6c087c8ba2f4372b2b59926b90b10f281"
+    },
+    {
+      "id": "android-phone-en-US-export",
+      "path": "raw/android-phone/en-US/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f24987ba9461e6a37448ddbebb5e15240af87397caac6ae0e5b667080bd1e657"
+    },
+    {
+      "id": "android-phone-en-US-home",
+      "path": "raw/android-phone/en-US/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "1e9cf5ea13817e212652ae3dfa9ad82ad237a8121991a93a95e73425f0417998"
+    },
+    {
+      "id": "android-phone-en-US-import",
+      "path": "raw/android-phone/en-US/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:45.057525Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "40e08c37ef1754e58e260b8de2f9597fb71bc968b2a990854b691343194b6722"
+    },
+    {
+      "id": "android-phone-en-US-resize",
+      "path": "raw/android-phone/en-US/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:28.939668Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "cfe1d6d14c663473c6294a1ffad48d99af879137c244d3546f0428b68d901c7a"
+    },
+    {
+      "id": "android-phone-es-ES-batch",
+      "path": "raw/android-phone/es-ES/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c57ef8afaec90f03e5fc223e6184ad00afdc1330617198d3a268db7ea47df274"
+    },
+    {
+      "id": "android-phone-es-ES-compare",
+      "path": "raw/android-phone/es-ES/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5c256207089cf4bab7073d720854361c0998ea372fbe42e9995bced8a2ee8420"
+    },
+    {
+      "id": "android-phone-es-ES-crop",
+      "path": "raw/android-phone/es-ES/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "52314fd16e0fc042d5c43fc2dc90f41e8e3a3d096c06c46e1b489fe762c17e51"
+    },
+    {
+      "id": "android-phone-es-ES-dark",
+      "path": "raw/android-phone/es-ES/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3be9a82850c8d4516eb6daafb12883675d9e4bc6a58ceea16988d90bb7618616"
+    },
+    {
+      "id": "android-phone-es-ES-enhance",
+      "path": "raw/android-phone/es-ES/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "38cf97c6089068ed58fac2b134ab37094663a06edc5951a22757f263e80b038b"
+    },
+    {
+      "id": "android-phone-es-ES-export",
+      "path": "raw/android-phone/es-ES/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9578d8e5a59d8fbfae0d756d6e75211e4852964f00ff58310f994d5a6fc07ef4"
+    },
+    {
+      "id": "android-phone-es-ES-home",
+      "path": "raw/android-phone/es-ES/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "8376235b7327fd2da1466f4f76ca2a7a0da33f4eb336d90596070268126f01f7"
+    },
+    {
+      "id": "android-phone-es-ES-import",
+      "path": "raw/android-phone/es-ES/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:46.290834Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9021dc0d84fbe90f08e2075724b6b7466a77b27f16b8a55e0c188c434221c7c7"
+    },
+    {
+      "id": "android-phone-es-ES-resize",
+      "path": "raw/android-phone/es-ES/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:57:50.259632Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "17fb8bf9e501476fe78357228b68d468b1fd57de97b067b61978d3d2b683607b"
+    },
+    {
+      "id": "android-phone-fr-FR-batch",
+      "path": "raw/android-phone/fr-FR/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "10d729a80c4e6550c99473d4bc14bbb1b6780be1af24fb9addf137233c8c37cd"
+    },
+    {
+      "id": "android-phone-fr-FR-compare",
+      "path": "raw/android-phone/fr-FR/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3501d37e2aba223f9fce812493988a86c2b8bfc0400eb3ec29c86b886ee85cfd"
+    },
+    {
+      "id": "android-phone-fr-FR-crop",
+      "path": "raw/android-phone/fr-FR/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "917ff48461ebc6b8aec516e53f160e73fcc82d53cd1e77f9cb59267508166a17"
+    },
+    {
+      "id": "android-phone-fr-FR-dark",
+      "path": "raw/android-phone/fr-FR/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "633056dc866bd57c28a7328f1b57d9e87f04da9d1b55fb55845994e8321751b6"
+    },
+    {
+      "id": "android-phone-fr-FR-enhance",
+      "path": "raw/android-phone/fr-FR/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "12fa15c466cdccacd2249a7ddcff38499fa892047dbaab1a44f033f9221720ef"
+    },
+    {
+      "id": "android-phone-fr-FR-export",
+      "path": "raw/android-phone/fr-FR/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "a79964d31886d954e2cfc4f1e60b310869976129532eb979767c91f475eedaa1"
+    },
+    {
+      "id": "android-phone-fr-FR-home",
+      "path": "raw/android-phone/fr-FR/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "41aae939131abbb796388f4032cd1725e32c6d849f809fa7c380d6f2b5184419"
+    },
+    {
+      "id": "android-phone-fr-FR-import",
+      "path": "raw/android-phone/fr-FR/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:47.555595Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "06fe2cfcef457f87ec9685e78d8a49f08411ef80fa938b9293927dd447b5dca0"
+    },
+    {
+      "id": "android-phone-fr-FR-resize",
+      "path": "raw/android-phone/fr-FR/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:13.557982Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2913991d838f9461e084731aa580765edfc5e097fb5be25932ea6757fa2986a6"
+    },
+    {
+      "id": "android-phone-de-DE-batch",
+      "path": "raw/android-phone/de-DE/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "cafd9701089295b174905ca20c09e0e55a05aa2b960a144127c3beced9f77862"
+    },
+    {
+      "id": "android-phone-de-DE-compare",
+      "path": "raw/android-phone/de-DE/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "294993e191c3046620a7ffa38c573107d9c0f427e9364c718e8dec34e07720e3"
+    },
+    {
+      "id": "android-phone-de-DE-crop",
+      "path": "raw/android-phone/de-DE/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b0a91069667cd9b9c115f7f7517b98cdedb167fb6d6785c1c6cb273783b117d6"
+    },
+    {
+      "id": "android-phone-de-DE-dark",
+      "path": "raw/android-phone/de-DE/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d914b118a7889ccded6daaadd2bf156d5d1e48f62a2d0653aff2907383af80ab"
+    },
+    {
+      "id": "android-phone-de-DE-enhance",
+      "path": "raw/android-phone/de-DE/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "296a81e49941521634f8f50469ae256402467925fd366f1bb02e684c186dd722"
+    },
+    {
+      "id": "android-phone-de-DE-export",
+      "path": "raw/android-phone/de-DE/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d5a6c01710969ffd3034f1b3c4c56be467642cb5be6ead8e445a6cd0b5402322"
+    },
+    {
+      "id": "android-phone-de-DE-home",
+      "path": "raw/android-phone/de-DE/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2ab90d2d5fa075b436c4d68af02e9c2eb89020c0bd961c7134e6df49a3089005"
+    },
+    {
+      "id": "android-phone-de-DE-import",
+      "path": "raw/android-phone/de-DE/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:48.760726Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "681af60c8de7d55fdcb35ff19ac1493a6b973c732cb4abea59c730780fbb4fa2"
+    },
+    {
+      "id": "android-phone-de-DE-resize",
+      "path": "raw/android-phone/de-DE/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-phone",
+      "viewport": {
+        "width": 1080,
+        "height": 1920,
+        "pixelRatio": 2.625
+      },
+      "orientation": "portrait",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:58:34.825127Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "15a588559e240d0abb3731f2781b6214bdfa22d80536975d66c0ddc784371980"
+    },
+    {
+      "id": "android-tablet-zh-CN-batch",
+      "path": "raw/android-tablet/zh-CN/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "26b2007ba21a9dd7f2417c2fa92fc3ca53b325b43bd9375441ee685bf35cfd50"
+    },
+    {
+      "id": "android-tablet-zh-CN-compare",
+      "path": "raw/android-tablet/zh-CN/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c74ff883c51d6b7a7168e624978de5ac4ef655c2ffde9fb09301abd293967f8f"
+    },
+    {
+      "id": "android-tablet-zh-CN-crop",
+      "path": "raw/android-tablet/zh-CN/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b66d7ae80d556f4d8a12a1a26c393ffd56d779e16ce43be36a57306c240aa229"
+    },
+    {
+      "id": "android-tablet-zh-CN-dark",
+      "path": "raw/android-tablet/zh-CN/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "fce8b927f26104f77d536dc2c39bf602b2a1c2daf77ceb585dc57ab7c30d2b54"
+    },
+    {
+      "id": "android-tablet-zh-CN-enhance",
+      "path": "raw/android-tablet/zh-CN/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "abc94b59081e73df91e3611a947daa6145a725065c7b2132f33056a8bea62786"
+    },
+    {
+      "id": "android-tablet-zh-CN-export",
+      "path": "raw/android-tablet/zh-CN/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5794d8c4c216c24d91d76a9e34ff90820c954879495fedec2a743c50e877a7b0"
+    },
+    {
+      "id": "android-tablet-zh-CN-home",
+      "path": "raw/android-tablet/zh-CN/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "cf8ca421a27b5d77df65eb2be372eead4b71e64bf26f9117dbf411059b0a4962"
+    },
+    {
+      "id": "android-tablet-zh-CN-import",
+      "path": "raw/android-tablet/zh-CN/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:57.195311Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9e456773e8bd8b416e6c90f905ed502ef74100d41d57a51335f105c24da4df63"
+    },
+    {
+      "id": "android-tablet-zh-CN-resize",
+      "path": "raw/android-tablet/zh-CN/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-CN",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:17.509968Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "986ec133dcd5bc73f5f6ebc00a671cc2c09c7201b1d4b5a5c08e085df8e042fd"
+    },
+    {
+      "id": "android-tablet-zh-TW-batch",
+      "path": "raw/android-tablet/zh-TW/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "df5330cd1729bcde4f6af6e5036d6ec908a02fe59856f9e57d04c30988b6b174"
+    },
+    {
+      "id": "android-tablet-zh-TW-compare",
+      "path": "raw/android-tablet/zh-TW/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3cd75772c3d8678c023ccc329abca1d54352f76e6be27e3d417b42cb34a8bb6e"
+    },
+    {
+      "id": "android-tablet-zh-TW-crop",
+      "path": "raw/android-tablet/zh-TW/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e15ece95f0201686b15f4cb52cb162548de33f350a800db9205838e3c3bdc371"
+    },
+    {
+      "id": "android-tablet-zh-TW-dark",
+      "path": "raw/android-tablet/zh-TW/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "dark",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b0350073adabeb7b313db37783059078219a5720f0ea9cc4797d237fe59a844b"
+    },
+    {
+      "id": "android-tablet-zh-TW-enhance",
+      "path": "raw/android-tablet/zh-TW/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "f17facbc1a7314a8047dea3152be95ea006e6ca93995d2fa54b20df03cdd3b40"
+    },
+    {
+      "id": "android-tablet-zh-TW-export",
+      "path": "raw/android-tablet/zh-TW/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5c622af47f6e6efd17ae43770b4d66cb15556ac22bf294cf6192f3c1ba7ad5f4"
+    },
+    {
+      "id": "android-tablet-zh-TW-home",
+      "path": "raw/android-tablet/zh-TW/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2b8d2128c71e8b22f6e612a07f36524c1a80f8a86c18eae0f8698936a4d1b5c8"
+    },
+    {
+      "id": "android-tablet-zh-TW-import",
+      "path": "raw/android-tablet/zh-TW/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:17:58.758972Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9a8f2e4bcbb0606f647945d9a78b7ac745ff7fc8fee0452bb3652093d4cd8d55"
+    },
+    {
+      "id": "android-tablet-zh-TW-resize",
+      "path": "raw/android-tablet/zh-TW/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "zh-TW",
+      "theme": "light",
+      "timestamp": "2026-11-11T12:59:47.939973Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d2e8a2a5d9bc374a44d8ab9d6911c42e3dc9e23b01c68b46d4d0c977290e7554"
+    },
+    {
+      "id": "android-tablet-en-US-batch",
+      "path": "raw/android-tablet/en-US/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9e7fc1979f9b0880b7061c7363196630f0b2b2210935cd7efe0ace928c8e93a4"
+    },
+    {
+      "id": "android-tablet-en-US-compare",
+      "path": "raw/android-tablet/en-US/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "ebbaf3f3651cfd5155895081ac9fef02822388c8a056ccd0c99c1b5ee29937c1"
+    },
+    {
+      "id": "android-tablet-en-US-crop",
+      "path": "raw/android-tablet/en-US/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "4b35eb19e1819a30f3396d763cfe3081b7d73b98d0bad9955d0c89ffefacf957"
+    },
+    {
+      "id": "android-tablet-en-US-dark",
+      "path": "raw/android-tablet/en-US/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "dark",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "e63ea0bf2ea31d5b34c681fabc89dbae2997935dfcc5271f9f7c222561346ad7"
+    },
+    {
+      "id": "android-tablet-en-US-enhance",
+      "path": "raw/android-tablet/en-US/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "08055df8d20f252327310ee01f471f98882ce57b04fcc326a33769c34297fc34"
+    },
+    {
+      "id": "android-tablet-en-US-export",
+      "path": "raw/android-tablet/en-US/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "fac09e698d5aec7c45ed491424dd1cfa5c6a90fb728633438b9641485b9d4823"
+    },
+    {
+      "id": "android-tablet-en-US-home",
+      "path": "raw/android-tablet/en-US/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "5b36e8ff76389a23a4754e3d1c295b60db9c3404379aad7e928cf79039eea2c6"
+    },
+    {
+      "id": "android-tablet-en-US-import",
+      "path": "raw/android-tablet/en-US/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:18:00.241822Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "a9c210bdb51fbcf9fa2680a45dc14c7ea14548cf90f5bf1f4d8df8d91b231158"
+    },
+    {
+      "id": "android-tablet-en-US-resize",
+      "path": "raw/android-tablet/en-US/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "en-US",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:25.909962Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "fda5509d1810316321d509f5ff993f7edb4f94a7d8a9c1b00a33ff169855cc76"
+    },
+    {
+      "id": "android-tablet-es-ES-batch",
+      "path": "raw/android-tablet/es-ES/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b350cc76a4240b3cbf7fca2504eec5499c437ebb0ec72991d5f503437049222d"
+    },
+    {
+      "id": "android-tablet-es-ES-compare",
+      "path": "raw/android-tablet/es-ES/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d219be3d0a92f79f17993459d82a1fe17939b0019ee6815732305fbe21ad3568"
+    },
+    {
+      "id": "android-tablet-es-ES-crop",
+      "path": "raw/android-tablet/es-ES/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b060489d6d88308c4a0c4e0ffbba12f197df6163b4e55f1cddeddd0cdf858858"
+    },
+    {
+      "id": "android-tablet-es-ES-dark",
+      "path": "raw/android-tablet/es-ES/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "dark",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "3d3850a621d4b4b2288abd6e15544fe0a551bf2a38889d71a329bfbc2a0645fc"
+    },
+    {
+      "id": "android-tablet-es-ES-enhance",
+      "path": "raw/android-tablet/es-ES/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "112b67cbea9ee3a67197e03192ed003e52d5a8525e9e1b5f920909582eae3d18"
+    },
+    {
+      "id": "android-tablet-es-ES-export",
+      "path": "raw/android-tablet/es-ES/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0b02658bf4b971e3e4c024abc140c94dc5a1dd54978a9c303c9f15b5f76e24bc"
+    },
+    {
+      "id": "android-tablet-es-ES-home",
+      "path": "raw/android-tablet/es-ES/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d53eebe25224a4074066eedde596a748ace77935f26bd7fa21b25a0fdacd625c"
+    },
+    {
+      "id": "android-tablet-es-ES-import",
+      "path": "raw/android-tablet/es-ES/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:18:01.540129Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "9d1d3d16ec5a21c882073f153bf636a0923bcc0e528dfa20fa58f15cebd8dfb1"
+    },
+    {
+      "id": "android-tablet-es-ES-resize",
+      "path": "raw/android-tablet/es-ES/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "es-ES",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:00:48.756123Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2b566011d567d4448d0ff56f11f2ed8ad5712272e9c14ab7be6668e17c3b07d9"
+    },
+    {
+      "id": "android-tablet-fr-FR-batch",
+      "path": "raw/android-tablet/fr-FR/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "56260ece9eac27b4e8dfb6faf2b4c3ed178906c0ad1b38ea8977fb4bbb1475e9"
+    },
+    {
+      "id": "android-tablet-fr-FR-compare",
+      "path": "raw/android-tablet/fr-FR/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "b8217cb44e80c91d9b180a46a34d38288513a5b9b3a5ceafdd81a064b8ae0083"
+    },
+    {
+      "id": "android-tablet-fr-FR-crop",
+      "path": "raw/android-tablet/fr-FR/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c02bb58294b83179190be12450eb60020bc8df45c6040ae39e6954838482e27a"
+    },
+    {
+      "id": "android-tablet-fr-FR-dark",
+      "path": "raw/android-tablet/fr-FR/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "dark",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "cf4f5c16902782add98abec8edc8b8cf6bcac481bc92c9852ff1292abb18ab9d"
+    },
+    {
+      "id": "android-tablet-fr-FR-enhance",
+      "path": "raw/android-tablet/fr-FR/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d8b0dd7f4f03b82c45582729b37b517b97942827739ef9771cafcff02b4072f9"
+    },
+    {
+      "id": "android-tablet-fr-FR-export",
+      "path": "raw/android-tablet/fr-FR/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "8e8b4e058db13e37efdb915ed6d9ff6ba70f4a8ef8ac4724847b9cde00dbfa7f"
+    },
+    {
+      "id": "android-tablet-fr-FR-home",
+      "path": "raw/android-tablet/fr-FR/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "42ae50d5d47897bd5b68eb10133b8368989efb761a019f1214d8b70a9b39147b"
+    },
+    {
+      "id": "android-tablet-fr-FR-import",
+      "path": "raw/android-tablet/fr-FR/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:18:02.768202Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2324a2d2588d5fd4d6066986a8c83f305b5596189d05fb128a69eee5ca8b85a5"
+    },
+    {
+      "id": "android-tablet-fr-FR-resize",
+      "path": "raw/android-tablet/fr-FR/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "fr-FR",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:09.176089Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "145d15d1d27ea5b042e79aa6afad8b6942c84b1524160047d8e34dc8d08e3689"
+    },
+    {
+      "id": "android-tablet-de-DE-batch",
+      "path": "raw/android-tablet/de-DE/batch.png",
+      "source": "android-emulator",
+      "screen_name": "batch",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "c2276b043fec59ca9bf6d18b8999125e7c347164e1fe3e6bf831af1ab116d64d"
+    },
+    {
+      "id": "android-tablet-de-DE-compare",
+      "path": "raw/android-tablet/de-DE/compare.png",
+      "source": "android-emulator",
+      "screen_name": "compare",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "09240f630d62a62a937e9686ae8e679729440ef9cd7c5d068696814e6d6e4065"
+    },
+    {
+      "id": "android-tablet-de-DE-crop",
+      "path": "raw/android-tablet/de-DE/crop.png",
+      "source": "android-emulator",
+      "screen_name": "crop",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "69425a7140f3207e405ef9e5c6068227f4db7281939f921bb084bddffe3d71e2"
+    },
+    {
+      "id": "android-tablet-de-DE-dark",
+      "path": "raw/android-tablet/de-DE/dark.png",
+      "source": "android-emulator",
+      "screen_name": "dark",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "dark",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "427dcefd6243f0fc5929698f5d337d77e310b7a09942c0108454e6f75348c946"
+    },
+    {
+      "id": "android-tablet-de-DE-enhance",
+      "path": "raw/android-tablet/de-DE/enhance.png",
+      "source": "android-emulator",
+      "screen_name": "enhance",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "30a702e0f5a623356347c1039ecdcf11b7b9b089a4bc60ec98ca0c3ec9054c47"
+    },
+    {
+      "id": "android-tablet-de-DE-export",
+      "path": "raw/android-tablet/de-DE/export.png",
+      "source": "android-emulator",
+      "screen_name": "export",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "2b286d9a0e7a3f13266da4be92c808e5954a663d3619c8f93bbb5f0f91ee5f86"
+    },
+    {
+      "id": "android-tablet-de-DE-home",
+      "path": "raw/android-tablet/de-DE/home.png",
+      "source": "android-emulator",
+      "screen_name": "home",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "d8e9e0592be27dfe4dc3c520b9eb3d7780e3eac6cbd0bba568192f45fb5b8dcd"
+    },
+    {
+      "id": "android-tablet-de-DE-import",
+      "path": "raw/android-tablet/de-DE/import.png",
+      "source": "android-emulator",
+      "screen_name": "import",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:18:03.976621Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "0a46cc2a37df33820ad0dd539105eb2d212b8b4932bf35e79f2fd29adbab7feb"
+    },
+    {
+      "id": "android-tablet-de-DE-resize",
+      "path": "raw/android-tablet/de-DE/resize.png",
+      "source": "android-emulator",
+      "screen_name": "resize",
+      "platform": "android",
+      "device": "android-tablet",
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "pixelRatio": 1.5
+      },
+      "orientation": "landscape",
+      "locale": "de-DE",
+      "theme": "light",
+      "timestamp": "2026-11-11T13:01:33.559287Z",
+      "status_bar": "native app-window capture; no carrier or notification overlays",
+      "sha256": "8f9181aee18ee11a11297f43d557c4fa043d091e7a2d4d3f145ba353a9b3db02"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "summary": {
+    "fail": 0,
+    "warn": 10,
+    "info": 0
+  },
+  "findings": [
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/flutter/ios-native-home.png",
+      "message": "Screenshot is 1179x2556; nearest standard viewport is desktop-rotated with delta 1601."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/ios-native-home.png",
+      "message": "Only 11% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/flutter/landscape-crop.png",
+      "message": "Screenshot is 1704x786; nearest standard viewport is desktop with delta 356."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/phone-batch.png",
+      "message": "Only 11% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/phone-home.png",
+      "message": "Only 12% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/phone-settings.png",
+      "message": "Only 4% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "nonstandard-viewport",
+      "target": "design-system/qa/flutter/preview.png",
+      "message": "Screenshot is 1440x1110; nearest standard viewport is desktop with delta 416."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/preview.png",
+      "message": "Only 17% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/tabletop-crop.png",
+      "message": "Only 10% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/flutter/tabletop-keyboard-crop.png",
+      "message": "Only 3% of sampled pixels are midtone. Check contrast and surface readability."
+    }
+  ]
+}

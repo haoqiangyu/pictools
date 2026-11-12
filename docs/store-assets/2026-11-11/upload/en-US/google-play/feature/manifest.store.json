@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "generator": "scripts/store/feature_graphics.py",
+  "target": {
+    "platform": "google-play",
+    "device_group": "feature graphic",
+    "preset": "google-play-feature-graphic",
+    "width": 1024,
+    "height": 500,
+    "orientation": "landscape",
+    "locale": "en-US",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "last_checked": "2026-11-11"
+  },
+  "outputs": [
+    {
+      "id": "feature-graphic",
+      "screen_name": "crop",
+      "style": "split-caption",
+      "width": 1024,
+      "height": 500,
+      "platform": "google-play",
+      "preset": "google-play-feature-graphic",
+      "locale": "en-US",
+      "caption": "Crop. Convert.\nOn your device.",
+      "alt_text": "Crop a coastal photo, choose an aspect ratio and export a copy.",
+      "source": "android-emulator",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/raw/android-phone/en-US/crop.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/en-US/feature/feature.html",
+      "png_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/en-US/google-play/feature/feature-graphic.png",
+      "caption_area_percent": 18,
+      "render_status": "rendered",
+      "status": "png-ready",
+      "sha256": "3ac972946a3a6dacbe76b69834f24ccd3c3a85d8a981af9e2f063077a3aa852d"
+    }
+  ]
+}

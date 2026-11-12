@@ -45,7 +45,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Herramientas para imágenes'), findsOneWidget);
+    expect(find.text('Empieza con una imagen'), findsOneWidget);
     expect(find.text('Comparar imágenes'), findsOneWidget);
     expect(find.text('Mejorar brillo'), findsOneWidget);
     expect(

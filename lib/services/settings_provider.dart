@@ -6,6 +6,13 @@ class SettingsProvider extends ChangeNotifier {
   final SettingsService _service = SettingsService();
 
   String? _language;
+  ThemeMode _themeMode = ThemeMode.system;
+  ThemeMode get themeMode => _themeMode;
+  Future<void> setThemeMode(ThemeMode mode) async {
+    _themeMode = mode;
+    notifyListeners();
+    await _service.setThemeMode(mode.name);
+  }
 
   String? get language => _language;
 
@@ -26,6 +33,11 @@ class SettingsProvider extends ChangeNotifier {
 
   Future<void> init() async {
     _language = await _service.getLanguage();
+    final name = await _service.getThemeMode();
+    _themeMode =
+        ThemeMode.values.where((v) => v.name == name).firstOrNull ??
+        ThemeMode.system;
+    notifyListeners();
   }
 
   Future<void> setLanguage(String? language) async {

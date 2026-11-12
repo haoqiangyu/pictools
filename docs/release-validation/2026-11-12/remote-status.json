@@ -1,0 +1,178 @@
+{
+  "apple": {
+    "app_id": "6808580052",
+    "versions": [
+      {
+        "id": "9684f6f1-5605-4e8c-9cee-1f42c1bdea37",
+        "version": "1.2.0",
+        "state": "WAITING_FOR_REVIEW",
+        "release_type": "AFTER_APPROVAL",
+        "build": "3",
+        "locales": [
+          {
+            "locale": "fr-FR",
+            "support_url": "https://pictureslighting.com/"
+          },
+          {
+            "locale": "zh-Hant",
+            "support_url": "https://pictureslighting.com/"
+          },
+          {
+            "locale": "en-US",
+            "support_url": "https://pictureslighting.com/"
+          },
+          {
+            "locale": "es-ES",
+            "support_url": "https://pictureslighting.com/"
+          },
+          {
+            "locale": "zh-Hans",
+            "support_url": "https://pictureslighting.com/"
+          },
+          {
+            "locale": "de-DE",
+            "support_url": "https://pictureslighting.com/"
+          }
+        ]
+      },
+      {
+        "id": "db406856-022e-4076-8379-bff523d3bb23",
+        "version": "1.0",
+        "state": "READY_FOR_DISTRIBUTION",
+        "release_type": "MANUAL",
+        "build": "2",
+        "locales": [
+          {
+            "locale": "zh-Hans",
+            "support_url": "https://pictureslighting.com/"
+          }
+        ]
+      }
+    ],
+    "builds": [
+      {
+        "id": "3bcb0412-f710-4d34-a3ad-a1b933d53c41",
+        "build": "3",
+        "version": "1.2.0",
+        "state": "VALID"
+      },
+      {
+        "id": "06641e6c-758b-4bd5-84a0-f1eed922ed57",
+        "build": "2",
+        "version": "1.0.1",
+        "state": "VALID"
+      }
+    ]
+  },
+  "google": {
+    "listings": [
+      {
+        "locale": "zh-CN",
+        "title": "Pictoos: 图片工具箱"
+      },
+      {
+        "locale": "de-DE",
+        "title": "Pictoos: Bild-Werkzeugkasten"
+      },
+      {
+        "locale": "fr-FR",
+        "title": "Pictoos : boîte à outils photo"
+      },
+      {
+        "locale": "zh-TW",
+        "title": "Pictoos: 圖片工具箱"
+      },
+      {
+        "locale": "en-US",
+        "title": "Pictoos: Image Toolbox"
+      },
+      {
+        "locale": "es-ES",
+        "title": "Pictoos: Kit de imágenes"
+      }
+    ],
+    "tracks": [
+      {
+        "releases": [
+          {
+            "name": "1.2.0",
+            "release_notes": [
+              {
+                "language": "fr-FR",
+                "text": "Espace de travail renouvelé et thèmes clair/sombre. Conversion par lots dans six formats, qualité JPEG/WebP réglable et WebP sans perte. Améliorations du recadrage, des dimensions, de la comparaison et de la luminosité. Choisissez séparément la source et la destination : PNG/JPG dans la photothèque, tous les formats en fichiers. Suivez le traitement et l'enregistrement de chaque image."
+              },
+              {
+                "language": "es-ES",
+                "text": "Nuevo espacio de trabajo con temas claro y oscuro. Convierte seis formatos por lotes con calidad JPEG/WebP ajustable y WebP sin pérdida. Mejoras en recorte, tamaño, comparación y brillo. Elige por separado el origen y el destino: PNG/JPG en la fototeca y todos los formatos como archivos. Consulta el estado de procesamiento y guardado de cada imagen."
+              },
+              {
+                "language": "zh-TW",
+                "text": "更新圖片工作區與淺色、深色外觀。支援批次轉換六種圖片格式、調整 JPEG/WebP 品質及無損 WebP。改善裁切縮放、三種圖片比較與亮度增強。匯入來源與儲存位置可分別選擇：PNG/JPG 可儲存至相簿，全部格式可儲存至檔案，並明確顯示每張圖片的處理與儲存狀態。"
+              },
+              {
+                "language": "en-US",
+                "text": "Updated the workspace and light/dark themes. Batch convert six image formats with JPEG/WebP quality controls and lossless WebP. Improved cropping, resizing, three comparison modes and brightness enhancement. Choose import and save locations separately: PNG/JPG can go to your photo library, while all formats can be saved as files. Processing and saved states are shown for each image."
+              },
+              {
+                "language": "de-DE",
+                "text": "Überarbeiteter Arbeitsbereich mit hellem und dunklem Design. Sechs Formate im Stapel konvertieren, JPEG/WebP-Qualität einstellen und verlustfreies WebP nutzen. Verbesserungen bei Zuschnitt, Größe, Vergleich und Helligkeit. Quelle und Speicherziel getrennt wählen: PNG/JPG in der Fotomediathek, alle Formate als Dateien. Verarbeitungs- und Speicherstatus pro Bild sichtbar."
+              },
+              {
+                "language": "zh-CN",
+                "text": "更新图片工作台与浅色、深色外观。支持批量转换六种图片格式，调整 JPEG/WebP 质量和无损 WebP。优化裁剪缩放、三种图片对比和亮度增强。导入来源与保存位置可分别选择：PNG/JPG 可保存到相册，全部格式可保存到文件，并明确显示每张图片的处理与保存状态。"
+              }
+            ],
+            "status": "draft",
+            "version_codes": [
+              "3"
+            ]
+          },
+          {
+            "name": "2 (1.0.1)",
+            "status": "completed",
+            "version_codes": [
+              "2"
+            ]
+          }
+        ],
+        "track": "production"
+      },
+      {
+        "track": "beta"
+      },
+      {
+        "track": "alpha"
+      },
+      {
+        "releases": [
+          {
+            "name": "1 (1.0.0)",
+            "status": "completed",
+            "version_codes": [
+              "1"
+            ]
+          }
+        ],
+        "track": "internal"
+      },
+      {
+        "releases": [
+          {
+            "name": "2 (1.0.1)",
+            "release_notes": [
+              {
+                "language": "zh-CN",
+                "text": "优化体验"
+              }
+            ],
+            "status": "completed",
+            "version_codes": [
+              "2"
+            ]
+          }
+        ],
+        "track": "close_test_01"
+      }
+    ]
+  }
+}

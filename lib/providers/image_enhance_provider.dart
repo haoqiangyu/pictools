@@ -3,9 +3,21 @@ import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import '../models/export_format.dart';
+import '../services/image_processing_service.dart';
 
 /// 图片亮度增强状态管理
 class ImageEnhanceProvider extends ChangeNotifier {
+  ImageEnhanceProvider({Future<Uint8List> Function(Uint8List)? enhancer})
+    : _enhancer = enhancer ?? ImageProcessingService.enhance;
+  final Future<Uint8List> Function(Uint8List) _enhancer;
+  int _generation = 0, _loadGeneration = 0;
+  @override
+  void dispose() {
+    _generation++;
+    _loadGeneration++;
+    super.dispose();
+  }
+
   /// 原始图片数据
   Uint8List? _originalData;
   Uint8List? get originalData => _originalData;
@@ -46,23 +58,41 @@ class ImageEnhanceProvider extends ChangeNotifier {
 
   /// 设置图片
   Future<void> setImage(Uint8List data, {String? name, String? path}) async {
+    final generation = ++_loadGeneration;
+    // 解码获取原始尺寸
+    final codec = await ui.instantiateImageCodec(data);
+    final frame = await codec.getNextFrame();
+    final size = Size(
+      frame.image.width.toDouble(),
+      frame.image.height.toDouble(),
+    );
+    frame.image.dispose();
+    codec.dispose();
+    if (generation != _loadGeneration) return;
+    _generation++;
     _originalData = data;
     _fileName = name;
     _filePath = path;
     _enhancedData = null;
     _errorMessage = null;
 
-    // 解码获取原始尺寸
-    final codec = await ui.instantiateImageCodec(data);
-    final frame = await codec.getNextFrame();
-    _originalSize = Size(
-      frame.image.width.toDouble(),
-      frame.image.height.toDouble(),
-    );
-    frame.image.dispose();
-    codec.dispose();
+    _originalSize = size;
+    _isProcessing = false;
 
     notifyListeners();
+  }
+
+  Future<void> enhance() async {
+    if (_originalData == null || _isProcessing) return;
+    final generation = _generation;
+    final data = _originalData!;
+    startProcessing();
+    try {
+      final result = await _enhancer(data);
+      if (generation == _generation) setEnhancedData(result);
+    } catch (_) {
+      if (generation == _generation) setError('enhanceError');
+    }
   }
 
   /// 设置增强后的图片
@@ -95,6 +125,8 @@ class ImageEnhanceProvider extends ChangeNotifier {
 
   /// 清除图片
   void clearImage() {
+    _generation++;
+    _loadGeneration++;
     _originalData = null;
     _enhancedData = null;
     _fileName = null;
@@ -107,6 +139,8 @@ class ImageEnhanceProvider extends ChangeNotifier {
 
   /// 完全重置
   void reset() {
+    _generation++;
+    _loadGeneration++;
     _originalData = null;
     _enhancedData = null;
     _fileName = null;

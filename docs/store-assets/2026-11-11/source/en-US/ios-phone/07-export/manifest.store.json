@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "created_at": "2026-11-11T13:51:32Z",
+  "generator": "ui-design-crafter/scripts/export_store_screenshots.py",
+  "source_manifest": null,
+  "render_mode": "html-only",
+  "target": {
+    "platform": "app-store",
+    "preset": "custom-1179x2556",
+    "device_group": "ios-phone",
+    "orientation": "portrait",
+    "width": 1179,
+    "height": 2556,
+    "required_or_optional": "custom",
+    "source_url": "",
+    "last_checked": "",
+    "locale": "en-US",
+    "theme": "default",
+    "style": "top-caption"
+  },
+  "outputs": [
+    {
+      "id": "01-export-content-top-caption",
+      "screen_name": "export-content",
+      "screen_role": null,
+      "source": "user-provided",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/en-US/ios-phone/export-content.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/en-US/ios-phone/07-export/app-store/custom-1179x2556/en-us/01-export-content-top-caption.html",
+      "png_path": null,
+      "caption": "Save it\nyour way.",
+      "alt_text": "Set a file name and format, then save an image to Photos or Files.",
+      "style": "top-caption",
+      "width": 1179,
+      "height": 2556,
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "locale": "en-US",
+      "theme": "default",
+      "status": "html-ready",
+      "render_status": "not-rendered",
+      "warnings": []
+    }
+  ]
+}

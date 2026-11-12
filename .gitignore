@@ -72,3 +72,18 @@ coverage/
 venv/
 __pycache__/
 *.py[cod]
+
+# Fastlane dependencies, credentials, and local reports
+/.bundle/
+/vendor/bundle/
+/fastlane/.env
+/fastlane/.env.*
+!/fastlane/.env.example
+/fastlane/secrets/
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/README.md
+*.p8
+
+# Reproducible store screenshot export archives; keep source assets in Git
+/docs/store-assets/**/*.zip

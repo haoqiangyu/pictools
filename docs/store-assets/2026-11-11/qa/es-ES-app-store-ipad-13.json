@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 4,
+    "readable_images": 4,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/01-crop.png",
+      "caption": "Recorta y ajusta.\nA tu medida.",
+      "alt_text": "Recorta una foto de la costa, elige la proporción y exporta una copia.",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/02-compare.png",
+      "caption": "Mira cada\ndiferencia.",
+      "alt_text": "Compara una foto antes y después con el deslizador, en paralelo o mediante superposición.",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/03-batch.png",
+      "caption": "Convierte por lotes.\nRepite menos.",
+      "alt_text": "Tres fotos convertidas a JPG en un lote, con controles de formato, calidad y guardado.",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/04-export.png",
+      "caption": "Guarda donde\ntú quieras.",
+      "alt_text": "Elige el nombre y el formato y guarda una copia en Fotos o Archivos.",
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "expected_width": 2752,
+      "expected_height": 2064,
+      "expected_orientation": "landscape",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/01-crop.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 2863330,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/02-compare.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 3023593,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/03-batch.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 267572,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/ipad-13/04-export.png",
+      "fmt": "png",
+      "width": 2752,
+      "height": 2064,
+      "bytes": 1419590,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

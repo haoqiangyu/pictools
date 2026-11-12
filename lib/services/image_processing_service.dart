@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as img;
 
 import '../models/export_format.dart';
+import '../models/export_options.dart';
+import 'image_import_service.dart';
 import '../src/rust/api/image_codec.dart' as rust_codec;
 import '../src/rust/api/image_enhance.dart' as rust_enhance;
 import 'platform_capabilities.dart';
@@ -26,9 +28,47 @@ class ImageProcessingService {
     return compute(_encodeInDart, _EncodeRequest(imageData, format, quality));
   }
 
+  static Future<Uint8List> export(
+    Uint8List data,
+    ExportOptions options, {
+    int? width,
+    int? height,
+    List<double>? crop,
+  }) async {
+    final png = await prepareExport(
+      data,
+      options,
+      width: width,
+      height: height,
+      crop: crop,
+    );
+    if (PlatformCapabilities.supportsRustProcessing) {
+      return rust_codec.encodeImage(
+        imageData: png,
+        format: options.format.toRustFormat(
+          quality: options.quality,
+          lossless: options.lossless,
+        ),
+      );
+    }
+    return compute(
+      _encodeInDart,
+      _EncodeRequest(png, options.format, options.quality),
+    );
+  }
+
+  static Future<Uint8List> prepareExport(
+    Uint8List data,
+    ExportOptions options, {
+    int? width,
+    int? height,
+    List<double>? crop,
+  }) => compute(_prepareExport, (data, options, width, height, crop));
+
   static Future<Uint8List> enhance(Uint8List imageData) async {
     if (PlatformCapabilities.supportsRustProcessing) {
-      return rust_enhance.enhanceImage(imageData: imageData);
+      final upright = await prepareExport(imageData, const ExportOptions());
+      return rust_enhance.enhanceImage(imageData: upright);
     }
     return compute(_enhanceInDart, imageData);
   }
@@ -204,3 +244,72 @@ num _enhanceChannel(double channel) {
 // x^(1/2.4), kept local so mobile processing does not need another package.
 double _fifthRootPower(double value) =>
     value == 0 ? 0 : math.pow(value, 1 / 2.4).toDouble();
+
+Uint8List _prepareExport(
+  (Uint8List, ExportOptions, int?, int?, List<double>?) request,
+) {
+  final (bytes, options, width, height, crop) = request;
+  final decoder = img.findDecoderForData(bytes);
+  final info = decoder?.startDecode(bytes);
+  if (info == null) throw const FormatException('imageImportError');
+  if (info.width * info.height > ImageImportService.maxPixels) {
+    throw const FormatException('pixelLimit');
+  }
+  var source = decoder!.decodeFrame(0);
+  if (source == null) throw const FormatException('imageImportError');
+  source = img.bakeOrientation(source);
+  if (width != null && height != null) {
+    if (width < 1 ||
+        height < 1 ||
+        width > ImageImportService.maxDimension ||
+        height > ImageImportService.maxDimension ||
+        width * height > ImageImportService.maxPixels) {
+      throw const FormatException('pixelLimit');
+    }
+    source = img.copyResize(
+      source,
+      width: width,
+      height: height,
+      interpolation: img.Interpolation.cubic,
+    );
+  } else if (crop != null) {
+    final x = (crop[0] * source.width).round().clamp(0, source.width - 1);
+    final y = (crop[1] * source.height).round().clamp(0, source.height - 1);
+    source = img.copyCrop(
+      source,
+      x: x,
+      y: y,
+      width: (crop[2] * source.width).round().clamp(1, source.width - x),
+      height: (crop[3] * source.height).round().clamp(1, source.height - y),
+    );
+  }
+  if (options.format == ExportFormat.ico &&
+      (source.width > 256 || source.height > 256)) {
+    if (!options.resizeIco) throw const FormatException('icoWarning');
+    final scale = 256 / math.max(source.width, source.height);
+    source = img.copyResize(
+      source,
+      width: math.max(1, (source.width * scale).round()),
+      height: math.max(1, (source.height * scale).round()),
+    );
+  }
+  if (options.format == ExportFormat.jpg) {
+    final color = options.jpegBackground;
+    final background = img.Image(
+      width: source.width,
+      height: source.height,
+      numChannels: 3,
+    );
+    img.fill(
+      background,
+      color: img.ColorRgb8(
+        (color >> 16) & 255,
+        (color >> 8) & 255,
+        color & 255,
+      ),
+    );
+    img.compositeImage(background, source);
+    source = background;
+  }
+  return img.encodePng(source);
+}

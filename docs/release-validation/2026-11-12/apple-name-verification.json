@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-12",
+  "app_id": "6808580052",
+  "version": "1.2.0",
+  "build": "3",
+  "state": "PREPARE_FOR_SUBMISSION",
+  "release_type": "MANUAL",
+  "only_name_updated": true,
+  "localizations": [
+    {
+      "locale": "zh-Hans",
+      "before": "Pictools - 图片裁剪与格式转换",
+      "name": "Pictoos: 图片工具箱",
+      "characters": 14,
+      "verified": true
+    },
+    {
+      "locale": "zh-Hant",
+      "before": "Pictools - 圖片裁切與格式轉換",
+      "name": "Pictoos: 圖片工具箱",
+      "characters": 14,
+      "verified": true
+    },
+    {
+      "locale": "en-US",
+      "before": "Pictools: Crop & Convert",
+      "name": "Pictoos: Image Toolbox",
+      "characters": 22,
+      "verified": true
+    },
+    {
+      "locale": "es-ES",
+      "before": "Pictools: Recorta y convierte",
+      "name": "Pictoos: Kit de imágenes",
+      "characters": 24,
+      "verified": true
+    },
+    {
+      "locale": "fr-FR",
+      "before": "Pictools : recadrer, convertir",
+      "name": "Pictoos : boîte à outils photo",
+      "characters": 30,
+      "verified": true
+    },
+    {
+      "locale": "de-DE",
+      "before": "Pictools: Bilder konvertieren",
+      "name": "Pictoos: Bild-Werkzeugkasten",
+      "characters": 28,
+      "verified": true
+    }
+  ]
+}

@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'providers/image_compare_provider.dart';
+import 'providers/batch_converter_provider.dart';
+import 'layout/foldable_environment.dart';
 import 'providers/image_adjust_provider.dart';
 import 'providers/image_enhance_provider.dart';
 import 'providers/background_removal_provider.dart';
@@ -40,11 +42,11 @@ Future<void> main() async {
   if (PlatformCapabilities.isDesktop && windowArgs.type == WindowType.main) {
     await windowManager.ensureInitialized();
 
-    // 固定尺寸 1400x900
+    // Initial desktop window; the content remains responsive.
     const Size initialSize = Size(1400, 900);
 
-    // 使用深色背景避免闪烁
-    const Color bgColor = Color(0xFF1E1E1E);
+    // Match the initial Studio surface while Flutter starts.
+    const Color bgColor = Color(0xFFF7F6F2);
 
     WindowOptions windowOptions = const WindowOptions(
       size: initialSize,
@@ -79,6 +81,7 @@ class PictoolsApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: settingsProvider),
+        ChangeNotifierProvider(create: (_) => BatchConverterProvider()),
         ChangeNotifierProvider(create: (_) => ImageCompareProvider()),
         ChangeNotifierProvider(create: (_) => ImageAdjustProvider()),
         ChangeNotifierProvider(create: (_) => ImageEnhanceProvider()),
@@ -88,7 +91,10 @@ class PictoolsApp extends StatelessWidget {
         builder: (context, settings, _) => MaterialApp(
           onGenerateTitle: (context) => AppLocalizations.of(context).appName,
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: settings.themeMode,
+          builder: (context, child) => FoldableEnvironment(child: child!),
           locale: settings.locale,
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: const [
@@ -103,7 +109,10 @@ class PictoolsApp extends StatelessWidget {
             '/image-compare': (context) => const ImageCompareScreen(),
             '/image-adjust': (context) => const ImageAdjustScreen(),
             '/image-enhance': (context) => const ImageEnhanceScreen(),
-            '/background-removal': (context) => const BackgroundRemovalScreen(),
+            '/background-removal': (context) => Theme(
+              data: AppTheme.darkTheme,
+              child: const BackgroundRemovalScreen(),
+            ),
             '/image-converter': (context) => const ImageConverterScreen(),
             '/settings': (context) => const SettingsScreen(),
             '/privacy-policy': (context) => const PrivacyPolicyScreen(),
@@ -125,7 +134,10 @@ class PictoolsApp extends StatelessWidget {
       case WindowType.imageEnhance:
         return const ImageEnhanceScreen(isStandaloneWindow: true);
       case WindowType.backgroundRemoval:
-        return const BackgroundRemovalScreen(isStandaloneWindow: true);
+        return Theme(
+          data: AppTheme.darkTheme,
+          child: const BackgroundRemovalScreen(isStandaloneWindow: true),
+        );
       case WindowType.settings:
         return const SettingsScreen(isStandaloneWindow: true);
     }

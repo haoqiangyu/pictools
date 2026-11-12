@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "generator": "scripts/store/feature_graphics.py",
+  "target": {
+    "platform": "google-play",
+    "device_group": "feature graphic",
+    "preset": "google-play-feature-graphic",
+    "width": 1024,
+    "height": 500,
+    "orientation": "landscape",
+    "locale": "zh-TW",
+    "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+    "last_checked": "2026-11-11"
+  },
+  "outputs": [
+    {
+      "id": "feature-graphic",
+      "screen_name": "crop",
+      "style": "split-caption",
+      "width": 1024,
+      "height": 500,
+      "platform": "google-play",
+      "preset": "google-play-feature-graphic",
+      "locale": "zh-TW",
+      "caption": "裁切、轉換\n在裝置上完成",
+      "alt_text": "裁剪海岸照片，選擇比例並拖動裁剪框，匯出新副本。",
+      "source": "android-emulator",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/raw/android-phone/zh-TW/crop.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-TW/feature/feature.html",
+      "png_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/zh-TW/google-play/feature/feature-graphic.png",
+      "caption_area_percent": 18,
+      "render_status": "rendered",
+      "status": "png-ready",
+      "sha256": "df12f7516f4fc588ccc3088a2eeaa13232a8707e97114af8ea028d06097db0ec"
+    }
+  ]
+}

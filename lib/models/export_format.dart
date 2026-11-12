@@ -9,6 +9,8 @@ enum ExportFormat {
   ico,
   tiff;
 
+  bool get supportsPhotos => this == png || this == jpg;
+
   String get displayName {
     switch (this) {
       case ExportFormat.png:
@@ -44,14 +46,14 @@ enum ExportFormat {
   }
 
   /// 转换为 Rust 对应的 ImageFormat
-  ImageFormat toRustFormat({int quality = 90}) {
+  ImageFormat toRustFormat({int quality = 90, bool lossless = false}) {
     switch (this) {
       case ExportFormat.png:
         return const ImageFormat.png();
       case ExportFormat.jpg:
         return ImageFormat.jpg(quality: quality);
       case ExportFormat.webp:
-        return ImageFormat.webP(quality: quality, lossless: false);
+        return ImageFormat.webP(quality: quality, lossless: lossless);
       case ExportFormat.bmp:
         return const ImageFormat.bmp();
       case ExportFormat.ico:

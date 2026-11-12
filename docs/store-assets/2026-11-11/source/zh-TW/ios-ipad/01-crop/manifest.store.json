@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "created_at": "2026-11-11T13:51:24Z",
+  "generator": "ui-design-crafter/scripts/export_store_screenshots.py",
+  "source_manifest": null,
+  "render_mode": "html-only",
+  "target": {
+    "platform": "app-store",
+    "preset": "custom-2752x2064",
+    "device_group": "ios-ipad",
+    "orientation": "landscape",
+    "width": 2752,
+    "height": 2064,
+    "required_or_optional": "custom",
+    "source_url": "",
+    "last_checked": "",
+    "locale": "zh-TW",
+    "theme": "default",
+    "style": "top-caption"
+  },
+  "outputs": [
+    {
+      "id": "01-crop-content-top-caption",
+      "screen_name": "crop-content",
+      "screen_role": null,
+      "source": "user-provided",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-TW/ios-ipad/crop-content.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-TW/ios-ipad/01-crop/app-store/custom-2752x2064/zh-tw/01-crop-content-top-caption.html",
+      "png_path": null,
+      "caption": "裁切到位\n尺寸剛好",
+      "alt_text": "裁剪海岸照片，選擇比例並拖動裁剪框，匯出新副本。",
+      "style": "top-caption",
+      "width": 2752,
+      "height": 2064,
+      "platform": "app-store",
+      "preset": "custom-2752x2064",
+      "locale": "zh-TW",
+      "theme": "default",
+      "status": "html-ready",
+      "render_status": "not-rendered",
+      "warnings": []
+    }
+  ]
+}

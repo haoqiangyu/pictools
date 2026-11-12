@@ -96,7 +96,8 @@ class AppLocalizations {
       'privacyLocal':
           '图片对比、调整、亮度增强和格式转换均在您的设备上完成。应用不会将图片上传给我们。Android 版不申请网络权限。',
       'privacyFilesTitle': '文件访问',
-      'privacyFiles': '您通过系统文件选择器主动选择图片，并决定导出位置。应用不会扫描您的相册，也不会在未经操作的情况下访问其他文件。',
+      'privacyFiles':
+          '您主动选择图片，并决定保存到相册或文件。保存到相册时，iOS 仅申请添加照片权限，Android 9 及以下需要存储写入权限。应用不扫描相册、不修改原图；只有点击保存后才写入新副本。',
       'privacyPrefsTitle': '本地设置',
       'privacyPrefs': '您选择的界面语言仅保存在设备本地，可随时改为跟随系统。',
       'privacyDesktopTitle': '桌面版抠图模型',
@@ -142,7 +143,8 @@ class AppLocalizations {
       'privacyLocal':
           '圖片比較、調整、亮度增強與格式轉換都在您的裝置上完成。應用程式不會將圖片上傳給我們。Android 版不要求網路權限。',
       'privacyFilesTitle': '檔案存取',
-      'privacyFiles': '您透過系統檔案選擇器主動選取圖片，並決定匯出位置。應用程式不會掃描相簿，也不會在未經操作時存取其他檔案。',
+      'privacyFiles':
+          '您主動選取圖片，並決定儲存到相簿或檔案。相簿儲存僅需 iOS 新增照片權限，Android 9 及以下需儲存寫入權限。應用程式不掃描相簿、不修改原圖；僅在點選儲存後寫入副本。',
       'privacyPrefsTitle': '本機設定',
       'privacyPrefs': '您選擇的介面語言只會儲存在裝置本機，並可隨時改為跟隨系統。',
       'privacyDesktopTitle': '桌面版去背模型',
@@ -195,7 +197,7 @@ class AppLocalizations {
           'Image comparison, adjustment, brightness enhancement, and format conversion take place on your device. The app does not upload your images to us. The Android app requests no network permission.',
       'privacyFilesTitle': 'File access',
       'privacyFiles':
-          'You choose images and export locations through the system file picker. The app does not scan your library or access other files without an action from you.',
+          'You choose images and save to Photos or Files. Photos export requests add-only access on iOS and storage-write permission on Android 9 or earlier. The app does not scan your library or modify originals; it writes new copies only when you tap Save.',
       'privacyPrefsTitle': 'Local settings',
       'privacyPrefs':
           'Your display-language preference is stored only on this device and can be changed back to the system setting at any time.',
@@ -251,7 +253,7 @@ class AppLocalizations {
           'La comparación, el ajuste, la mejora del brillo y la conversión se realizan en el dispositivo. La aplicación no nos envía tus imágenes. La versión para Android no solicita acceso a Internet.',
       'privacyFilesTitle': 'Acceso a archivos',
       'privacyFiles':
-          'Tú eliges las imágenes y el destino de exportación mediante el selector de archivos del sistema. La aplicación no examina la galería ni accede a otros archivos sin una acción tuya.',
+          'Tú eliges las imágenes y si guardarlas en Fotos o Archivos. Fotos solicita permiso solo para añadir en iOS y de escritura en Android 9 o anterior. La app no examina la galería ni modifica originales; crea copias al pulsar Guardar.',
       'privacyPrefsTitle': 'Ajustes locales',
       'privacyPrefs':
           'La preferencia de idioma solo se guarda en el dispositivo y puedes volver al idioma del sistema cuando quieras.',
@@ -309,7 +311,7 @@ class AppLocalizations {
           'La comparaison, l’ajustement, l’amélioration de la luminosité et la conversion ont lieu sur votre appareil. L’application ne nous envoie pas vos images. La version Android ne demande aucun accès à Internet.',
       'privacyFilesTitle': 'Accès aux fichiers',
       'privacyFiles':
-          'Vous choisissez les images et l’emplacement d’exportation avec le sélecteur de fichiers du système. L’application n’analyse pas votre photothèque et n’accède à aucun autre fichier sans action de votre part.',
+          'Vous choisissez les images et enregistrez dans Photos ou Fichiers. Photos demande uniquement l’ajout sur iOS et l’écriture sur Android 9 ou antérieur. L’app ne parcourt pas la photothèque et ne modifie pas les originaux ; elle crée des copies lorsque vous appuyez sur Enregistrer.',
       'privacyPrefsTitle': 'Paramètres locaux',
       'privacyPrefs':
           'Votre choix de langue est enregistré uniquement sur cet appareil et peut être rétabli sur la langue du système à tout moment.',
@@ -365,7 +367,7 @@ class AppLocalizations {
           'Bildvergleich, Anpassung, Helligkeitsverbesserung und Formatkonvertierung erfolgen auf Ihrem Gerät. Die App lädt Ihre Bilder nicht zu uns hoch. Die Android-App fordert keine Netzwerkberechtigung an.',
       'privacyFilesTitle': 'Dateizugriff',
       'privacyFiles':
-          'Sie wählen Bilder und Exportziele über die Systemdateiauswahl aus. Die App durchsucht Ihre Galerie nicht und greift ohne Ihre Aktion nicht auf andere Dateien zu.',
+          'Sie wählen Bilder und speichern sie in Fotos oder Dateien. Fotoexport benötigt unter iOS nur das Hinzufügen und unter Android 9 oder älter Schreibzugriff. Die App durchsucht die Galerie nicht und ändert keine Originale. Neue Kopien entstehen erst beim Speichern.',
       'privacyPrefsTitle': 'Lokale Einstellungen',
       'privacyPrefs':
           'Ihre Sprachauswahl wird nur auf diesem Gerät gespeichert und kann jederzeit wieder auf die Systemsprache gesetzt werden.',

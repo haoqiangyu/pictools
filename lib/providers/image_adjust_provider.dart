@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'dart:math' as math;
 import 'dart:io';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
@@ -8,6 +9,13 @@ import '../models/export_format.dart';
 
 /// 图片调整状态管理
 class ImageAdjustProvider extends ChangeNotifier {
+  int _generation = 0;
+  @override
+  void dispose() {
+    _generation++;
+    super.dispose();
+  }
+
   /// 图片原始数据
   Uint8List? _imageData;
   Uint8List? get imageData => _imageData;
@@ -25,7 +33,7 @@ class ImageAdjustProvider extends ChangeNotifier {
   Size? get originalSize => _originalSize;
 
   /// 当前调整模式
-  AdjustMode _mode = AdjustMode.resize;
+  AdjustMode _mode = AdjustMode.crop;
   AdjustMode get mode => _mode;
 
   /// 是否有图片
@@ -63,19 +71,24 @@ class ImageAdjustProvider extends ChangeNotifier {
 
   /// 设置图片
   Future<void> setImage(Uint8List data, {String? name, String? path}) async {
-    _imageData = data;
-    _fileName = name;
-    _filePath = path;
-
+    final generation = ++_generation;
     // 解码获取原始尺寸
     final codec = await ui.instantiateImageCodec(data);
     final frame = await codec.getNextFrame();
-    _originalSize = Size(
+    final size = Size(
       frame.image.width.toDouble(),
       frame.image.height.toDouble(),
     );
     frame.image.dispose();
     codec.dispose();
+    if (generation != _generation) return;
+    _imageData = data;
+    _fileName = name;
+    _filePath = path;
+
+    _originalSize = size;
+    _aspectRatio = AspectRatioPreset.free;
+    _lockAspectRatio = true;
 
     // 初始化目标尺寸
     _targetWidth = _originalSize!.width.toInt();
@@ -89,6 +102,7 @@ class ImageAdjustProvider extends ChangeNotifier {
 
   /// 清除图片
   void clearImage() {
+    _generation++;
     _imageData = null;
     _fileName = null;
     _filePath = null;
@@ -107,24 +121,24 @@ class ImageAdjustProvider extends ChangeNotifier {
 
   /// 设置目标宽度
   void setTargetWidth(int width) {
-    if (width <= 0 || _originalSize == null) return;
+    if (width <= 0 || width > 16384 || _originalSize == null) return;
 
     _targetWidth = width;
     if (_lockAspectRatio) {
       final ratio = _originalSize!.width / _originalSize!.height;
-      _targetHeight = (width / ratio).round();
+      _targetHeight = math.max(1, (width / ratio).round());
     }
     notifyListeners();
   }
 
   /// 设置目标高度
   void setTargetHeight(int height) {
-    if (height <= 0 || _originalSize == null) return;
+    if (height <= 0 || height > 16384 || _originalSize == null) return;
 
     _targetHeight = height;
     if (_lockAspectRatio) {
       final ratio = _originalSize!.width / _originalSize!.height;
-      _targetWidth = (height * ratio).round();
+      _targetWidth = math.max(1, (height * ratio).round());
     }
     notifyListeners();
   }
@@ -138,6 +152,12 @@ class ImageAdjustProvider extends ChangeNotifier {
   /// 设置锁定比例
   void setLockAspectRatio(bool lock) {
     _lockAspectRatio = lock;
+    if (lock && _originalSize != null) {
+      _targetHeight = math.max(
+        1,
+        (_targetWidth * _originalSize!.height / _originalSize!.width).round(),
+      );
+    }
     notifyListeners();
   }
 
@@ -184,13 +204,16 @@ class ImageAdjustProvider extends ChangeNotifier {
 
   /// 设置裁剪区域
   void setCropRect(Rect rect) {
+    if (!rect.isFinite || rect.width <= 0 || rect.height <= 0) return;
     // 确保裁剪区域在有效范围内
-    _cropRect = Rect.fromLTRB(
+    final bounded = Rect.fromLTRB(
       rect.left.clamp(0.0, 1.0),
       rect.top.clamp(0.0, 1.0),
       rect.right.clamp(0.0, 1.0),
       rect.bottom.clamp(0.0, 1.0),
     );
+    if (bounded.isEmpty) return;
+    _cropRect = bounded;
     notifyListeners();
   }
 
@@ -214,11 +237,12 @@ class ImageAdjustProvider extends ChangeNotifier {
 
   /// 完全重置
   void reset() {
+    _generation++;
     _imageData = null;
     _fileName = null;
     _filePath = null;
     _originalSize = null;
-    _mode = AdjustMode.resize;
+    _mode = AdjustMode.crop;
     _targetWidth = 0;
     _targetHeight = 0;
     _lockAspectRatio = true;

@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.annuo.pictools.launchqa">
+  <application android:label="Pictools Launch QA" android:theme="@style/LaunchTheme" android:icon="@mipmap/ic_launcher" android:debuggable="true">
+    <activity android:name=".LaunchProbe" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  </application>
+</manifest>

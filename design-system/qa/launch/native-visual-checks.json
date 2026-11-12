@@ -1,0 +1,130 @@
+{
+  "checks": [
+    {
+      "capture": "android12-system-light",
+      "size": [
+        1080,
+        2400
+      ],
+      "backgroundRGB": [
+        247,
+        246,
+        242
+      ],
+      "markBounds": [
+        415,
+        1075,
+        665,
+        1325
+      ],
+      "whiteGlyphPixels": 8589,
+      "markCenterOffset": [
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    {
+      "capture": "android12-system-dark",
+      "size": [
+        1080,
+        2400
+      ],
+      "backgroundRGB": [
+        23,
+        27,
+        24
+      ],
+      "markBounds": [
+        414,
+        1074,
+        666,
+        1326
+      ],
+      "whiteGlyphPixels": 8254,
+      "markCenterOffset": [
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    {
+      "capture": "android12-system-wide",
+      "size": [
+        1366,
+        768
+      ],
+      "backgroundRGB": [
+        247,
+        246,
+        242
+      ],
+      "markBounds": [
+        636,
+        337,
+        730,
+        431
+      ],
+      "whiteGlyphPixels": 1011,
+      "markCenterOffset": [
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    {
+      "capture": "android-legacy-resource-light",
+      "size": [
+        1080,
+        2400
+      ],
+      "backgroundRGB": [
+        247,
+        246,
+        242
+      ],
+      "markBounds": [
+        414,
+        1074,
+        666,
+        1326
+      ],
+      "whiteGlyphPixels": 9263,
+      "markCenterOffset": [
+        0.0,
+        0.0
+      ],
+      "pass": true
+    },
+    {
+      "capture": "android-legacy-resource-dark",
+      "size": [
+        1080,
+        2400
+      ],
+      "backgroundRGB": [
+        23,
+        27,
+        24
+      ],
+      "markBounds": [
+        414,
+        1074,
+        666,
+        1326
+      ],
+      "whiteGlyphPixels": 8732,
+      "markCenterOffset": [
+        0.0,
+        0.0
+      ],
+      "pass": true
+    }
+  ],
+  "allPass": true,
+  "smokeOverrides": {
+    "background-too-dark": "Intentional native dark launch surface. The centered brand and native system bars remain visible; the launch screen has no CTA or body content.",
+    "background-too-light": "Intentional opaque launch background matching the first Flutter surface.",
+    "nonstandard-viewport": "Native device PNGs use physical pixels; they are not CSS-pixel browser captures."
+  }
+}

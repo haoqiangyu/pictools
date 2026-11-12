@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -30,6 +32,8 @@
 	<string>Pictools uses the camera only when you choose to capture a new image for editing.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Pictools uses your location to add optional location metadata to photos you capture with the camera. It is used only on this device.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save your exported images as new photos. Pictools does not read or change existing photos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Pictools accesses your photo library only when you choose images to edit or export. Your images are processed on this device.</string>
 	<key>UIApplicationSceneManifest</key>

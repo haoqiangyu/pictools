@@ -1,5 +1,7 @@
-# Launch Screen Assets
+# Native launch mark
 
-You can customize the launch screen with your own desired assets by replacing the image files in this directory.
+The existing Pictools brand is rendered at 96pt with 1×, 2× and 3× assets. Run `swift scripts/generate_launch_icon.swift` from the repository root to regenerate these PNGs. The storyboard constrains both dimensions, preserving the mark in portrait and landscape.
 
-You can also do it by opening your Flutter project's Xcode project with `open ios/Runner.xcworkspace`, selecting `Runner/Assets.xcassets` in the Project Navigator and dropping in the desired images.
+Background appearance comes from `LaunchBackground.colorset`, shared by `LaunchScreen.storyboard` and the initial Flutter controller in `Main.storyboard`. It follows system appearance before Flutter settings are available. The mark stays burnt orange and white in both modes.
+
+See `design-system/pages/launch.md` for Android resource equivalents and startup handoff behavior. Native launch changes require a full rebuild; hot reload cannot update a system launch snapshot.

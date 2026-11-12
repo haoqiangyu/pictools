@@ -1,23 +1,16 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:window_manager/window_manager.dart';
 import '../providers/image_compare_provider.dart';
-import '../services/window_service.dart';
+import '../models/comparison_mode.dart';
+import '../layout/studio_scaffold.dart';
+import '../l10n/studio_localizations.dart';
 import '../services/window_arguments.dart';
-import '../theme/app_theme.dart';
-import '../widgets/image_upload_area.dart';
-import '../widgets/comparison_viewer.dart';
-import '../services/platform_capabilities.dart';
-import '../widgets/mode_switcher.dart';
-import '../l10n/app_localizations.dart';
+import '../widgets/studio_widgets.dart';
+import '../widgets/studio_canvas.dart';
 
-/// 图片对比功能页面
 class ImageCompareScreen extends StatefulWidget {
-  final bool isStandaloneWindow;
-
   const ImageCompareScreen({super.key, this.isStandaloneWindow = false});
-
+  final bool isStandaloneWindow;
   @override
   State<ImageCompareScreen> createState() => _ImageCompareScreenState();
 }
@@ -26,306 +19,176 @@ class _ImageCompareScreenState extends State<ImageCompareScreen> {
   @override
   void initState() {
     super.initState();
-    // 如果是独立窗口，尝试恢复状态
-    if (widget.isStandaloneWindow) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final args = WindowService.instance.currentArguments;
-        if (args?.data != null) {
-          context.read<ImageCompareProvider>().importState(args!.data!);
-        }
-      });
+    restoreWindow(
+      widget.isStandaloneWindow,
+      (s) => context.read<ImageCompareProvider>().importState(s),
+    );
+  }
+
+  Future<void> _pick(bool a) async {
+    final image = await pickStudioImage(context);
+    if (image == null || !mounted) return;
+    final p = context.read<ImageCompareProvider>();
+    if (a) {
+      p.setImageA(image.data, name: image.name, path: image.path);
+    } else {
+      p.setImageB(image.data, name: image.name, path: image.path);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppTheme.primaryBg,
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            // Landscape phones have very little vertical space. Keep the
-            // controls reachable and let the page scroll instead of allowing
-            // the comparison area to overlap the mode switcher.
-            final isShort = constraints.maxHeight < 600;
-            final content = Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _buildHeader(context),
-                SizedBox(height: isShort ? 8 : 16),
-                SizedBox(
-                  height: isShort ? 88 : 120,
-                  child: _buildUploadSection(context),
-                ),
-                SizedBox(height: isShort ? 8 : 16),
-                Container(height: 1, color: AppTheme.borderColor),
-                SizedBox(height: isShort ? 8 : 16),
-                if (isShort)
-                  SizedBox(height: 140, child: _buildComparisonSection(context))
-                else
-                  Expanded(child: _buildComparisonSection(context)),
-                SizedBox(height: isShort ? 8 : 12),
-                _buildModeSwitcher(context),
-              ],
-            );
-
-            final paddedContent = Padding(
-              padding: EdgeInsets.fromLTRB(20, isShort ? 12 : 32, 20, 20),
-              child: content,
-            );
-
-            return isShort
-                ? SingleChildScrollView(child: paddedContent)
-                : paddedContent;
-          },
-        ),
-      ),
+    final p = context.watch<ImageCompareProvider>();
+    final detach = detachAction(
+      context,
+      widget.isStandaloneWindow,
+      WindowType.imageCompare,
+      p.exportState,
     );
-  }
-
-  Widget _buildHeader(BuildContext context) {
-    return GestureDetector(
-      onDoubleTap: () async {
-        if (!PlatformCapabilities.supportsMultiWindow) return;
-        if (await windowManager.isMaximized()) {
-          windowManager.unmaximize();
-        } else {
-          windowManager.maximize();
-        }
-      },
-      behavior: HitTestBehavior.translucent, // 确保空白区域也能响应
-      child: Container(
-        color: Colors.transparent, // 必须设置颜色(即使是透明)才能响应点击
-        width: double.infinity, // 占满横向空间
-        padding: const EdgeInsets.symmetric(vertical: 8), // 增加一点垂直点击区域
-        child: Row(
-          children: [
-            // macOS 窗口按钮占位（仅在非独立窗口时需要，独立窗口有返回按钮）
-            if (Platform.isMacOS && widget.isStandaloneWindow)
-              const SizedBox(width: 54),
-            // 返回按钮
-            if (!widget.isStandaloneWindow)
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const Icon(Icons.arrow_back_rounded),
-                style: IconButton.styleFrom(
-                  foregroundColor: AppTheme.secondaryColor,
-                  backgroundColor: AppTheme.cardBg,
-                  padding: const EdgeInsets.all(8),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: AppTheme.borderColor),
-                  ),
-                ),
-              ),
-            const SizedBox(width: 12),
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: AppTheme.accentColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Icon(
-                Icons.compare,
-                color: AppTheme.accentColor,
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.l10n.t('compareTitle'),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: AppTheme.textColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    context.l10n.t('compareSubtitle'),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: AppTheme.secondaryColor,
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // 分离窗口按钮（仅在主窗口显示）
-            if (!widget.isStandaloneWindow &&
-                PlatformCapabilities.supportsMultiWindow)
-              Tooltip(
-                message: context.l10n.t('detach'),
-                child: IconButton(
-                  onPressed: () async {
-                    // 导出当前状态
-                    final state = await context
-                        .read<ImageCompareProvider>()
-                        .exportState();
-                    final success = await WindowService.instance
-                        .detachToNewWindow(
-                          WindowType.imageCompare,
-                          data: state,
-                        );
-                    if (success && context.mounted) {
-                      Navigator.of(context).pop();
-                    }
-                  },
-                  icon: const Icon(Icons.open_in_new, size: 18),
-                  style: IconButton.styleFrom(
-                    foregroundColor: AppTheme.secondaryColor,
-                    backgroundColor: AppTheme.cardBg,
-                    padding: const EdgeInsets.all(8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: const BorderSide(color: AppTheme.borderColor),
-                    ),
-                  ),
-                ),
-              ),
-            Consumer<ImageCompareProvider>(
-              builder: (context, provider, _) {
-                if (!provider.hasBothImages) return const SizedBox.shrink();
-                return TextButton.icon(
-                  onPressed: () => provider.reset(),
-                  icon: const Icon(Icons.refresh, size: 16),
-                  label: Text(context.l10n.t('reset')),
-                  style: TextButton.styleFrom(
-                    foregroundColor: AppTheme.secondaryColor,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 8,
-                    ),
+    final has = p.imageA != null || p.imageB != null;
+    return SessionExit(
+      hasSession: has && !widget.isStandaloneWindow,
+      onDiscard: p.reset,
+      child: StudioScaffold(
+        title: context.s('compareShort'),
+        isStandaloneWindow: widget.isStandaloneWindow,
+        actions: [
+          if (has)
+            StudioAction(
+              context.s('clearConfirm'),
+              Icons.delete_outline,
+              () async {
+                final clear = await showStudioDialog<bool>(
+                  context,
+                  StudioPrompt(
+                    title: context.s('clearConfirm'),
+                    message: context.s('originalKept'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text(context.s('cancel')),
+                      ),
+                      FilledButton(
+                        onPressed: () => Navigator.pop(context, true),
+                        child: Text(context.s('discard')),
+                      ),
+                    ],
                   ),
                 );
+                if (clear == true) p.reset();
               },
             ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildUploadSection(BuildContext context) {
-    return Consumer<ImageCompareProvider>(
-      builder: (context, provider, _) {
-        return SizedBox(
-          height: 120,
-          child: Row(
-            children: [
-              // 图片 A 上传区域
-              Expanded(
-                child: ImageUploadArea(
-                  label: context.l10n.t('originalA'),
-                  imageData: provider.imageA,
-                  fileName: provider.imageAName,
-                  filePath: provider.imageAPath,
-                  onImageSelected: (data, name, path) {
-                    provider.setImageA(data, name: name, path: path);
-                  },
-                  onClear: () => provider.clearImageA(),
+          ?detach,
+        ],
+        body: !has
+            ? StudioEmpty(
+                title: context.s('compareShort'),
+                description: context.s('emptyCompare'),
+                icon: Icons.compare,
+                onImage: (image) =>
+                    p.setImageA(image.data, name: image.name, path: image.path),
+              )
+            : StudioWorkspace(
+                preview: StudioCanvas(
+                  data: p.imageA ?? p.imageB!,
+                  second: p.hasBothImages ? p.imageB : null,
+                  mode: p.mode,
+                  position: p.sliderPosition,
+                  onPositionChanged: p.setSliderPosition,
+                  overlayOpacity: p.overlayOpacity,
+                ),
+                inspector: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    StudioFileTile(
+                      label: 'A',
+                      name: p.imageAName ?? context.s('selectImage'),
+                      data: p.imageA,
+                      onTap: () => _pick(true),
+                    ),
+                    const SizedBox(height: 8),
+                    StudioFileTile(
+                      label: 'B',
+                      name: p.imageBName ?? context.s('selectImage'),
+                      data: p.imageB,
+                      onTap: () => _pick(false),
+                    ),
+                    const SizedBox(height: 20),
+                    if (!p.hasBothImages)
+                      StudioNotice(context.s('emptyCompare'))
+                    else ...[
+                      StudioSegments<ComparisonMode>(
+                        items: {
+                          for (final m in ComparisonMode.values)
+                            m: m.displayName,
+                        },
+                        value: p.mode,
+                        onChanged: p.setMode,
+                      ),
+                      const SizedBox(height: 20),
+                      if (p.mode != ComparisonMode.sideBySide) ...[
+                        Text(
+                          '${context.s(p.mode == ComparisonMode.slider ? 'position' : 'opacity')} · ${((p.mode == ComparisonMode.slider ? p.sliderPosition : p.overlayOpacity) * 100).round()}%',
+                        ),
+                        Slider(
+                          value: p.mode == ComparisonMode.slider
+                              ? p.sliderPosition
+                              : p.overlayOpacity,
+                          divisions: 100,
+                          label:
+                              '${((p.mode == ComparisonMode.slider ? p.sliderPosition : p.overlayOpacity) * 100).round()}%',
+                          onChanged: p.mode == ComparisonMode.slider
+                              ? p.setSliderPosition
+                              : p.setOverlayOpacity,
+                        ),
+                        Wrap(
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: () => _position(p, 0),
+                              child: const Text('0%'),
+                            ),
+                            TextButton(
+                              onPressed: () => _position(p, .5),
+                              child: const Text('50%'),
+                            ),
+                            TextButton(
+                              onPressed: () => _position(p, 1),
+                              child: const Text('100%'),
+                            ),
+                          ],
+                        ),
+                      ],
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          final a = p.imageA,
+                              an = p.imageAName,
+                              ap = p.imageAPath;
+                          p.setImageA(
+                            p.imageB,
+                            name: p.imageBName,
+                            path: p.imageBPath,
+                          );
+                          p.setImageB(a, name: an, path: ap);
+                        },
+                        icon: const Icon(Icons.swap_horiz),
+                        label: Text(context.s('swapImages')),
+                      ),
+                    ],
+                    const SizedBox(height: 16),
+                    StudioNotice(context.s('compareFitNote')),
+                  ],
                 ),
               ),
-              const SizedBox(width: 12),
-              // 图片 B 上传区域
-              Expanded(
-                child: ImageUploadArea(
-                  label: context.l10n.t('comparisonB'),
-                  imageData: provider.imageB,
-                  fileName: provider.imageBName,
-                  filePath: provider.imageBPath,
-                  onImageSelected: (data, name, path) {
-                    provider.setImageB(data, name: name, path: path);
-                  },
-                  onClear: () => provider.clearImageB(),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildComparisonSection(BuildContext context) {
-    return Consumer<ImageCompareProvider>(
-      builder: (context, provider, _) {
-        if (!provider.hasBothImages) {
-          return _buildEmptyState(context);
-        }
-
-        return ComparisonViewer(
-          imageA: provider.imageA!,
-          imageB: provider.imageB!,
-          mode: provider.mode,
-          sliderPosition: provider.sliderPosition,
-          overlayOpacity: provider.overlayOpacity,
-          onSliderChanged: (position) {
-            provider.setSliderPosition(position);
-          },
-        );
-      },
-    );
-  }
-
-  Widget _buildEmptyState(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppTheme.cardBg,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.borderColor),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.compare, size: 56, color: AppTheme.borderColor),
-            const SizedBox(height: 12),
-            Text(
-              context.l10n.t('uploadTwoImages'),
-              style: const TextStyle(
-                color: AppTheme.secondaryColor,
-                fontSize: 15,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              context.l10n.t('supportedFormats'),
-              style: const TextStyle(color: AppTheme.borderColor, fontSize: 12),
-            ),
-          ],
-        ),
       ),
     );
   }
 
-  Widget _buildModeSwitcher(BuildContext context) {
-    return Consumer<ImageCompareProvider>(
-      builder: (context, provider, _) {
-        return AnimatedOpacity(
-          duration: const Duration(milliseconds: 200),
-          opacity: provider.hasBothImages ? 1.0 : 0.5,
-          child: AbsorbPointer(
-            absorbing: !provider.hasBothImages,
-            child: ModeSwitcher(
-              currentMode: provider.mode,
-              onModeChanged: (mode) => provider.setMode(mode),
-              overlayOpacity: provider.overlayOpacity,
-              onOpacityChanged: (opacity) =>
-                  provider.setOverlayOpacity(opacity),
-            ),
-          ),
-        );
-      },
-    );
+  void _position(ImageCompareProvider p, double value) {
+    if (p.mode == ComparisonMode.slider) {
+      p.setSliderPosition(value);
+    } else {
+      p.setOverlayOpacity(value);
+    }
   }
 }

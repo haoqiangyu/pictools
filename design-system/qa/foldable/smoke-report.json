@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "fail": 2,
+    "warn": 2,
+    "info": 0
+  },
+  "findings": [
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/foldable/screens/batch-progress.png",
+      "message": "Only 6% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "warn",
+      "rule": "limited-midtones",
+      "target": "design-system/qa/foldable/screens/outer-home.png",
+      "message": "Only 11% of sampled pixels are midtone. Check contrast and surface readability."
+    },
+    {
+      "severity": "fail",
+      "rule": "viewport-too-small",
+      "target": "design-system/qa/foldable/screens/pose-overflow.png",
+      "message": "Screenshot is 951x450; too small for UI QA."
+    },
+    {
+      "severity": "fail",
+      "rule": "viewport-too-small",
+      "target": "design-system/qa/foldable/screens/reduced-height.png",
+      "message": "Screenshot is 951x450; too small for UI QA."
+    }
+  ]
+}

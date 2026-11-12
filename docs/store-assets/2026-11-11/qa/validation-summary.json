@@ -1,0 +1,191 @@
+{
+  "sets": 25,
+  "screenshot_count": 144,
+  "feature_graphic_count": 6,
+  "locales": [
+    "zh-CN",
+    "zh-TW",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE"
+  ],
+  "raw_captures": 216,
+  "reports": [
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 6,
+      "readable_images": 6,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 8,
+      "readable_images": 8,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    },
+    {
+      "assets": 4,
+      "readable_images": 4,
+      "fail": 0,
+      "warn": 0,
+      "info": 0
+    }
+  ]
+}

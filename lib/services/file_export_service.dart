@@ -27,7 +27,10 @@ class FileExportService {
       return path;
     }
 
-    final outputPath = path.endsWith('.$extension') ? path : '$path.$extension';
+    final outputPath =
+        path.toLowerCase().endsWith('.${extension.toLowerCase()}')
+        ? path
+        : '$path.$extension';
     await File(outputPath).writeAsBytes(bytes, flush: true);
     return outputPath;
   }

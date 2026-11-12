@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 8,
+    "readable_images": 8,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/01-crop.png",
+      "caption": "Recorta y ajusta.\nA tu medida.",
+      "alt_text": "Recorta una foto de la costa, elige la proporción y exporta una copia.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/02-compare.png",
+      "caption": "Mira cada\ndiferencia.",
+      "alt_text": "Compara una foto antes y después con el deslizador, en paralelo o mediante superposición.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/03-batch.png",
+      "caption": "Convierte por lotes.\nRepite menos.",
+      "alt_text": "Tres fotos convertidas a JPG en un lote, con controles de formato, calidad y guardado.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-enhance",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/04-enhance.png",
+      "caption": "Da luz a\ntus imágenes.",
+      "alt_text": "Revisa el resultado de la mejora de brillo, compáralo con el original y exporta la foto.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "05-resize",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/05-resize.png",
+      "caption": "El tamaño exacto.\nPíxel a píxel.",
+      "alt_text": "Define el ancho y el alto, bloquea la proporción y exporta al tamaño deseado.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "06-import",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/06-import.png",
+      "caption": "Desde Fotos.\nDesde Archivos.",
+      "alt_text": "El diálogo de importación permite elegir imágenes desde Fotos o Archivos.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "07-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/07-export.png",
+      "caption": "Guarda donde\ntú quieras.",
+      "alt_text": "Elige el nombre y el formato y guarda una copia en Fotos o Archivos.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "08-dark",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/08-dark.png",
+      "caption": "De día.\nY de noche.",
+      "alt_text": "Editor de recorte en modo oscuro con una foto de la costa, proporciones y botón de exportación.",
+      "platform": "app-store",
+      "preset": "custom-1179x2556",
+      "expected_width": 1179,
+      "expected_height": 2556,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/01-crop.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1171531,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/02-compare.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1284671,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/03-batch.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 319923,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/04-enhance.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1226995,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/05-resize.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1228341,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/06-import.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 232122,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/07-export.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 226555,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/es-ES/app-store/iphone-dynamic-island-medium/08-dark.png",
+      "fmt": "png",
+      "width": 1179,
+      "height": 2556,
+      "bytes": 1159147,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}

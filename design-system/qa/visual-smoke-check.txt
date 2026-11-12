@@ -1,0 +1,15 @@
+Visual smoke check: 3 fail, 4 warn, 0 info
+[FAIL] viewport-too-small :: design-system/qa/screens/land-common.png
+  Screenshot is 844x390; too small for UI QA.
+[FAIL] viewport-too-small :: design-system/qa/screens/land-large.png
+  Screenshot is 932x430; too small for UI QA.
+[FAIL] viewport-too-small :: design-system/qa/screens/land-small.png
+  Screenshot is 740x360; too small for UI QA.
+[WARN] limited-midtones :: design-system/qa/screens/home.png
+  Only 11% of sampled pixels are midtone. Check contrast and surface readability.
+[WARN] limited-midtones :: design-system/qa/screens/large.png
+  Only 10% of sampled pixels are midtone. Check contrast and surface readability.
+[WARN] limited-midtones :: design-system/qa/screens/small.png
+  Only 13% of sampled pixels are midtone. Check contrast and surface readability.
+[WARN] limited-midtones :: design-system/qa/screens/tablet-home.png
+  Only 16% of sampled pixels are midtone. Check contrast and surface readability.

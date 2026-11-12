@@ -1,14 +1,18 @@
-import 'dart:io';
+import 'package:flutter/foundation.dart';
 
-/// Centralizes features that are only available in the desktop build.
+/// Capabilities follow Flutter's target platform, including embedder tests.
 class PlatformCapabilities {
   PlatformCapabilities._();
-
-  static bool get isMobile => Platform.isAndroid || Platform.isIOS;
-  static bool get isDesktop => !isMobile;
-
+  static bool get isMobile =>
+      !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.android ||
+          defaultTargetPlatform == TargetPlatform.iOS);
+  static bool get isDesktop =>
+      !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.macOS ||
+          defaultTargetPlatform == TargetPlatform.windows ||
+          defaultTargetPlatform == TargetPlatform.linux);
   static bool get supportsMultiWindow => isDesktop;
-  static bool get supportsRustProcessing =>
-      isDesktop || Platform.isAndroid || Platform.isIOS;
+  static bool get supportsRustProcessing => isDesktop || isMobile;
   static bool get supportsBackgroundRemoval => isDesktop;
 }

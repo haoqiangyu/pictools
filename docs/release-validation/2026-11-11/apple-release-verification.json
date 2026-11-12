@@ -1,0 +1,173 @@
+{
+  "version": "1.2.0",
+  "state": "PREPARE_FOR_SUBMISSION",
+  "release_type": "MANUAL",
+  "build": "3",
+  "locales": [
+    {
+      "locale": "zh-Hans",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    },
+    {
+      "locale": "zh-Hant",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    },
+    {
+      "locale": "en-US",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    },
+    {
+      "locale": "es-ES",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    },
+    {
+      "locale": "fr-FR",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    },
+    {
+      "locale": "de-DE",
+      "fields": {
+        "name": true,
+        "subtitle": true,
+        "description": true,
+        "keywords": true,
+        "promotional_text": true,
+        "release_notes": true
+      },
+      "support_url": "https://pictureslighting.com/",
+      "privacy_url": "https://privacy.pictureslighting.com"
+    }
+  ],
+  "screenshots": [
+    {
+      "locale": "zh-Hans",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "zh-Hans",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "zh-Hant",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "zh-Hant",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "en-US",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "en-US",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "es-ES",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "es-ES",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "fr-FR",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "fr-FR",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "de-DE",
+      "slot": "APP_IPHONE_61",
+      "count": 8,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    },
+    {
+      "locale": "de-DE",
+      "slot": "APP_IPAD_PRO_3GEN_129",
+      "count": 4,
+      "all_complete": true,
+      "ordered_checksums_match": true
+    }
+  ],
+  "errors": []
+}

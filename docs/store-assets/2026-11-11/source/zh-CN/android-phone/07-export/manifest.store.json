@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "created_at": "2026-11-11T13:51:18Z",
+  "generator": "ui-design-crafter/scripts/export_store_screenshots.py",
+  "source_manifest": null,
+  "render_mode": "html-only",
+  "target": {
+    "platform": "google-play",
+    "preset": "custom-1080x1920",
+    "device_group": "android-phone",
+    "orientation": "portrait",
+    "width": 1080,
+    "height": 1920,
+    "required_or_optional": "custom",
+    "source_url": "",
+    "last_checked": "",
+    "locale": "zh-CN",
+    "theme": "default",
+    "style": "top-caption"
+  },
+  "outputs": [
+    {
+      "id": "01-export-content-top-caption",
+      "screen_name": "export-content",
+      "screen_role": null,
+      "source": "user-provided",
+      "source_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-CN/android-phone/export-content.png",
+      "html_path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/source/zh-CN/android-phone/07-export/google-play/custom-1080x1920/zh-cn/01-export-content-top-caption.html",
+      "png_path": null,
+      "caption": "保存去哪\n由你决定",
+      "alt_text": "导出弹窗可设置文件名与格式，分别保存到相册或文件。",
+      "style": "top-caption",
+      "width": 1080,
+      "height": 1920,
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "locale": "zh-CN",
+      "theme": "default",
+      "status": "html-ready",
+      "render_status": "not-rendered",
+      "warnings": []
+    }
+  ]
+}

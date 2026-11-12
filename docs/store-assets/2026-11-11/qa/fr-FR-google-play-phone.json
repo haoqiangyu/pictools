@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "strict": true,
+  "summary": {
+    "assets": 8,
+    "readable_images": 8,
+    "fail": 0,
+    "warn": 0,
+    "info": 0
+  },
+  "assets": [
+    {
+      "target": "01-batch",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/01-batch.png",
+      "caption": "Convertissez par lots.\nMoins de répétitions.",
+      "alt_text": "Trois photos converties en JPG par lot, avec réglages du format, de la qualité et de l'enregistrement.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "02-crop",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/02-crop.png",
+      "caption": "Recadrez vos images.\nAu bon format.",
+      "alt_text": "Recadrez une photo de la côte, choisissez les proportions et exportez une copie.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "03-compare",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/03-compare.png",
+      "caption": "Voyez chaque\ndifférence.",
+      "alt_text": "Comparez une photo avant et après avec le curseur, côte à côte ou en superposition.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "04-resize",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/04-resize.png",
+      "caption": "Les bonnes dimensions.\nAu pixel près.",
+      "alt_text": "Réglez la largeur et la hauteur, verrouillez les proportions et exportez aux dimensions souhaitées.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "05-enhance",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/05-enhance.png",
+      "caption": "Faites place\nà la lumière.",
+      "alt_text": "Comparez la photo éclaircie avec l'original, puis exportez le résultat.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "06-import",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/06-import.png",
+      "caption": "Depuis Photos.\nDepuis Fichiers.",
+      "alt_text": "Le dialogue d'importation permet de choisir des images depuis Photos ou Fichiers.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "07-export",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/07-export.png",
+      "caption": "Enregistrez\nà votre façon.",
+      "alt_text": "Choisissez le nom et le format, puis enregistrez une copie dans Photos ou Fichiers.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    },
+    {
+      "target": "08-dark",
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/08-dark.png",
+      "caption": "De jour.\nComme de nuit.",
+      "alt_text": "L'éditeur de recadrage en mode sombre, avec photo, réglages des proportions et bouton d'exportation.",
+      "platform": "google-play",
+      "preset": "custom-1080x1920",
+      "expected_width": 1080,
+      "expected_height": 1920,
+      "expected_orientation": "portrait",
+      "source_manifest": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/manifest.store.json",
+      "render_status": "rendered"
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/01-batch.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 235210,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/02-crop.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 690758,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/03-compare.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 777462,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/04-resize.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 722552,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/05-enhance.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 727794,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/06-import.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 196990,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/07-export.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 163342,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    },
+    {
+      "path": "/Users/elon/Documents/code/flutter/pictools/docs/store-assets/2026-11-11/upload/fr-FR/google-play/phone/08-dark.png",
+      "fmt": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 677231,
+      "alpha": false,
+      "png_color_type": 2,
+      "png_bit_depth": 8
+    }
+  ],
+  "listing_text": null,
+  "findings": []
+}
